@@ -1,0 +1,402 @@
+@charset "utf-8";
+
+
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+//$brand-color:      #e95420;
+//$secondary-color1: #d34615;
+//$secondary-color2: #ac3911;
+$brand-color:      #6699cc;
+$secondary-color1: #003366;
+$secondary-color2: #336699;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    1024px;
+
+$on-palm:          600px;
+$on-laptop:        768px;
+$on-desktop:       1280px;
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .container {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+@media screen and (max-width: $on-palm) {
+    .navbar-brand {
+        font-family: 'chunkfiveroman';
+        font-size: 30px;
+    }
+}
+@media screen and (min-width: $on-palm) {
+    .navbar-brand {
+        font-family: 'chunkfiveroman';
+        font-size: 40px;
+        height: 60px;
+    }
+    .nav {
+        height: 100%;
+    }
+}
+
+@media (min-width: $on-palm) {
+    .navbar-nav>li>a {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: $on-laptop){
+  .navbar-form {
+    margin-top: 11px;
+  }
+}
+
+@media(min-width:$on-desktop) {
+    .home .slide-text h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+    .home .slide-text {
+        font-size: 1em;
+    }
+    .home .slide-text .slide-blurb {
+        line-height: 15px;
+        font-size: 15px;
+    }
+}
+@media(max-width:$on-desktop) {
+    .home .slide-text h2 {
+        line-height: 42px;
+    }
+    .home .slide-text h2 span {
+        font: bold 20px/30px Helvetica, Sans-Serif;
+    }
+    .slide-blurb {
+        display:none;
+    }
+}
+
+
+
+
+// Profile page CSS
+
+.portfolio{
+	padding:2% 4% 2% 2%;
+	text-align:center;
+}
+.heading{
+	background: #fff;
+	text-align: left;
+	box-shadow: 0px 0px 4px 0px #545b62;
+}
+.heading img{
+	width: 10%;
+}
+.bio-info{
+	padding: 3%;
+	box-shadow: 0px 0px 4px 0px #b0b3b7;
+}
+h3.bio-header {
+    font-weight: 600;
+}
+h5.bio-subheader {
+    font-size: 12px;
+    margin-top: -15px;
+    color: gray;
+}
+.name{
+	font-family: 'Charmonman', cursive;
+	font-weight:600;
+}
+.bio-image{
+	text-align:center;
+	padding: 6%;
+}
+.bio-image img{
+	border-radius:50%;
+}
+.bio-content{
+	text-align:left;
+}
+.bio-content p{
+}
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
+
+// Define imported font face
+
+@font-face {
+    font-family: 'chunkfiveroman';
+    src: url('static/fonts/chunkfive-webfont.woff2') format('woff2'),
+         url('static/fonts/chunkfive-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.article-pic {
+    margin: 0 10px 10px 0px;
+    width: 100%;
+}
+
+.blog-thumb {
+    //height: 150px;
+    max-width: 98%;
+}
+
+.blog-thumb img {
+    //height: 150px;
+    min-width: 100%;
+    object-fit:cover;
+}
+
+body {
+	padding-top: 70px;
+}
+
+
+.bottom-right {
+    position: absolute;
+    bottom: 40px;
+    right: 25px;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 25px;
+    left: 18px;
+}
+
+.centered {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.clear {
+  clear: both;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.col-md-4:nth-child(3n+1){
+    clear:left
+}
+
+// Header CSS for Headroom
+ /**
+ * Note: I have omitted any vendor-prefixes for clarity.
+ * Adding them is left as an exercise for the reader.
+ */
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+// End header CSS
+
+#home-slider .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.home .slide-text h2 {
+    text-transform: uppercase;
+    line-height: 69px;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 90px;
+}
+
+.item .slide-text span {
+    font-size: 25px;
+    line-height: 40px;
+    letter-spacing: 0
+}
+
+.item .slide-filter {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(38, 41, 46, .7)
+}
+
+.item .slide-text {
+    position: absolute;
+    display: block;
+    bottom: -5%;
+    text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+    right: 0;
+    left: 0;
+    width: 100%;
+    /*padding: 0 10px;*/
+    z-index: 22;
+    /*max-width: 800px;*/
+    margin: 0 auto;
+    text-align: center;
+    /*font-size: 4em;*/
+}
+
+.item .slide-text h2 span,
+.item .slide-text .slide-blurb span {
+   color: white;
+   font: bold 32px/45px Helvetica, Sans-Serif;
+   letter-spacing: -1px;
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px;
+}
+
+.item .slide-text .slide-blurb {
+  position: absolute;
+  left:0;
+  bottom:40px;
+}
+.item .slide-text .slide-blurb span {
+  font: bold 18px/35px Helvetica, sans-serif;
+}
+
+.item .slide-text h2,
+.item .slide-text span {
+    font-weight: bold;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    font-weight: 300;
+    color: #FFF;
+    // position: relative;
+}
+
+.navbar-brand > img {
+    height: 100%;
+}
+
+.portfolioContainer .col-md-4:nth-child(3n+1){
+    clear:none
+}
+
+.post-info {
+    // position: absolute;
+    // top:215px;
+    margin-right:3px;
+}
+
+.post-thumb > .panel {
+    min-height:400px;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+
+.slide-image {
+    height: 50vh;
+    min-height: 200px;
+    max-width: 100%;
+}
+
+.slide-image img {
+    min-height: 50vh;
+    min-width: 100%;
+    object-fit:cover;
+}
+
+/* This gets Google to fall into place */
+.social {
+	font-size: 1px;
+}
+
+/* This gets Facebook to fall into place */
+.social iframe {
+	vertical-align: bottom;
+}
+
+/* Set an optional width for your button wrappers */
+.social span {
+	display: inline-block;
+	width: 110px;
+}
+
+/* Adjust the widths individually if you like */
+.social .google {
+	width: 75px;
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    margin-bottom: 25px;
+    height: 0;
+}
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+//Force Footer to Bottom of Page
+.page-container {
+  position: relative;
+  min-height: 85vh;
+}
+
+.content-wrap {
+  padding-bottom: 10rem;    /* Footer height */
+}
+
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;            /* Footer height */
+}

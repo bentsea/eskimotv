@@ -1,0 +1,10 @@
+<p>Dear {{ user.username }},</p>
+<p>We have received a request to update your EskimoTV email. If you do not have an EskimoTV account, please disregard this email.</p>
+<p>Please click on the following link to confirm your new email address:</p>
+<ul>
+  <li><a href="{{ url_for('main.confirm_email_change',token=token,_external=True) }}">{{ url_for('main.confirm_email_change',token=token,_external=True) }}</a></li>
+</ul>
+<p>Sincerely,<br/>The EskimoTV Team</p>
+
+
+<p>Note: Replies to this email address are not monitored.</p>

@@ -1,0 +1,8 @@
+Dear {{ user.username }},
+Welcome to EskimoTV!
+Please click on the following link to confirm your account:
+{{ url_for('auth.confirm',token=token,_external=True) }}
+Sincerely,
+The EskimoTV Team
+
+Note: Replies to this email address are not monitored.

@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: bentsea/eskimotv-frontend:latest
+    build:
+      dockerfile: frontend.dockerfile
+      context: .
+    ports:
+      - "8000:5000"
+    env_file: .env
+    volumes:
+      - '.:/home/eskimotv/app'
+    entrypoint: ./app/boot.sh
+    restart: always

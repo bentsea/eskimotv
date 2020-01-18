@@ -1,0 +1,36 @@
+{% extends "default.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Eskimo TV: Home{% endblock %}
+
+{% block header %}<h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h1>{% endblock %}
+
+{% block page_content %}
+{% if current_user.can(Permission.WRITE) %}
+<div class="">
+  {{ wtf.quick_form(form) }}
+</div>
+{% endif %}
+<ul class="articles">
+  {% for article in articles %}
+  <li class="article">
+    <div class="profile-thumbnail">
+      <a href="{{ url_for('main.profile', id = article.author.id) }}">
+        <img class="img-rounded profile-thumbnail" src="{{ article.author.gravatar(size=40) }}" alt="{{ article.author.username }} Avatar">
+      </a>
+    </div>
+    <div class="article-content">
+      <div class="article-date">{{ moment(article.published).fromNow() }}</div>
+      <div class="article-author">
+        <a href="{{ url_for('main.profile', id = article.author.id) }}">
+          {{ article.author.username }}
+        </a>
+      </div>
+      <div class="article-body">
+        {{ article.body }}
+      </div>      
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

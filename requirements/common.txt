@@ -1,0 +1,14 @@
+Flask
+flask-bootstrap4
+Flask_Assets
+cssmin
+pyscss
+jsmin
+flask-moment
+Flask-Images
+flask-wtf
+flask-sqlalchemy
+mysql-connector
+flask-mail
+flask-migrate
+Flask-Login

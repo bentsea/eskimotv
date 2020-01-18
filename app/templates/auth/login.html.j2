@@ -1,0 +1,15 @@
+{% extends "default.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}{{ config.TITLE }} - Login{% endblock %}
+
+{% block header %}<h1>Login</h1>{% endblock %}
+
+{% block page_content %}
+<div class="col-md-4">
+  {{ wtf.quick_form(form) }}
+  <br />
+  <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register.</a></p>
+  <p>Forgot your password? <a href="{{ url_for('auth.request_reset_password') }}">Click here to reset.</a></p>
+</div>
+{% endblock %}

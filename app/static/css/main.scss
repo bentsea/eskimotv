@@ -1,0 +1,324 @@
+@charset "utf-8";
+
+
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+//$brand-color:      #e95420;
+//$secondary-color1: #d34615;
+//$secondary-color2: #ac3911;
+$brand-color:      #6699cc;
+$secondary-color1: #003366;
+$secondary-color2: #336699;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    1024px;
+
+$on-palm:          600px;
+$on-laptop:        768px;
+$on-desktop:       1280px;
+
+// Theme correction
+.bg-primary {
+  background-color: $brand-color !important;
+}
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: $secondary-color1;
+}
+a {
+  color: $brand-color;
+}
+a:hover a:visited {
+  color: $secondary-color1;
+}
+.btn-primary {
+    color: #fff;
+    background-color: $brand-color;
+    border-color: $brand-color;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: $secondary-color2;
+    border-color: $secondary-color1;
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: $secondary-color1;
+    border-color: $secondary-color2;
+}
+body {
+  padding-top: 70px;
+}
+
+.profile-thumbnail {
+    position: absolute;
+}
+.profile-header {
+    min-height: 260px;
+    margin-left: 280px;
+}
+div.article-tabs {
+    margin-top: 16px;
+}
+ul.articles {
+    list-style-type: none;
+    padding: 0px;
+    margin: 16px 0px 0px 0px;
+    border-top: 1px solid #e0e0e0;
+}
+div.article-tabs ul.articles {
+    margin: 0px;
+    border-top: none;
+}
+ul.articles li.article {
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+ul.articles li.article:hover {
+    background-color: #f0f0f0;
+}
+div.article-date {
+    float: right;
+}
+div.article-author {
+    font-weight: bold;
+}
+div.article-thumbnail {
+    position: absolute;
+}
+div.article-content {
+    margin-left: 48px;
+    min-height: 48px;
+}
+div.article-footer {
+    text-align: right;
+}
+ul.comments {
+    list-style-type: none;
+    padding: 0px;
+    margin: 16px 0px 0px 0px;
+}
+ul.comments li.comment {
+    margin-left: 32px;
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+ul.comments li.comment:nth-child(1) {
+    border-top: 1px solid #e0e0e0;
+}
+ul.comments li.comment:hover {
+    background-color: #f0f0f0;
+}
+div.comment-date {
+    float: right;
+}
+div.comment-author {
+    font-weight: bold;
+}
+div.comment-thumbnail {
+    position: absolute;
+}
+div.comment-content {
+    margin-left: 48px;
+    min-height: 48px;
+}
+div.comment-form {
+    margin: 16px 0px 16px 32px;
+}
+div.pagination {
+    width: 100%;
+    text-align: right;
+    padding: 0px;
+    margin: 0px;
+}
+div.flask-pagedown-preview {
+    margin: 10px 0px 10px 0px;
+    border: 1px solid #e0e0e0;
+    padding: 4px;
+}
+div.flask-pagedown-preview h1 {
+    font-size: 140%;
+}
+div.flask-pagedown-preview h2 {
+    font-size: 130%;
+}
+div.flask-pagedown-preview h3 {
+    font-size: 120%;
+}
+.article-body h1 {
+    font-size: 140%;
+}
+.article-body h2 {
+    font-size: 130%;
+}
+.article-body h3 {
+    font-size: 120%;
+}
+.table.followers tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+// End THeme Correction
+
+//footer-style
+.site-footer {
+  border-top: 1px solid #e8e8e8;
+}
+
+.footer-heading {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    color: $grey-color-dark;
+}
+.contact-list, .social-media-list {
+    list-style: none;
+    margin-left: 0px;
+    padding-inline-start: 0px;
+}
+// End Footer CSS
+
+
+//Force Footer to Bottom of Page
+.page-container {
+  position: relative;
+  min-height: 85vh;
+}
+
+.content-wrap {
+  padding-bottom: 13rem;    /* Footer height */
+}
+
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;            /* Footer height */
+}
+
+
+//Video wrappers for responsive youtube.
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    margin-bottom: 25px;
+    height: 0;
+}
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+// Header CSS for Headroom
+ /**
+ * Note: I have omitted any vendor-prefixes for clarity.
+ * Adding them is left as an exercise for the reader.
+ */
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+// End header CSS
+
+
+// Jumbotron Text CSS
+#home-slider .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.home .slide-text h2 {
+    text-transform: uppercase;
+    line-height: 69px;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 90px;
+}
+
+.item .slide-text span {
+    font-size: 25px;
+    line-height: 40px;
+    letter-spacing: 0
+}
+
+.item .slide-filter {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(38, 41, 46, .7)
+}
+
+.item .slide-text {
+    position: absolute;
+    display: block;
+    bottom: -5%;
+    text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+    right: 0;
+    left: 0;
+    width: 100%;
+    /*padding: 0 10px;*/
+    z-index: 22;
+    /*max-width: 800px;*/
+    margin: 0 auto;
+    text-align: center;
+    /*font-size: 4em;*/
+}
+
+.item .slide-text h2 span,
+.item .slide-text .slide-blurb span {
+   color: white;
+   font: bold 32px/45px Helvetica, Sans-Serif;
+   letter-spacing: -1px;
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px;
+}
+
+.item .slide-text .slide-blurb {
+  position: absolute;
+  left:0;
+  bottom:40px;
+}
+.item .slide-text .slide-blurb span {
+  font: bold 18px/35px Helvetica, sans-serif;
+}
+
+.item .slide-text h2,
+.item .slide-text span {
+    font-weight: bold;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    font-weight: 300;
+    color: #FFF;
+    // position: relative;
+}
+
+//End Jumbotron Text CSS

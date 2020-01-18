@@ -1,0 +1,11 @@
+{% extends "default.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}{{ config.TITLE }} - Register{% endblock %}
+
+{% block header %}<h1>Register</h1>{% endblock %}
+{% block page_content %}
+<div class="col-md-4">
+  {{ wtf.quick_form(form) }}
+</div>
+{% endblock %}

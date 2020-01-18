@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% block head %}
+  {% include "includes/head.html.j2" %}
+  {% endblock %}
+</head>
+<body>
+  <div class="page-container">
+    {% block nav %}
+    {% include "includes/nav.html.j2" %}
+    {% endblock %}
+
+    {% block content %}
+    <div class="container content-wrap">
+      {% for message in get_flashed_messages() %}
+      <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+      </div>
+      {% endfor %}
+      <header class="page-header">
+        {% block header %}{% endblock %}
+      </header>
+      {% block page_content %}{% endblock %}
+    </div>
+    {% endblock %}
+
+    {% block footer %}
+    {% include "includes/footer.html.j2" %}
+    {% endblock %}
+  </div>
+
+  {% block js %}
+  {% include "includes/js.html.j2" %}
+  {% endblock %}
+</body>
+</html>

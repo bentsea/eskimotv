@@ -1,0 +1,10 @@
+<p>Dear {{ user.username }},</p>
+<p>Welcome to EskimoTV!</p>
+<p>Please click on the following link to confirm your account:</p>
+<ul>
+  <li><a href="{{ url_for('auth.confirm',token=token,_external=True) }}">{{ url_for('auth.confirm',token=token,_external=True) }}</a></li>
+</ul>
+<p>Sincerely,<br/>The EskimoTV Team</p>
+
+
+<p>Note: Replies to this email address are not monitored.</p>

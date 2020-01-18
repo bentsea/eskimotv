@@ -1,0 +1,33 @@
+{% extends "default.html.j2" %}
+
+{% block title %}EskimoTV: {{ user.username }}{% endblock %}
+
+{% block header %}
+<img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=256) }}">
+<div class="profile-header">
+  <h1>{{ user.username }}</h1>
+  {% if user.first_name or user.last_name %}
+  <p>
+    {% if user.first_name %}{{ user.first_name }}{% if user.last_name %} {{ user.last_name }}{% endif %} | {{ user.role.name }}{% endif %}
+  </p>
+  {% endif %}
+  {% if current_user.is_administrator() or current_user.id == user.id %}
+  <p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+  {% endif %}
+  {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+  <p>
+    Member since {{ moment(user.member_since).format('L') }}.
+    Last seen {{ moment(user.last_seen).fromNow() }}.
+  </p>
+  <p>
+    {% if user == current_user %}
+    <a class="btn btn-primary" href="{{ url_for('main.edit_profile') }}">Edit Profile</a>
+    {% endif %}
+    {% if current_user.is_administrator() %}
+    <a class="btn btn-danger" href="{{ url_for('main.edit_profile_admin', id=user.id) }}">Edit Profile [Admin]</a>
+    {% endif %}
+    {% endblock %}
+  </p>
+</div>
+{% block page_content %}
+{% endblock %}

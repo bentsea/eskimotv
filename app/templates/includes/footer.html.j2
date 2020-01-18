@@ -1,0 +1,28 @@
+<footer class="site-footer">
+
+  <div class="container">
+
+    <h2 class="footer-heading">About {{ config.TITLE }}</h2>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <ul class="contact-list">
+          <li>Contact Us: <a href="mailto:{{ config.EMAIL }}">{{ config.EMAIL }}</a></li>
+          <li>Who we are: {{ config.DESCRIPTION }}</li>
+          {#{% if page.date %}<li>Copyright © {{ page.date | date_to_string }} EskimoTV</li>{% endif %}#}
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="footer-heading">Attribution</h2>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <p class="text"><img src="{{ url_for('static',filename='img/site-resource/attribution/tmdb-attribution-logo.svg') }}" width="80px">
+This product uses the TMDb API for data and images but is not endorsed or certified by TMDb.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
