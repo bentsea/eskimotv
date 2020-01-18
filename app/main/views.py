@@ -22,7 +22,8 @@ def index():
 @main.route('/user/<id>')
 def profile(id):
     user = User.query.filter_by(id=id).first()
-    return render_template('main/user.html.j2',user=user)
+    articles = user.articles.order_by(Article.published.desc()).all()
+    return render_template('main/user.html.j2',user=user, articles=articles)
 
 @main.route('/edit-profile',methods=['GET','POST'])
 @login_required
