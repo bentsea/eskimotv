@@ -12,3 +12,4 @@ mysql-connector
 flask-mail
 flask-migrate
 Flask-Login
+faker

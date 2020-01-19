@@ -29,7 +29,7 @@
     {% endblock %}
   </p>
 </div>
+{% block page_content %}
 <h3>Articles by {{ user.username }}</h3>
 {% include "includes/articles.html.j2" %}
-{% block page_content %}
 {% endblock %}
