@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import render_template, session, redirect, url_for, flash, request
+from flask import render_template, session, redirect, url_for, flash, request, current_app
 from . import main
 from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm
 from .. import db
@@ -16,8 +16,13 @@ def index():
         db.session.add(article)
         db.session.commit()
         return redirect(url_for('.index'))
-    articles = Article.query.order_by(Article.created.desc()).all()
-    return render_template('main/home.html.j2',form=form,articles=articles)
+    page = request.args.get('page',1,type=int)
+    pagination=Article.query.order_by(Article.published.desc()).paginate(page,
+        per_page=current_app.config['ESKIMOTV_ARTICLES_PER_PAGE'],
+        error_out=False)
+
+    articles = pagination.items
+    return render_template('main/home.html.j2',form=form,articles=articles,pagination=pagination)
 
 @main.route('/user/<id>')
 def profile(id):

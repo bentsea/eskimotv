@@ -16,6 +16,7 @@ class Config:
     ESKIMOTV_ADMIN = os.environ.get('ESKIMOTV_ADMIN')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ANALYTICS = os.environ.get('ANALYTICS')
+    ESKIMOTV_ARTICLES_PER_PAGE = 9
 
     @staticmethod
     def init_app(app):

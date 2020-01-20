@@ -1,5 +1,6 @@
 {% extends "default.html.j2" %}
 {% import "bootstrap/wtf.html" as wtf %}
+{% import "includes/macros.html.j2" as macros %}
 
 {% block title %}Eskimo TV: Home{% endblock %}
 
@@ -12,4 +13,7 @@
 </div>
 {% endif %}
 {% include "includes/articles.html.j2" %}
+<div class="">
+  {{ macros.pagination_widget(pagination, 'main.index') }}
+</div>
 {% endblock %}

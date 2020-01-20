@@ -60,6 +60,13 @@ a:hover a:visited {
     background-color: $secondary-color1;
     border-color: $secondary-color2;
 }
+.page-item.active .page-link {
+  background-color: $brand-color;
+  border-color: $brand-color;
+}
+.page-link {
+  color: $secondary-color1;
+}
 body {
   padding-top: 70px;
 }
