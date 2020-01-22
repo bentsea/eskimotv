@@ -17,6 +17,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ANALYTICS = os.environ.get('ANALYTICS')
     ESKIMOTV_ARTICLES_PER_PAGE = 9
+    CKEDITOR_FILE_UPLOADER = 'main.upload_images'
 
     @staticmethod
     def init_app(app):

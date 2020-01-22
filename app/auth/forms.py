@@ -32,4 +32,4 @@ class RequestPasswordReset(FlaskForm):
 class PasswordReset(FlaskForm):
     password = PasswordField('Password',validators=[DataRequired(),EqualTo('password2',message="Passwords must match.")])
     password2 = PasswordField('Confirm Password',validators=[DataRequired()])
-    submit = SubmitField('Register')
+    submit = SubmitField('Update Password')

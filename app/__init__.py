@@ -8,6 +8,7 @@ from flask_assets import Environment, Bundle
 from flask_migrate import Migrate
 from flask_images import Images
 from flask_login import LoginManager
+from flask_ckeditor import CKEditor
 
 mail=Mail()
 moment=Moment()
@@ -16,6 +17,7 @@ bootstrap=Bootstrap()
 assets=Environment()
 migrate = Migrate()
 image = Images()
+ckeditor = CKEditor()
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 
@@ -32,6 +34,7 @@ def create_app(config_name):
     migrate.init_app(app,db)
     image.init_app(app)
     login_manager.init_app(app)
+    ckeditor.init_app(app)
 
     assets._named_bundles = {}
 

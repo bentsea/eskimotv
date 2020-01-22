@@ -13,3 +13,7 @@ flask-mail
 flask-migrate
 Flask-Login
 faker
+flask-ckeditor
+flask-pagedown
+markdown
+bleach

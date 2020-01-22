@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, BooleanField, SelectField,\
-    SubmitField
+from wtforms import StringField, TextAreaField, BooleanField, SelectField, SubmitField
+from flask_ckeditor import CKEditorField
 from wtforms.validators import DataRequired, Length, Email, Regexp
 from wtforms import ValidationError
 from ..models import Role,User
@@ -57,5 +57,5 @@ class EditProfileAdminForm(FlaskForm):
             raise ValidationError('Username already in use.')
 
 class ArticleForm(FlaskForm):
-    body = TextAreaField('Article Body:', validators=[DataRequired()])
+    body = CKEditorField('Article Body:', validators=[DataRequired()])
     submit = SubmitField('Publish')

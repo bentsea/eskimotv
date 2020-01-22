@@ -7,6 +7,7 @@ from ..email import send_email
 from ..models import User,Role,Article,Permission
 from flask_login import login_required,current_user
 from ..decorators import admin_required
+from flask_ckeditor import upload_success, upload_fail
 
 @main.route('/', methods=['GET','POST'])
 def index():
@@ -117,3 +118,10 @@ def edit_profile_admin(id):
     form.last_name.data = user.last_name
     form.about_me.data = user.about_me
     return render_template('main/edit_user.html.j2', form=form, user=user)
+
+
+
+@main.route('/images',methods=['GET','POST'])
+@login_required
+def upload_images():
+    return upload_success(url="https://img.eskimotv.net/img/2020/01/bad-boys-for-life-2020-4-cover.jpg")
