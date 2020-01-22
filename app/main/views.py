@@ -8,6 +8,7 @@ from ..models import User,Role,Article,Permission
 from flask_login import login_required,current_user
 from ..decorators import admin_required
 from flask_ckeditor import upload_success, upload_fail
+import os
 
 @main.route('/', methods=['GET','POST'])
 def index():
@@ -124,4 +125,14 @@ def edit_profile_admin(id):
 @main.route('/images',methods=['GET','POST'])
 @login_required
 def upload_images():
-    return upload_success(url="https://img.eskimotv.net/img/2020/01/bad-boys-for-life-2020-4-cover.jpg")
+    f = request.files.get('upload')
+    # Add more validations here
+    extension = f.filename.split('.')[1].lower()
+    if extension.lower() not in ['jpg', 'gif', 'png', 'jpeg']:
+        return upload_fail(message='Image only!')
+    path = os.path.join(current_app.config['UPLOADED_IMAGES'],current_user.username)
+    if not os.path.exists(path):
+        os.makedirs(path)
+    f.save(os.path.join(path,f.filename))
+    url = url_for('static', filename="uploads/{}/{}".format(current_user.username,f.filename))
+    return upload_success(url=url)  # return upload_success call

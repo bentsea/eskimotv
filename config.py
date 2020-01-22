@@ -18,6 +18,7 @@ class Config:
     ANALYTICS = os.environ.get('ANALYTICS')
     ESKIMOTV_ARTICLES_PER_PAGE = 9
     CKEDITOR_FILE_UPLOADER = 'main.upload_images'
+    UPLOADED_IMAGES = os.path.join(basedir,'app/static/uploads/')
 
     @staticmethod
     def init_app(app):
