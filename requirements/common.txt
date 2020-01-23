@@ -17,3 +17,4 @@ flask-ckeditor
 flask-pagedown
 markdown
 bleach
+python-slugify

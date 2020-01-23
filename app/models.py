@@ -1,11 +1,13 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from flask import current_app, request
+from flask import current_app, request, render_template_string
 from . import db, login_manager
 from flask_login import UserMixin, AnonymousUserMixin
-from datetime import datetime
+from datetime import datetime,date
+from slugify import slugify
 import hashlib
+import bleach
 
 class Permission:
     FOLLOW = 1
@@ -223,12 +225,26 @@ def load_user(user_id):
 class Article(db.Model):
     __tablename__ = 'articles'
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64),index=True)
+    title_slug = db.Column(db.String(64),index=True)
+    body_html = db.Column(db.Text)
     body = db.Column(db.Text)
     draft = db.Column(db.Text)
     created = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     last_edit = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     published = db.Column(db.DateTime, index=True)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    @staticmethod
+    def on_changed_body(target, value, oldvalue, initiator):
+        allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code',
+                        'em', 'i', 'li', 'ol', 'pre', 'strong', 'ul',
+                        'h1', 'h2', 'h3','h4', 'p']
+        target.body_html = bleach.linkify(bleach.clean(render_template_string(value),tags=allowed_tags, strip=True))
+
+    @staticmethod
+    def on_changed_title(target,value,oldvalue,initiator):
+        target.title_slug = slugify(value)
 
 
 class Director(db.Model):
@@ -260,3 +276,7 @@ class Person(db.Model):
                                backref=db.backref('directed', lazy='joined'),
                                lazy='dynamic',
                                cascade='all, delete-orphan')
+
+
+db.event.listen(Article.body, 'set', Article.on_changed_body)
+db.event.listen(Article.title,'set', Article.on_changed_title)

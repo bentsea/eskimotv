@@ -1,4 +1,5 @@
-from datetime import datetime
+from datetime import datetime,date
+from sqlalchemy import func
 from flask import render_template, session, redirect, url_for, flash, request, current_app
 from . import main
 from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm
@@ -14,17 +15,23 @@ import os
 def index():
     form=ArticleForm()
     if current_user.can(Permission.WRITE) and form.validate_on_submit():
-        article = Article(body=form.body.data,author=current_user._get_current_object(),published=datetime.utcnow())
-        db.session.add(article)
-        db.session.commit()
-        return redirect(url_for('.index'))
+        if form.submit.data == True:
+            article = Article(title=form.title.data,body=form.body.data,author=current_user._get_current_object(),published=datetime.utcnow())
+            db.session.add(article)
+            db.session.commit()
+            return redirect(url_for('.index'))
+        if form.save_draft.data == True:
+            article = Article(title=form.body.title,body=form.body.data,author=current_user._get_current_object())
+            db.session.add(article)
+            db.session.commit()
+            return redirect(url_for('.index'))
     page = request.args.get('page',1,type=int)
     pagination=Article.query.order_by(Article.published.desc()).paginate(page,
         per_page=current_app.config['ESKIMOTV_ARTICLES_PER_PAGE'],
         error_out=False)
 
     articles = pagination.items
-    return render_template('main/home.html.j2',form=form,articles=articles,pagination=pagination)
+    return render_template('main/home.html.j2',form=form,articles=articles,pagination=pagination,time=datetime.utcnow())
 
 @main.route('/user/<id>')
 def profile(id):
@@ -136,3 +143,10 @@ def upload_images():
     f.save(os.path.join(path,f.filename))
     url = url_for('static', filename="uploads/{}/{}".format(current_user.username,f.filename))
     return upload_success(url=url)  # return upload_success call
+
+
+@main.route('/articles/<int:year>/<int:month>/<int:day>/<string:title_slug>')
+def article(year,month,day,title_slug):
+    article_date = date(year,month,day)
+    article = Article.query.filter(func.date(Article.published) == article_date).filter_by(title_slug=title_slug).first_or_404()
+    return render_template('main/article.html.j2',articles=[article])

@@ -13,7 +13,7 @@ class Config:
     EMAIL = "movieinfo@eskimotv.net"
     DESCRIPTION = "A home for critical and honest reviews that strive for a thoughtful exploration of all forms of art and expression, especially reviews of movies, music, TV, and games!"
     ESKIMOTV_MAIL_SENDER = 'EskimoTV Service Droid <no-reply@eskimotv.net>'
-    ESKIMOTV_ADMIN = os.environ.get('ESKIMOTV_ADMIN')
+    ESKIMOTV_ADMIN = os.environ.get('ESKIMOTV_ADMIN','brokenmind@gmail.com')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ANALYTICS = os.environ.get('ANALYTICS')
     ESKIMOTV_ARTICLES_PER_PAGE = 9

@@ -1,22 +1,32 @@
 <ul class="articles">
   {% for article in articles %}
-  <li class="article">
-    <div class="profile-thumbnail">
-      <a href="{{ url_for('main.profile', id = article.author.id) }}">
-        <img class="img-rounded profile-thumbnail" src="{{ article.author.gravatar(size=40) }}" alt="{{ article.author.username }} Avatar">
-      </a>
-    </div>
-    <div class="article-content">
-      <div class="article-date">{{ moment(article.published).fromNow() }}</div>
-      <div class="article-author">
+    <li class="article">
+      <div class="profile-thumbnail">
         <a href="{{ url_for('main.profile', id = article.author.id) }}">
-          {{ article.author.username }}
+          <img class="img-rounded profile-thumbnail" src="{{ article.author.gravatar(size=40) }}" alt="{{ article.author.username }} Avatar">
         </a>
       </div>
-      <div class="article-body">
-        {{ article.body }}
+      <div class="article-content">
+        <div class="article-date">{{ moment(article.published).fromNow() }}</div>
+        <div class="article-author">
+          {% if article.title_slug %}
+            <a href="{{ url_for('main.article', year=article.published.date().year, month = article.published.date().month, day = article.published.date().day, title_slug = article.title_slug) }}">
+              {{ article.title }}
+            </a>
+          {% else %}
+            <a href="{{ url_for('main.profile', id=article.author.id) }}">
+              {{ article.author.username }}
+            </a>
+          {% endif %}
+        </div>
+        <div class="article-body">
+          {% if article.body_html %}
+            {{ article.body_html }}
+          {% else %}
+            {{ article.body }}
+          {% endif %}
+        </div>
       </div>
-    </div>
-  </li>
+    </li>
   {% endfor %}
 </ul>

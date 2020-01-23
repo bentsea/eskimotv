@@ -21,6 +21,6 @@ def articles(count=100):
     user_count = User.query.count()
     for i in range(count):
         u = User.query.offset(randint(0,user_count - 1)).first()
-        a = Article(body=fake.text(),published=fake.past_date(),author=u)
+        a = Article(title=fake.sentence(nb_words=4),body=fake.text(),published=fake.past_date(),author=u)
         db.session.add(a)
     db.session.commit()

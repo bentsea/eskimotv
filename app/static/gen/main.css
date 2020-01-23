@@ -187,133 +187,142 @@
                                                                                 .table.followers tr {
                                                                                   border-bottom: 1px solid #e0e0e0; }
 
-                                                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003185}}
-                                                                                  .site-footer {
-                                                                                    border-top: 1px solid #e8e8e8; }
+                                                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003181}}
+                                                                                  blockquote {
+                                                                                    color: #828282;
+                                                                                    border-left: 4px solid #e8e8e8;
+                                                                                    padding-left: 15px;
+                                                                                    font-size: 18px;
+                                                                                    letter-spacing: -1px;
+                                                                                    font-style: italic; }
 
-                                                                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003189}}
-                                                                                    .footer-heading {
-                                                                                      font-size: 20px;
-                                                                                      margin-bottom: 15px;
-                                                                                      margin-top: 20px;
-                                                                                      color: #424242; }
+                                                                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003192}}
+                                                                                    .site-footer {
+                                                                                      border-top: 1px solid #e8e8e8; }
 
-                                                                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003195}}
-                                                                                      .contact-list, .social-media-list {
-                                                                                        list-style: none;
-                                                                                        margin-left: 0px;
-                                                                                        padding-inline-start: 0px; }
+                                                                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003196}}
+                                                                                      .footer-heading {
+                                                                                        font-size: 20px;
+                                                                                        margin-bottom: 15px;
+                                                                                        margin-top: 20px;
+                                                                                        color: #424242; }
 
-                                                                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003204}}
-                                                                                        .page-container {
-                                                                                          position: relative;
-                                                                                          min-height: 85vh; }
+                                                                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003202}}
+                                                                                        .contact-list, .social-media-list {
+                                                                                          list-style: none;
+                                                                                          margin-left: 0px;
+                                                                                          padding-inline-start: 0px; }
 
-                                                                                          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003209}}
-                                                                                          .content-wrap {
-                                                                                            padding-bottom: 13rem; }
+                                                                                          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003211}}
+                                                                                          .page-container {
+                                                                                            position: relative;
+                                                                                            min-height: 85vh; }
 
-                                                                                            @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003213}}
-                                                                                            .site-footer {
-                                                                                              position: absolute;
-                                                                                              bottom: 0;
-                                                                                              width: 100%;
-                                                                                              height: 10rem; }
+                                                                                            @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003216}}
+                                                                                            .content-wrap {
+                                                                                              padding-bottom: 13rem; }
 
-                                                                                              @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003222}}
-                                                                                              .videoWrapper {
-                                                                                                position: relative;
-                                                                                                padding-bottom: 56.25%;
-                                                                                                padding-top: 25px;
-                                                                                                margin-bottom: 25px;
-                                                                                                height: 0; }
+                                                                                              @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003220}}
+                                                                                              .site-footer {
+                                                                                                position: absolute;
+                                                                                                bottom: 0;
+                                                                                                width: 100%;
+                                                                                                height: 10rem; }
 
                                                                                                 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003229}}
-                                                                                                .videoWrapper iframe {
-                                                                                                  position: absolute;
-                                                                                                  top: 0;
-                                                                                                  left: 0;
-                                                                                                  width: 100%;
-                                                                                                  height: 100%; }
+                                                                                                .videoWrapper {
+                                                                                                  position: relative;
+                                                                                                  padding-bottom: 56.25%;
+                                                                                                  padding-top: 25px;
+                                                                                                  margin-bottom: 25px;
+                                                                                                  height: 0; }
 
-                                                                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003240}}
-                                                                                                  .headroom {
-                                                                                                    will-change: transform;
-                                                                                                    transition: transform 200ms linear; }
+                                                                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003236}}
+                                                                                                  .videoWrapper iframe {
+                                                                                                    position: absolute;
+                                                                                                    top: 0;
+                                                                                                    left: 0;
+                                                                                                    width: 100%;
+                                                                                                    height: 100%; }
 
-                                                                                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003244}}
-                                                                                                    .headroom--pinned {
-                                                                                                      transform: translateY(0%); }
+                                                                                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003247}}
+                                                                                                    .headroom {
+                                                                                                      will-change: transform;
+                                                                                                      transition: transform 200ms linear; }
 
-                                                                                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003247}}
-                                                                                                      .headroom--unpinned {
-                                                                                                        transform: translateY(-100%); }
+                                                                                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003251}}
+                                                                                                      .headroom--pinned {
+                                                                                                        transform: translateY(0%); }
 
                                                                                                         @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003254}}
-                                                                                                        #home-slider .item img {
-                                                                                                          display: block;
-                                                                                                          width: 100%;
-                                                                                                          height: auto; }
+                                                                                                        .headroom--unpinned {
+                                                                                                          transform: translateY(-100%); }
 
-                                                                                                          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003260}}
-                                                                                                          .home .slide-text h2 {
-                                                                                                            text-transform: uppercase;
-                                                                                                            line-height: 69px;
-                                                                                                            letter-spacing: 2px;
-                                                                                                            position: absolute;
-                                                                                                            bottom: 90px; }
+                                                                                                          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003261}}
+                                                                                                          #home-slider .item img {
+                                                                                                            display: block;
+                                                                                                            width: 100%;
+                                                                                                            height: auto; }
 
-                                                                                                            @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003268}}
-                                                                                                            .item .slide-text span {
-                                                                                                              font-size: 25px;
-                                                                                                              line-height: 40px;
-                                                                                                              letter-spacing: 0; }
+                                                                                                            @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003267}}
+                                                                                                            .home .slide-text h2 {
+                                                                                                              text-transform: uppercase;
+                                                                                                              line-height: 69px;
+                                                                                                              letter-spacing: 2px;
+                                                                                                              position: absolute;
+                                                                                                              bottom: 90px; }
 
-                                                                                                              @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003274}}
-                                                                                                              .item .slide-filter {
-                                                                                                                display: block;
-                                                                                                                position: absolute;
-                                                                                                                width: 100%;
-                                                                                                                height: 100%;
-                                                                                                                left: 0;
-                                                                                                                top: 0;
-                                                                                                                background: rgba(38, 41, 46, 0.7); }
+                                                                                                              @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003275}}
+                                                                                                              .item .slide-text span {
+                                                                                                                font-size: 25px;
+                                                                                                                line-height: 40px;
+                                                                                                                letter-spacing: 0; }
 
-                                                                                                                @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003284}}
-                                                                                                                .item .slide-text {
-                                                                                                                  position: absolute;
+                                                                                                                @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003281}}
+                                                                                                                .item .slide-filter {
                                                                                                                   display: block;
-                                                                                                                  bottom: -5%;
-                                                                                                                  text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
-                                                                                                                  right: 0;
-                                                                                                                  left: 0;
+                                                                                                                  position: absolute;
                                                                                                                   width: 100%;
-                                                                                                                  z-index: 22;
-                                                                                                                  margin: 0 auto;
-                                                                                                                  text-align: center; }
+                                                                                                                  height: 100%;
+                                                                                                                  left: 0;
+                                                                                                                  top: 0;
+                                                                                                                  background: rgba(38, 41, 46, 0.7); }
 
-                                                                                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003301}}
-                                                                                                                  .item .slide-text h2 span, .item .slide-text .slide-blurb span {
-                                                                                                                    color: white;
-                                                                                                                    font: bold 32px / 45px Helvetica, Sans-Serif;
-                                                                                                                    letter-spacing: -1px;
-                                                                                                                    background: black;
-                                                                                                                    background: rgba(0, 0, 0, 0.7);
-                                                                                                                    padding: 10px; }
+                                                                                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003291}}
+                                                                                                                  .item .slide-text {
+                                                                                                                    position: absolute;
+                                                                                                                    display: block;
+                                                                                                                    bottom: -5%;
+                                                                                                                    text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+                                                                                                                    right: 0;
+                                                                                                                    left: 0;
+                                                                                                                    width: 100%;
+                                                                                                                    z-index: 22;
+                                                                                                                    margin: 0 auto;
+                                                                                                                    text-align: center; }
 
-                                                                                                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003310}}
-                                                                                                                    .item .slide-text .slide-blurb {
-                                                                                                                      position: absolute;
-                                                                                                                      left: 0;
-                                                                                                                      bottom: 40px; }
+                                                                                                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003308}}
+                                                                                                                    .item .slide-text h2 span, .item .slide-text .slide-blurb span {
+                                                                                                                      color: white;
+                                                                                                                      font: bold 32px / 45px Helvetica, Sans-Serif;
+                                                                                                                      letter-spacing: -1px;
+                                                                                                                      background: black;
+                                                                                                                      background: rgba(0, 0, 0, 0.7);
+                                                                                                                      padding: 10px; }
 
-                                                                                                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003315}}
-                                                                                                                      .item .slide-text .slide-blurb span {
-                                                                                                                        font: bold 18px / 35px Helvetica, sans-serif; }
+                                                                                                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003317}}
+                                                                                                                      .item .slide-text .slide-blurb {
+                                                                                                                        position: absolute;
+                                                                                                                        left: 0;
+                                                                                                                        bottom: 40px; }
 
-                                                                                                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003320}}
-                                                                                                                        .item .slide-text h2, .item .slide-text span {
-                                                                                                                          font-weight: bold;
-                                                                                                                          text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-                                                                                                                          font-weight: 300;
-                                                                                                                          color: #FFF; }
+                                                                                                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003322}}
+                                                                                                                        .item .slide-text .slide-blurb span {
+                                                                                                                          font: bold 18px / 35px Helvetica, sans-serif; }
+
+                                                                                                                          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003327}}
+                                                                                                                          .item .slide-text h2, .item .slide-text span {
+                                                                                                                            font-weight: bold;
+                                                                                                                            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+                                                                                                                            font-weight: 300;
+                                                                                                                            color: #FFF; }

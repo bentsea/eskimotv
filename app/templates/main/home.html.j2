@@ -2,14 +2,30 @@
 {% import "bootstrap/wtf.html" as wtf %}
 {% import "includes/macros.html.j2" as macros %}
 
-{% block title %}Eskimo TV: Home{% endblock %}
+{% block title %}{{ super() }}: Home{% endblock %}
 
 {% block header %}<h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h1>{% endblock %}
 
 {% block page_content %}
 {% if current_user.can(Permission.WRITE) %}
 <div class="">
-  {{ wtf.quick_form(form) }}
+  <form class="form form-horizontal" method="post" role="form">
+    <div class="row">
+      <div class="col-md-12">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_errors(form, hiddens="only") }}
+
+        {{ wtf.form_field(form.title)}}
+        {{ wtf.form_field(form.body) }}
+      </div>
+      <div class="col-md-12">
+        <div class="float-right">
+          {{ wtf.form_field(form.submit, class="btn btn-primary") }}
+          {{ wtf.form_field(form.save_draft, class="btn btn-secondary") }}
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
 {% endif %}
 {% include "includes/articles.html.j2" %}
@@ -17,5 +33,5 @@
   {{ macros.pagination_widget(pagination, 'main.index') }}
 </div>
 {{ ckeditor.load() }}
-{{ ckeditor.config(name="body") }}
+{{ ckeditor.config(name="body",custom_config="entities: false") }}
 {% endblock %}

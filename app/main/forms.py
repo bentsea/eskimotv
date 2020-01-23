@@ -57,5 +57,7 @@ class EditProfileAdminForm(FlaskForm):
             raise ValidationError('Username already in use.')
 
 class ArticleForm(FlaskForm):
+    title = StringField('Title',validators=[DataRequired(),Length(1,64)])
     body = CKEditorField('Article Body:', validators=[DataRequired()])
     submit = SubmitField('Publish')
+    save_draft = SubmitField('Save Draft')
