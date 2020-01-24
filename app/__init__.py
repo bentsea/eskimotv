@@ -9,6 +9,7 @@ from flask_migrate import Migrate
 from flask_images import Images
 from flask_login import LoginManager
 from flask_ckeditor import CKEditor
+from flask_wtf.csrf import CSRFProtect
 
 mail=Mail()
 moment=Moment()
@@ -18,6 +19,7 @@ assets=Environment()
 migrate = Migrate()
 image = Images()
 ckeditor = CKEditor()
+csrf = CSRFProtect()
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 
@@ -35,6 +37,7 @@ def create_app(config_name):
     image.init_app(app)
     login_manager.init_app(app)
     ckeditor.init_app(app)
+    csrf.init_app(app)
 
     assets._named_bundles = {}
 

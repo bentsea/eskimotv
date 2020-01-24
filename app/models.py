@@ -238,9 +238,10 @@ class Article(db.Model):
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):
         allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code',
-                        'em', 'i', 'li', 'ol', 'pre', 'strong', 'ul',
+                        'em', 'i', 'li', 'ol', 'pre', 'strong', 'ul','img','figure','figcaption',
                         'h1', 'h2', 'h3','h4', 'p']
-        target.body_html = bleach.linkify(bleach.clean(render_template_string(value),tags=allowed_tags, strip=True))
+        allowed_attr = ['alt','height','width','src','class']
+        target.body_html = bleach.linkify(bleach.clean(render_template_string(value),tags=allowed_tags, attributes=allowed_attr, strip=True))
 
     @staticmethod
     def on_changed_title(target,value,oldvalue,initiator):
