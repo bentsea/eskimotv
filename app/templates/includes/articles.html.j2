@@ -1,5 +1,6 @@
 <ul class="articles">
   {% for article in articles %}
+  {% if current_user == article.author or current_user.is_administrator() or article.published < now %}
     <li class="article">
       <div class="profile-thumbnail">
         <a href="{{ url_for('main.profile', id = article.author.id) }}">
@@ -14,8 +15,8 @@
               {{ article.title }}
             </a>
           {% else %}
-            <a href="{{ url_for('main.profile', id=article.author.id) }}">
-              {{ article.author.username }}
+            <a href="{{ url_for('main.article_by_id', id=article.id) }}">
+              No Title
             </a>
           {% endif %}
         </div>
@@ -28,5 +29,6 @@
         </div>
       </div>
     </li>
+  {% endif %}
   {% endfor %}
 </ul>

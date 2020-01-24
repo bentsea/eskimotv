@@ -5,4 +5,17 @@
 
 {% block page_content %}
 {% include "includes/articles.html.j2" %}
+{% if current_user.can(Permission.EDIT) %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="float-right">
+      {% if articles[0].draft %}
+      <a class="btn btn-warning" href="{{ url_for('main.discard_draft',id=articles[0].id) }}">Discard Draft</a>
+      <a class="btn btn-secondary" href="{{ url_for('main.edit_article',id=articles[0].id,edit='draft') }}">Resume Draft</a>
+      {% endif %}
+      <a class="btn btn-primary" href="{{ url_for('main.edit_article',id=articles[0].id) }}">Edit Article</a>
+    </div>
+  </div>
+</div>
+{% endif %}
 {% endblock %}

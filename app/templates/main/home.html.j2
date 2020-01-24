@@ -32,6 +32,9 @@
 <div class="">
   {{ macros.pagination_widget(pagination, 'main.index') }}
 </div>
+{% endblock %}
+{% block js %}
+{{ super() }}
 {{ ckeditor.load(custom_url=url_for('static', filename='ckeditor/ckeditor.js')) }}
 {{ ckeditor.config(name="body",custom_config="entities: false,image2_alignClasses:['image-left','image-center','image-right'],image2_altRequired:true") }}
 {% endblock %}

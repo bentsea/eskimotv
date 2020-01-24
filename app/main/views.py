@@ -1,6 +1,6 @@
 from datetime import datetime,date
 from sqlalchemy import func
-from flask import render_template, session, redirect, url_for, flash, request, current_app
+from flask import render_template, session, redirect, url_for, flash, request, current_app, abort
 from . import main
 from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm
 from .. import db
@@ -9,6 +9,7 @@ from ..models import User,Role,Article,Permission
 from flask_login import login_required,current_user
 from ..decorators import admin_required
 from flask_ckeditor import upload_success, upload_fail
+from slugify import slugify
 import os
 
 @main.route('/', methods=['GET','POST'])
@@ -149,4 +150,61 @@ def upload_images():
 def article(year,month,day,title_slug):
     article_date = date(year,month,day)
     article = Article.query.filter(func.date(Article.published) == article_date).filter_by(title_slug=title_slug).first_or_404()
+    if article.published > datetime.utcnow() and not current_user.is_administrator():
+        abort(404)
     return render_template('main/article.html.j2',articles=[article])
+
+@main.route('/articles/id/<int:id>')
+def article_by_id(id):
+    article = Article.query.get_or_404(id)
+    return render_template('main/article.html.j2',articles=[article])
+
+@main.route('/edit/<int:id>',methods=['GET','POST'])
+@login_required
+def edit_article(id):
+    article = Article.query.get_or_404(id)
+    if current_user != article.author and not current_user.can(Permission.ADMIN):
+        abort(403)
+    form = ArticleForm()
+    if request.method == "POST":
+        if form.validate_on_submit():
+            if form.submit.data:
+                if Article.query.filter_by(title_slug=slugify(form.title.data)).first() and article.title != form.title.data:
+                    flash("Your title is too similar to an existing article.")
+                    return render_template('main/edit_article.html.j2',form=form,article=article)
+                article.body = form.body.data
+                article.title = form.title.data
+                article.draft = None
+                article.published = form.publish_date.data
+                db.session.add(article)
+                db.session.commit()
+                flash('The article has been successfully updated.')
+                return redirect(url_for('main.article_by_id',id=id))
+            if form.save_draft.data:
+                article.draft_title = form.title.data
+                article.draft = form.body.data
+                db.session.add(article)
+                db.session.commit()
+                flash("Edits saved as draft.")
+                return redirect(url_for('main.article_by_id',id = article.id))
+    if request.args.get('edit') == 'draft':
+        form.title.data = article.draft_title
+        form.body.data = article.draft
+    else:
+        form.title.data = article.title
+        form.body.data = article.body
+    if article.published:
+        form.publish_date.data = article.published
+    else:
+        form.publish_date.data = datetime.utcnow()
+    return render_template('main/edit_article.html.j2',form=form,article=article)
+
+@main.route('/discard_draft')
+@login_required
+def discard_draft():
+    article = Article.query.get_or_404(request.args.get('id'))
+    if current_user == article.author or current_user.can(Permission.EDIT):
+        article.draft = None
+        article.draft_title = None
+        db.session.add(article)
+        db.session.commit()

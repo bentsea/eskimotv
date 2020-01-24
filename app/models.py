@@ -226,6 +226,7 @@ class Article(db.Model):
     __tablename__ = 'articles'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64),index=True)
+    draft_title = db.Column(db.String(64))
     title_slug = db.Column(db.String(64),index=True)
     body_html = db.Column(db.Text)
     body = db.Column(db.Text)

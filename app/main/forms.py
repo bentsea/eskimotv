@@ -1,8 +1,11 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, BooleanField, SelectField, SubmitField
+from wtforms.fields.html5 import DateTimeField
 from flask_ckeditor import CKEditorField
+from sqlalchemy import func
 from wtforms.validators import DataRequired, Length, Email, Regexp
 from wtforms import ValidationError
+from slugify import slugify
 from ..models import Role,User
 
 class NameForm(FlaskForm):
@@ -59,5 +62,6 @@ class EditProfileAdminForm(FlaskForm):
 class ArticleForm(FlaskForm):
     title = StringField('Title',validators=[DataRequired(),Length(1,64)])
     body = CKEditorField('Article Body:', validators=[DataRequired()])
+    publish_date = DateTimeField('Update published date:')
     submit = SubmitField('Publish')
     save_draft = SubmitField('Save Draft')

@@ -15,3 +15,26 @@
   </li>
 </ul>
 {% endmacro %}
+
+{% macro article_form(wtf,form,article=None) %}
+<div class="">
+  <form class="form form-horizontal" method="post" role="form">
+    <div class="row">
+      <div class="col-md-12">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_errors(form, hiddens="only") }}
+
+        {{ wtf.form_field(form.title)}}
+        {{ wtf.form_field(form.body) }}
+        {{ wtf.form_field(form.publish_date) }}
+      </div>
+      <div class="col-md-12">
+        <div class="float-right">
+          {{ wtf.form_field(form.submit, class="btn btn-primary") }}
+          {{ wtf.form_field(form.save_draft, class="btn btn-secondary") }}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endmacro %}

@@ -1,0 +1,20 @@
+{% extends "default.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "includes/macros.html.j2" as macros %}
+
+{% block title %}{{ super() }}: Edit Post{% endblock %}
+
+{% block header %}<h1>Edit Post</h1>{% endblock %}
+
+{% block page_content %}
+{% if current_user == article.author or current_user.can(Permission.EDIT) %}
+{{ macros.article_form(wtf,form) }}
+{% else %}
+<p>You do not have permission to edit this article.</p>
+{% endif %}
+{% endblock %}
+{% block js %}
+{{ super() }}
+{{ ckeditor.load(custom_url=url_for('static', filename='ckeditor/ckeditor.js')) }}
+{{ ckeditor.config(name="body",custom_config="entities: false,image2_alignClasses:['image-left','image-center','image-right'],image2_altRequired:true") }}
+{% endblock %}
