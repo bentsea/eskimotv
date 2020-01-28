@@ -146,10 +146,9 @@ def upload_images():
     return upload_success(url=url)  # return upload_success call
 
 
-@main.route('/articles/<int:year>/<int:month>/<int:day>/<string:title_slug>')
-def article(year,month,day,title_slug):
-    article_date = date(year,month,day)
-    article = Article.query.filter(func.date(Article.published) == article_date).filter_by(title_slug=title_slug).first_or_404()
+@main.route('/articles/<string:title_slug>')
+def article(title_slug):
+    article = Article.query.filter_by(title_slug=title_slug).first_or_404()
     if article.published > datetime.utcnow() and not current_user.is_administrator():
         abort(404)
     return render_template('main/article.html.j2',articles=[article])
@@ -208,3 +207,8 @@ def discard_draft():
         article.draft_title = None
         db.session.add(article)
         db.session.commit()
+        flash('Draft discarded.')
+        return redirect(url_for('main.article',title_slug=article.title_slug))
+    else:
+        flash("You don't have permission to discard this user's drafts.")
+        return redirect(url_for('main.article',title_slug=article.title_slug))

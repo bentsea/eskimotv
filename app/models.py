@@ -235,6 +235,7 @@ class Article(db.Model):
     last_edit = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     published = db.Column(db.DateTime, index=True)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    subject_id = db.Column(db.Integer, db.ForeignKey('creative_works.id'))
 
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):
@@ -248,36 +249,24 @@ class Article(db.Model):
     def on_changed_title(target,value,oldvalue,initiator):
         target.title_slug = slugify(value)
 
-
-class Director(db.Model):
-    __tablename__="directs"
-    director_id=db.Column(db.Integer,db.ForeignKey('people.id'),primary_key=True)
-    work_id=db.Column(db.Integer,db.ForeignKey('creative_works.id'),primary_key=True)
-
 class CreativeWork(db.Model):
     __tablename__="creative_works"
     id=db.Column(db.Integer,primary_key=True)
-    #type=db.Column(db.String(32),index=True)
-    #name=db.Column(db.String(128),index=True)
-    #tmdb_id = db.Column(db.Text(),unique=True,index=True)
-    directed_by = db.relationship('Director',
-                               foreign_keys=[Director.work_id],
-                               backref=db.backref('directed_by', lazy='joined'),
-                               lazy='dynamic',
-                               cascade='all, delete-orphan')
-    #image=db.Column(db.Text())
-    #ublished=db.Column(db.DateTime())
+    type=db.Column(db.String(32),index=True)
+    name=db.Column(db.String(128),index=True)
+    tmdb_id = db.Column(db.Integer(),unique=True,index=True)
+    director = db.Column(db.String(128), index=True)
+    articles = db.relationship('Article',backref='subject',lazy='dynamic')
+    image=db.Column(db.Text())
+    date_published=db.Column(db.DateTime())
+    director_id = db.Column(db.Integer(),db.ForeignKey('people.id'))
 
 class Person(db.Model):
     __tablename__="people"
     id=db.Column(db.Integer,primary_key=True)
-    #tmdb_id = db.Column(db.Integer,index=True)
-    # #name = db.Column(db.Text(),index=True)
-    directed = db.relationship('Director',
-                               foreign_keys=[Director.director_id],
-                               backref=db.backref('directed', lazy='joined'),
-                               lazy='dynamic',
-                               cascade='all, delete-orphan')
+    tmdb_id = db.Column(db.Integer(),unique=True,index=True)
+    name = db.Column(db.String(64),index=True)
+    directed = db.relationship('CreativeWork',backref='director',lazy='dynamic')
 
 
 db.event.listen(Article.body, 'set', Article.on_changed_body)

@@ -13,7 +13,7 @@
       <a class="btn btn-warning" href="{{ url_for('main.discard_draft',id=articles[0].id) }}">Discard Draft</a>
       <a class="btn btn-secondary" href="{{ url_for('main.edit_article',id=articles[0].id,edit='draft') }}">Resume Draft</a>
       {% endif %}
-      <a class="btn btn-primary" href="{{ url_for('main.edit_article',id=articles[0].id) }}">Edit Article</a>
+      <a class="btn btn-primary" href="{{ url_for('main.edit_article',id=articles[0].id) }}">Edit Article{% if articles[0].draft %} (Discard Draft){% endif %}</a>
     </div>
   </div>
 </div>

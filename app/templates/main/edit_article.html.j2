@@ -16,5 +16,5 @@
 {% block js %}
 {{ super() }}
 {{ ckeditor.load(custom_url=url_for('static', filename='ckeditor/ckeditor.js')) }}
-{{ ckeditor.config(name="body",custom_config="entities: false,image2_alignClasses:['image-left','image-center','image-right'],image2_altRequired:true") }}
+{{ ckeditor.config(name="body",height=500,custom_config="entities: false,image2_alignClasses:['image-left','image-center','image-right'],image2_altRequired:true") }}
 {% endblock %}
