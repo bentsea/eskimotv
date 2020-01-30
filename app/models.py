@@ -255,7 +255,6 @@ class CreativeWork(db.Model):
     type=db.Column(db.String(32),index=True)
     name=db.Column(db.String(128),index=True)
     tmdb_id = db.Column(db.Integer(),unique=True,index=True)
-    director = db.Column(db.String(128), index=True)
     articles = db.relationship('Article',backref='subject',lazy='dynamic')
     image=db.Column(db.Text())
     date_published=db.Column(db.DateTime())
