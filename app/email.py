@@ -15,3 +15,11 @@ def send_email(recipient,subject,template,**kwargs):
     thr = Thread(target=send_async_email, args=[app,msg])
     thr.start()
     return thr
+
+
+def send_test_email(**kwargs):
+    app = current_app._get_current_object()
+    msg = Message("{} {}".format(app.config['ESKIMOTV_MAIL_SUBJECT_PREFIX'],"Test Email"),sender=app.config['ESKIMOTV_MAIL_SENDER'],recipients=["brokenmind@gmail.com"])
+    msg.body = "This is a test email. Test emails should contain no information of value."
+    msg.html = "This is a test email. Test emails should contain no information of value."
+    send_async_email(app,msg)

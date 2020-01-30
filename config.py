@@ -5,7 +5,8 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or "zEC1yH6twLV5bI7pDP7d"
     MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.googlemail.com')
     MAIL_PORT = os.environ.get('MAIL_PORT', '25')
-    MAL_USE_TLS = os.environ.get('MAIL_USE_TLS','false').lower() in ['true','on','1']
+    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS','false').lower() in ['true','on','1']
+    MAIL_USE_SSL=os.environ.get('MAIL_USE_SSL','false').lower() in ['true','on','1']
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ESKIMOTV_MAIL_SUBJECT_PREFIX = '[EskimoTV]'
