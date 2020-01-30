@@ -1,12 +1,19 @@
-FROM python:3.8.1-alpine3.11
-RUN apk update && apk upgrade && apk add bash && apk add dumb-init libsass sassc
-RUN apk add build-base python-dev py-pip jpeg-dev zlib-dev
+#FROM python:3.8.1-alpine3.11
+#RUN apk update && apk upgrade && apk add bash && apk add dumb-init libsass sassc
+#RUN apk add build-base python-dev py-pip jpeg-dev zlib-dev
+
+FROM python:3.8.1-slim
+#Update and upgrade.
+RUN apt-get update && apt-get upgrade -y
+#Add sass interpreter.
+RUN apt-get install sassc -y
 
 #Set ENV Variables
 ENV LIBRARY_PATH=/lib:/usr/lib
 
 #Add user.
-RUN adduser -D eskimotv
+#RUN adduser -D eskimotv
+RUN adduser eskimotv
 USER eskimotv
 
 #Set Work directory
