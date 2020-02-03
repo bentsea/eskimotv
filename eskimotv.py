@@ -1,11 +1,12 @@
 import os
 from app import create_app,db
+from flask_login import current_user
 from app.models import User,Role,Permission,CreativeWork,Article
 from flask_migrate import Migrate
 from datetime import datetime
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
-migrate = Migrate(app,db)
+migrate = Migrate(app,db,render_as_batch=True)
 
 @app.shell_context_processor
 def make_shell_context():

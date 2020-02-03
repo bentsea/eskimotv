@@ -19,7 +19,8 @@ class Config:
     ANALYTICS = os.environ.get('ANALYTICS')
     ESKIMOTV_ARTICLES_PER_PAGE = 9
     CKEDITOR_FILE_UPLOADER = 'main.upload_images'
-    UPLOADED_IMAGES = os.path.join(basedir,'app/static/uploads/')
+    CKEDITOR_FILE_BROWSER = 'flaskfilemanager.index'
+    FLASKFILEMANAGER_FILE_PATH = os.path.join(basedir,'app/static/uploads/')
     CKEDITOR_ENABLE_CSRF = True
 
     @staticmethod

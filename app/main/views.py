@@ -1,6 +1,6 @@
 from datetime import datetime,date
 from sqlalchemy import func
-from flask import render_template, session, redirect, url_for, flash, request, current_app, abort
+from flask import render_template, session, redirect, url_for, flash, request, current_app, abort, send_from_directory
 from . import main
 from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm
 from .. import db
@@ -129,7 +129,6 @@ def edit_profile_admin(id):
     return render_template('main/edit_user.html.j2', form=form, user=user)
 
 
-
 @main.route('/images',methods=['GET','POST'])
 @login_required
 def upload_images():
@@ -138,10 +137,13 @@ def upload_images():
     extension = f.filename.split('.')[1].lower()
     if extension.lower() not in ['jpg', 'gif', 'png', 'jpeg']:
         return upload_fail(message='Image only!')
-    path = os.path.join(current_app.config['UPLOADED_IMAGES'],current_user.username)
+    path = os.path.join(current_app.config['FLASKFILEMANAGER_FILE_PATH'],current_user.username)
+    filepath = os.path.join(path,f.filename)
     if not os.path.exists(path):
         os.makedirs(path)
-    f.save(os.path.join(path,f.filename))
+    if os.path.isfile(filepath):
+        return upload_fail("File with that name already exists.")
+    f.save(filepath)
     url = url_for('static', filename="uploads/{}/{}".format(current_user.username,f.filename))
     return upload_success(url=url)  # return upload_success call
 

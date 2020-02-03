@@ -221,21 +221,40 @@ login_manager.anonymous_user = AnonymousUser
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+class ArticleType(db.Model):
+    __tablename__="article_type"
+    id = db.Column(db.Integer,primary_key=True)
+    name = db.Column(db.String(32),index=True)
+    articles = db.relationship('Article',backref='type',lazy='dynamic')
+
+    def __repr__(self):
+        return '<{} Article>'.format(self.name)
+
 
 class Article(db.Model):
     __tablename__ = 'articles'
     id = db.Column(db.Integer, primary_key=True)
+    article_type_id = db.Column(db.Integer, db.ForeignKey('article_type.id'))
+    image = db.Column(db.String(128))
     title = db.Column(db.String(64),index=True)
-    draft_title = db.Column(db.String(64))
     title_slug = db.Column(db.String(64),index=True)
+    draft_title = db.Column(db.String(64))
     body_html = db.Column(db.Text)
     body = db.Column(db.Text)
     draft = db.Column(db.Text)
+    blurb = db.Column(db.String(256))
+    youtube = db.Column(db.String(64))
+    final_verdict = db.Column(db.String(256))
+    rating = db.Column(db.Integer,index=True)
     created = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     last_edit = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     published = db.Column(db.DateTime, index=True)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     subject_id = db.Column(db.Integer, db.ForeignKey('creative_works.id'))
+    request_to_publish = db.Column(db.Boolean,index=True)
+
+    def __repr__(self):
+        return '<Article {}>'.format(self.id)
 
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):

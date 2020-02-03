@@ -7,6 +7,8 @@ FROM python:3.8.1-slim
 RUN apt-get update && apt-get upgrade -y
 #Add sass interpreter.
 RUN apt-get install sassc -y
+#Add dependency for installing flaskfilemanager
+RUN apt-get install swig build-essential -y
 
 #Set ENV Variables
 ENV LIBRARY_PATH=/lib:/usr/lib

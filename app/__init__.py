@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, current_app,session
 from flask_mail import Mail
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
@@ -10,6 +10,7 @@ from flask_images import Images
 from flask_login import LoginManager
 from flask_ckeditor import CKEditor
 from flask_wtf.csrf import CSRFProtect
+import flaskfilemanager
 
 mail=Mail()
 moment=Moment()
@@ -28,6 +29,19 @@ def create_app(config_name):
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
 
+
+    # with app.app_context():
+    #     #Define access control for flaskfilemanager.
+    #     def file_access_permission():
+    #         """
+    #         :return: True if the user is allowed to access the filemanager, otherwise False
+    #         """
+    #         return session.get('user_id',False)
+    #
+    #     #Restrict flaskfilemanager access ut user directory.
+    #     app.config['FLASKFILEMANAGER_FILE_PATH'] = "{}{}/".format(app.config['FLASKFILEMANAGER_FILE_PATH'],session.get('user_id'))
+
+    #Initialize dependencies.
     mail.init_app(app)
     moment.init_app(app)
     bootstrap.init_app(app)
@@ -39,6 +53,8 @@ def create_app(config_name):
     ckeditor.init_app(app)
     csrf.init_app(app)
 
+
+
     assets._named_bundles = {}
 
     scss = Bundle('css/main.scss',filters="pyscss",output="gen/main.css")
@@ -48,11 +64,15 @@ def create_app(config_name):
     js = Bundle('js/*.js',filters="jsmin",output="gen/all.js")
     assets.register('all_js',js)
 
-    # attach routes and custom error pages here
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
+    with app.app_context():
+        # attach routes and custom error pages here
+        from .main import main as main_blueprint
+        app.register_blueprint(main_blueprint)
 
-    from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint, url_prefix='/auth')
+        from .auth import auth as auth_blueprint
+        app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
-    return app
+        #flaskfilemanager.init(app,access_control_function=file_access_permission)
+        flaskfilemanager.init(app)
+
+        return app

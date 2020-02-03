@@ -18,3 +18,4 @@ flask-pagedown
 markdown
 bleach
 python-slugify
+flaskfilemanager
