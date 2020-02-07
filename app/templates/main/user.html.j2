@@ -20,6 +20,9 @@
     Last seen {{ moment(user.last_seen).fromNow() }}.
   </p>
   <p>
+    {% if user.can(Permission.WRITE) %}
+    <a class="btn btn-success" href="{{ url_for('main.new_article') }}">New Article</a>
+    {% endif %}
     {% if user == current_user %}
     <a class="btn btn-primary" href="{{ url_for('main.edit_profile') }}">Edit Profile</a>
     {% endif %}

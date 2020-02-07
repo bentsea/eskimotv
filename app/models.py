@@ -230,13 +230,23 @@ class ArticleType(db.Model):
     def __repr__(self):
         return '<{} Article>'.format(self.name)
 
+    @staticmethod
+    def insert_article_types():
+        types = ["Review","Editorial","News"]
+        for t in types:
+            type = ArticleType.query.filter_by(name=t).first()
+            if type == None:
+                type = ArticleType(name=t)
+            db.session.add(type)
+        db.session.commit()
+
 
 class Article(db.Model):
     __tablename__ = 'articles'
     id = db.Column(db.Integer, primary_key=True)
     article_type_id = db.Column(db.Integer, db.ForeignKey('article_type.id'))
     image = db.Column(db.String(128))
-    title = db.Column(db.String(64),index=True)
+    title = db.Column(db.String(128),index=True)
     title_slug = db.Column(db.String(64),index=True)
     draft_title = db.Column(db.String(64))
     body_html = db.Column(db.Text)

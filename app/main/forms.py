@@ -6,7 +6,7 @@ from sqlalchemy import func
 from wtforms.validators import DataRequired, Length, Email, Regexp
 from wtforms import ValidationError
 from slugify import slugify
-from ..models import Role,User
+from ..models import Role,User,ArticleType
 
 class NameForm(FlaskForm):
     name = StringField('What is your name?',validators=[DataRequired()])
@@ -47,7 +47,7 @@ class EditProfileAdminForm(FlaskForm):
     def __init__(self, user, *args, **kwargs):
         super(EditProfileAdminForm, self).__init__(*args, **kwargs)
         self.role.choices = [(role.id, role.name)
-                             for role in Role.query.order_by(Role.name).all()]
+                             for role in Role.query.order_by(Role.id).all()]
         self.user = user
 
     def validate_email(self, field):
@@ -60,8 +60,18 @@ class EditProfileAdminForm(FlaskForm):
             raise ValidationError('Username already in use.')
 
 class ArticleForm(FlaskForm):
-    title = StringField('Title',validators=[DataRequired(),Length(1,64)])
+    title = StringField('Title',validators=[DataRequired(),Length(1,128)])
     body = CKEditorField('Article Body:', validators=[DataRequired()])
     publish_date = DateTimeField('Update published date:')
     submit = SubmitField('Publish')
     save_draft = SubmitField('Save Draft')
+
+class NewArticle(FlaskForm):
+    title = StringField('Title',validators=[DataRequired(),Length(1,128)])
+    article_type = SelectField('Article Type', coerce=int)
+    subject = StringField('Subject (Optional)',validators=[Length(1,128)])
+
+    def __init__(self, *args, **kwargs):
+        super(NewArticle, self).__init__(*args, **kwargs)
+        self.article_type.choices = [(type.id, type.name)
+                             for type in ArticleType.query.order_by(ArticleType.id).all()]

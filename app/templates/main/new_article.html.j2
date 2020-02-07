@@ -1,0 +1,17 @@
+{% extends "default.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %}EskimoTV: Create New Article{% endblock %}
+
+{% block header %}
+<h1>Create New Article</h1>
+{% endblock %}
+
+{% block page_content %}
+<div class="row">
+  <div class="col-md-4">
+    {{ wtf.quick_form(form) }}
+  </div>
+</div>
+{% endblock %}

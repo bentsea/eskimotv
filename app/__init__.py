@@ -72,7 +72,8 @@ def create_app(config_name):
         from .auth import auth as auth_blueprint
         app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
-        #flaskfilemanager.init(app,access_control_function=file_access_permission)
-        flaskfilemanager.init(app)
+        #import the access control after the db has been initialized.
+        from . import filemanager_config
+        flaskfilemanager.init(app,access_control_function=filemanager_config.can_edit_files)
 
         return app

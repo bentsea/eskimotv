@@ -2,7 +2,7 @@ from datetime import datetime,date
 from sqlalchemy import func
 from flask import render_template, session, redirect, url_for, flash, request, current_app, abort, send_from_directory
 from . import main
-from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm
+from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm,NewArticle
 from .. import db
 from ..email import send_email
 from ..models import User,Role,Article,Permission
@@ -214,3 +214,11 @@ def discard_draft():
     else:
         flash("You don't have permission to discard this user's drafts.")
         return redirect(url_for('main.article',title_slug=article.title_slug))
+
+@main.route('/new_article/')
+@login_required
+def new_article():
+    if not current_user.can(Permission.WRITE):
+        abort(403)
+    form = NewArticle()
+    return render_template('main/new_article.html.j2',form=form)
