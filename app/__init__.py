@@ -53,7 +53,8 @@ def create_app(config_name):
     ckeditor.init_app(app)
     csrf.init_app(app)
 
-
+    def can_edit_files():
+        return current_user.can(Permission.WRITE)
 
     assets._named_bundles = {}
 
@@ -73,7 +74,6 @@ def create_app(config_name):
         app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
         #import the access control after the db has been initialized.
-        from . import filemanager_config
-        flaskfilemanager.init(app,access_control_function=filemanager_config.can_edit_files)
+        flaskfilemanager.init(app,access_control_function=can_edit_files)
 
         return app

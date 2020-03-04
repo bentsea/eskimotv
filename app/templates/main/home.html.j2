@@ -7,7 +7,7 @@
 {% block header %}<h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h1>{% endblock %}
 
 {% block page_content %}
-{% if current_user.can(Permission.WRITE) %}
+{% if True %}
 <div class="">
   <form class="form form-horizontal" method="post" role="form">
     <div class="row">
