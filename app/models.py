@@ -289,6 +289,9 @@ class CreativeWork(db.Model):
     date_published=db.Column(db.DateTime())
     director_id = db.Column(db.Integer(),db.ForeignKey('people.id'))
 
+    def __repr__(self):
+        return "<{type} \"{name}\">".format(type=self.type,name=self.name)
+
 class Person(db.Model):
     __tablename__="people"
     id=db.Column(db.Integer,primary_key=True)

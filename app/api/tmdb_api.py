@@ -18,14 +18,14 @@ from pathlib import Path
 
 def set_globals(date):
    #Base Variables
-   globals()['pathPrefix']="/workspace/eskimotv"
-   globals()['appPrefix'] ="/app"
+   globals()['pathPrefix']="/home/eskimotv"
+   globals()['appPrefix'] ="/app/app"
    globals()['dateSuffix']  = date.strftime("/%Y/%m/")
    globals()['max_width']  = 1920
 
    #Compound variables
    globals()['postSuffix']  = "/_posts" + dateSuffix
-   globals()['imgSuffix']  = "/img" + dateSuffix
+   globals()['imgSuffix']  = "/static/img" + dateSuffix
    globals()['thumbsSuffix']  = "/thumbs/img" + dateSuffix
    globals()['postPath'] =pathPrefix + appPrefix + postSuffix
    globals()['imgPath'] =pathPrefix + appPrefix + imgSuffix
@@ -38,12 +38,12 @@ def set_globals(date):
    globals()['multiSearch']  = "search/multi"
    globals()['site_url']  = "https://www.themoviedb.org"
 
-   if os.path.isdir(postPath) == False:
-      os.makedirs(postPath)
-   if os.path.isdir(imgPath) == False:
-      os.makedirs(imgPath)
-   if os.path.isdir(thumbsPath) == False:
-      os.makedirs(thumbsPath)
+   # if os.path.isdir(postPath) == False:
+   #    os.makedirs(postPath)
+   # if os.path.isdir(imgPath) == False:
+   #    os.makedirs(imgPath)
+   # if os.path.isdir(thumbsPath) == False:
+   #    os.makedirs(thumbsPath)
 
 def generateSession():
    readAccessToken="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2Y2Q0NTk4NTI4Y2E4YzI4MTc1Mjg0OTM1NTZiMmQ0OSIsInN1YiI6IjU5MjEwMzhmYzNhMzY4N2E2NDA1MDEwZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.A2sLjkzHDwJz5luDyRp9To_0beIxkPtIJJs_sUQCRSA"
@@ -77,6 +77,11 @@ def slugify(s):
     s = s.strip()
     s = s.replace(' ', '-')
     return s
+
+def get_backdrops(media_type,id):
+    set_globals(datetime.datetime.now())
+    auth={'api_key':apiKey}
+    return { "images": [ {'url':'https://image.tmdb.org/t/p/original{}'.format(backdrop['file_path']),'height':backdrop['height'],'width':backdrop['width']} for backdrop in json.loads(requests.get("{}{}/{}/images".format(url,media_type,id), params=auth).text)['backdrops']] }
 
 #Takes a movie title and release year and returns a subject_info dictionary and saves an image with a cover image from the movie.
 def get_info(title='', search_release_year=None, language='en-US', data=None, media_type=None):
@@ -248,64 +253,64 @@ def makeFile(fileName,output):
 
 
 
-def main(argv):
-#Get options from command line.
-   article_type="review"
-   userName="dscott"
-   release_year=None
-   subject=None
-   title=None
-   media_type=None
-   date=datetime.datetime.now()
-   try:
-      opts, args = getopt.getopt(argv,"enhm:y:t:u:s:d:",["news","help","test","subject=","title=","year=","user=","editorial=","media=","date="])
-   except getopt.GetoptError as err:
-      error(err)
-   #exit if no options are passed.
-   if len(opts) == 0:
-      error()
-   for opt, arg in opts:
-      if opt in ('-u','--user'):
-         userName = arg
-      elif opt in ("-d","--date"):
-         backdate = parse(arg)
-         answer = "awaiting input"
-         while(answer not in ['y','yes','','n','no']):
-            answer = input("Do you wish to backdate this post to {}? ([y]es|[n]o, or just hit Enter for yes.): ".format(backdate.strftime("%B %d, %Y"))).lower()
-            if answer in ['y','yes','']:
-               date = backdate
-            else:
-               print("Exiting without attempting to create post.")
-               exit()
-      elif opt in ("-t", "--title"):
-         title = arg
-      elif opt in ("-y", "--year"):
-         release_year = arg
-      elif opt in ("-e","--editorial"):
-         article_type = "editorial"
-      elif opt in ("-n","--news"):
-         article_type = "news"
-      elif opt in ("-h","--help"):
-         help()
-      elif opt in ("-m","--media"):
-         media_type = arg.lower()
-      elif opt in ("-s","--subject"):
-         subject = arg
-      else:
-         print('Boo Usage: new -t "Movie Title or article title" -u "Author Username" [ --editorial | --news | -s "Movie Title" | -y "Release year"]')
-         sys.exit(2)
-
-   set_globals(date)
-
-   if not subject:
-      if article_type == "review":
-         subject_info = get_info(title,release_year,media_type=media_type)
-         if not subject_info:
-            print('failed')
-            exit()
-         genArticle(subject_info['title'],userName,article_type=article_type,media_type=(media_type or subject_info['media_type']),subject_info=subject_info)
-      else:
-         genArticle(title,userName,article_type=article_type,media_type=media_type)
-   else:
-      subject_info = get_info(subject,release_year,media_type=media_type)
-      genArticle(title,userName,article_type=article_type,media_type=media_type,subject_info=subject_info)
+# def main(argv):
+# #Get options from command line.
+#    article_type="review"
+#    userName="dscott"
+#    release_year=None
+#    subject=None
+#    title=None
+#    media_type=None
+#    date=datetime.datetime.now()
+#    try:
+#       opts, args = getopt.getopt(argv,"enhm:y:t:u:s:d:",["news","help","test","subject=","title=","year=","user=","editorial=","media=","date="])
+#    except getopt.GetoptError as err:
+#       error(err)
+#    #exit if no options are passed.
+#    if len(opts) == 0:
+#       error()
+#    for opt, arg in opts:
+#       if opt in ('-u','--user'):
+#          userName = arg
+#       elif opt in ("-d","--date"):
+#          backdate = parse(arg)
+#          answer = "awaiting input"
+#          while(answer not in ['y','yes','','n','no']):
+#             answer = input("Do you wish to backdate this post to {}? ([y]es|[n]o, or just hit Enter for yes.): ".format(backdate.strftime("%B %d, %Y"))).lower()
+#             if answer in ['y','yes','']:
+#                date = backdate
+#             else:
+#                print("Exiting without attempting to create post.")
+#                exit()
+#       elif opt in ("-t", "--title"):
+#          title = arg
+#       elif opt in ("-y", "--year"):
+#          release_year = arg
+#       elif opt in ("-e","--editorial"):
+#          article_type = "editorial"
+#       elif opt in ("-n","--news"):
+#          article_type = "news"
+#       elif opt in ("-h","--help"):
+#          help()
+#       elif opt in ("-m","--media"):
+#          media_type = arg.lower()
+#       elif opt in ("-s","--subject"):
+#          subject = arg
+#       else:
+#          print('Boo Usage: new -t "Movie Title or article title" -u "Author Username" [ --editorial | --news | -s "Movie Title" | -y "Release year"]')
+#          sys.exit(2)
+#
+#    set_globals(date)
+#
+#    if not subject:
+#       if article_type == "review":
+#          subject_info = get_info(title,release_year,media_type=media_type)
+#          if not subject_info:
+#             print('failed')
+#             exit()
+#          genArticle(subject_info['title'],userName,article_type=article_type,media_type=(media_type or subject_info['media_type']),subject_info=subject_info)
+#       else:
+#          genArticle(title,userName,article_type=article_type,media_type=media_type)
+#    else:
+#       subject_info = get_info(subject,release_year,media_type=media_type)
+#       genArticle(title,userName,article_type=article_type,media_type=media_type,subject_info=subject_info)

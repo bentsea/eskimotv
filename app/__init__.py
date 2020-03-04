@@ -7,7 +7,7 @@ from flask_bootstrap import Bootstrap
 from flask_assets import Environment, Bundle
 from flask_migrate import Migrate
 from flask_images import Images
-from flask_login import LoginManager
+from flask_login import LoginManager,current_user
 from flask_ckeditor import CKEditor
 from flask_wtf.csrf import CSRFProtect
 import flaskfilemanager
@@ -54,6 +54,7 @@ def create_app(config_name):
     csrf.init_app(app)
 
     def can_edit_files():
+        from app.models import Permission
         return current_user.can(Permission.WRITE)
 
     assets._named_bundles = {}
@@ -72,6 +73,9 @@ def create_app(config_name):
 
         from .auth import auth as auth_blueprint
         app.register_blueprint(auth_blueprint, url_prefix='/auth')
+
+        from .api import api as api_blueprint
+        app.register_blueprint(api_blueprint, url_prefix='/api')
 
         #import the access control after the db has been initialized.
         flaskfilemanager.init(app,access_control_function=can_edit_files)

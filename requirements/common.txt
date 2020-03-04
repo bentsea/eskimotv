@@ -19,3 +19,6 @@ markdown
 bleach
 python-slugify
 flaskfilemanager
+python-resize-image
+requests
+urllib3

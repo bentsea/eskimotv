@@ -222,3 +222,18 @@ def new_article():
         abort(403)
     form = NewArticle()
     return render_template('main/new_article.html.j2',form=form)
+
+@main.route('/change_cover/<int:id>',methods=['GET','POST'])
+@login_required
+def change_cover(id):
+    article = Article.query.get_or_404(request.args.get('id'))
+    if (article.published and current_user.can(Permission.PUBLISH)) or (not article.published and (current_user == article.author or current_user.can(Permission.EDIT))):
+        flash("You have permission to edit this article's image, but that function doesn't work right now.")
+        return redirect(url_for('main.article',title_slug=article.title_slug))
+    else:
+        if article.published:
+            flash("You don't have permission to change the image on published articles.")
+            return redirect(url_for('main.article',title_slug=article.title_slug))
+        else:
+            flash("You don't have permission to edit this article.")
+            return redirect(url_for('main.article',title_slug=article.title_slug))

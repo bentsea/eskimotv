@@ -11,7 +11,7 @@
         <div class="article-date">{{ moment(article.published).fromNow() }}</div>
         <div class="article-author">
           {% if article.title_slug %}
-            <a href="{{ url_for('main.article', year=article.published.date().year, month = article.published.date().month, day = article.published.date().day, title_slug = article.title_slug) }}">
+            <a href="{{ url_for('main.article', title_slug = article.title_slug) }}">
               {{ article.title }}
             </a>
           {% else %}
