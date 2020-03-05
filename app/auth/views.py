@@ -6,6 +6,7 @@ from datetime import datetime
 from .. import db
 from ..email import send_email
 from .forms import LoginForm,RegistrationForm,RequestPasswordReset,PasswordReset
+import base64
 
 @auth.before_app_request
 def before_request():

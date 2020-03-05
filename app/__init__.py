@@ -10,7 +10,7 @@ from flask_images import Images
 from flask_login import LoginManager,current_user
 from flask_ckeditor import CKEditor
 from flask_wtf.csrf import CSRFProtect
-import flaskfilemanager
+import flaskfilemanager, base64
 
 mail=Mail()
 moment=Moment()
@@ -52,6 +52,25 @@ def create_app(config_name):
     login_manager.init_app(app)
     ckeditor.init_app(app)
     csrf.init_app(app)
+
+    @login_manager.request_loader
+    def load_user(request):
+        from app.models import User
+        api_key = request.headers.get('Authorization')
+        if api_key:
+            api_key = api_key.replace('Basic ','',1)
+            try:
+                api_key = base64.b64decode(api_key).decode('utf-8')
+            except TypeError:
+                pass
+        if api_key:
+            username,password = api_keys.split(":")
+            user = User.query.filter_by(username=username).first()
+            app.logger.info("{} {}".format(username,password))
+            if user and user.verify_password(password):
+                app.logger.info("Login Success")
+                return user
+        return None
 
     def can_edit_files():
         from app.models import Permission
