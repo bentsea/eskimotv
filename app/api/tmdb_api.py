@@ -78,10 +78,31 @@ def slugify(s):
     s = s.replace(' ', '-')
     return s
 
+#Return item release date depending on item type.
+def item_release_date(movie_object):
+    return movie_object.get('release_date') or movie_object.get('first_air_date') or ""
+
+#Get a list of backdrops to choose from based on a specific item.
 def get_backdrops(media_type,id):
     set_globals(datetime.datetime.now())
     auth={'api_key':apiKey}
     return { "images": [ {'url':'https://image.tmdb.org/t/p/original{}'.format(backdrop['file_path']),'height':backdrop['height'],'width':backdrop['width']} for backdrop in json.loads(requests.get("{}{}/{}/images".format(url,media_type,id), params=auth).text)['backdrops']] }
+
+def find_subjects(title='', release_year=None, language='en-US', data=None, media_type=None):
+
+    set_globals(datetime.datetime.now())
+
+    if not data:
+        data={'api_key':apiKey,'query':title,'language':language}
+
+    results = json.loads(requests.get(url+multiSearch,params=data).text).get('results')
+
+    no_results = [{"error":"No Results Found","backdrop_path":"https://www.eskimotv.net/img/site-resource/logo-page.jpg","overview":"No results were returned for your search. Please try again or select 'Do Not Use a Subject'."}]
+
+    if not release_year:
+        return results or no_results
+    else:
+        return [result for result in results if item_release_date(result).find(release_year) != -1] or no_results
 
 #Takes a movie title and release year and returns a subject_info dictionary and saves an image with a cover image from the movie.
 def get_info(title='', search_release_year=None, language='en-US', data=None, media_type=None):
@@ -94,9 +115,6 @@ def get_info(title='', search_release_year=None, language='en-US', data=None, me
    def return_none():
       print('No results found for subject query.')
       return None
-
-   def item_release_date(movie_object):
-      return movie_object.get('release_date') or movie_object.get('first_air_date') or ""
 
    #Iterate through crew and return the name of the crew matching the role title specified.
    def get_crew(credits,role):

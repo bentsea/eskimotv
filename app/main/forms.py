@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, BooleanField, SelectField, SubmitField
+from flask_wtf.file import FileField, FileRequired
+from wtforms import StringField, TextAreaField, BooleanField, SelectField, SubmitField, HiddenField
 from wtforms.fields.html5 import DateTimeField
 from flask_ckeditor import CKEditorField
 from sqlalchemy import func
@@ -67,9 +68,15 @@ class ArticleForm(FlaskForm):
     save_draft = SubmitField('Save Draft')
 
 class NewArticle(FlaskForm):
-    title = StringField('Title',validators=[DataRequired(),Length(1,128)])
+    title = StringField('Article Title',validators=[DataRequired(),Length(1,128)])
     article_type = SelectField('Article Type', coerce=int)
-    subject = StringField('Subject (Optional)',validators=[Length(1,128)])
+    subject_title = HiddenField('Subject Title')
+    subject_image = HiddenField('Subject Image')
+    tmdb_id = HiddenField('Subject ID')
+    subject_type = HiddenField('Subject Type')
+    subject_selected = HiddenField('Subject Selected',validators=[DataRequired()])
+    cover_image_file = FileField()
+    create_draft = SubmitField('Create Draft')
 
     def __init__(self, *args, **kwargs):
         super(NewArticle, self).__init__(*args, **kwargs)

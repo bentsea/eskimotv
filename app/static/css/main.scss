@@ -45,12 +45,15 @@ a {
 a:hover a:visited {
   color: $secondary-color1;
 }
+.btn {
+  margin: 5px 0px 5px 0px;
+}
 .btn-primary {
     color: #fff;
     background-color: $brand-color;
     border-color: $brand-color;
 }
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:focus {
     color: #fff;
     background-color: $secondary-color2;
     border-color: $secondary-color1;
@@ -186,6 +189,13 @@ blockquote {
     letter-spacing: -1px;
     font-style: italic;
 }
+.card {
+  margin: 15px 0px 15px 0px;
+}
+.card-title {
+  text-transform: capitalize;
+}
+
 // End THeme Correction
 
 //footer-style

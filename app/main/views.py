@@ -151,7 +151,7 @@ def upload_images():
 @main.route('/articles/<string:title_slug>')
 def article(title_slug):
     article = Article.query.filter_by(title_slug=title_slug).first_or_404()
-    if article.published > datetime.utcnow() and not current_user.is_administrator():
+    if (not article.published or article.published > datetime.utcnow()) and not current_user.is_administrator():
         abort(404)
     return render_template('main/article.html.j2',articles=[article])
 
@@ -215,7 +215,7 @@ def discard_draft():
         flash("You don't have permission to discard this user's drafts.")
         return redirect(url_for('main.article',title_slug=article.title_slug))
 
-@main.route('/new_article/')
+@main.route('/new_article/',methods=["GET","POST"])
 @login_required
 def new_article():
     if not current_user.can(Permission.WRITE):

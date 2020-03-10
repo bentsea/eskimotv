@@ -11,7 +11,166 @@
 {% block page_content %}
 <div class="row">
   <div class="col-md-4">
-    {{ wtf.quick_form(form) }}
+    <form class="form form-horizontal" method="post" enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+      {{ wtf.form_field(form.title)}}
+      {{ wtf.form_field(form.article_type) }}
+      <div type="button" id="subjectModalButton" class="btn btn-primary" data-toggle="modal" data-target="#subjectModal">Select Subject</div>
+      {{ wtf.form_field(form.cover_image_file) }}
+      {{ wtf.form_field(form.create_draft) }}
+    </form>
   </div>
 </div>
+
+
+<!-- Search For Subject Modal -->
+<div class="modal fade" id="subjectModal" tabindex="-1" role="dialog" aria-labelledby="subjectModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="subjectModalLabel">Search for Article Subject</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col col-sm-6">
+            <div class="form-group  required"><label class="form-control-label" for="title">Subject Title:</label>
+              <input class="form-control" id="subject_title_query" name="subject_title_query" required type="text" value="">
+            </div>
+          </div>
+          <div class="col col-sm-6">
+            <div class="form-group  required"><label class="form-control-label" for="title">Subject Year:</label>
+              <input class="form-control" id="subject_year_query" name="subject_year_query" required type="text" value="">
+            </div>
+          </div>
+          <div class="col col-sm-12">
+            <div class="btn btn-primary" onclick="re_search($('#subject_title_query').val(),$('#subject_year_query').val());">Re-Search</div>
+            <div class="btn btn-warning" onclick="$('#subject_selected').val('None');$('#subjectModal').modal('hide');">Do Not Use a Subject</div>
+          </div>
+        </div>
+        <div id="searchData"></div>
+        <div class="collapse" id="affcampaigncode" style="display:none;">
+            <div class="card card-body">
+                <p>Placeholder</p>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Select TMDB Cover Modal -->
+<div class="modal fade" id="tmdbCoverModal" tabindex="-1" role="dialog" aria-labelledby="tmdbCoverModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tmdbCoverModalLabel">Interested in Austin Film Festival?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="affcampaigninfo">
+            <p>Placeholder.</p>
+        </div>
+        <div class="collapse" id="affcampaigncode" style="display:none;">
+            <div class="card card-body">
+                <p>Placeholder</p>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+{{ super() }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+{% raw %}<script id="search_results_template" type="text/template">
+<div class="card">
+  <img class="card-img-top" src="{{ backdrop_path }}" alt="{{ backdrop_alt }}" title="{{ backdrop_alt }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ media_type }}: {{ title }} ({{ year }})</h5>
+    <p class="card-text">{{ overview }}</p>
+    <div onclick="$('#title').val('{{ title }} ({{ year }})');$('#subject_title').val('{{ title }}');$('#subject_image').val('{{ poster_path }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#subjectModal').modal('hide');" class="btn btn-primary">Use For Subject and Article Title</div>
+    <div onclick="$('#subject_title').val('{{ title }}');$('#subject_image').val('{{ poster_path }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#subjectModal').modal('hide');" class="btn btn-primary">Only Use For Subject</div>
+  </div>
+</div>
+</script>{% endraw %}
+{% raw %}<script id="search_results_error_template" type="text/template">
+<div class="card">
+  <img class="card-img-top" src="{{ backdrop_path }}" alt="{{ backdrop_alt }}">
+  <div class="card-body">
+    <h5 class="card-title">Error: {{ error }}</h5>
+    <p class="card-text">{{ overview }}</p>
+  </div>
+</div>
+</script>{% endraw %}
+<script type="text/javascript">
+function search(data) {
+  $("#searchData").empty()
+  $.getJSON("/api/tmdb_search",data,function(data,status,xhr){
+    window.test_data = JSON.parse(data);
+    var data = JSON.parse(data);
+    var template = $("#search_results_template").html();
+    var error_template = $("#search_results_error_template").html();
+
+    $.each(data,function(i,v){
+      if (v.hasOwnProperty("error")) {
+        $("#searchData").append(Mustache.render(error_template, v));
+        return false;
+      }
+
+      if(v.hasOwnProperty("release_date")) {
+        v.year = v.release_date.split('-')[0];
+      } else if (v.hasOwnProperty("first_air_date")) {
+        v.year = v.first_air_date.split('-')[0];
+      } else {
+        v.year = 'N/A';
+      }
+      if (v.backdrop_path == null) {
+        v.backdrop_alt = "No Backdrop Available.";
+        v.backdrop_path = "https://www.eskimotv.net/img/site-resource/logo-page.jpg";
+      } else if (v.hasOwnProperty("backdrop_path")) {
+        v.backdrop_alt = v.title + " backdrop";
+        v.backdrop_path = "https://image.tmdb.org/t/p/original" + v.backdrop_path;
+      } else {
+        v.backdrop_alt = "No Backdrop Available.";
+        v.backdrop_path = "https://www.eskimotv.net/img/site-resource/logo-page.jpg";
+      }
+      if (v.hasOwnProperty("name")) {
+        v.title = v.name;
+      }
+      $("#searchData").append(Mustache.render(template, v));
+    });
+  });
+}
+function re_search (title,year) {
+  var data = {"title":title};
+  if (year != "") {
+    data.release_year = parseInt(year);
+  }
+  search(data);
+}
+$("#subjectModal").on('shown.bs.modal', function(){
+  var data = {"title":$("#title").val()};
+  $("#subject_title_query").val($("#title").val());
+  search(data);
+});
+//
+// function update_form(article_title,title,image,id,type) {
+//
+// }
+</script>
 {% endblock %}

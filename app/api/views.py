@@ -1,5 +1,5 @@
 from flask_login import login_required,current_user
-from flask import request,jsonify,session
+from flask import request,jsonify,session,current_app
 import base64
 import json
 from . import api
@@ -14,6 +14,14 @@ def get_backdrops():
         return jsonify(json.dumps(tmdb_api.get_backdrops(request.args.get('media_type'),request.args.get('id'))))
     except Exception as err:
         return str(err), 500
+
+@api.route('/tmdb_search',methods=["GET","POST"])
+@login_required
+def tmdb_search():
+    try:
+        return jsonify(json.dumps(tmdb_api.find_subjects(title = request.values.get('title',""),release_year = request.values.get('release_year',None))))
+    except Exception as err:
+        return print(err),500
 
 @api.route('/test')
 def this_test():
