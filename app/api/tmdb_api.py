@@ -12,6 +12,7 @@ from io import BytesIO
 from resizeimage import resizeimage
 from jinja2 import FileSystemLoader, Environment
 from pathlib import Path
+from flask import current_app
 
 
 
@@ -86,7 +87,7 @@ def item_release_date(movie_object):
 def get_backdrops(media_type,id):
     set_globals(datetime.datetime.now())
     auth={'api_key':apiKey}
-    return { "images": [ {'url':'https://image.tmdb.org/t/p/original{}'.format(backdrop['file_path']),'height':backdrop['height'],'width':backdrop['width']} for backdrop in json.loads(requests.get("{}{}/{}/images".format(url,media_type,id), params=auth).text)['backdrops']] }
+    return [{'file_path':backdrop['file_path'],'height':backdrop['height'],'width':backdrop['width']} for backdrop in json.loads(requests.get("{}{}/{}/images".format(url,media_type,id), params=auth).text)['backdrops']]
 
 def find_subjects(title='', release_year=None, language='en-US', data=None, media_type=None):
 

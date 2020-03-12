@@ -75,7 +75,8 @@ class NewArticle(FlaskForm):
     tmdb_id = HiddenField('Subject ID')
     subject_type = HiddenField('Subject Type')
     subject_selected = HiddenField('Subject Selected',validators=[DataRequired()])
-    cover_image_file = FileField()
+    cover_image_file = FileField('Use a Local File')
+    cover_image_url = StringField('Use an Image From Online',render_kw={"placeholder": "Image URL"})
     create_draft = SubmitField('Create Draft')
 
     def __init__(self, *args, **kwargs):
