@@ -278,6 +278,11 @@ class Article(db.Model):
     def on_changed_title(target,value,oldvalue,initiator):
         target.title_slug = slugify(value)
 
+class Directs(db.Model):
+    __tablename__ = "directs"
+    directed_id = db.Column(db.Integer,db.ForeignKey('creative_works.id'),primary_key=True)
+    director_id = db.Column(db.Integer,db.ForeignKey('people.id'),primary_key=True)
+
 class CreativeWork(db.Model):
     __tablename__="creative_works"
     id=db.Column(db.Integer,primary_key=True)
@@ -287,7 +292,7 @@ class CreativeWork(db.Model):
     articles = db.relationship('Article',backref='subject',lazy='dynamic')
     image=db.Column(db.Text())
     date_published=db.Column(db.DateTime())
-    director_id = db.Column(db.Integer(),db.ForeignKey('people.id'))
+    directed_by = db.relationship('Directs',foreign_keys=[Directs.directed_id],backref=db.backref('directed',lazy='joined'),lazy='dynamic',cascade='all,delete-orphan')
 
     def __repr__(self):
         return "<{type} \"{name}\">".format(type=self.type,name=self.name)
@@ -297,7 +302,7 @@ class Person(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     tmdb_id = db.Column(db.Integer(),unique=True,index=True)
     name = db.Column(db.String(64),index=True)
-    directed = db.relationship('CreativeWork',backref='director',lazy='dynamic')
+    directed = db.relationship('Directs',foreign_keys=[Directs.director_id],backref=db.backref('director',lazy='joined'),lazy='dynamic',cascade='all,delete-orphan')
 
 
 db.event.listen(Article.body, 'set', Article.on_changed_body)

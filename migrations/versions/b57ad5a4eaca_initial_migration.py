@@ -1,8 +1,8 @@
-"""Initial Migration
+"""Initial migration
 
-Revision ID: e4ac19017324
+Revision ID: b57ad5a4eaca
 Revises: 
-Create Date: 2020-02-02 06:15:55.627580
+Create Date: 2020-03-04 00:43:41.351696
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'e4ac19017324'
+revision = 'b57ad5a4eaca'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -25,6 +25,20 @@ def upgrade():
     )
     with op.batch_alter_table('article_type', schema=None) as batch_op:
         batch_op.create_index(batch_op.f('ix_article_type_name'), ['name'], unique=False)
+
+    op.create_table('creative_works',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('type', sa.String(length=32), nullable=True),
+    sa.Column('name', sa.String(length=128), nullable=True),
+    sa.Column('tmdb_id', sa.Integer(), nullable=True),
+    sa.Column('image', sa.Text(), nullable=True),
+    sa.Column('date_published', sa.DateTime(), nullable=True),
+    sa.PrimaryKeyConstraint('id')
+    )
+    with op.batch_alter_table('creative_works', schema=None) as batch_op:
+        batch_op.create_index(batch_op.f('ix_creative_works_name'), ['name'], unique=False)
+        batch_op.create_index(batch_op.f('ix_creative_works_tmdb_id'), ['tmdb_id'], unique=True)
+        batch_op.create_index(batch_op.f('ix_creative_works_type'), ['type'], unique=False)
 
     op.create_table('people',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -47,22 +61,13 @@ def upgrade():
     with op.batch_alter_table('roles', schema=None) as batch_op:
         batch_op.create_index(batch_op.f('ix_roles_default'), ['default'], unique=False)
 
-    op.create_table('creative_works',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('type', sa.String(length=32), nullable=True),
-    sa.Column('name', sa.String(length=128), nullable=True),
-    sa.Column('tmdb_id', sa.Integer(), nullable=True),
-    sa.Column('image', sa.Text(), nullable=True),
-    sa.Column('date_published', sa.DateTime(), nullable=True),
-    sa.Column('director_id', sa.Integer(), nullable=True),
+    op.create_table('directs',
+    sa.Column('directed_id', sa.Integer(), nullable=False),
+    sa.Column('director_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['directed_id'], ['creative_works.id'], ),
     sa.ForeignKeyConstraint(['director_id'], ['people.id'], ),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('directed_id', 'director_id')
     )
-    with op.batch_alter_table('creative_works', schema=None) as batch_op:
-        batch_op.create_index(batch_op.f('ix_creative_works_name'), ['name'], unique=False)
-        batch_op.create_index(batch_op.f('ix_creative_works_tmdb_id'), ['tmdb_id'], unique=True)
-        batch_op.create_index(batch_op.f('ix_creative_works_type'), ['type'], unique=False)
-
     op.create_table('users',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('email', sa.String(length=128), nullable=True),
@@ -87,7 +92,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('article_type_id', sa.Integer(), nullable=True),
     sa.Column('image', sa.String(length=128), nullable=True),
-    sa.Column('title', sa.String(length=64), nullable=True),
+    sa.Column('title', sa.String(length=128), nullable=True),
     sa.Column('title_slug', sa.String(length=64), nullable=True),
     sa.Column('draft_title', sa.String(length=64), nullable=True),
     sa.Column('body_html', sa.Text(), nullable=True),
@@ -102,6 +107,7 @@ def upgrade():
     sa.Column('published', sa.DateTime(), nullable=True),
     sa.Column('author_id', sa.Integer(), nullable=True),
     sa.Column('subject_id', sa.Integer(), nullable=True),
+    sa.Column('request_to_publish', sa.Boolean(), nullable=True),
     sa.ForeignKeyConstraint(['article_type_id'], ['article_type.id'], ),
     sa.ForeignKeyConstraint(['author_id'], ['users.id'], ),
     sa.ForeignKeyConstraint(['subject_id'], ['creative_works.id'], ),
@@ -112,6 +118,7 @@ def upgrade():
         batch_op.create_index(batch_op.f('ix_articles_last_edit'), ['last_edit'], unique=False)
         batch_op.create_index(batch_op.f('ix_articles_published'), ['published'], unique=False)
         batch_op.create_index(batch_op.f('ix_articles_rating'), ['rating'], unique=False)
+        batch_op.create_index(batch_op.f('ix_articles_request_to_publish'), ['request_to_publish'], unique=False)
         batch_op.create_index(batch_op.f('ix_articles_title'), ['title'], unique=False)
         batch_op.create_index(batch_op.f('ix_articles_title_slug'), ['title_slug'], unique=False)
 
@@ -132,6 +139,7 @@ def downgrade():
     with op.batch_alter_table('articles', schema=None) as batch_op:
         batch_op.drop_index(batch_op.f('ix_articles_title_slug'))
         batch_op.drop_index(batch_op.f('ix_articles_title'))
+        batch_op.drop_index(batch_op.f('ix_articles_request_to_publish'))
         batch_op.drop_index(batch_op.f('ix_articles_rating'))
         batch_op.drop_index(batch_op.f('ix_articles_published'))
         batch_op.drop_index(batch_op.f('ix_articles_last_edit'))
@@ -143,12 +151,7 @@ def downgrade():
         batch_op.drop_index(batch_op.f('ix_users_email'))
 
     op.drop_table('users')
-    with op.batch_alter_table('creative_works', schema=None) as batch_op:
-        batch_op.drop_index(batch_op.f('ix_creative_works_type'))
-        batch_op.drop_index(batch_op.f('ix_creative_works_tmdb_id'))
-        batch_op.drop_index(batch_op.f('ix_creative_works_name'))
-
-    op.drop_table('creative_works')
+    op.drop_table('directs')
     with op.batch_alter_table('roles', schema=None) as batch_op:
         batch_op.drop_index(batch_op.f('ix_roles_default'))
 
@@ -158,6 +161,12 @@ def downgrade():
         batch_op.drop_index(batch_op.f('ix_people_name'))
 
     op.drop_table('people')
+    with op.batch_alter_table('creative_works', schema=None) as batch_op:
+        batch_op.drop_index(batch_op.f('ix_creative_works_type'))
+        batch_op.drop_index(batch_op.f('ix_creative_works_tmdb_id'))
+        batch_op.drop_index(batch_op.f('ix_creative_works_name'))
+
+    op.drop_table('creative_works')
     with op.batch_alter_table('article_type', schema=None) as batch_op:
         batch_op.drop_index(batch_op.f('ix_article_type_name'))
 
