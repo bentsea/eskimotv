@@ -45,7 +45,7 @@ class Role(db.Model):
         return self.permissions & perm == perm
 
     def __repr__(self):
-        return '<Role {}>'.format(self.name)
+        return f'<Role {self.name}>'
 
     @staticmethod
     def insert_roles():
@@ -241,6 +241,11 @@ class ArticleType(db.Model):
         db.session.commit()
 
 
+class ArticleTags(db.Model):
+    __tablename__ = "article_tags"
+    article_id = db.Column(db.Integer,db.ForeignKey('articles.id'),primary_key=True)
+    tag_id = db.Column(db.Integer,db.ForeignKey('tags.id'),primary_key=True)
+
 class Article(db.Model):
     __tablename__ = 'articles'
     id = db.Column(db.Integer, primary_key=True)
@@ -259,9 +264,11 @@ class Article(db.Model):
     created = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     last_edit = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     published = db.Column(db.DateTime, index=True)
+    is_published = db.Column(db.Boolean,index=True,default=False)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     subject_id = db.Column(db.Integer, db.ForeignKey('creative_works.id'))
     request_to_publish = db.Column(db.Boolean,index=True)
+    tags = db.relationship('ArticleTags',foreign_keys=[ArticleTags.article_id],backref=db.backref('articles',lazy='joined'),lazy='dynamic',cascade='all,delete-orphan')
 
     def __repr__(self):
         return '<Article {}>'.format(self.id)
@@ -277,6 +284,17 @@ class Article(db.Model):
     @staticmethod
     def on_changed_title(target,value,oldvalue,initiator):
         target.title_slug = slugify(value)
+
+class Tags(db.Model):
+    __tablename__="tags"
+    id = db.Column(db.Integer,primary_key=True,index=True)
+    tmdb_id = db.Column(db.Integer,unique=True,index=True)
+    name = db.Column(db.String(64),unique=True,index=True)
+    tags = db.relationship('ArticleTags',foreign_keys=[ArticleTags.tag_id],backref=db.backref('tags',lazy='joined'),lazy='dynamic',cascade='all,delete-orphan')
+
+    def __repr__(self):
+        return f'<Tag: {self.name}>'
+
 
 class Directs(db.Model):
     __tablename__ = "directs"

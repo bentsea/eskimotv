@@ -17,7 +17,7 @@ from flask import current_app
 
 
 
-def set_globals(date):
+def set_globals(date=datetime.datetime.now()):
    #Base Variables
    globals()['pathPrefix']="/home/eskimotv"
    globals()['appPrefix'] ="/app/app"
