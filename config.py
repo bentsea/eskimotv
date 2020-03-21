@@ -23,6 +23,10 @@ class Config:
     FLASKFILEMANAGER_FILE_PATH = os.path.join(basedir,'app/static/uploads/')
     TMDB_API_KEY=os.environ.get('TMDB_API_KEY')
     CKEDITOR_ENABLE_CSRF = True
+    primary_color = "#6699cc"
+    secondary_color1 = "#003366"
+    secondary_color2 = "#336699"
+    light_color1 = "#D6EAF8"
 
     @staticmethod
     def init_app(app):

@@ -17,7 +17,7 @@ def index():
     form=ArticleForm()
     if current_user.can(Permission.WRITE) and form.validate_on_submit():
         if form.submit.data == True:
-            article = Article(title=form.title.data,body=form.body.data,author=current_user._get_current_object(),published=datetime.utcnow())
+            article = Article(title=form.title.data,body=form.body.data,author=current_user._get_current_object(),publish_date=datetime.utcnow())
             db.session.add(article)
             db.session.commit()
             return redirect(url_for('.index'))
@@ -27,7 +27,7 @@ def index():
             db.session.commit()
             return redirect(url_for('.index'))
     page = request.args.get('page',1,type=int)
-    pagination=Article.query.order_by(Article.published.desc()).paginate(page,
+    pagination=Article.query.order_by(Article.publish_date.desc()).paginate(page,
         per_page=current_app.config['ESKIMOTV_ARTICLES_PER_PAGE'],
         error_out=False)
 
@@ -37,7 +37,7 @@ def index():
 @main.route('/user/<id>')
 def profile(id):
     user = User.query.filter_by(id=id).first()
-    articles = user.articles.order_by(Article.published.desc()).all()
+    articles = user.articles.order_by(Article.publish_date.desc()).all()
     return render_template('main/user.html.j2',user=user, articles=articles)
 
 @main.route('/edit-profile',methods=['GET','POST'])
@@ -151,7 +151,7 @@ def upload_images():
 @main.route('/articles/<string:title_slug>')
 def article(title_slug):
     article = Article.query.filter_by(title_slug=title_slug).first_or_404()
-    if (not article.published or article.published > datetime.utcnow()) and not current_user.is_administrator():
+    if article.published and not current_user.is_administrator():
         abort(404)
     return render_template('main/article.html.j2',articles=[article])
 
@@ -176,7 +176,7 @@ def edit_article(id):
                 article.body = form.body.data
                 article.title = form.title.data
                 article.draft = None
-                article.published = form.publish_date.data
+                article.publish_date = form.publish_date.data
                 db.session.add(article)
                 db.session.commit()
                 flash('The article has been successfully updated.')
@@ -195,7 +195,7 @@ def edit_article(id):
         form.title.data = article.title
         form.body.data = article.body
     if article.published:
-        form.publish_date.data = article.published
+        form.publish_date.data = article.publish_date
     else:
         form.publish_date.data = datetime.utcnow()
     return render_template('main/edit_article.html.j2',form=form,article=article)

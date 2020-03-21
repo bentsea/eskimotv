@@ -208,7 +208,7 @@ $("#subjectModal").on('shown.bs.modal', function(){
   <img class="card-img-top" src="{{ thumb }}">
   <div class="card-body">
     <a target="_blank" href="{{ for_download }}" class="btn btn-primary">View Full Size</a>
-    <div onclick="$('#selected-image').val('{{ for_download }}');" class="btn btn-primary">Use This Image</div>
+    <div onclick="$('#selected-image').val('{{ for_download }}');$('#tmdbCoverModal').modal('hide');" class="btn btn-primary">Use This Image</div>
   </div>
 </div>
 </script>{% endraw %}

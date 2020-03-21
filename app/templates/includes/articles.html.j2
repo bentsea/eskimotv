@@ -1,6 +1,6 @@
 <ul class="articles">
   {% for article in articles %}
-  {% if current_user == article.author or current_user.is_administrator() or article.published < now %}
+  {% if current_user == article.author or current_user.is_administrator() or article.published %}
     <li class="article">
       <div class="profile-thumbnail">
         <a href="{{ url_for('main.profile', id = article.author.id) }}">
@@ -8,7 +8,7 @@
         </a>
       </div>
       <div class="article-content">
-        <div class="article-date">{{ moment(article.published).fromNow() }}</div>
+        <div class="article-date">{{ moment(article.publish_date).fromNow() }}</div>
         <div class="article-author">
           {% if article.title_slug %}
             <a href="{{ url_for('main.article', title_slug = article.title_slug) }}">
@@ -21,11 +21,7 @@
           {% endif %}
         </div>
         <div class="article-body">
-          {% if article.body_html %}
-            {{ article.body_html }}
-          {% else %}
-            {{ article.body }}
-          {% endif %}
+          {{ article.blurb }}
         </div>
       </div>
     </li>

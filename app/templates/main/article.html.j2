@@ -4,7 +4,67 @@
 {% block title %}{% if not articles[0].published %}Draft: {% endif %}{{ super() }}: {{ articles[0].title }}{% endblock %}
 
 {% block page_content %}
-{% include "includes/articles.html.j2" %}
+<div class="row">
+  <div class="col-lg-8">
+    <div class="post">
+      <article class="post-content">
+        <header class="post-header">
+          <h2 class="post-title">{% if article[0].youtube %}Video: {% endif %}{{ article[0].title }}</h2>
+          <p class="post-meta">{{ article[0].type.name | capitalize }} • {{ article[0].publish_date.strftime("%b %-d, %Y") }} • Author: <a href="{{ url_for('main.profile', id = article[0].author.id) }}">{{ article[0].author.name }}</a></p>
+          {% include "includes/social-media.html" %}
+        </header>
+        {% if article[0].youtube %}{% include "includes/media.html" type="youtube" src=article[0].youtube feature = true %}{% else %}{% capture post_year %}{{ article[0].date | date: "%Y" }}{% endcapture %}{% assign post_year = post_year | plus:0 %}{% if post_year > 2016 %}<img class="img-responsive webfeedsFeaturedVisual " style="margin: 0 10px 10px 0px; width: 100%;" src="{{ article[0].image | prepend: site.cdnurl }}" alt="{{ article[0].title }} Cover">{% endif %}{% endif %}
+        {{ content }}
+        {% if article[0].reviewInfo.rating %}
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><b>Final Verdict</b>:</td><td>{{ article[0].reviewInfo.final-verdict }}</td>
+            </tr>
+            <tr>
+              <td><b>Rating</b>:</td><td>{% if article[0].reviewInfo.rating > 99 %}A+{% elsif article[0].reviewInfo.rating > 94 %}A{% elsif article[0].reviewInfo.rating > 89 %}A-{% elsif article[0].reviewInfo.rating > 88 %}B+{% elsif article[0].reviewInfo.rating > 84 %}B{% elsif article[0].reviewInfo.rating > 79 %}B-{% elsif article[0].reviewInfo.rating > 78 %}C+{% elsif article[0].reviewInfo.rating > 74 %}C{% elsif article[0].reviewInfo.rating > 69 %}C-{% elsif article[0].reviewInfo.rating > 59 %}D+{% elsif article[0].reviewInfo.rating > 39 %}D{% elsif article[0].reviewInfo.rating > 19 %}D-{% else %}F{% endif %}</td>
+            </tr>
+          </tbody>
+        </table>
+        {% endif %}
+      </article>
+      {% if article[0].subjectInfo %}
+      {% assign sorted-posts = site.posts | where_exp: "post","post.subjectInfo.about.name == article[0].subjectInfo.about.name" %}
+      {% if sorted-posts.size > 1 %}
+      <div class="panel panel-info" role="table">
+        <div class="panel-heading">Want more content about <i>{{ article[0].subjectInfo.about.name }}</i>?</div>
+        <div class="panel-body">
+        <p>If you're interested in another perspective, check out these other articles and videos from our authors about <i>{{ article[0].subjectInfo.about.name }}</i>:</p>
+        {% for item in sorted-posts %}
+          {% if item.url != article[0].url %}
+            {% include related-post.html post=item %}
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+      {% include social-media.html %}
+      <br>
+      <hr class="clear">
+      <h2 id="comments">Comments</h2>
+      <div class="fb-comments" data-href="https://www.eskimotv.net{{ article[0].url }}" data-width="100%"></div>
+      <noscript>Please enable JavaScript to view the comments powered by Facebook.</noscript>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="sidebar-nav">
+      {#<h3>Sponsors</h3>
+      {% include ads.html %}#}
+      <!--googleoff: all-->
+      <!--noindex-->
+      <h3>Related Articles</h3>
+
+      <!--/noindex-->
+      <!--googleon: all-->
+    </div>
+  </div>
+</div>
 {% if current_user.can(Permission.EDIT) %}
 <div class="row">
   <div class="col-md-12">

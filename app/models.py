@@ -246,6 +246,9 @@ class ArticleTags(db.Model):
     article_id = db.Column(db.Integer,db.ForeignKey('articles.id'),primary_key=True)
     tag_id = db.Column(db.Integer,db.ForeignKey('tags.id'),primary_key=True)
 
+    def __repr__(self):
+        return "Success"
+
 class Article(db.Model):
     __tablename__ = 'articles'
     id = db.Column(db.Integer, primary_key=True)
@@ -263,7 +266,7 @@ class Article(db.Model):
     rating = db.Column(db.Integer,index=True)
     created = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     last_edit = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    published = db.Column(db.DateTime, index=True)
+    publish_date = db.Column(db.DateTime, index=True)
     is_published = db.Column(db.Boolean,index=True,default=False)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     subject_id = db.Column(db.Integer, db.ForeignKey('creative_works.id'))
@@ -272,6 +275,11 @@ class Article(db.Model):
 
     def __repr__(self):
         return '<Article {}>'.format(self.id)
+
+    @property
+    def published(self):
+        """Returns true if the publish date is at or before the current time and is_published is true."""
+        return self.is_published and self.publish_date <= datetime.now()
 
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):

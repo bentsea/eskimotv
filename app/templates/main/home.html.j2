@@ -4,30 +4,48 @@
 
 {% block title %}{{ super() }}: Home{% endblock %}
 
-{% block header %}<h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h1>{% endblock %}
-
 {% block page_content %}
-{% if True %}
-<div class="">
-  <form class="form form-horizontal" method="post" role="form">
-    <div class="row">
-      <div class="col-md-12">
-        {{ form.hidden_tag() }}
-        {{ wtf.form_errors(form, hiddens="only") }}
+<div class="home">
+  <div class="page-heading visible-md-block visible-lg-block">
+    <h1>Icy & Chilly Reviews and Editorials</h1>
+    <h3 class="page-meta">Your home for movies, entertainment, and more!</h3>
+  </div>
 
-        {{ wtf.form_field(form.title)}}
-        {{ wtf.form_field(form.body) }}
-      </div>
-      <div class="col-md-12">
-        <div class="float-right">
-          {{ wtf.form_field(form.submit, class="btn btn-primary") }}
-          {{ wtf.form_field(form.save_draft, class="btn btn-secondary") }}
+  <div id="home-slider" class="owl-carousel">
+    {% for article in articles %}
+    <div class="item" {% if loop.first %}style="display:block; background: url('{{ article.image }}');"{% endif %}>
+      <a href="{{ url_for('main.article_by_id', id=article.id) }}">
+        <div class="slide-text">
+          <h2><span>{{ article.title }} / {% if article.youtube %}Video {% endif %}{{ article.type.name | capitalize }}</span></h2>
+          <span class="slide-blurb"><span>{{ article.blurb }}</span></span>
         </div>
-      </div>
+        <div class="slide-image">
+          <img {% if not loop.first %}class="lazyOwl" data-src="{{ article.image }}"{% endif %}{% if loop.first %}src="{{ article.image }}"{% endif %} alt="{{ article.title }}">
+        </div>
+      </a>
     </div>
-  </form>
+    {% endfor %}
+  </div>
+
+  <h2>Recent Reviews</h2>
+
+  <div class="row">
+  </div>
+
+  <h2>Recent News</h2>
+
+  <div class="row">
+  </div>
+
+  <h2>Recent Editorials</h2>
+
+  <div class="row">
+  </div>
+
+  <p class="rss-subscribe">subscribe <a href="">via RSS</a></p>
 </div>
-{% endif %}
+
+
 {% include "includes/articles.html.j2" %}
 <div class="">
   {{ macros.pagination_widget(pagination, 'main.index') }}
@@ -35,6 +53,4 @@
 {% endblock %}
 {% block js %}
 {{ super() }}
-{{ ckeditor.load(custom_url=url_for('static', filename='ckeditor/ckeditor.js')) }}
-{{ ckeditor.config(name="body",custom_config="entities: false,image2_alignClasses:['image-left','image-center','image-right'],image2_altRequired:true") }}
 {% endblock %}
