@@ -1,6 +1,6 @@
 from datetime import datetime,date
 from sqlalchemy import func
-from flask import render_template, session, redirect, url_for, flash, request, current_app, abort, send_from_directory
+from flask import render_template, get_template_attribute, session, redirect, url_for, flash, request, current_app, abort, send_from_directory
 from . import main
 from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm,NewArticle
 from .. import db
