@@ -264,6 +264,7 @@ class Article(db.Model):
     youtube = db.Column(db.String(64))
     final_verdict = db.Column(db.String(256))
     rating = db.Column(db.Integer,index=True)
+    letter_rating = db.Column(db.String(3))
     created = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     last_edit = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     publish_date = db.Column(db.DateTime, index=True)
@@ -288,6 +289,15 @@ class Article(db.Model):
                         'h1', 'h2', 'h3','h4', 'p']
         allowed_attr = ['alt','height','width','src','class']
         target.body_html = bleach.linkify(bleach.clean(render_template_string(value),tags=allowed_tags, attributes=allowed_attr, strip=True))
+
+    @staticmethod
+    def on_changed_rating(target,value,oldvalue,initiator):
+        def get_letter_grade(grade):
+            score_range = {"A+":99,"A":94,"A-":89,"B+":88,"B":84,"B-":79,"C+":78,"C":74,"C-":69,"D+":59,"D":39,"D-":19,"F":0}
+            for letter_grade,minimum in score_range:
+                if grade >= minimum:
+                    return letter_grade
+        target.letter_rating = get_letter_grade(value)
 
     @staticmethod
     def on_changed_title(target,value,oldvalue,initiator):
@@ -333,3 +343,4 @@ class Person(db.Model):
 
 db.event.listen(Article.body, 'set', Article.on_changed_body)
 db.event.listen(Article.title,'set', Article.on_changed_title)
+db.event.listen(Article.rating,'set', Article.on_changed_rating)

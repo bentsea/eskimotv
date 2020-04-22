@@ -6,4 +6,5 @@ from ..models import Permission
 
 @main.app_context_processor
 def inject_permissions():
-    return dict(Permission=Permission)
+    from flask import render_template_string
+    return dict(Permission=Permission,render_template_string=render_template_string)

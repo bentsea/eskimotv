@@ -21,7 +21,7 @@
           {% endif %}
         </div>
         <div class="article-body">
-          {{ article.blurb }}
+          {{ render_template_string(article.body) }}
         </div>
       </div>
     </li>

@@ -41,3 +41,7 @@
   </form>
 </div>
 {% endmacro %}
+
+{% macro media(type,src) %}
+{% if type == "youtube" %}<div class="videoWrapper"><iframe width="853" height="480" src="https://www.youtube.com/embed/{{ src }}{% if kwargs.get('feature') %}?&autoplay=1{% endif %}" allowfullscreen></iframe></div>{% elif type == "img" %}{% if kwargs.get('style') == "non-standard" %}<div style="margin:10px 0px 15px 0px;text-align:center;font-size:small;color:{{ CONFIG.secondary_color1 }};background:{{ CONFIG.light_color1 }};"><div><img src="{{ src }}" alt="{{ kwargs.get('title') }}" title="{{ kwargs.get('title') }}" style="max-height:35vh;vertical-align:middle;padding:5px 5px 2px 5px;"></div><div>{% if kwargs.get('caption') %}<i>{{ kwargs.get('caption') }}</i>{% endif %}</div></div>{% else %}<div style="font-size:small;text-align:center;margin:10px 0px 15px 0px;"><img class="img-responsive" style="width:100%;padding: 0px 0px 2px 0px;" src="{{ src }}" alt="{{ kwargs.get('title') }}" title="{{ kwargs.get('title') }}">{% if kwargs.get('caption') %}<i>{{ kwargs.get('caption') }}</i>{% endif %}</div>{% endif %}{% endif %}
+{% endmacro %}

@@ -153,12 +153,12 @@ def article(title_slug):
     article = Article.query.filter_by(title_slug=title_slug).first_or_404()
     if article.published and not current_user.is_administrator():
         abort(404)
-    return render_template('main/article.html.j2',articles=[article])
+    return render_template('main/article.html.j2',article=article)
 
 @main.route('/articles/id/<int:id>')
 def article_by_id(id):
     article = Article.query.get_or_404(id)
-    return render_template('main/article.html.j2',articles=[article])
+    return render_template('main/article.html.j2',article=article)
 
 @main.route('/edit/<int:id>',methods=['GET','POST'])
 @login_required
