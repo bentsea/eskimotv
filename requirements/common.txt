@@ -4,6 +4,7 @@ Flask_Assets
 cssmin
 pyscss
 jsmin
+email_validator
 flask-moment
 Flask-Images
 flask-wtf
