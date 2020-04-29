@@ -2,7 +2,7 @@ from random import randint
 from sqlalchemy.exc import IntegrityError
 from faker import Faker
 from . import db
-from .models import User, Article, ArticleType
+from .models import User, Article, ArticleType,Tags
 
 def users(count=100):
     fake = Faker()
@@ -32,3 +32,18 @@ def articles(count=100):
             type=types[randint(0,type_count - 1)])
         db.session.add(a)
     db.session.commit()
+
+def tag_articles():
+    article_count = Article.query.count()
+    tag_count = Tags.query.count()
+    for article in Article.query.all():
+        if article.id < 11:
+            continue
+        for tags_to_add in range(0,randint(4,10)):
+            for attempt in range(10):
+                new_tag = Tags.query.get(randint(1,tag_count))
+                if new_tag not in article.tags.all():
+                    article.tags.append(new_tag)
+                    break
+        db.session.add(article)
+        db.session.commit()

@@ -241,13 +241,9 @@ class ArticleType(db.Model):
         db.session.commit()
 
 
-class ArticleTags(db.Model):
-    __tablename__ = "article_tags"
-    article_id = db.Column(db.Integer,db.ForeignKey('articles.id'),primary_key=True)
-    tag_id = db.Column(db.Integer,db.ForeignKey('tags.id'),primary_key=True)
-
-    def __repr__(self):
-        return "Success"
+article_tags =db.Table("article_tags",
+    db.Column('article_id', db.Integer, db.ForeignKey('articles.id')),
+    db.Column('tag_id', db.Integer, db.ForeignKey('tags.id')))
 
 class Article(db.Model):
     __tablename__ = 'articles'
@@ -272,10 +268,10 @@ class Article(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     subject_id = db.Column(db.Integer, db.ForeignKey('creative_works.id'))
     request_to_publish = db.Column(db.Boolean,index=True)
-    tags = db.relationship('ArticleTags',foreign_keys=[ArticleTags.article_id],backref=db.backref('articles',lazy='joined'),lazy='dynamic',cascade='all,delete-orphan')
+    tags = db.relationship('Tags',secondary=article_tags,backref=db.backref('articles',lazy='dynamic'), lazy='dynamic')
 
     def __repr__(self):
-        return '<Article {}>'.format(self.id)
+        return '<Article {}>'.format(self.title)
 
     @property
     def published(self):
@@ -308,7 +304,6 @@ class Tags(db.Model):
     id = db.Column(db.Integer,primary_key=True,index=True)
     tmdb_id = db.Column(db.Integer,unique=True,index=True)
     name = db.Column(db.String(64),unique=True,index=True)
-    tags = db.relationship('ArticleTags',foreign_keys=[ArticleTags.tag_id],backref=db.backref('tags',lazy='joined'),lazy='dynamic',cascade='all,delete-orphan')
 
     def __repr__(self):
         return f'<Tag: {self.name}>'
