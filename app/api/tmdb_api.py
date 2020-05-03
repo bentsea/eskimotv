@@ -79,6 +79,8 @@ def slugify(s):
     s = s.replace(' ', '-')
     return s
 
+#Return a list of TMDB categories.
+
 #Return item release date depending on item type.
 def item_release_date(movie_object):
     return movie_object.get('release_date') or movie_object.get('first_air_date') or ""

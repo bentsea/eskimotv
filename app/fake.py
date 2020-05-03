@@ -37,7 +37,7 @@ def tag_articles():
     article_count = Article.query.count()
     tag_count = Tags.query.count()
     for article in Article.query.all():
-        if article.id < 11:
+        if article.id > 10:
             continue
         for tags_to_add in range(0,randint(4,10)):
             for attempt in range(10):
@@ -46,4 +46,8 @@ def tag_articles():
                     article.tags.append(new_tag)
                     break
         db.session.add(article)
-        db.session.commit()
+        try:
+            db.session.commit()
+        except:
+            db.session.rollback()
+            exit()

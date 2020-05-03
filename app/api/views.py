@@ -36,3 +36,7 @@ def this_test():
         return api_key
     except Exception as err:
         return str(err),500
+
+@api.route('/get-categories')
+def get_categories():
+    return ""
