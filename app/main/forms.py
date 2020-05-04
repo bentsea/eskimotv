@@ -68,8 +68,8 @@ class ArticleForm(FlaskForm):
     save_draft = SubmitField('Save Draft')
 
 class NewArticle(FlaskForm):
-    title = StringField('Article Title',validators=[DataRequired(),Length(1,128)])
-    article_type = SelectField('Article Type', coerce=int)
+    title = StringField('Article Title:',validators=[DataRequired(),Length(1,128)])
+    article_type = SelectField('Article Type:', coerce=int)
     subject_title = HiddenField('Subject Title')
     subject_image = HiddenField('Subject Image')
     tmdb_id = HiddenField('Subject ID')

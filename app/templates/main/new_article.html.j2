@@ -16,6 +16,7 @@
       <div class="card h-100">
         <div class="card-body">
           <h5 class="card-title">Step 1: Select a Subject</h5>
+          <!-- Javascript at the bottom of the page makes the subjectModalButton the default button -->
           <div class="form-group  required"><label class="form-control-label" for="title">Subject Title:</label>
             <input class="form-control" id="subject_initial_title_query" name="subject_initial_title_query" required type="text" value="">
           </div>
@@ -39,8 +40,21 @@
     <div class="col-md-6 with-margin">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">Step 3: Choose Article Title and Type, Then Create Article</h5>
+          <h5 class="card-title">Step 3: Choose Article Tags and Title</h5>
+          <div class="form-group">
+            <label class="form-control-label" for="tags_selector">Article Tags*:</label>
+            <select class="form-control" id="tags_selector" multiple="multiple"></select>
+          </div>
           {{ wtf.form_field(form.title)}}
+          <p><sub>*If a new tag is needed, please contact an editor, publisher, or administrator.</sub></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 with-margin">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Step 4: Choose Article Type and Create Article</h5>
           {{ wtf.form_field(form.article_type) }}
           {{ wtf.form_field(form.create_draft) }}
         </div>
@@ -214,10 +228,10 @@ $("#subjectModal").on('shown.bs.modal', function(){
 </script>{% endraw %}
 <script type="text/javascript">
 $("#tmdbCoverModal").on('shown.bs.modal', function(){
-  var data = {"media_type":$('#subject_type').val(),"id":$('#tmdb_id').val()}
+  var search_data = {"media_type":$('#subject_type').val(),"id":$('#tmdb_id').val()}
 
   $("#imageData").empty()
-  $.getJSON("{{ url_for('api.get_backdrops') }}",data,function(data,status,xhr) {
+  $.getJSON("{{ url_for('api.get_backdrops') }}",search_data,function(data,status,xhr) {
     window.test_data = JSON.parse(data)
     var data = JSON.parse(data);
     var template = $("#image_results_template").html();
@@ -235,4 +249,30 @@ $("#tmdbCoverModal").on('shown.bs.modal', function(){
 });
 </script>
 <!-- end cover image selection logic -->
+
+<!-- Initialize Tag selection box -->
+<script type="text/javascript">
+$.getJSON("{{ url_for('api.get_tags') }}",function(data,status,xhr) {
+  var items = JSON.parse(data)['results'];
+  console.log(items)
+  $("#tags_selector").select2({
+    data: items,
+    {% if current_user.can(Permission.PUBLISH) %}tags: true,{% endif %}
+    tokenSeparators: [',']
+  });
+});
+</script>
+
+<!-- Make the subjectModalButton the default button for the query box -->
+
+<script type="text/javascript">
+  // Make the search for subject button the default for the subject query field.
+  $('#subject_initial_title_query').keypress(function(event){
+      var keycode = (event.keyCode ? event.keyCode : event.which);
+      if(keycode == '13'){
+          $('#subjectModalButton').click();
+          return false;
+      }
+  });
+</script>
 {% endblock %}
