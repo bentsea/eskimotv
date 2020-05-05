@@ -66,9 +66,7 @@ def create_app(config_name):
         if api_key:
             username,password = api_keys.split(":")
             user = User.query.filter_by(username=username).first()
-            app.logger.info("{} {}".format(username,password))
             if user and user.verify_password(password):
-                app.logger.info("Login Success")
                 return user
         return None
 

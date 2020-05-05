@@ -44,7 +44,9 @@
       <!--googleoff: all-->
       <!--noindex-->
       <h3>Related Articles</h3>
-
+      {% for related_article in article.related_articles %}
+      {{ render_template('includes/related_articles.html.j2',related_article=related_article) }}
+      {% endfor %}
       <!--/noindex-->
       <!--googleon: all-->
     </div>

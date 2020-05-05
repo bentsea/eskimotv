@@ -45,6 +45,15 @@ a {
 a:hover a:visited {
   color: $secondary-color1;
 }
+.blog-thumb {
+    //height: 150px;
+    max-width: 98%;
+}
+.blog-thumb img {
+    //height: 150px;
+    min-width: 100%;
+    object-fit:cover;
+}
 .btn {
   margin: 5px 0px 5px 0px;
 }
@@ -85,9 +94,15 @@ body {
 .with-margin {
   margin: 15px 0px 15px 0px;
 }
-
 div.article-tabs {
     margin-top: 16px;
+}
+figure>img {
+    display: block;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
 }
 ul.articles {
     list-style-type: none;

@@ -21,7 +21,9 @@ def articles(count=100):
     user_count = User.query.count()
     type_count = ArticleType.query.count()
     types = ArticleType.query.all()
-    for i in range(count):
+    tag_count = Tags.query.count()
+    article_count_i = 0
+    while article_count_i < count:
         u = User.query.offset(randint(0,user_count - 1)).first()
         a = Article(title=fake.sentence(nb_words=4),
             body= '\n\n'.join(fake.paragraphs(nb=3)),
@@ -30,15 +32,32 @@ def articles(count=100):
             author=u,
             image="https://www.eskimotv.net/img/site-resource/logo-page.jpg",
             type=types[randint(0,type_count - 1)])
-        db.session.add(a)
-    db.session.commit()
+        try:
+            db.session.add(a)
+            db.session.commit()
+            article_count_i += 1
+        except:
+            db.session.rollback()
+            continue
+        tags_i = 0
+        tags_to_add = range(0,randint(4,10))
+        while tags_i < tags_to_add:
+            new_tag = Tags.query.get(randint(1,tag_count))
+            if new_tag not in a.tags.all():
+                a.tags.append(new_tag)
+            try:
+                db.session.add(a)
+                db.session.commit()
+                tags_i += 1
+            except:
+                db.session.rollback()
+                continue
+
 
 def tag_articles():
     article_count = Article.query.count()
     tag_count = Tags.query.count()
     for article in Article.query.all():
-        if article.id > 10:
-            continue
         for tags_to_add in range(0,randint(4,10)):
             for attempt in range(10):
                 new_tag = Tags.query.get(randint(1,tag_count))

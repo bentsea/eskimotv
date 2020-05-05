@@ -1,7 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from flask import current_app, request, render_template_string
+from flask import current_app, request, render_template_string,url_for
 from . import db, login_manager
 from flask_login import UserMixin, AnonymousUserMixin
 from datetime import datetime,date
@@ -277,6 +278,30 @@ class Article(db.Model):
     def published(self):
         """Returns true if the publish date is at or before the current time and is_published is true."""
         return self.is_published and self.publish_date <= datetime.now()
+
+    @property
+    def url(self):
+        """Return the canonical URL for the article."""
+        return url_for('main.article', title_slug = self.title_slug,_external=True)
+
+    @property
+    def related_articles(self, count=7):
+        """Returns a list of articles that share tags in common ranked in descending order."""
+        article_id = self.id
+
+        sub_stmt = db.session.query(article_tags.c.tag_id)\
+            .filter(article_tags.c.article_id==article_id)
+
+        query = db.session.query(Article.id,
+            func.count(article_tags.c.tag_id).label('total'),
+            func.group_concat(article_tags.c.tag_id).label('related_tags'))\
+            .filter(Article.id!=article_id)\
+            .filter(article_tags.c.tag_id.in_(sub_stmt))\
+            .filter(article_tags.c.article_id==Article.id)\
+            .group_by(Article.id)\
+            .order_by(func.count(article_tags.c.tag_id).desc()).all()
+
+        return [Article.query.get(article[0]) for article in query[:count]]
 
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):
