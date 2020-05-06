@@ -25,3 +25,5 @@
 *.gif           binary
 *.jpg           binary
 *.png           binary
+*.sql           binary
+*.sqlite        binary
