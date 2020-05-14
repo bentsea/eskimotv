@@ -149,8 +149,8 @@
   <div class="card-body">
     <h5 class="card-title">{{ media_type }}: {{ title }} ({{ year }})</h5>
     <p class="card-text">{{ overview }}</p>
-    <div onclick="$('#title').val('{{ title }} ({{ year }})');$('#subject_title').val('{{ title }}');$('#subject_image').val('{{ poster_path }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#subjectModal').modal('hide');" class="btn btn-primary">Use For Subject and Article Title</div>
-    <div onclick="$('#subject_title').val('{{ title }}');$('#subject_image').val('{{ poster_path }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#subjectModal').modal('hide');" class="btn btn-primary">Only Use For Subject</div>
+    <div onclick="$('#title').val('{{ title }} ({{ year }})');$('#subject_title').val('{{ title }}');$('#subject_image').val('{{ poster_path }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Use For Subject and Article Title</div>
+    <div onclick="$('#subject_title').val('{{ title }}');$('#subject_image').val('{{ poster_path }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Only Use For Subject</div>
   </div>
 </div>
 </script>{% endraw %}

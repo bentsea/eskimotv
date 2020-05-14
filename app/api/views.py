@@ -22,8 +22,16 @@ def get_backdrops():
 def tmdb_search():
     """Returns a list of results from TMDB based on the specified query values. 'title' is required and 'release_year' can be specified to narrow results."""
     try:
-        return jsonify(json.dumps(tmdb_api.find_subjects(title = request.values.get('title',""),release_year = request.values.get('release_year',None))))
+        results = tmdb_api.find_subjects(title = request.values.get('title',""),release_year = request.values.get('release_year',None))
+        for result in results:
+            genres = []
+            for genre in result.get('genre_ids'):
+                genres.append(Tags.query.filter_by(tmdb_id=genre).first().id)
+            result['genres']=genres
+        current_app.logger.info(results)
+        return jsonify(json.dumps(results))
     except Exception as err:
+        current_app.logger.error(err)
         return print(err),500
 
 @api.route('/get-tags')
