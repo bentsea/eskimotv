@@ -26,11 +26,11 @@ def articles(count=100):
     while article_count_i < count:
         u = User.query.offset(randint(0,user_count - 1)).first()
         a = Article(title=fake.sentence(nb_words=4),
-            body= '\n\n'.join(fake.paragraphs(nb=3)),
-            blurb=fake.text(),
+            body= '\n'.join([f'<p>{paragraph}</p>' for paragraph in [' '.join([fake.sentence(nb_words=randint(5,20)) for sentence_i in range(0,randint(4,8))]) for paragraph_i in range(0,randint(5,7))]]),
+            blurb=fake.sentence(nb_words=randint(5,15)),
             publish_date=fake.past_date(),
             author=u,
-            image="https://www.eskimotv.net/img/site-resource/logo-page.jpg",
+            image="/static/img/site-resource/logo-page.jpg",
             type=types[randint(0,type_count - 1)])
         try:
             db.session.add(a)

@@ -1,0 +1,25 @@
+<article class="col-md-4 col-sm-6 post-thumb d-flex align-items-stretch">
+    <div class="card">
+        <div class="card-body">
+            <a href="{{ post.url }}">
+                <figure class="blog-thumb">
+<!--                <img src="{% if post.image %}/thumbs{{ post.image }}{% else %}/img/carousel/fullimage1.jpg{% endif %}" alt="{{ post.description }}" {% if post.description %}title="{{ post.description }}"{% endif %}>
+    -->
+ <img src="{{ resized_img_src(post.image,width=480,height=225,mode='crop',quality='55') }}" alt="{% if post.blurb %}{{ post.blurb }}{% else %}{{ post.title }}{% endif %}" title="{% if post.blurb %}{{ post.blurb }}{% else %}{{ post.title }}{% endif %}">
+            </figure>
+            </a>
+            <div class="post-area">
+                <a href="{{ post.url }}">
+                    <h4>{{ post.title }}</h4>
+                </a>
+                <a href="{{ url_for('main.profile', id = post.author.id) }}">
+                    <h5>{% if post.youtube %}Video {% endif %}{{ post.type.name.capitalize() }} by {{ post.author.first_name }} {{ post.author.last_name }}</h5>
+                </a>
+                <p class="post-info"><span class="glyphicon glyphicon-time"></span> {{ post.publish_date.strftime("%b %d, %Y") }} | <a href="{{ post.url }}#comments">Comments <span class="badge"><fb:comments-count href="{{ post.url }}"></fb:comments-count></span></a><!--{% if post.rating %} | <i>{{ post.rating}}/100</i>{% endif %}--><br />
+                {% if post.blurb %}{{ post.blurb }}{% endif %}</p>
+
+                <div class="bottom-right"><a class="btn btn-primary btn-xs" href="{{ post.url }}">Read More</a></div>
+            </div>
+        </div>
+    </div>
+</article>

@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired
-from wtforms import StringField, TextAreaField, BooleanField, SelectField, SubmitField, HiddenField
+from wtforms import StringField, TextAreaField, BooleanField, SelectField, SubmitField, HiddenField, SelectMultipleField
 from wtforms.fields.html5 import DateTimeField
 from flask_ckeditor import CKEditorField
 from sqlalchemy import func
@@ -8,6 +8,12 @@ from wtforms.validators import DataRequired, Length, Email, Regexp
 from wtforms import ValidationError
 from slugify import slugify
 from ..models import Role,User,ArticleType
+
+#create a custom select mulitple field that works with Select2 JS as the field cannot properly validate without preset choices.
+class Select2MultipleField(SelectMultipleField):
+    def pre_validate(self, form):
+        # Prevent "not a valid choice" error
+        pass
 
 class NameForm(FlaskForm):
     name = StringField('What is your name?',validators=[DataRequired()])
@@ -64,6 +70,7 @@ class ArticleForm(FlaskForm):
     title = StringField('Title',validators=[DataRequired(),Length(1,128)])
     body = CKEditorField('Article Body:', validators=[DataRequired()])
     publish_date = DateTimeField('Update published date:')
+    tags_selector = Select2MultipleField('Article Tags:',choices=[],validators=[DataRequired()])
     submit = SubmitField('Publish')
     save_draft = SubmitField('Save Draft')
 
@@ -75,6 +82,7 @@ class NewArticle(FlaskForm):
     tmdb_id = HiddenField('Subject ID')
     subject_type = HiddenField('Subject Type')
     subject_selected = HiddenField('Subject Selected',validators=[DataRequired()])
+    tags_selector = Select2MultipleField('Article Tags:',choices=[],validators=[DataRequired()])
     cover_image_file = FileField('Use a Local File')
     cover_image_url = StringField('Use an Image From Online',render_kw={"placeholder": "Image URL"})
     create_draft = SubmitField('Create Draft')

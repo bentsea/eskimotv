@@ -54,6 +54,11 @@ a:hover a:visited {
     min-width: 100%;
     object-fit:cover;
 }
+.bottom-right {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}
 .btn {
   margin: 5px 0px 5px 0px;
 }
@@ -82,7 +87,9 @@ a:hover a:visited {
 body {
   padding-top: 70px;
 }
-
+.post-info {
+  margin-bottom:60px;
+}
 .profile-thumbnail {
     position: absolute;
 }

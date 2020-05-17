@@ -1,6 +1,6 @@
 from flask_login import login_required,current_user
 from flask import request,jsonify,session,current_app
-from ..models import Tags
+from ..models import Article, Tags
 import base64
 import json
 from . import api
@@ -40,4 +40,9 @@ def get_tags():
     """Returns a list of categories formatted for the SELECT2 plugin to use for category/tag dropdown lists."""
     tags = Tags.query.filter(Tags.name.contains(request.values.get('term',''))).all()
     response = {"results":[{"id":tag.id,"text":tag.name,"tmdb_id":tag.tmdb_id} for tag in tags],"pagination":{"more":False}}
+    selected_tags_article = Article.query.get(request.values.get('article_id'))
+    if selected_tags_article:
+        for result in response['results']:
+            if Tags.query.get(int(result['id'])) in selected_tags_article.tags.all():
+                result['selected'] = True
     return jsonify(json.dumps(response))

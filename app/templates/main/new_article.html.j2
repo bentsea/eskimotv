@@ -12,6 +12,8 @@
 <form class="form form-horizontal" method="post" enctype="multipart/form-data">
   {{ form.hidden_tag() }}
   <div class="row justify-content-md-center">
+
+    <!-- Search for subject card -->
     <div class="col-md-6 with-margin">
       <div class="card h-100">
         <div class="card-body">
@@ -24,7 +26,10 @@
         </div>
       </div>
     </div>
+    <!-- Search for subject card -->
 
+
+    <!-- Select Image card -->
     <div class="col-md-6 with-margin">
       <div class="card h-100">
         <div class="card-body">
@@ -36,20 +41,20 @@
         </div>
       </div>
     </div>
+    <!-- Select Image card -->
 
+    <!-- Title / tags card -->
     <div class="col-md-6 with-margin">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">Step 3: Choose Article Tags and Title</h5>
-          <div class="form-group">
-            <label class="form-control-label" for="tags_selector">Article Tags*:</label>
-            <select class="form-control" id="tags_selector" multiple="multiple"></select>
-          </div>
-          {{ wtf.form_field(form.title)}}
+          <h5 class="card-title">Step 3: Choose Article Title and Tags</h5>
+          {{ wtf.form_field(form.title) }}
+          {{ wtf.form_field(form.tags_selector) }}
           <p><sub>*If a new tag is needed, please contact an editor, publisher, or administrator.</sub></p>
         </div>
       </div>
     </div>
+    <!-- Title / tags card -->
 
     <div class="col-md-6 with-margin">
       <div class="card h-100">
@@ -141,6 +146,7 @@
 {% block js %}
 {{ super() }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
 <!-- Subject selection logic -->
 {% raw %}<script id="search_results_template" type="text/template">
@@ -264,7 +270,6 @@ $.getJSON("{{ url_for('api.get_tags') }}",function(data,status,xhr) {
 </script>
 
 <!-- Make the subjectModalButton the default button for the query box -->
-
 <script type="text/javascript">
   // Make the search for subject button the default for the subject query field.
   $('#subject_initial_title_query').keypress(function(event){

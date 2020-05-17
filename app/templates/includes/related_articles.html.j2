@@ -1,12 +1,12 @@
 <article class="col-lg-12">
     <a href="{{ related_article.url }}">
         <figure class="blog-thumb">
-        <img src="{% if related_article.thumbnail %}{{ related_article.thumbnail }}{% else %}/static/img/site-resource/site_thumb.jpg{% endif %}" alt="{{ related_article.tags[0].name.capitalize() }}: {{ related_article.title }}" title="{{ related_article.type.name.capitalize() }}: {{ related_article.title }}">
+        <img src="{{ resized_img_src(related_article.image,width=480,height=225,mode='crop') }}" alt="{{ related_article.tags[0].name.capitalize() }}: {{ related_article.title }}" title="{{ related_article.type.name.capitalize() }}: {{ related_article.title }}">
         </figure>
     </a>
     <a href="{{ related_article.url }}">
         <h4>{{ related_article.title }}</h4>
-        <h5>{% if related_article.youtube %}Video {% endif %}{{ related_article.type.name.capitalize() }} by {{ related_article.author.first_name }}</h5>
+        <h5>{% if related_article.youtube %}Video {% endif %}{{ related_article.type.name.capitalize() }} by {{ related_article.author.first_name }} {{ related_article.author.last_name }}</h5>
     </a>
 
     <span class="glyphicon glyphicon-time"></span> {{ related_article.publish_date.strftime("%b %d, %Y") }} | <a href="{{ related_article.url }}#comments">Comments<!-- <span class="badge"><fb:comments-count href="{{ related_article.url }}"></fb:comments-count></span>--></a><br><br>

@@ -2,19 +2,36 @@
 {% import "bootstrap/wtf.html" as wtf %}
 {% import "includes/macros.html.j2" as macros %}
 
-{% block title %}{{ super() }}: Edit Post{% endblock %}
+{% block title %}{{ super() }}: Edit Article{% endblock %}
 
-{% block header %}<h1>Edit Post</h1>{% endblock %}
+{% block header %}<h1>Edit Article</h1>{% endblock %}
 
 {% block page_content %}
 {% if current_user == article.author or current_user.can(Permission.EDIT) %}
-{{ macros.article_form(wtf,form) }}
+{{ macros.article_form(wtf,form,article=article) }}
 {% else %}
 <p>You do not have permission to edit this article.</p>
 {% endif %}
 {% endblock %}
 {% block js %}
 {{ super() }}
+<!-- include select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+<!-- Initialize ckeditor -->
 {{ ckeditor.load(custom_url=url_for('static', filename='ckeditor/ckeditor.js')) }}
 {{ ckeditor.config(name="body",height=500,custom_config="entities: false,image2_alignClasses:['image-left','image-center','image-right'],image2_altRequired:true") }}
+
+<!-- Initialize Tag selection box -->
+<script type="text/javascript">
+$.getJSON("{{ url_for('api.get_tags',article_id=article.id) }}",function(data,status,xhr) {
+  var items = JSON.parse(data)['results'];
+  console.log(items)
+  $("#tags_selector").select2({
+    data: items,
+    {% if current_user.can(Permission.PUBLISH) %}tags: true,{% endif %}
+    tokenSeparators: [',']
+  });
+});
+</script>
 {% endblock %}

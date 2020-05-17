@@ -13,14 +13,14 @@
 
   <div id="home-slider" class="owl-carousel">
     {% for article in articles %}
-    <div class="item" {% if loop.first %}style="display:block; background: url('{{ article.image }}');"{% endif %}>
+    <div class="item">
       <a href="{{ url_for('main.article_by_id', id=article.id) }}">
         <div class="slide-text">
           <h2><span>{{ article.title }} / {% if article.youtube %}Video {% endif %}{{ article.type.name | capitalize }}</span></h2>
           <span class="slide-blurb"><span>{{ article.blurb }}</span></span>
         </div>
         <div class="slide-image">
-          <img {% if not loop.first %}class="lazyOwl" data-src="{{ article.image }}"{% endif %}{% if loop.first %}src="{{ article.image }}"{% endif %} alt="{{ article.title }}">
+          <img {% if not loop.first %}class="lazyOwl" data-src="{{ resized_img_src(article.image,width=1110,height=555,mode='crop',quality="100") }}"{% endif %}{% if loop.first %}src="{{ resized_img_src(article.image,width=1110,height=555,mode='crop',quality="100") }}"{% endif %} alt="{{ article.title }}">
         </div>
       </a>
     </div>
@@ -30,26 +30,32 @@
   <h2>Recent Reviews</h2>
 
   <div class="row">
+    {% for post in all_articles['Review'][:6] %}
+    {{ render_template('includes/post-panel.html.j2',post=post) }}
+    {% endfor %}
   </div>
 
   <h2>Recent News</h2>
 
   <div class="row">
+    {% for post in all_articles['News'][:3] %}
+    {{ render_template('includes/post-panel.html.j2',post=post) }}
+    {% endfor %}
   </div>
 
   <h2>Recent Editorials</h2>
 
   <div class="row">
+    {% for post in all_articles['Editorial'][:3] %}
+    {{ render_template('includes/post-panel.html.j2',post=post) }}
+    {% endfor %}
   </div>
 
   <p class="rss-subscribe">subscribe <a href="">via RSS</a></p>
 </div>
-
-
-{% include "includes/articles.html.j2" %}
-<div class="">
+{#<div class="">
   {{ macros.pagination_widget(pagination, 'main.index') }}
-</div>
+</div>#}
 {% endblock %}
 {% block js %}
 {{ super() }}

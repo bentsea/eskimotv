@@ -25,6 +25,7 @@
         {{ wtf.form_errors(form, hiddens="only") }}
 
         {{ wtf.form_field(form.title)}}
+        {{ wtf.form_field(form.tags_selector) }}
         {{ wtf.form_field(form.body) }}
         {{ wtf.form_field(form.publish_date) }}
       </div>
@@ -35,6 +36,7 @@
         <div class="float-right">
           {{ wtf.form_field(form.submit, class="btn btn-primary") }}
           {{ wtf.form_field(form.save_draft, class="btn btn-secondary") }}
+          <a href="{{ article.url }}" class="btn btn-danger">Cancel</a>
         </div>
       </div>
     </div>

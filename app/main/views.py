@@ -5,7 +5,7 @@ from . import main
 from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm,NewArticle
 from .. import db
 from ..email import send_email
-from ..models import User,Role,Article,Permission
+from ..models import User,Role,Article,Permission,ArticleType,Tags
 from flask_login import login_required,current_user
 from ..decorators import admin_required
 from flask_ckeditor import upload_success, upload_fail
@@ -32,7 +32,10 @@ def index():
         error_out=False)
 
     articles = pagination.items
-    return render_template('main/home.html.j2',form=form,articles=articles,pagination=pagination,time=datetime.utcnow())
+    all_articles={}
+    for type in ArticleType.query.all():
+        all_articles[type.name] = type.articles.all()
+    return render_template('main/home.html.j2',form=form,articles=articles,all_articles=all_articles,pagination=pagination,time=datetime.utcnow())
 
 @main.route('/user/<id>')
 def profile(id):
@@ -179,6 +182,22 @@ def edit_article(id):
                 article.publish_date = form.publish_date.data
                 db.session.add(article)
                 db.session.commit()
+                for tag_id in form.tags_selector.data:
+                    tag = Tags.query.get(tag_id)
+                    if tag not in article.tags.all():
+                        try:
+                            article.tags.append(tag)
+                            db.session.add(article)
+                            db.session.commit()
+                        except:
+                            current_app.logger.info('Error')
+                            db.session.rollback()
+                            continue
+                for tag in article.tags.all():
+                    if str(tag.id) not in form.tags_selector.data:
+                        article.tags.remove(tag)
+                        db.session.add(article)
+                        db.session.commit()
                 flash('The article has been successfully updated.')
                 return redirect(url_for('main.article_by_id',id=id))
             if form.save_draft.data:
@@ -188,6 +207,10 @@ def edit_article(id):
                 db.session.commit()
                 flash("Edits saved as draft.")
                 return redirect(url_for('main.article_by_id',id = article.id))
+        else:
+            for fieldName, errorMessages in form.errors.items():
+                for error in errorMessages:
+                    flash(f'{fieldName} {error}')
     if request.args.get('edit') == 'draft':
         form.title.data = article.draft_title
         form.body.data = article.draft
