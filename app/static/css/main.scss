@@ -30,6 +30,57 @@ $on-palm:          600px;
 $on-laptop:        768px;
 $on-desktop:       1280px;
 
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .container {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+      @content;
+    }
+}
+
+@media screen and (max-width: $on-palm) {
+}
+@media screen and (min-width: $on-palm) {
+}
+
+@media (min-width: $on-palm) {
+}
+
+@media(min-width:1280px) {
+    .home .slide-text h2 {
+      font-size: 30px;
+      line-height: 42px;
+    }
+    .home .slide-text {
+      font-size: 1em;
+    }
+    .home .slide-text h2 span {
+      font: bold 32px/45px Helvetica, Sans-Serif;
+    }
+    .home .slide-text .slide-blurb {
+      line-height: 15px;
+      font-size: 15px;
+    }
+}
+@media(max-width:1280px) {
+    .home .slide-text h2 {
+      line-height: 42px;
+    }
+    .home .slide-text h2 span {
+      font: bold 20px/30px Helvetica, Sans-Serif;
+    }
+    .slide-blurb {
+      display:none;
+    }
+}
+
+
+
 // Theme correction
 .bg-primary {
   background-color: $brand-color !important;
@@ -85,7 +136,7 @@ a:hover a:visited {
   color: $secondary-color1;
 }
 body {
-  padding-top: 70px;
+  padding-top: 75px;
 }
 .post-info {
   margin-bottom:60px;
@@ -97,7 +148,11 @@ body {
     min-height: 260px;
     margin-left: 280px;
 }
-
+.slide-image img {
+    min-height: 50vh;
+    min-width: 100%;
+    object-fit: cover;
+}
 .with-margin {
   margin: 15px 0px 15px 0px;
 }
@@ -351,7 +406,6 @@ blockquote {
 .item .slide-text h2 span,
 .item .slide-text .slide-blurb span {
    color: white;
-   font: bold 32px/45px Helvetica, Sans-Serif;
    letter-spacing: -1px;
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7);

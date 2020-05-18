@@ -9,5 +9,5 @@
         <h5>{% if related_article.youtube %}Video {% endif %}{{ related_article.type.name.capitalize() }} by {{ related_article.author.first_name }} {{ related_article.author.last_name }}</h5>
     </a>
 
-    <span class="glyphicon glyphicon-time"></span> {{ related_article.publish_date.strftime("%b %d, %Y") }} | <a href="{{ related_article.url }}#comments">Comments<!-- <span class="badge"><fb:comments-count href="{{ related_article.url }}"></fb:comments-count></span>--></a><br><br>
+    <i class="far fa-clock"></i> {{ related_article.publish_date.strftime("%b %d, %Y") }} | <a href="{{ related_article.url }}#comments">Comments<!-- <span class="badge"><fb:comments-count href="{{ related_article.url }}"></fb:comments-count></span>--></a><br><br>
 </article>

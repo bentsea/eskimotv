@@ -8,7 +8,7 @@ def users(count=100):
     fake = Faker()
     i = 0
     while i < count:
-        u = User(email=fake.email(),username=fake.user_name(), password='password',confirmed=True,first_name=fake.name(),about_me=fake.text(),member_since=fake.past_date())
+        u = User(email=fake.email(),username=fake.user_name(), password='password',confirmed=True,first_name=fake.first_name(),last_name=fake.last_name(),about_me=fake.text(),member_since=fake.past_date())
         db.session.add(u)
         try:
             db.session.commit()

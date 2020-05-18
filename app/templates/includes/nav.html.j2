@@ -23,19 +23,19 @@
         </li>
       </ul>
       <ul class="navbar-nav navbar-right">
-        {% if current_user.is_authenticated %}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="account">Account <span class="caret"></span></a>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="account"><i class="far fa-user-circle"></i> <span class="caret"></span></a>
           <ul class="dropdown-menu" aria-labelledby="account">
+            {% if current_user.is_authenticated %}
             <li><a class="dropdown-item" href="{{ url_for('main.profile',id=current_user.id) }}">Profile</a></li>
               <li><a class="dropdown-item" href="{{ url_for('main.edit_profile') }}">Edit Profile</a></li>
             <div class="dropdown-divider"></div>
             <li><a class="dropdown-item" href="{{ url_for('auth.logout') }}">Log Out</a></li>
+            {% else %}
+            <li><a class="dropdown-item" href="{{ url_for('auth.login') }}">Log In</a></li>
+            {% endif %}
           </ul>
-        </ul>
-        {% else %}
-        <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.login') }}">Log In</a></li>
-        {% endif %}
+        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" name="cse" action="/results" id="cse-search-box" role="search">
         <input type="hidden" name="cx" value="partner-pub-8475356019399300:2319328558" />
