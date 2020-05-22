@@ -14,7 +14,7 @@
   <div id="home-slider" class="owl-carousel">
     {% for article in articles %}
     <div class="item">
-      <a href="{{ url_for('main.article_by_id', id=article.id) }}">
+      <a href="{{ article.url }}">
         <div class="slide-text">
           <h2><span>{{ article.title }} / {% if article.youtube %}Video {% endif %}{{ article.type.name | capitalize }}</span></h2>
           <span class="slide-blurb"><span>{{ article.blurb }}</span></span>

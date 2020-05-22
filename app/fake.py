@@ -29,6 +29,7 @@ def articles(count=100):
             body= '\n'.join([f'<p>{paragraph}</p>' for paragraph in [' '.join([fake.sentence(nb_words=randint(5,20)) for sentence_i in range(0,randint(4,8))]) for paragraph_i in range(0,randint(5,7))]]),
             blurb=fake.sentence(nb_words=randint(5,15)),
             publish_date=fake.past_date(),
+            is_published=True,
             author=u,
             image="/static/img/site-resource/logo-page.jpg",
             type=types[randint(0,type_count - 1)])

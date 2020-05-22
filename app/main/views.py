@@ -5,7 +5,7 @@ from . import main
 from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm,NewArticle
 from .. import db
 from ..email import send_email
-from ..models import User,Role,Article,Permission,ArticleType,Tags
+from ..models import User,Role,Article,Permission,ArticleType,Tags,CreativeWork
 from flask_login import login_required,current_user
 from ..decorators import admin_required
 from flask_ckeditor import upload_success, upload_fail
@@ -27,14 +27,14 @@ def index():
             db.session.commit()
             return redirect(url_for('.index'))
     page = request.args.get('page',1,type=int)
-    pagination=Article.query.order_by(Article.publish_date.desc()).paginate(page,
+    pagination=Article.query.filter_by(published=True).order_by(Article.publish_date.desc()).paginate(page,
         per_page=current_app.config['ESKIMOTV_ARTICLES_PER_PAGE'],
         error_out=False)
 
     articles = pagination.items
     all_articles={}
     for type in ArticleType.query.all():
-        all_articles[type.name] = type.articles.all()
+        all_articles[type.name] = type.articles.filter_by(published=True).all()
     return render_template('main/home.html.j2',form=form,articles=articles,all_articles=all_articles,pagination=pagination,time=datetime.utcnow())
 
 @main.route('/user/<id>')
@@ -154,21 +154,26 @@ def upload_images():
 @main.route('/articles/<string:title_slug>')
 def article(title_slug):
     article = Article.query.filter_by(title_slug=title_slug).first_or_404()
-    if article.published and not current_user.is_administrator():
+    if not article.published and not current_user.is_administrator() and not current_user.can(Permission.EDIT) and not current_user == article.author:
         abort(404)
     return render_template('main/article.html.j2',article=article)
 
-@main.route('/articles/id/<int:id>')
-def article_by_id(id):
-    article = Article.query.get_or_404(id)
-    return render_template('main/article.html.j2',article=article)
+# @main.route('/articles/id/<int:id>')
+# def article_by_id(id):
+#     article = Article.query.get_or_404(id)
+#     if not article.published and not current_user.is_administrator():
+#         abort(404)
+#     return render_template('main/article.html.j2',article=article)
 
 @main.route('/edit/<int:id>',methods=['GET','POST'])
 @login_required
 def edit_article(id):
     article = Article.query.get_or_404(id)
-    if current_user != article.author and not current_user.can(Permission.ADMIN):
+    if current_user != article.author and not current_user.can(Permission.EDIT):
         abort(403)
+    if article.published and not current_user.can(Permission.PUBLISH):
+        flash('You do not have permissions to edit published articles. Please contact a Publisher for assistance.')
+        return redirect(article.url)
     form = ArticleForm()
     if request.method == "POST":
         if form.validate_on_submit():
@@ -180,6 +185,7 @@ def edit_article(id):
                 article.title = form.title.data
                 article.draft = None
                 article.publish_date = form.publish_date.data
+                article.is_published = True
                 db.session.add(article)
                 db.session.commit()
                 for tag_id in form.tags_selector.data:
@@ -198,15 +204,31 @@ def edit_article(id):
                         article.tags.remove(tag)
                         db.session.add(article)
                         db.session.commit()
-                flash('The article has been successfully updated.')
-                return redirect(url_for('main.article_by_id',id=id))
+                flash('The article has been successfully published.')
+                return redirect(article.url)
             if form.save_draft.data:
                 article.draft_title = form.title.data
                 article.draft = form.body.data
                 db.session.add(article)
                 db.session.commit()
-                flash("Edits saved as draft.")
-                return redirect(url_for('main.article_by_id',id = article.id))
+                for tag_id in form.tags_selector.data:
+                    tag = Tags.query.get(tag_id)
+                    if tag not in article.tags.all():
+                        try:
+                            article.tags.append(tag)
+                            db.session.add(article)
+                            db.session.commit()
+                        except:
+                            current_app.logger.info('Error')
+                            db.session.rollback()
+                            continue
+                for tag in article.tags.all():
+                    if str(tag.id) not in form.tags_selector.data:
+                        article.tags.remove(tag)
+                        db.session.add(article)
+                        db.session.commit()
+                flash("Draft has been succesfully updated.")
+                return redirect(article.url)
         else:
             for fieldName, errorMessages in form.errors.items():
                 for error in errorMessages:
@@ -238,12 +260,34 @@ def discard_draft():
         flash("You don't have permission to discard this user's drafts.")
         return redirect(url_for('main.article',title_slug=article.title_slug))
 
+@main.route('/unpublish', methods=["GET","POST"])
+@login_required
+def unpublish():
+    article_id = request.values.get('article_id')
+    if article_id:
+        article = Article.query.get_or_404(article_id)
+        article.is_published = False
+        db.session.add(article)
+        db.session.commit()
+        flash('This article has been removed from publication.')
+        return redirect(article.url)
+    else:
+        flash('You are toying with powers beyond your comprehension. Do not try that again.')
+        flash('Your activity has been reported.')
+        return redirect(url_for('main.index'))
+
 @main.route('/new_article/',methods=["GET","POST"])
 @login_required
 def new_article():
     if not current_user.can(Permission.WRITE):
         abort(403)
     form = NewArticle()
+    if request.method == "POST":
+        if form.validate_on_submit():
+            if form.tmdb_id.data:
+                subject = CreativeWork.query.filter_by(tmdb_id=tmdb_id).first()
+                if not subject:
+                    subject = CreativeWork(tmdb_id=form.tmdb_id.data,name=form.subject_title.data,image=form.subject_image.data,type=form.subject_type.data)
     return render_template('main/new_article.html.j2',form=form)
 
 @main.route('/change_cover/<int:id>',methods=['GET','POST'])

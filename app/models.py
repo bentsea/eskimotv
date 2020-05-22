@@ -6,6 +6,7 @@ from flask import current_app, request, render_template_string,url_for
 from . import db, login_manager
 from flask_login import UserMixin, AnonymousUserMixin
 from datetime import datetime,date
+from sqlalchemy.ext.hybrid import hybrid_property
 from slugify import slugify
 import hashlib
 import bleach
@@ -274,7 +275,7 @@ class Article(db.Model):
     def __repr__(self):
         return '<Article {}>'.format(self.title)
 
-    @property
+    @hybrid_property
     def published(self):
         """Returns true if the publish date is at or before the current time and is_published is true."""
         return self.is_published and self.publish_date <= datetime.now()
@@ -334,10 +335,9 @@ class Tags(db.Model):
         return f'<Tag: {self.name}>'
 
 
-class Directs(db.Model):
-    __tablename__ = "directs"
-    directed_id = db.Column(db.Integer,db.ForeignKey('creative_works.id'),primary_key=True)
-    director_id = db.Column(db.Integer,db.ForeignKey('people.id'),primary_key=True)
+director_relationship = db.Table("directs",
+    db.Column('directed_id', db.Integer, db.ForeignKey('creative_works.id')),
+    db.Column('director_id', db.Integer, db.ForeignKey('people.id')))
 
 class CreativeWork(db.Model):
     __tablename__="creative_works"
@@ -348,7 +348,7 @@ class CreativeWork(db.Model):
     articles = db.relationship('Article',backref='subject',lazy='dynamic')
     image=db.Column(db.Text())
     date_published=db.Column(db.DateTime())
-    directed_by = db.relationship('Directs',foreign_keys=[Directs.directed_id],backref=db.backref('directed',lazy='joined'),lazy='dynamic',cascade='all,delete-orphan')
+    directed_by = db.relationship('Person',secondary=director_relationship,backref=db.backref('directed',lazy='dynamic'), lazy='dynamic')
 
     def __repr__(self):
         return "<{type} \"{name}\">".format(type=self.type,name=self.name)
@@ -358,7 +358,6 @@ class Person(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     tmdb_id = db.Column(db.Integer(),unique=True,index=True)
     name = db.Column(db.String(64),index=True)
-    directed = db.relationship('Directs',foreign_keys=[Directs.director_id],backref=db.backref('director',lazy='joined'),lazy='dynamic',cascade='all,delete-orphan')
 
 
 db.event.listen(Article.body, 'set', Article.on_changed_body)

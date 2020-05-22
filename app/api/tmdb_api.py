@@ -90,6 +90,15 @@ def get_backdrops(media_type,id):
     set_globals(datetime.datetime.now())
     auth={'api_key':apiKey}
     return [{'file_path':backdrop['file_path'],'height':backdrop['height'],'width':backdrop['width']} for backdrop in json.loads(requests.get("{}{}/{}/images".format(url,media_type,id), params=auth).text)['backdrops']]
+media={'movie':[{'id':20,'name':'test'},{'id':22,'name':'test'}],'tv':[{'id':24,'name':'test'},{'id':26,'name':'test'}]}
+
+#Return a tmdb genre name from an id.
+def get_genre_name(id,language='en-US'):
+    data={'api_key':apiKey,'language':language}
+    media=[]
+    media.append(json.loads(requests.get(url+'genre/movie/list',params=data).text).get('genres'))
+    media.append(json.loads(requests.get(url+'genre/tv/list',params=data).text).get('genres'))
+    return {genre['id']:genre['name'] for genres in media for genre in genres}[int(id)]
 
 def find_subjects(title='', release_year=None, language='en-US', data=None, media_type=None):
 
@@ -272,7 +281,7 @@ def makeFile(fileName,output):
       file.write(output)
    print("Success, new file created: " + fileName)
 
-
+set_globals(datetime.datetime.now())
 
 # def main(argv):
 # #Get options from command line.

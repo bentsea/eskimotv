@@ -81,6 +81,7 @@ class NewArticle(FlaskForm):
     subject_image = HiddenField('Subject Image')
     tmdb_id = HiddenField('Subject ID')
     subject_type = HiddenField('Subject Type')
+    #subject_selected is a field that must be set by JS to ensure that either a subject is selected or that the user has deliberately selected None.
     subject_selected = HiddenField('Subject Selected',validators=[DataRequired()])
     tags_selector = Select2MultipleField('Article Tags:',choices=[],validators=[DataRequired()])
     cover_image_file = FileField('Use a Local File')
