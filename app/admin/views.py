@@ -1,15 +1,21 @@
 from datetime import datetime,date
 from flask import render_template, get_template_attribute, session, redirect, url_for, flash, request, current_app, abort, send_from_directory
 from .. import db
+from ..api import tmdb_api
 from ..email import send_email
 from . import admin
 from sqlalchemy import func
 from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm,NewArticle
 from slugify import slugify
-from ..models import User,Role,Article,Permission,ArticleType,Tags,CreativeWork
+from ..models import User,Role,Article,Permission,ArticleType,Tags,CreativeWork,Person
 from flask_login import login_required,current_user
 from ..decorators import admin_required
 from flask_ckeditor import upload_success, upload_fail
+
+def add_new_creative_work(tmdb_id,media_type):
+    current_app.logger.info(f'{tmdb_id} {media_type}')
+    current_app.logger.info(tmdb_api.get_creative_work(tmdb_id,media_type))
+    return
 
 @admin.route('/user/<id>')
 def profile(id):
@@ -225,9 +231,11 @@ def new_article():
     if request.method == "POST":
         if form.validate_on_submit():
             if form.tmdb_id.data:
-                subject = CreativeWork.query.filter_by(tmdb_id=tmdb_id).first()
+                #subject = CreativeWork.query.filter_by(tmdb_id=form.tmdb_id.data).first()
+                subject = None
                 if not subject:
-
+                    add_new_creative_work(form.tmdb_id.data,form.subject_type.data)
+                    return render_template('main/new_article.html.j2',form=form)
                     subject = CreativeWork(tmdb_id=form.tmdb_id.data,name=form.subject_title.data,image=form.subject_image.data,type=form.subject_type.data)
     return render_template('main/new_article.html.j2',form=form)
 
