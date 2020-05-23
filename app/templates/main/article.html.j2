@@ -11,7 +11,8 @@
       <article class="post-content">
         <header class="post-header">
           <h2 class="post-title">{% if not article.published %}Draft Article: {% endif %}{% if article.youtube %}Video: {% endif %}{{ article.title }}</h2>
-          <p class="post-meta">{{ article.type.name | capitalize }} • {{ article.publish_date.strftime("%b %-d, %Y") }} • Author: <a href="{{ url_for('main.profile', id = article.author.id) }}">{{ article.author.username }}</a></p>
+          <p class="post-meta">{{ article.type.name | capitalize }} • {{ article.publish_date.strftime("%b %-d, %Y") }} • Author: <a href="{{ url_for('admin.profile', id = article.author.id) }}">{{ article.author.username }}</a></p>
+          <p class="post-meta">{% for tag in article.tags %}<span class="badge badge-pill badge-secondary">{{ tag.name }}</span> {% endfor %}</p>
           {% include "includes/social-media.html" %}
         </header>
         {% if article.youtube %}{{ macros.media(type="youtube",src=article.youtube,feature=True) }}{% else %}<img class="img-responsive webfeedsFeaturedVisual" src="{{ resized_img_src(article.image,width=994,height=466,mode='crop') }}" alt="{{ article.title }} Cover">{% endif %}
@@ -57,10 +58,10 @@
   <div class="col-md-12">
     <div class="float-right">
       {% if article.draft %}
-      <a class="btn btn-warning" href="{{ url_for('main.discard_draft',id=article.id) }}">Discard Draft</a>
-      <a class="btn btn-secondary" href="{{ url_for('main.edit_article',id=article.id,edit='draft') }}">Resume Draft</a>
+      <a class="btn btn-warning" href="{{ url_for('admin.discard_draft',id=article.id) }}">Discard Draft</a>
+      <a class="btn btn-secondary" href="{{ url_for('admin.edit_article',id=article.id,edit='draft') }}">Resume Draft</a>
       {% endif %}
-      <a class="btn btn-primary" href="{{ url_for('main.edit_article',id=article.id) }}">Edit Article{% if article.draft %} (Discard Draft){% endif %}</a>
+      <a class="btn btn-primary" href="{{ url_for('admin.edit_article',id=article.id) }}">Edit Article{% if article.draft %} (Discard Draft){% endif %}</a>
     </div>
   </div>
 </div>

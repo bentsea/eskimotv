@@ -12,7 +12,7 @@
                 <a href="{{ post.url }}">
                     <h4>{{ post.title }}</h4>
                 </a>
-                <a href="{{ url_for('main.profile', id = post.author.id) }}">
+                <a href="{{ url_for('admin.profile', id = post.author.id) }}">
                     <h5>{% if post.youtube %}Video {% endif %}{{ post.type.name.capitalize() }} by {{ post.author.first_name }} {{ post.author.last_name }}</h5>
                 </a>
                 <p class="post-info"><i class="far fa-clock"></i> {{ post.publish_date.strftime("%b %d, %Y") }} | <a href="{{ post.url }}#comments">Comments <span class="badge"><fb:comments-count href="{{ post.url }}"></fb:comments-count></span></a><!--{% if post.rating %} | <i>{{ post.rating}}/100</i>{% endif %}--><br />

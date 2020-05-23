@@ -77,7 +77,7 @@ def create_app(config_name):
     assets._named_bundles = {}
 
     scss = Bundle('css/main.scss',filters="pyscss",output="gen/main.css")
-    all_css = Bundle('css/bootstrap.min.css','css/owl.carousel.css','css/owl.theme.css','css/owl.transitions.css','css/social-share-kit.css',scss,filters="cssmin",output="gen/all.css")
+    all_css = Bundle('css/owl.carousel.css','css/owl.theme.css','css/owl.transitions.css','css/social-share-kit.css',scss,filters="cssmin",output="gen/all.css")
     assets.register('all_css',all_css)
 
     js = Bundle('js/*.js',filters="jsmin",output="gen/all.js")
@@ -93,6 +93,9 @@ def create_app(config_name):
 
         from .api import api as api_blueprint
         app.register_blueprint(api_blueprint, url_prefix='/api/v1')
+
+        from .admin import admin as admin_blueprint
+        app.register_blueprint(admin_blueprint, url_prefix='/admin')
 
         #import the access control after the db has been initialized.
         flaskfilemanager.init(app,access_control_function=can_edit_files)

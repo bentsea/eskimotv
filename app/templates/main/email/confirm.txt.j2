@@ -1,7 +1,7 @@
 Dear {{ user.username }},
 We have received a request to update your EskimoTV email. If you do not have an EskimoTV account, please disregard this email.
 Please click on the following link to confirm your new email address:
-{{ url_for('main.confirm_email_change',token=token,_external=True) }}
+{{ url_for('admin.confirm_email_change',token=token,_external=True) }}
 Sincerely,
 The EskimoTV Team
 

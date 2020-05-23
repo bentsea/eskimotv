@@ -37,7 +37,7 @@
           {{ wtf.form_field(form.submit, class="btn btn-primary") }}
           {{ wtf.form_field(form.save_draft, class="btn btn-secondary") }}
           <a href="{{ article.url }}" class="btn btn-danger">Cancel</a>
-          {% if article.published %}<a href="{{ url_for('main.unpublish',article_id=article.id) }}" class="btn btn-warning">Un-Publish</a>{% endif %}
+          {% if article.published %}<a href="{{ url_for('admin.unpublish',article_id=article.id) }}" class="btn btn-warning">Un-Publish</a>{% endif %}
         </div>
       </div>
     </div>

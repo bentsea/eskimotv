@@ -31,7 +31,7 @@ def articles(count=100):
             publish_date=fake.past_date(),
             is_published=True,
             author=u,
-            image="/static/img/site-resource/logo-page.jpg",
+            image="img/site-resource/logo-page.jpg",
             type=types[randint(0,type_count - 1)])
         try:
             db.session.add(a)
@@ -41,7 +41,7 @@ def articles(count=100):
             db.session.rollback()
             continue
         tags_i = 0
-        tags_to_add = range(0,randint(4,10))
+        tags_to_add = randint(4,10)
         while tags_i < tags_to_add:
             new_tag = Tags.query.get(randint(1,tag_count))
             if new_tag not in a.tags.all():

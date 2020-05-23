@@ -93,24 +93,23 @@ def get_backdrops(media_type,id):
 media={'movie':[{'id':20,'name':'test'},{'id':22,'name':'test'}],'tv':[{'id':24,'name':'test'},{'id':26,'name':'test'}]}
 
 #Return a tmdb genre name from an id.
-def get_genre_name(id,language='en-US'):
+def get_genre_info(id=None,name=None,language='en-US'):
     data={'api_key':apiKey,'language':language}
     media=[]
     media.append(json.loads(requests.get(url+'genre/movie/list',params=data).text).get('genres'))
     media.append(json.loads(requests.get(url+'genre/tv/list',params=data).text).get('genres'))
-    return {genre['id']:genre['name'] for genres in media for genre in genres}[int(id)]
+    data = {genre['id']:genre['name'] for genres in media for genre in genres}
+    if id:
+        return data[int(id)]
+    else:
+        return data
 
 def find_subjects(title='', release_year=None, language='en-US', data=None, media_type=None):
-
     set_globals(datetime.datetime.now())
-
     if not data:
         data={'api_key':apiKey,'query':title,'language':language}
-
     results = json.loads(requests.get(url+multiSearch,params=data).text).get('results')
-
     no_results = [{"error":"No Results Found","backdrop_path":"https://www.eskimotv.net/img/site-resource/logo-page.jpg","overview":"No results were returned for your search. Please try again or select 'Do Not Use a Subject'."}]
-
     if not release_year:
         return results or no_results
     else:

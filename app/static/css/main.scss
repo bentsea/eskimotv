@@ -16,7 +16,8 @@ $background-color: #fdfdfd;
 //$secondary-color1: #d34615;
 //$secondary-color2: #ac3911;
 $brand-color:      #6699cc;
-$secondary-color1: #003366;
+$brand-color2:     #003366;
+$secondary-color1: #AEA79F;
 $secondary-color2: #336699;
 
 $grey-color:       #828282;
@@ -79,7 +80,20 @@ $on-desktop:       1280px;
     }
 }
 
-
+//Default Bootstrap Overrides
+.badge-primary {
+    color: #fff;
+    background-color: $brand-color;
+}
+.badge-secondary {
+    color: #fff;
+    background-color: $secondary-color1;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: $secondary-color1;
+    border-color: $secondary-color1;
+}
 
 // Theme correction
 .bg-primary {
@@ -121,11 +135,11 @@ a:hover a:visited {
 .btn-primary:hover, .btn-primary:focus {
     color: #fff;
     background-color: $secondary-color2;
-    border-color: $secondary-color1;
+    border-color: $brand-color2;
 }
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: $secondary-color1;
+    background-color: $brand-color2;
     border-color: $secondary-color2;
 }
 .page-item.active .page-link {
@@ -262,6 +276,12 @@ div.flask-pagedown-preview h3 {
 }
 .table.followers tr {
     border-bottom: 1px solid #e0e0e0;
+}
+.page-heading h1 {
+  font-size: 36px;
+}
+.page-heading h3 {
+  font-size: 24px;
 }
 blockquote {
     color: #828282;

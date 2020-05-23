@@ -18,7 +18,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ANALYTICS = os.environ.get('ANALYTICS')
     ESKIMOTV_ARTICLES_PER_PAGE = 9
-    CKEDITOR_FILE_UPLOADER = 'main.upload_images'
+    CKEDITOR_FILE_UPLOADER = 'admin.upload_images'
     CKEDITOR_FILE_BROWSER = 'flaskfilemanager.index'
     FLASKFILEMANAGER_FILE_PATH = os.path.join(basedir,'app/static/uploads/')
     TMDB_API_KEY=os.environ.get('TMDB_API_KEY')

@@ -300,7 +300,7 @@ class Article(db.Model):
             .filter(article_tags.c.tag_id.in_(sub_stmt))\
             .filter(article_tags.c.article_id==Article.id)\
             .group_by(Article.id)\
-            .order_by(func.count(article_tags.c.tag_id).desc()).all()
+            .order_by(func.count(article_tags.c.tag_id).desc()).order_by(Article.publish_date.desc()).all()
 
         return [Article.query.get(article[0]) for article in query[:count]]
 
