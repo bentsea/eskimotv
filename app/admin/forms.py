@@ -84,7 +84,7 @@ class NewArticle(FlaskForm):
     #subject_selected is a field that must be set by JS to ensure that either a subject is selected or that the user has deliberately selected None.
     subject_selected = HiddenField('Subject Selected',validators=[DataRequired()])
     #Dummy text field to indicate whether or not an image has been selected yet.
-    selected_image = StringField('Selected Image:',validators=[DataRequired()])
+    selected_image = StringField('Selected Image:')
     #Dummy text field to indicate search information for a subject.
     subject_initial_title_query = StringField('Subject Title:')
     tags_selector = Select2MultipleField('Article Tags:',validators=[DataRequired()])

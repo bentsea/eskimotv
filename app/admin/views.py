@@ -1,6 +1,8 @@
 from datetime import datetime,date
 from flask import render_template, get_template_attribute, session, redirect, url_for, flash, request, current_app, abort, send_from_directory,jsonify
 import json
+from io import BytesIO
+from PIL import Image
 from .. import db
 from ..api import tmdb_api
 from ..email import send_email
@@ -256,8 +258,11 @@ def new_article():
         abort(403)
     form = NewArticle()
     if request.method == "POST":
-        return render_template('main/new_article.html.j2',form=form)
         if form.validate_on_submit():
+            path = "/home/eskimotv/app/app/static/img/cover-images"
+            img = Image.open(form.cover_image_file.data)
+            img.save(path+"/test.jpg")
+            return render_template('main/new_article.html.j2',form=form)
             new_article = Article(title=form.title.data,
                 publish_date=datetime.now(),
                 author=current_user,
@@ -266,6 +271,14 @@ def new_article():
                 subject = CreativeWork.query.filter_by(tmdb_id=form.tmdb_id.data).first()
                 if not subject:
                     subject = add_new_creative_work(form.tmdb_id.data,form.subject_type.data)
+                article.subject = subject
+                db.session.add(article)
+                db.session.commit()
+            return redirect(url_for('admin.edit_article',id=article.id))
+        else:
+            for fieldName, errorMessages in form.errors.items():
+                for error in errorMessages:
+                    flash(f'{fieldName} {error}')
     return render_template('main/new_article.html.j2',form=form)
 
 

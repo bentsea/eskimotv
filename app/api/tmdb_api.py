@@ -19,18 +19,18 @@ from flask import current_app
 
 def set_globals(date=datetime.datetime.now()):
    #Base Variables
-   globals()['pathPrefix']="/home/eskimotv"
-   globals()['appPrefix'] ="/app/app"
-   globals()['dateSuffix']  = date.strftime("/%Y/%m/")
+   globals()['path_prefix']="/home/eskimotv"
+   globals()['app_prefix'] ="/app/app"
+   globals()['date_suffix']  = date.strftime("/%Y/%m/")
    globals()['max_width']  = 1920
 
    #Compound variables
-   globals()['postSuffix']  = "/_posts" + dateSuffix
-   globals()['imgSuffix']  = "/static/img" + dateSuffix
-   globals()['thumbsSuffix']  = "/thumbs/img" + dateSuffix
-   globals()['postPath'] =pathPrefix + appPrefix + postSuffix
-   globals()['imgPath'] =pathPrefix + appPrefix + imgSuffix
-   globals()['thumbsPath'] =pathPrefix + appPrefix + thumbsSuffix
+   globals()['post_suffix']  = "/_posts" + date_suffix
+   globals()['img_suffix']  = "/static/img" + date_suffix
+   globals()['thumbs_suffix']  = "/thumbs/img" + date_suffix
+   globals()['post_path'] =path_prefix + app_prefix + post_suffix
+   globals()['img_path'] =path_prefix + app_prefix + img_suffix
+   globals()['thumbs_path'] =path_prefix + app_prefix + thumbs_suffix
 
 
    #need a better way to deal with these variables.
@@ -43,8 +43,8 @@ def set_globals(date=datetime.datetime.now()):
    #    os.makedirs(postPath)
    # if os.path.isdir(imgPath) == False:
    #    os.makedirs(imgPath)
-   # if os.path.isdir(thumbsPath) == False:
-   #    os.makedirs(thumbsPath)
+   # if os.path.isdir(thumbs_path) == False:
+   #    os.makedirs(thumbs_path)
 
 def generateSession():
    readAccessToken="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2Y2Q0NTk4NTI4Y2E4YzI4MTc1Mjg0OTM1NTZiMmQ0OSIsInN1YiI6IjU5MjEwMzhmYzNhMzY4N2E2NDA1MDEwZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.A2sLjkzHDwJz5luDyRp9To_0beIxkPtIJJs_sUQCRSA"
@@ -57,16 +57,7 @@ def generateSession():
    requests.get(url+'authentication/token/validate_with_login',params=payload)
    return json.loads(requests.get(url+'authentication/session/new',params=payload).text)
 
-def saveImage(imgURL,imgName):
-   response = requests.get(imgURL)
-   img = Image.open(BytesIO(response.content))
-   new_height = int(img.height * (max_width / img.width))
-   img = img.resize((max_width,new_height))
-   img = resizeimage.resize_crop(img,[1920,900])
-   img.save(imgPath + imgName,optimize=True,quality=60)
-   img = img.resize((480,225))
-   img.save(thumbsPath + imgName,optimize=True,quality=60)
-   return imgSuffix + imgName
+
 
 def slugify(s):
     s = s.lower()
@@ -268,7 +259,7 @@ def error(err = None):
       sys.exit(2)
 
 def help():
-   templateLoader = FileSystemLoader("{}/scripts/templates".format(pathPrefix))
+   templateLoader = FileSystemLoader("{}/scripts/templates".format(path_prefix))
    env = Environment(loader=templateLoader)
    template = env.get_template('help')
    print(template.render())
@@ -276,7 +267,7 @@ def help():
 
 def genArticle(title,userName,article_type="review",media_type="movie",subject_info=None):
 
-   templateLoader = FileSystemLoader("{}/scripts/templates".format(pathPrefix))
+   templateLoader = FileSystemLoader("{}/scripts/templates".format(path_prefix))
    env = Environment(loader=templateLoader)
    template = env.get_template('article.markdown')
    output = template.render(title=title,author_username=userName,media_type=media_type,subjectItem=subject_info,article_type=article_type)
@@ -291,7 +282,7 @@ def genReview(title,userName, release_year=""):
 
    movie_info = movie_info(title,release_year)
 
-   templateLoader = FileSystemLoader("{}/scripts/templates".format(pathPrefix))
+   templateLoader = FileSystemLoader("{}/scripts/templates".format(path_prefix))
    env = Environment(loader=templateLoader)
    template = env.get_template('article.markdown')
    output = template.render(author_username=userName,subjectItem=movie_info,review=True)
@@ -301,7 +292,7 @@ def genReview(title,userName, release_year=""):
 
 def genEditorial(articleTitle, userName):
 
-   templateLoader = FileSystemLoader("{}/scripts/templates".format(pathPrefix))
+   templateLoader = FileSystemLoader("{}/scripts/templates".format(path_prefix))
    env = Environment(loader=templateLoader)
    template = env.get_template('article.markdown')
    output = template.render(title=articleTitle,author_username=userName)

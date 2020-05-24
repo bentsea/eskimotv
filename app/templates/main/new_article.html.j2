@@ -79,7 +79,7 @@
             <div class="card-body">
               <h5 class="card-title">Upload an Image File:</h5>
               {{ wtf.form_field(form.cover_image_file) }}
-              <div class="btn btn-primary" onclick="$('#selected_image').val('Custom Image Upload');$('#tmdbCoverModal').modal('hide');">Use for Cover</div>
+              <div class="btn btn-primary" onclick="(function(){if($('#cover_image_file').val()){$('#selected_image').val('Custom Image Upload');$('#tmdbCoverModal').modal('hide');}})();">Use for Cover</div>
             </div>
           </div>
           <div class="card">
@@ -224,7 +224,7 @@ $("#subjectModal").on('shown.bs.modal', function(){
   <img class="card-img-top" src="{{ thumb }}">
   <div class="card-body">
     <a target="_blank" href="{{ for_download }}" class="btn btn-primary">View Full Size</a>
-    <div onclick="$('#selected_image').val('{{ for_download }}');$('#tmdbCoverModal').modal('hide');" class="btn btn-primary">Use This Image</div>
+    <div onclick="$('#selected_image').val('{{ for_download }}');enable_create_article();$('#tmdbCoverModal').modal('hide');" class="btn btn-primary">Use This Image</div>
   </div>
 </div>
 </script>{% endraw %}
