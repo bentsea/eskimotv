@@ -115,56 +115,45 @@ def find_subjects(title='', release_year=None, language='en-US', data=None, medi
         return [result for result in results if item_release_date(result).find(release_year) != -1] or no_results
 
 def get_creative_work(tmdb_id,media_type):
-    subject_info = {}
+    media_types = {'tv':'TVSeries','movie':'Movie'}
+    subject_info = {'CreativeWork':{},'Person':[]}
     item = {}
     #print(movie_database_search_object)
 
     auth={'api_key':apiKey}
     raw_info = json.loads(requests.get(url+media_type + '/' + str(tmdb_id), params=auth).text)
     credits = credits=json.loads(requests.get(url+media_type + '/' + str(tmdb_id) + '/credits',params=auth).text)
-    current_app.logger.info(raw_info)
 
-    #Use a dictionary of media types to translate between The Movie Database media type and Schema.org media type.
-    media_types = {'tv':'TVSeries','movie':'Movie'}
-    subject_info['media_type'] = media_type
-    subject_info['type'] = media_types[media_type]
-    subject_info['categories'] = [d['name'] for d in raw_info['genres']]
-    subject_info['images'] = json.loads(requests.get("{}{}/{}/images".format(url,media_type,tmdb_id), params=auth).text)
+    #To create the director person we need the TMDB_id of the person and their name filtered out based on job title.
+    subject_info['Person']=get_crew(credits,"Director")
 
+    #Movies and TV require the following: type,name(title), date_published(publish date for movies and first air date for tv),tmdb_id,same_as url, image, additional director info.
+    item['type'] = media_type
+    item['name'] = raw_info.get('title') or raw_info.get('name')
+    item['date_published'] = datetime.datetime.strptime((raw_info.get('release_date') or raw_info.get('first_air_date')), '%Y-%m-%d')
+    item['tmdb_id'] = tmdb_id
+    item['same_as'] = f"{site_url}/{media_type}/{raw_info['id']}"
+    item['image'] = f"https://image.tmdb.org/t/p/original{raw_info['poster_path']}"
+    subject_info['CreativeWork'] = item
 
-    #Create the title for articles based on the type of object and whether or not there is a published year.
-    title = raw_info.get('title') or raw_info.get('name')
-
-    item['name'] = title
-
-    item['sameAs'] = "{}/{}/{}".format(site_url,media_type,raw_info['id'])
-    item['image'] = "https://image.tmdb.org/t/p/original{}".format(raw_info['poster_path'])
-
-    director = get_crew(credits,"Director")
-    if director:
-        item['director'] = director
-
-    #Use either the release date or the first air date as the datePublished
-    item['datePublished'] = (raw_info.get('release_date') or raw_info.get('first_air_date'))
-
-    #Create a title and slug based on whether or not there is a date
-    subject_info['title'] = "{} ({})".format(title,item.get('datePublished').split('-')[0])
-    subject_info['slug'] = slugify(subject_info['title'])
-    current_app.logger.info(subject_info)
-    if len(subject_info['images']['backdrops']) != 0:
-        imageIndex = random.randint(0,len(subject_info['images']['backdrops'])-1)
-        #subject_info['cover_image'] = ""
-        #subject_info['cover_image'] = saveImage('https://image.tmdb.org/t/p/original{}'.format(subject_info['images']['backdrops'][imageIndex]['file_path']),"{}-{}-cover.jpg".format(subject_info['slug'],imageIndex))
-    else:
-        print("No backdrop available from The Movie Datbase, leaving cover blank.")
-        subject_info['cover_image'] = ""
-
-    subject_info['item'] = item
     return subject_info
+
+    # subject_info['media_type'] = media_type
+    # subject_info['type'] = media_types[media_type]
+    #Save this line for later. May be a better way to get categories.
+    # subject_info['categories'] = [d['name'] for d in raw_info['genres']]
+    # subject_info['images'] = json.loads(requests.get("{}{}/{}/images".format(url,media_type,tmdb_id), params=auth).text)
+
+
+
+
 
 #Iterate through crew and return the name of the crew matching the role title specified.
 def get_crew(credits,role):
-  return next((item for item in credits['crew'] if item["job"] == role),{}).get('name')
+  #return next((item for item in credits['crew'] if item["job"] == role),{}).get('name')
+  return [{'tmdb_id':item['id'],'name':item['name']} for item in credits['crew'] if item["job"] == role]
+
+
 
 #Takes a movie title and release year and returns a subject_info dictionary and saves an image with a cover image from the movie.
 def get_info(title='', search_release_year=None, language='en-US', data=None, media_type=None):

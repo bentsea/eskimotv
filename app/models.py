@@ -345,6 +345,7 @@ class CreativeWork(db.Model):
     type=db.Column(db.String(32),index=True)
     name=db.Column(db.String(128),index=True)
     tmdb_id = db.Column(db.Integer(),unique=True,index=True)
+    same_as = db.Column(db.String(64),unique=True)
     articles = db.relationship('Article',backref='subject',lazy='dynamic')
     image=db.Column(db.Text())
     date_published=db.Column(db.DateTime())
@@ -353,11 +354,28 @@ class CreativeWork(db.Model):
     def __repr__(self):
         return "<{type} \"{name}\">".format(type=self.type,name=self.name)
 
+    @property
+    def serialize(self):
+        """Return object data in easily serializable format"""
+        return {
+            'id':self.id,
+            'type':self.type,
+            'name':self.name,
+            'tmdb_id':self.tmdb_id,
+            'same_as':self.same_as,
+            'image':self.image,
+            'date_published':self.date_published.strftime("%Y-%m-%d"),
+            'directed_by': [director.name for director in self.directed_by.all()]
+        }
+
 class Person(db.Model):
     __tablename__="people"
     id=db.Column(db.Integer,primary_key=True)
     tmdb_id = db.Column(db.Integer(),unique=True,index=True)
     name = db.Column(db.String(64),index=True)
+
+    def __repr__(self):
+        return f'<Person "{self.name}">'
 
 
 db.event.listen(Article.body, 'set', Article.on_changed_body)

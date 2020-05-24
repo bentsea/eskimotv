@@ -7,7 +7,7 @@ from sqlalchemy import func
 from wtforms.validators import DataRequired, Length, Email, Regexp
 from wtforms import ValidationError
 from slugify import slugify
-from ..models import Role,User,ArticleType
+from ..models import Role,User,ArticleType,Tags
 
 #create a custom select mulitple field that works with Select2 JS as the field cannot properly validate without preset choices.
 class Select2MultipleField(SelectMultipleField):
@@ -83,7 +83,11 @@ class NewArticle(FlaskForm):
     subject_type = HiddenField('Subject Type')
     #subject_selected is a field that must be set by JS to ensure that either a subject is selected or that the user has deliberately selected None.
     subject_selected = HiddenField('Subject Selected',validators=[DataRequired()])
-    tags_selector = Select2MultipleField('Article Tags:',choices=[],validators=[DataRequired()])
+    #Dummy text field to indicate whether or not an image has been selected yet.
+    selected_image = StringField('Selected Image:',validators=[DataRequired()])
+    #Dummy text field to indicate search information for a subject.
+    subject_initial_title_query = StringField('Subject Title:')
+    tags_selector = Select2MultipleField('Article Tags:',validators=[DataRequired()])
     cover_image_file = FileField('Use a Local File')
     cover_image_url = StringField('Use an Image From Online',render_kw={"placeholder": "Image URL"})
     create_draft = SubmitField('Create Draft')
@@ -92,3 +96,4 @@ class NewArticle(FlaskForm):
         super(NewArticle, self).__init__(*args, **kwargs)
         self.article_type.choices = [(type.id, type.name)
                              for type in ArticleType.query.order_by(ArticleType.id).all()]
+        self.tags_selector.choices = [(tag.id,tag.name) for tag in Tags.query.all()]

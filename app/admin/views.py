@@ -1,5 +1,6 @@
 from datetime import datetime,date
-from flask import render_template, get_template_attribute, session, redirect, url_for, flash, request, current_app, abort, send_from_directory
+from flask import render_template, get_template_attribute, session, redirect, url_for, flash, request, current_app, abort, send_from_directory,jsonify
+import json
 from .. import db
 from ..api import tmdb_api
 from ..email import send_email
@@ -13,9 +14,35 @@ from ..decorators import admin_required
 from flask_ckeditor import upload_success, upload_fail
 
 def add_new_creative_work(tmdb_id,media_type):
-    current_app.logger.info(f'{tmdb_id} {media_type}')
-    current_app.logger.info(tmdb_api.get_creative_work(tmdb_id,media_type))
-    return
+    creative_work = CreativeWork.query.filter_by(tmdb_id=tmdb_id).first()
+    if not creative_work:
+        creative_work_data = tmdb_api.get_creative_work(tmdb_id,media_type)
+        creative_work = CreativeWork(
+            type=creative_work_data['CreativeWork']['type'],
+            name=creative_work_data['CreativeWork']['name'],
+            same_as=creative_work_data['CreativeWork']['same_as'],
+            tmdb_id=creative_work_data['CreativeWork']['tmdb_id'],
+            image=creative_work_data['CreativeWork']['image'],
+            date_published=creative_work_data['CreativeWork']['date_published'])
+        db.session.add(creative_work)
+        db.session.commit()
+        for person_info in creative_work_data['Person']:
+            person = Person.query.filter_by(tmdb_id=person_info['tmdb_id']).first()
+            if not person:
+                person = Person(tmdb_id=person_info['tmdb_id'],name=person_info['name'])
+            try:
+                db.session.add(person)
+                db.session.commit()
+            except:
+                db.session.rollback()
+            if person not in creative_work.directed_by.all():
+                creative_work.directed_by.append(person)
+                try:
+                    db.session.add(creative_work)
+                    db.session.commit()
+                except:
+                    db.session.rollback()
+    return creative_work
 
 @admin.route('/user/<id>')
 def profile(id):
@@ -229,14 +256,16 @@ def new_article():
         abort(403)
     form = NewArticle()
     if request.method == "POST":
+        return render_template('main/new_article.html.j2',form=form)
         if form.validate_on_submit():
-            if form.tmdb_id.data:
-                #subject = CreativeWork.query.filter_by(tmdb_id=form.tmdb_id.data).first()
-                subject = None
+            new_article = Article(title=form.title.data,
+                publish_date=datetime.now(),
+                author=current_user,
+                type=ArticleType.query.get(form.article_type.data))
+            if form.subject_selected.data != "None":
+                subject = CreativeWork.query.filter_by(tmdb_id=form.tmdb_id.data).first()
                 if not subject:
-                    add_new_creative_work(form.tmdb_id.data,form.subject_type.data)
-                    return render_template('main/new_article.html.j2',form=form)
-                    subject = CreativeWork(tmdb_id=form.tmdb_id.data,name=form.subject_title.data,image=form.subject_image.data,type=form.subject_type.data)
+                    subject = add_new_creative_work(form.tmdb_id.data,form.subject_type.data)
     return render_template('main/new_article.html.j2',form=form)
 
 

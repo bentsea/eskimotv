@@ -19,9 +19,7 @@
         <div class="card-body">
           <h5 class="card-title">Step 1: Select a Subject</h5>
           <!-- Javascript at the bottom of the page makes the subjectModalButton the default button -->
-          <div class="form-group  required"><label class="form-control-label" for="title">Subject Title:</label>
-            <input class="form-control" id="subject_initial_title_query" name="subject_initial_title_query" type="text" value="">
-          </div>
+          {{ wtf.form_field(form.subject_initial_title_query) }}
           <div type="button" id="subjectModalButton" class="btn btn-primary" data-toggle="modal" data-target="#subjectModal">Search for Subject</div>
         </div>
       </div>
@@ -34,9 +32,7 @@
       <div class="card h-100">
         <div class="card-body">
           <h5 class="card-title">Step 2: Select Cover Image</h5>
-          <div class="form-group  required"><label class="form-control-label" for="title">Selected Image:</label>
-            <input class="form-control" id="selected-image" name="selected-image" placeholder="No Image selected" required type="text" readonly>
-          </div>
+          {{ wtf.form_field(form.selected_image,disabled=True) }}
           <div type="button" id="coverSelectModalButton" class="btn btn-primary" data-toggle="modal" data-target="#tmdbCoverModal">Select Cover Image</div>
         </div>
       </div>
@@ -83,7 +79,7 @@
             <div class="card-body">
               <h5 class="card-title">Upload an Image File:</h5>
               {{ wtf.form_field(form.cover_image_file) }}
-              <div class="btn btn-primary" onclick="$('#subject_selected').val('None');$('#subjectModal').modal('hide');">Use for Cover</div>
+              <div class="btn btn-primary" onclick="$('#selected_image').val('Custom Image Upload');$('#tmdbCoverModal').modal('hide');">Use for Cover</div>
             </div>
           </div>
           <div class="card">
@@ -91,7 +87,7 @@
             <div class="card-body">
               <h5 class="card-title">Or Use an Online Image:</h5>
               {{ wtf.form_field(form.cover_image_url) }}
-              <div class="btn btn-primary" onclick="$('#selected-image').val($('#cover_image_url').val());$('#tmdbCoverModal').modal('hide');">Use for Cover</div>
+              <div class="btn btn-primary" onclick="$('#selected_image').val($('#cover_image_url').val());$('#tmdbCoverModal').modal('hide');">Use for Cover</div>
             </div>
           </div>
           <h5>Or Select from the Images Below:</h5>
@@ -228,7 +224,7 @@ $("#subjectModal").on('shown.bs.modal', function(){
   <img class="card-img-top" src="{{ thumb }}">
   <div class="card-body">
     <a target="_blank" href="{{ for_download }}" class="btn btn-primary">View Full Size</a>
-    <div onclick="$('#selected-image').val('{{ for_download }}');$('#tmdbCoverModal').modal('hide');" class="btn btn-primary">Use This Image</div>
+    <div onclick="$('#selected_image').val('{{ for_download }}');$('#tmdbCoverModal').modal('hide');" class="btn btn-primary">Use This Image</div>
   </div>
 </div>
 </script>{% endraw %}
