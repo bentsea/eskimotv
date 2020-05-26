@@ -1,12 +1,13 @@
 from datetime import datetime,date
 from flask import render_template, get_template_attribute, session, redirect, url_for, flash, request, current_app, abort, send_from_directory,jsonify
 import json
+import requests
 from io import BytesIO
 from PIL import Image
 from .. import db
 from ..api import tmdb_api
 from ..email import send_email
-from . import admin
+from . import admin,files
 from sqlalchemy import func
 from .forms import NameForm,EditProfileForm,EditProfileAdminForm,ArticleForm,NewArticle
 from slugify import slugify
@@ -158,6 +159,7 @@ def edit_article(id):
                     return render_template('main/edit_article.html.j2',form=form,article=article)
                 article.body = form.body.data
                 article.title = form.title.data
+                article.blurb = form.blurb.data
                 article.draft = None
                 article.publish_date = form.publish_date.data
                 article.is_published = True
@@ -214,10 +216,11 @@ def edit_article(id):
     else:
         form.title.data = article.title
         form.body.data = article.body
-    if article.published:
-        form.publish_date.data = article.publish_date
-    else:
-        form.publish_date.data = datetime.utcnow()
+    form.publish_date.data = article.publish_date
+    form.blurb.data = article.blurb
+    if article.subject:
+        form.tmdb_id.data = article.subject.tmdb_id
+        form.subject_type.data = article.subject.type
     return render_template('main/edit_article.html.j2',form=form,article=article)
 
 @admin.route('/discard_draft')
@@ -235,7 +238,7 @@ def discard_draft():
         flash("You don't have permission to discard this user's drafts.")
         return redirect(url_for('main.article',title_slug=article.title_slug))
 
-@admin.route('/unpublish', methods=["GET","POST"])
+@admin.route('/unpublish_article', methods=["GET","POST"])
 @login_required
 def unpublish():
     article_id = request.values.get('article_id')
@@ -251,6 +254,31 @@ def unpublish():
         flash('Your activity has been reported.')
         return redirect(url_for('main.index'))
 
+@admin.route('/delete_article', methods=["GET","POST"])
+@login_required
+def delete_article():
+    def remove_from_database(article):
+        files.delete_image(article.image)
+        db.session.delete(article)
+        db.session.commit()
+        flash('Article has been deleted.')
+    article_id = request.values.get('article_id')
+    if article_id:
+        article = Article.query.get_or_404(article_id)
+        if article.is_published and current_user.can(Permission.PUBLISH):
+            remove_from_database(article)
+            return redirect(url_for('main.index'))
+        elif not article.is_published and article.author == current_user:
+            remove_from_database(article)
+            return redirect(url_for('main.index'))
+        else:
+            flash('Uh-uh-uh, you didn\'t say the magic word...')
+            return redirect(article.url)
+    else:
+        flash('You are toying with powers beyond your comprehension. Do not try that again.')
+        flash('Your activity has been reported.')
+        return redirect(url_for('main.index'))
+
 @admin.route('/new_article/',methods=["GET","POST"])
 @login_required
 def new_article():
@@ -259,14 +287,27 @@ def new_article():
     form = NewArticle()
     if request.method == "POST":
         if form.validate_on_submit():
-            path = "/home/eskimotv/app/app/static/img/cover-images"
-            img = Image.open(form.cover_image_file.data)
-            img.save(path+"/test.jpg")
-            return render_template('main/new_article.html.j2',form=form)
-            new_article = Article(title=form.title.data,
+            if Article.query.filter_by(title_slug=slugify(form.title.data)).first():
+                flash("Your title is too similar to an existing article.")
+                return render_template('main/new_article.html.j2',form=form)
+            if form.cover_image_file.data:
+                img = Image.open(form.cover_image_file.data)
+            elif form.cover_image_url.data:
+                img = Image.open(BytesIO(requests.get(form.cover_image_url.data).content))
+            article = Article(title=form.title.data,
                 publish_date=datetime.now(),
                 author=current_user,
                 type=ArticleType.query.get(form.article_type.data))
+            article.image=files.save_cover_image(img,article.title_slug)
+            for tag in form.tags_selector.data:
+                article.tags.append(Tags.query.get(tag))
+            try:
+                db.session.add(article)
+                db.session.commit()
+            except Exception as err:
+                db.session.rollback()
+                flash("There was an unspecified error wile attempting to create your article. Please wait a minute and try again, then contact an admin if you continue to receive this error.")
+                return render_template('main/new_article.html.j2',form=form)
             if form.subject_selected.data != "None":
                 subject = CreativeWork.query.filter_by(tmdb_id=form.tmdb_id.data).first()
                 if not subject:

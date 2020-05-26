@@ -115,12 +115,12 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group  required"><label class="form-control-label" for="title">Subject Title:</label>
-              <input class="form-control" id="subject_title_query" name="subject_title_query" required type="text" value="">
+              <input class="form-control" id="subject_title_query" name="subject_title_query" type="text" value="">
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group  required"><label class="form-control-label" for="title">Subject Year:</label>
-              <input class="form-control" id="subject_year_query" name="subject_year_query" required type="text" value="">
+              <input class="form-control" id="subject_year_query" name="subject_year_query" type="text" value="">
             </div>
           </div>
           <div class="col-sm-12">
@@ -151,8 +151,8 @@
   <div class="card-body">
     <h5 class="card-title">{{ media_type }}: {{ title }} ({{ year }})</h5>
     <p class="card-text">{{ overview }}</p>
-    <div onclick="$('#title').val('{{ title }} ({{ year }})');$('#subject_title').val('{{ title }}');$('#subject_image').val('{{ poster_path }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Use For Subject and Article Title</div>
-    <div onclick="$('#subject_title').val('{{ title }}');$('#subject_image').val('{{ poster_path }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Only Use For Subject</div>
+    <div onclick="$('#title').val('{{ title }} ({{ year }})');$('#subject_title').val('{{ title }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Use For Subject and Article Title</div>
+    <div onclick="$('#subject_title').val('{{ title }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Only Use For Subject</div>
   </div>
 </div>
 </script>{% endraw %}
@@ -224,7 +224,7 @@ $("#subjectModal").on('shown.bs.modal', function(){
   <img class="card-img-top" src="{{ thumb }}">
   <div class="card-body">
     <a target="_blank" href="{{ for_download }}" class="btn btn-primary">View Full Size</a>
-    <div onclick="$('#selected_image').val('{{ for_download }}');enable_create_article();$('#tmdbCoverModal').modal('hide');" class="btn btn-primary">Use This Image</div>
+    <div onclick="$('#cover_image_url').val('{{ for_download }}');$('#selected_image').val('{{ for_download }}');$('#tmdbCoverModal').modal('hide');" class="btn btn-primary">Use This Image</div>
   </div>
 </div>
 </script>{% endraw %}

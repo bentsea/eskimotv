@@ -1,7 +1,7 @@
 from flask import Blueprint
 
 admin = Blueprint('admin',__name__)
-from . import views, errors
+from . import views, errors, forms, files
 from ..models import Permission
 
 @admin.app_context_processor

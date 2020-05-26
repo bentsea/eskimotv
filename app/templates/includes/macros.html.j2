@@ -16,35 +16,6 @@
 </ul>
 {% endmacro %}
 
-{% macro article_form(wtf,form,article) %}
-<div class="">
-  <form class="form form-horizontal" method="post" role="form">
-    <div class="row">
-      <div class="col-md-12">
-        {{ form.hidden_tag() }}
-        {{ wtf.form_errors(form, hiddens="only") }}
-
-        {{ wtf.form_field(form.title)}}
-        {% if article.published and not current_user.can(Permission.PUBLISH) %}<span data-toggle="tooltip" title="Only a Publisher may modify tags on a published article. Please contact a publisher for assistance.">{{ wtf.form_field(form.tags_selector, disabled=True) }}</span>{% else %}{{ wtf.form_field(form.tags_selector) }}{% endif %}
-        {{ wtf.form_field(form.body) }}
-        {{ wtf.form_field(form.publish_date) }}
-      </div>
-      <div class="col-md-12">
-        <div class="float-left">
-          <a href="#" class="btn btn-secondary">Select Subject</a>
-        </div>
-        <div class="float-right">
-          {{ wtf.form_field(form.submit, class="btn btn-primary") }}
-          {{ wtf.form_field(form.save_draft, class="btn btn-secondary") }}
-          <a href="{{ article.url }}" class="btn btn-danger">Cancel</a>
-          {% if article.published %}<a href="{{ url_for('admin.unpublish',article_id=article.id) }}" class="btn btn-warning">Un-Publish</a>{% endif %}
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
-{% endmacro %}
-
 {% macro media(type,src) %}
 {% if type == "youtube" %}<div class="videoWrapper"><iframe width="853" height="480" src="https://www.youtube.com/embed/{{ src }}{% if kwargs.get('feature') %}?&autoplay=1{% endif %}" allowfullscreen></iframe></div>{% elif type == "img" %}{% if kwargs.get('style') == "non-standard" %}<div style="margin:10px 0px 15px 0px;text-align:center;font-size:small;color:{{ CONFIG.secondary_color1 }};background:{{ CONFIG.light_color1 }};"><div><img src="{{ src }}" alt="{{ kwargs.get('title') }}" title="{{ kwargs.get('title') }}" style="max-height:35vh;vertical-align:middle;padding:5px 5px 2px 5px;"></div><div>{% if kwargs.get('caption') %}<i>{{ kwargs.get('caption') }}</i>{% endif %}</div></div>{% else %}<div style="font-size:small;text-align:center;margin:10px 0px 15px 0px;"><img class="img-responsive" style="width:100%;padding: 0px 0px 2px 0px;" src="{{ src }}" alt="{{ kwargs.get('title') }}" title="{{ kwargs.get('title') }}">{% if kwargs.get('caption') %}<i>{{ kwargs.get('caption') }}</i>{% endif %}</div>{% endif %}{% endif %}
 {% endmacro %}

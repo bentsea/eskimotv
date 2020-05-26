@@ -26,10 +26,11 @@ def index():
         per_page=current_app.config['ESKIMOTV_ARTICLES_PER_PAGE'],
         error_out=False)
 
-    articles = pagination.items
+    # articles = pagination.items
+    articles = [article for article in Article.query.all()[:30] if article.published]
     all_articles={}
     for type in ArticleType.query.all():
-        all_articles[type.name] = type.articles.filter_by(published=True).order_by(Article.publish_date.desc()).all()
+        all_articles[type.name] = [ article for article in type.articles.order_by(Article.publish_date.desc()).all()[:15] if article.published]
     return render_template('main/home.html.j2',articles=articles,all_articles=all_articles,pagination=pagination,time=datetime.utcnow())
 
 @main.route('/articles/<string:title_slug>')

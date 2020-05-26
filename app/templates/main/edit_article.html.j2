@@ -8,7 +8,163 @@
 
 {% block page_content %}
 {% if current_user == article.author or current_user.can(Permission.EDIT) %}
-{{ macros.article_form(wtf,form,article=article) }}
+<div class="">
+  <form class="form form-horizontal" method="post" role="form">
+    <div class="row">
+      <div class="col-md-12">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_errors(form, hiddens="only") }}
+
+        {{ wtf.form_field(form.title) }}
+        {{ wtf.form_field(form.blurb) }}
+        {% if article.type.name == "Review" %}{{ wtf.form_field(form.rating,required=True,type="Number",min="0",max="100") }}{% endif %}
+        {% if article.published and not current_user.can(Permission.PUBLISH) %}<span data-toggle="tooltip" title="Only a Publisher may modify tags on a published article. Please contact a publisher for assistance.">{{ wtf.form_field(form.tags_selector, disabled=True) }}</span>{% else %}{{ wtf.form_field(form.tags_selector) }}{% endif %}
+        {{ wtf.form_field(form.body) }}
+        {{ wtf.form_field(form.publish_date) }}
+      </div>
+      <div class="col-md-12">
+        <div class="float-left">
+          <a href="#" data-toggle="modal" data-target="#subjectModal" class="btn btn-primary">Change Subject</a>
+          <a href="#" data-toggle="modal" data-target="#tmdbCoverModal" class="btn btn-primary">Change Image</a>
+        </div>
+        <div class="float-right">
+          {{ wtf.form_field(form.submit, class="btn btn-primary") }}
+          {{ wtf.form_field(form.save_draft, class="btn btn-success") }}
+          {% if article.published %}<a href="{{ url_for('admin.unpublish',article_id=article.id) }}" class="btn btn-warning">Un-Publish</a>{% endif %}
+          {% if (article.published and current_user.can(Permission.PUBLISH)) or (not article.published and current_user == article.author) %}<button type="button" data-toggle="modal" data-target="#deleteArticleModal" class="btn btn-danger">Delete</button>{% endif %}
+          <button type="button" data-toggle="modal" data-target="#exitEditorModal" class="btn btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exit Editor Modal -->
+    <div class="modal fade" id="exitEditorModal" tabindex="-1" role="dialog" aria-labelledby="exitEditorLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exitEditorLabel">Exit Editor?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <p>Discard unsaved changes and exit editor?</p>
+              </div>
+              <div class="col-sm-12">
+                <div class="float-right">
+                  <a href="{{ article.url }}" class="btn btn-danger">Quit Editor</a>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Nevermind</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirm Article Delete Modal -->
+    <div class="modal fade" id="deleteArticleModal" tabindex="-1" role="dialog" aria-labelledby="deleteArticleLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteArticleLabel">Delete <em>{{ article.title }}</em>?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <p>If you delete <em>{{ article.title }}</em>, then all data will be lost. This action cannot be undone. Are you sure you wish to continue?</p>
+              </div>
+              <div class="col-sm-12">
+                <div class="float-right">
+                  <a href="{{ url_for('admin.delete_article',article_id=article.id) }}" class="btn btn-danger">Delete</a>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Select TMDB Cover Modal -->
+    <div class="modal fade" id="tmdbCoverModal" tabindex="-1" role="dialog" aria-labelledby="tmdbCoverModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tmdbCoverModalLabel">Select Cover Image</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img class="card-img-top" src="{{ backdrop_path }}" alt="{{ backdrop_alt }}">
+              <div class="card-body">
+                <h5 class="card-title">Upload an Image File:</h5>
+                {{ wtf.form_field(form.cover_image_file) }}
+                <div class="btn btn-primary" onclick="(function(){if($('#cover_image_file').val()){$('#selected_image').val('Custom Image Upload');$('#tmdbCoverModal').modal('hide');}})();">Use for Cover</div>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{{ backdrop_path }}" alt="{{ backdrop_alt }}">
+              <div class="card-body">
+                <h5 class="card-title">Or Use an Online Image:</h5>
+                {{ wtf.form_field(form.cover_image_url) }}
+                <div class="btn btn-primary" onclick="$('#selected_image').val($('#cover_image_url').val());$('#tmdbCoverModal').modal('hide');">Use for Cover</div>
+              </div>
+            </div>
+            <h5>Or Select from the Images Below:</h5>
+            <div id="imageData"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search For Subject Modal -->
+    <div class="modal fade" id="subjectModal" tabindex="-1" role="dialog" aria-labelledby="subjectModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="subjectModalLabel">Search for Article Subject</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group  required"><label class="form-control-label" for="title">Subject Title:</label>
+                  <input class="form-control" id="subject_title_query" name="subject_title_query" type="text" value="">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group  required"><label class="form-control-label" for="title">Subject Year:</label>
+                  <input class="form-control" id="subject_year_query" name="subject_year_query" type="text" value="">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="btn btn-primary" onclick="re_search($('#subject_title_query').val(),$('#subject_year_query').val());">New Search</div>
+                <div class="btn btn-warning" onclick="$('#subject_selected').val('None');$('#subjectModal').modal('hide');">Do Not Use a Subject</div>
+              </div>
+            </div>
+            <div id="searchData"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
 {% else %}
 <p>You do not have permission to edit this article.</p>
 {% endif %}
@@ -17,6 +173,8 @@
 {{ super() }}
 <!-- include select2 -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+<!-- include mustache -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
 
 <!-- Initialize ckeditor -->
 {{ ckeditor.load(custom_url=url_for('static', filename='ckeditor/ckeditor.js')) }}
@@ -34,4 +192,112 @@ $.getJSON("{{ url_for('api.get_tags',article_id=article.id) }}",function(data,st
   });
 });
 </script>
+
+<!-- Subject selection logic -->
+{% raw %}<script id="search_results_template" type="text/template">
+<div class="card">
+  <img class="card-img-top" src="{{ backdrop_path }}" alt="{{ backdrop_alt }}" title="{{ backdrop_alt }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ media_type }}: {{ title }} ({{ year }})</h5>
+    <p class="card-text">{{ overview }}</p>
+    <div onclick="$('#title').val('{{ title }} ({{ year }})');$('#subject_title').val('{{ title }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Use For Subject and Article Title</div>
+    <div onclick="$('#subject_title').val('{{ title }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Only Use For Subject</div>
+  </div>
+</div>
+</script>{% endraw %}
+{% raw %}<script id="search_results_error_template" type="text/template">
+<div class="card">
+  <img class="card-img-top" src="{{ backdrop_path }}" alt="{{ backdrop_alt }}">
+  <div class="card-body">
+    <h5 class="card-title">Error: {{ error }}</h5>
+    <p class="card-text">{{ overview }}</p>
+  </div>
+</div>
+</script>{% endraw %}
+<script type="text/javascript">
+function search(data) {
+  $("#searchData").empty()
+  $.getJSON("{{ url_for('api.tmdb_search') }}",data,function(data,status,xhr){
+    var data = JSON.parse(data);
+    var template = $("#search_results_template").html();
+    var error_template = $("#search_results_error_template").html();
+
+    $.each(data,function(i,v){
+      if (v.hasOwnProperty("error")) {
+        $("#searchData").append(Mustache.render(error_template, v));
+        return false;
+      }
+
+      if(v.hasOwnProperty("release_date")) {
+        v.year = v.release_date.split('-')[0];
+      } else if (v.hasOwnProperty("first_air_date")) {
+        v.year = v.first_air_date.split('-')[0];
+      } else {
+        v.year = 'N/A';
+      }
+      if (v.backdrop_path == null) {
+        v.backdrop_alt = "No Backdrop Available.";
+        v.backdrop_path = "https://www.eskimotv.net/img/site-resource/logo-page.jpg";
+      } else if (v.hasOwnProperty("backdrop_path")) {
+        v.backdrop_alt = v.title + " backdrop";
+        v.backdrop_path = "https://image.tmdb.org/t/p/w342" + v.backdrop_path;
+      } else {
+        v.backdrop_alt = "No Backdrop Available.";
+        v.backdrop_path = "https://www.eskimotv.net/img/site-resource/logo-page.jpg";
+      }
+      if (v.hasOwnProperty("name")) {
+        v.title = v.name;
+      }
+      $("#searchData").append(Mustache.render(template, v));
+    });
+  });
+}
+function re_search (title,year) {
+  var data = {"title":title};
+  if (year != "") {
+    data.release_year = parseInt(year);
+  }
+  search(data);
+}
+$("#subjectModal").on('shown.bs.modal', function(){
+  var data = {"title":$("#subject_initial_title_query").val()};
+  $("#subject_title_query").val($("#subject_initial_title_query").val());
+  search(data);
+});
+</script>
+<!-- end Subject selection logic -->
+
+<!-- cover image selection logic -->
+{% raw %}<script id="image_results_template" type="text/template">
+<div class="card">
+  <img class="card-img-top" src="{{ thumb }}">
+  <div class="card-body">
+    <a target="_blank" href="{{ for_download }}" class="btn btn-primary">View Full Size</a>
+    <div onclick="$('#cover_image_url').val('{{ for_download }}');$('#selected_image').val('{{ for_download }}');$('#tmdbCoverModal').modal('hide');" class="btn btn-primary">Use This Image</div>
+  </div>
+</div>
+</script>{% endraw %}
+<script type="text/javascript">
+$("#tmdbCoverModal").on('shown.bs.modal', function(){
+  var search_data = {"media_type":$('#subject_type').val(),"id":$('#tmdb_id').val()}
+
+  $("#imageData").empty()
+  $.getJSON("{{ url_for('api.get_backdrops') }}",search_data,function(data,status,xhr) {
+    window.test_data = JSON.parse(data)
+    var data = JSON.parse(data);
+    var template = $("#image_results_template").html();
+
+    $.each(data, function(i,v) {
+
+      if (v.hasOwnProperty('file_path') && v.file_path != null) {
+        v.thumb = 'https://image.tmdb.org/t/p/w342' + v.file_path;
+        v.for_download = 'https://image.tmdb.org/t/p/original' + v.file_path;
+        $("#imageData").append(Mustache.render(template, v));
+      }
+
+    });
+  });
+});
+</script>
+<!-- end cover image selection logic -->
 {% endblock %}

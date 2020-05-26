@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired
-from wtforms import StringField, TextAreaField, BooleanField, SelectField, SubmitField, HiddenField, SelectMultipleField
+from wtforms import StringField, TextAreaField, BooleanField, SelectField, SubmitField, HiddenField, SelectMultipleField, IntegerField
 from wtforms.fields.html5 import DateTimeField
 from flask_ckeditor import CKEditorField
 from sqlalchemy import func
@@ -67,10 +67,16 @@ class EditProfileAdminForm(FlaskForm):
             raise ValidationError('Username already in use.')
 
 class ArticleForm(FlaskForm):
-    title = StringField('Title',validators=[DataRequired(),Length(1,128)])
+    title = StringField('Title:',validators=[DataRequired(),Length(1,128)])
+    blurb = StringField('Blurb:',validators=[DataRequired(),Length(1,128)])
     body = CKEditorField('Article Body:', validators=[DataRequired()])
     publish_date = DateTimeField('Update published date:')
     tags_selector = Select2MultipleField('Article Tags:',choices=[],validators=[DataRequired()])
+    cover_image_file = FileField('Use a Local File')
+    cover_image_url = StringField('Use an Image From Online',render_kw={"placeholder": "Image URL"})
+    tmdb_id = HiddenField('Subject ID')
+    subject_type = HiddenField('Subject Type')
+    rating = IntegerField('Rating (0-100):')
     submit = SubmitField('Publish')
     save_draft = SubmitField('Save Draft')
 
@@ -78,7 +84,6 @@ class NewArticle(FlaskForm):
     title = StringField('Article Title:',validators=[DataRequired(),Length(1,128)])
     article_type = SelectField('Article Type:', coerce=int)
     subject_title = HiddenField('Subject Title')
-    subject_image = HiddenField('Subject Image')
     tmdb_id = HiddenField('Subject ID')
     subject_type = HiddenField('Subject Type')
     #subject_selected is a field that must be set by JS to ensure that either a subject is selected or that the user has deliberately selected None.
