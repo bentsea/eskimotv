@@ -12,7 +12,7 @@
   </div>
 
   <div id="home-slider" class="owl-carousel">
-    {% for article in articles %}
+    {% for article in articles[:15] %}
     <div class="item">
       <a href="{{ article.url }}">
         <div class="slide-text">
@@ -28,7 +28,7 @@
   </div>
 
   <h2>Recent Reviews</h2>
-
+  
   <div class="row">
     {% for post in all_articles['Review'][:6] %}
     {{ render_template('includes/post-panel.html.j2',post=post) }}

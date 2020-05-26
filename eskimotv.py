@@ -1,7 +1,7 @@
 import os
 from app import create_app,db
 from flask_login import current_user
-from app.models import User,Role,Permission,CreativeWork,Article,ArticleType,Tags
+from app.models import User,Role,Permission,CreativeWork,Article,ArticleType,Tags,Person
 from flask_migrate import Migrate
 from datetime import datetime
 
@@ -10,7 +10,7 @@ migrate = Migrate(app,db,render_as_batch=True)
 
 @app.shell_context_processor
 def make_shell_context():
-    return dict(db=db, User=User, Role=Role, Permission=Permission, CreativeWork=CreativeWork, Article=Article,ArticleType=ArticleType,Tags=Tags)
+    return dict(db=db, User=User, Role=Role, Permission=Permission, CreativeWork=CreativeWork, Article=Article,ArticleType=ArticleType,Tags=Tags,Person=Person)
 
 @app.context_processor
 def inject_now():

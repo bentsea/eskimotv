@@ -6,12 +6,24 @@
 
 {% block page_content %}
 <div class="row">
+  {% if (article.published and current_user.can(Permission.PUBLISH)) or (not article.published and current_user.can(Permission.EDIT)) %}
+  <div class="col-lg-12">
+    <div class="card">
+      Publisher Options:
+      <a href="{{ url_for('admin.edit_article',id=article.id) }}" class="btn btn-primary">Edit Article</a>
+      <a href="{{ url_for('admin.unpublish',article_id=article.id) }}" class="btn btn-warning">Un-Publish</a>
+      {% if article.draft %}
+      <a class="btn btn-secondary" href="{{ url_for('admin.edit_article',id=article.id,edit='draft') }}">Resume Draft</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
   <div class="col-lg-8">
     <div class="post">
       <article class="post-content">
         <header class="post-header">
           <h2 class="post-title">{% if not article.published %}Draft Article: {% endif %}{% if article.youtube %}Video: {% endif %}{{ article.title }}</h2>
-          <p class="post-meta">{{ article.type.name | capitalize }} • {{ article.publish_date.strftime("%b %-d, %Y") }} • Author: <a href="{{ url_for('admin.profile', id = article.author.id) }}">{{ article.author.username }}</a></p>
+          <p class="post-meta">{{ article.type.name | capitalize }} • {{ article.publish_date.strftime("%b %-d, %Y") }} • Author: <a href="{{ url_for('main.profile', id = article.author.id) }}">{{ article.author.username }}</a></p>
           <p class="post-meta">{% for tag in article.tags %}<span class="badge badge-pill badge-secondary">{{ tag.name }}</span> {% endfor %}</p>
           {% include "includes/social-media.html" %}
         </header>
@@ -53,17 +65,4 @@
     </div>
   </div>
 </div>
-{% if current_user.can(Permission.EDIT) %}
-<div class="row">
-  <div class="col-md-12">
-    <div class="float-right">
-      {% if article.draft %}
-      <a class="btn btn-warning" href="{{ url_for('admin.discard_draft',id=article.id) }}">Discard Draft</a>
-      <a class="btn btn-secondary" href="{{ url_for('admin.edit_article',id=article.id,edit='draft') }}">Resume Draft</a>
-      {% endif %}
-      <a class="btn btn-primary" href="{{ url_for('admin.edit_article',id=article.id) }}">Edit Article{% if article.draft %} (Discard Draft){% endif %}</a>
-    </div>
-  </div>
-</div>
-{% endif %}
 {% endblock %}

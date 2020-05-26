@@ -47,11 +47,6 @@ def add_new_creative_work(tmdb_id,media_type):
                     db.session.rollback()
     return creative_work
 
-@admin.route('/user/<id>')
-def profile(id):
-    user = User.query.filter_by(id=id).first()
-    articles = user.articles.order_by(Article.publish_date.desc()).all()
-    return render_template('main/user.html.j2',user=user, articles=articles)
 
 @admin.route('/edit-profile',methods=['GET','POST'])
 @login_required
@@ -238,7 +233,7 @@ def discard_draft():
         flash("You don't have permission to discard this user's drafts.")
         return redirect(url_for('main.article',title_slug=article.title_slug))
 
-@admin.route('/unpublish_article', methods=["GET","POST"])
+@admin.route('/unpublish_article')
 @login_required
 def unpublish():
     article_id = request.values.get('article_id')
@@ -254,7 +249,7 @@ def unpublish():
         flash('Your activity has been reported.')
         return redirect(url_for('main.index'))
 
-@admin.route('/delete_article', methods=["GET","POST"])
+@admin.route('/delete_article')
 @login_required
 def delete_article():
     def remove_from_database(article):

@@ -3,8 +3,8 @@
   {% if current_user == article.author or current_user.is_administrator() or article.published %}
     <li class="article">
       <div class="profile-thumbnail">
-        <a href="{{ url_for('admin.profile', id = article.author.id) }}">
-          <img class="img-rounded profile-thumbnail" src="{{ article.author.gravatar(size=40) }}" alt="{{ article.author.username }} Avatar">
+        <a href="{{ url_for('main.profile', id = article.author.id) }}">
+          <img class="rounded" src="{{ article.author.gravatar(size=40) }}" alt="{{ article.author.username }} Avatar">
         </a>
       </div>
       <div class="article-content">

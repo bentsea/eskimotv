@@ -1,5 +1,5 @@
 from datetime import datetime,date
-from flask import render_template, session, redirect, url_for, flash, request, current_app, abort
+from flask import render_template, session, redirect, url_for, flash, request, current_app, abort, make_response
 from . import main
 from .. import db
 from ..models import User,Role,Article,Permission,ArticleType,Tags,CreativeWork
@@ -39,3 +39,43 @@ def article(title_slug):
     if not article.published and not current_user.is_administrator() and not current_user.can(Permission.EDIT) and not current_user == article.author:
         abort(404)
     return render_template('main/article.html.j2',article=article)
+
+@main.route('/user/<id>')
+def profile(id):
+    user = User.query.filter_by(id=id).first()
+    def query_for_user():
+        if current_user == user:
+            return user.articles
+        else:
+            return user.articles.filter_by(is_published=True).filter(publish_date < datetime.now())
+    def query_for_requests_to_publish():
+        if current_user.can(Permission.PUBLISH):
+            return Article.query.filter_by(request_to_publish=True)
+        else:
+            abort(403,description="You don't have permission to publish.")
+    def query_for_all_unpublished():
+        if current_user.can(Permission.PUBLISH):
+            return Article.query.filter_by(is_published=False)
+    display_options = {
+        'none':query_for_user,
+        "waiting_for_publication":query_for_requests_to_publish,
+        "unpublished":query_for_all_unpublished
+    }
+    display = 'none'
+    if current_user.is_authenticated:
+        display = request.cookies.get('display','none')
+        if current_user.id != id and display == "followed":
+            display = 'none'
+    query = display_options[display]()
+    page = request.args.get('page',1,type=int)
+    pagination = query.order_by(Article.publish_date.desc()).paginate(page,
+        per_page=current_app.config['ESKIMOTV_ARTICLES_PER_PAGE'],
+        error_out=False)
+    articles = pagination.items
+    return render_template('main/user.html.j2',user=user, articles=articles,display=display)
+
+@main.route('/toggle_user_display')
+def toggle_user_display():
+    response = make_response(redirect(url_for('main.profile',id=request.args.get('user_id'))))
+    response.set_cookie('display',request.args.get('display','none'),max_age=30*24*60*60)
+    return response
