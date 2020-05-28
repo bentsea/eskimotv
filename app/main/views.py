@@ -22,12 +22,12 @@ def index():
     #         db.session.commit()
     #         return redirect(url_for('.index'))
     page = request.args.get('page',1,type=int)
-    pagination=Article.query.filter_by(published=True).order_by(Article.publish_date.desc()).paginate(page,
+    pagination=Article.query.order_by(Article.publish_date.desc()).paginate(page,
         per_page=current_app.config['ESKIMOTV_ARTICLES_PER_PAGE'],
         error_out=False)
 
     # articles = pagination.items
-    articles = [article for article in Article.query.all()[:30] if article.published]
+    articles = [article for article in Article.query.order_by(Article.publish_date.desc()).all()[:30] if article.published]
     all_articles={}
     for type in ArticleType.query.all():
         all_articles[type.name] = [ article for article in type.articles.order_by(Article.publish_date.desc()).all()[:15] if article.published]
