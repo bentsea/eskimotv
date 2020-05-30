@@ -28,7 +28,7 @@
   </div>
 
   <h2>Recent Reviews</h2>
-  
+
   <div class="row">
     {% for post in all_articles['Review'][:6] %}
     {{ render_template('includes/post-panel.html.j2',post=post) }}
@@ -56,7 +56,4 @@
 {#<div class="">
   {{ macros.pagination_widget(pagination, 'main.index') }}
 </div>#}
-{% endblock %}
-{% block js %}
-{{ super() }}
 {% endblock %}

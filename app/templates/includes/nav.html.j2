@@ -9,16 +9,22 @@
 
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item{% if request.url_rule.endpoint == 'main.index' %} active{% endif %}">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        <li class="nav-item{% if request.url_rule.endpoint == 'main.reviews' %} active{% endif %}">
+          <a class="nav-link" href="{{ url_for('main.reviews') }}">Reviews</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+        <li class="nav-item{% if request.url_rule.endpoint == 'main.editorials' %} active{% endif %}">
+          <a class="nav-link" href="{{ url_for('main.editorials') }}">Editorials</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item{% if request.url_rule.endpoint == 'main.news' %} active{% endif %}">
+          <a class="nav-link" href="{{ url_for('main.news') }}">News</a>
+        </li>
+        <li class="nav-item{% if request.url_rule.endpoint == 'main.archive' %} active{% endif %}">
+          <a class="nav-link" href="{{ url_for('main.archive') }}">Archive</a>
+        </li>
+        <li class="nav-item{% if request.url_rule.endpoint == 'main.about' %} active{% endif %}">
           <a class="nav-link" href="#">About</a>
         </li>
       </ul>

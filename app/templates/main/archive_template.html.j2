@@ -1,0 +1,35 @@
+{% extends "default.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "includes/macros.html.j2" as macros %}
+
+{% block title %}{{ super() }}: Reviews{% endblock %}
+
+{% block page_content %}
+<div class="home">
+
+  <h1 class="page-heading">Reviews{% if pagination %} - Page {{ pagination.page }} of {{ pagination.pages }}{% endif %}</h1>
+
+    <!-- BEGIN BLOG -->
+    <div class="row row-centered">
+        {% for post in articles %}
+        {{ render_template('includes/post-panel.html.j2',post=post) }}
+        {% endfor %}
+    </div>
+    <!-- END BLOG -->
+    <!-- BLOG NAVIGATION -->
+    {{ macros.pagination_widget(pagination, request.url_rule.endpoint) }}
+    {#<div class="row row-centered">
+        <div class="col-md-4 col-sm-6 col-centered">
+            <div class="btn-group btn-group-justified">
+                {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path }}" class="btn btn-primary">&lt; Newer</a>{% endif %}
+                <a href="/" class="btn btn-primary">Home</a>
+                {% if paginator.next_page %}<a href="{{ paginator.next_page_path }}" class="btn btn-primary">Older &gt;</a>{% else %}<a href="/archive/" class="btn btn-primary">Full Archive</a>{% endif %}
+            </div>
+        </div>
+    </div>#}
+    <!-- BLOG NAVIGATION -->
+
+  <p class="rss-subscribe">subscribe <a href="{{ url_for('main.rss_feed',_external=True) }}">via RSS</a></p>
+
+</div>
+{% endblock %}

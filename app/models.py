@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import func
+from sqlalchemy import func,and_
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask import current_app, request, render_template_string,url_for
@@ -300,7 +300,7 @@ class Article(db.Model):
             .filter(article_tags.c.tag_id.in_(sub_stmt))\
             .filter(article_tags.c.article_id==Article.id)\
             .group_by(Article.id)\
-            .order_by(func.count(article_tags.c.tag_id).desc()).order_by(Article.publish_date.desc()).all()
+            .order_by(func.count(article_tags.c.tag_id).desc()).order_by(Article.publish_date.desc()).filter(Article.publish_date <= datetime.utcnow(),Article.is_published==True).all()
 
         return [Article.query.get(article[0]) for article in query[:count]]
 
