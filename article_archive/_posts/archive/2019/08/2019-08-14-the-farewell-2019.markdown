@@ -1,0 +1,26 @@
+---
+title: "The Farewell (2019)"
+blurb: "Bring your Kleenix to this heartwarming feel good flick"
+categories: [review,movie,Comedy,Drama]
+image: /img/2019/08/the-farewell-2019-5-cover.jpg
+author: jasone
+youtube: 54IzdfgVlG8?t=47
+reviewInfo:
+   final-verdict: "Informative of Chinese customs, very dramatic, and surprisingly very comedic despite the heavy subject matter."
+   rating: 89
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "The Farewell"
+      sameAs: "https://www.themoviedb.org/movie/565310"
+      image: "https://image.tmdb.org/t/p/original/rYrFd9GfJWTtcwkqo3wL9srDHUe.jpg"
+      director: "Lulu Wang"
+      datePublished: "2019-07-12"
+published: True
+---
+ [Radio Review beings at 0:47]
+ 
+ Directed by Lulu Wang, The Farewell is about a Chinese family whose grandmother is diagnosed with cancer and has a short time left to live. Her immediate family decides not to tell her about this dark news. 
+ 
+ The Farewell is informative of Chinese customs, very dramatic, and surprisingly very comedic despite the heavy subject matter. The pacing can be slow at times despite it’s short 98 minute running time but I still recommend you check it out! Bring your Kleenix to this heartwarming feel good flick!
+

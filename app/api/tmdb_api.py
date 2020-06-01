@@ -105,11 +105,18 @@ def find_subjects(title='', release_year=None, language='en-US', data=None, medi
     else:
         return [result for result in results if item_release_date(result).find(release_year) != -1] or no_results
 
-def get_creative_work(tmdb_id,media_type):
+def get_creative_work(tmdb_id=None,media_type=None,imdb_id=None):
+    if not tmdb_id and not imdb_id:
+        raise Exception("No identifying ids were provided.")
     media_types = {'tv':'TVSeries','movie':'Movie'}
     subject_info = {'CreativeWork':{},'Person':[]}
     item = {}
     #print(movie_database_search_object)
+
+    if imdb_id:
+        data = {'api_key':apiKey,'language':'en-US','external_source':'imdb_id'}
+        media_type = 'movie'
+        tmdb_id = json.loads(requests.get(f"{url}find/{imdb_id}", params=data).text)['movie_results'][0]['id']
 
     auth={'api_key':apiKey}
     raw_info = json.loads(requests.get(url+media_type + '/' + str(tmdb_id), params=auth).text)
@@ -121,7 +128,10 @@ def get_creative_work(tmdb_id,media_type):
     #Movies and TV require the following: type,name(title), date_published(publish date for movies and first air date for tv),tmdb_id,same_as url, image, additional director info.
     item['type'] = media_type
     item['name'] = raw_info.get('title') or raw_info.get('name')
-    item['date_published'] = datetime.datetime.strptime((raw_info.get('release_date') or raw_info.get('first_air_date')), '%Y-%m-%d')
+    try:
+        item['date_published'] = datetime.datetime.strptime((raw_info.get('release_date') or raw_info.get('first_air_date')), '%Y-%m-%d')
+    except:
+        item['date_published'] = None
     item['tmdb_id'] = tmdb_id
     item['same_as'] = f"{site_url}/{media_type}/{raw_info['id']}"
     item['image'] = f"https://image.tmdb.org/t/p/original{raw_info['poster_path']}"

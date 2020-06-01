@@ -1,0 +1,43 @@
+---
+title: "Joker (2019)"
+blurb: "Not for everyone, but what it does right it does beter than anything else."
+categories: [review,movie,Crime,Thriller,Drama,Comic,Tragedy]
+image: /img/2019/10/joker-2019-14-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "A sad and painful ride through mental illness and isolation."
+   rating: 97
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Joker"
+      sameAs: "https://www.themoviedb.org/movie/475557"
+      image: "https://image.tmdb.org/t/p/original/lbGzEyESjANpOeD48aROlc3X7aa.jpg"
+      director: "Todd Phillips"
+      datePublished: "2019-10-04"
+published: True
+---
+
+
+The whole of *Joker* is summed in a single powerful image: a plain-faced, average-looking man bursting out with involuntary laughter, a hand clasped over his mouth, and sincere pain clearly visible behind his eyes. This poignant image appears early in the film to set the tone. *Joker* isn't for everyone. It's tragic, slow, and sad. This is a movie that is not meant to be enjoyed in a traditional sense, and I think that will be reflected when audiences see it.
+
+{% include media type="youtube" src="zAGVQLHvwOY" %}
+
+*Joker* is a mid 80s period piece that explores the origins of Batman's most iconic villain, The Joker (known as Arthur Fleck in the film and portrayed by Joaquin Phoenix). Historically, The Joker has not benefitted from having a fleshed-out origin story. Like a force of nature, having more in common with the horror of staring into the abyss than traditional comic book villainy, definition robs him of what makes him powerful. The Joker is terrifying because he is the void, and the void cannot have a shape. 
+
+However, writer/director Todd Phillips found something special in this character. The Joker is neither the hero nor the villain. He is a victim of mental illness. In reality, *Joker* is less an origin story for The Joker than it is a meticulous exploration of madness born from pain and uncertainty. What sets it apart from similar films is how successfully it disentangles that madness from the underlying mental illness that is at its heart. 
+
+While the exploration of the mingling of mental illness with poverty, abuse, and neglect as a powderkeg of emotion and violence works, some of the metaphors are a little too on-the-nose. Todd Philips uses world-building to parallel the explosion of Arthur Fleck's life. The story dives headfirst into the ways that society fetishizes mental illness even as it ostracizes the mentally ill. The crowds make a symbol out of a man who is dying on the inside and who has lost his way.  It may be a little over blunt in how it tells the audience that The Joker is not to be emulated, while it could never possibly be blunt enough to hit the people who need to understand this the most. 
+
+Todd Phillips does his best world-building in the areas that reflect the troubles of Arthur Fleck in those of everyone else. He captures some real-life feelings of disenfranchisement in a world that cares more about the rich than it does about justice. Helplessness is everywhere. Similar to how everyday people both obsess over madness even as they revile those who struggle with disability, so too are the poor both constantly the focus of the wealthy even as they are dismissed in any meaningful capacity. It's stunning how well the story and world-building tie these ideas together.
+
+I was deeply worried when I went into the film that The Joker would be portrayed as a misunderstood vessel for the world's poison as a setup to justify his inevitable lashing out at everything and everyone around him... but he's not. Joaquin Phoenix portrays a man who is loved but doesn't know how to process that love. A man helpless in a world where he cannot tell what is real and what is fake. His own body betrays him, his laughter the condition of a neurological illness that is no more bound to how he feels than a cramp to anyone else. And it is constant and disruptive in his daily interactions. He's frustrated and isolated by the failures of the people around him and he is falling apart as every support in his life crumbles away.
+
+Though Todd Phillips has given The Joker an origin story, he has maintained him as a force of nature. Arthur Fleck is what happens when we fail, and we are failing all the time. He is the inevitable result of when we fail each other. He is a call for compassion and love in all of the places where we fail to share it. That is the greatest strength of what the cast and crew have created here. 
+
+I speak so glowingly of this film because *Joker* resonated with me. I do need to talk about its flaws, though, because they are present. *Joker* is not perfect. By far the biggest issue is the ending. Thematically, it fails to deliver on the promises the film makes and turns into a paint-by-number Batman movie. I don't know how Todd Phillips could have ended it, though. The problem with the depth of material that is addressed through most of the story is that it doesn't have a satisfying ending. While the ending is disappointing, it doesn't feel like it fails to satisfy in a deliberate way. It could possibly have ended more abruptly and been a bit better. 
+
+While I think real fans of The Joker and the best stories about his character will get it, there are a lot of people who want an entertaining comic book movie. Or a horror movie they can feel good about afterward. Or they want something like *Venom* that they can identify with. You know who you are and I appreciate you and your tastes, so I do not mean this in a dismissive way, but if you need any of those things... you aren't going to get them here. It's an uncomfortable, sad, and introspective ride with only a few exclamation points of violence. This is the type of movie that tries to make you feel bad for the things you want out of your movies.
+
+At the end of the day, though outstandingly constructed, beautiful acted, insightful, and powerful, I believe *Joker* is going to be a divisive film. I love it, and it is beautifully crafted. But I like movies that make me feel like crap from time to time, so it was right up my alley. 

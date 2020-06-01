@@ -68,33 +68,30 @@ class EditProfileAdminForm(FlaskForm):
 
 class ArticleForm(FlaskForm):
     title = StringField('Title:',validators=[DataRequired(),Length(1,128)])
-    blurb = StringField('Blurb:',validators=[DataRequired(),Length(1,128)])
-    body = CKEditorField('Article Body:', validators=[DataRequired()])
+    blurb = StringField('Blurb:',validators=[Length(0,128)])
+    body = CKEditorField('Article Body:')
     publish_date = DateTimeField('Update published date:')
     tags_selector = Select2MultipleField('Article Tags:',choices=[],validators=[DataRequired()])
-    cover_image_file = FileField('Use a Local File')
-    cover_image_url = StringField('Use an Image From Online',render_kw={"placeholder": "Image URL"})
+    cover_image_file = FileField('Use a Local File:')
+    cover_image_url = StringField('Use an Image From Online:',render_kw={"placeholder": "Image URL"})
+    #subject_selected is a field that must be set by JS to indicate if the subject has changed.
+    subject_selected = HiddenField('Subject Selected')
     tmdb_id = HiddenField('Subject ID')
     subject_type = HiddenField('Subject Type')
     rating = IntegerField('Rating (0-100):')
+    final_verdict = StringField('Final Verdict:')
     submit = SubmitField('Publish')
     save_draft = SubmitField('Save Draft')
 
-class NewArticle(FlaskForm):
-    title = StringField('Article Title:',validators=[DataRequired(),Length(1,128)])
+class NewArticle(ArticleForm):
     article_type = SelectField('Article Type:', coerce=int)
     subject_title = HiddenField('Subject Title')
-    tmdb_id = HiddenField('Subject ID')
-    subject_type = HiddenField('Subject Type')
     #subject_selected is a field that must be set by JS to ensure that either a subject is selected or that the user has deliberately selected None.
     subject_selected = HiddenField('Subject Selected',validators=[DataRequired()])
     #Dummy text field to indicate whether or not an image has been selected yet.
     selected_image = StringField('Selected Image:')
     #Dummy text field to indicate search information for a subject.
     subject_initial_title_query = StringField('Subject Title:')
-    tags_selector = Select2MultipleField('Article Tags:',validators=[DataRequired()])
-    cover_image_file = FileField('Use a Local File')
-    cover_image_url = StringField('Use an Image From Online',render_kw={"placeholder": "Image URL"})
     create_draft = SubmitField('Create Draft')
 
     def __init__(self, *args, **kwargs):

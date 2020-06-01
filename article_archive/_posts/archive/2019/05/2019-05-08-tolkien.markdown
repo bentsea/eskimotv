@@ -1,0 +1,37 @@
+---
+author: jasone
+blurb: An informatively unengaging factual narrative
+categories:
+- review
+- movie
+- Drama
+date: 2019-05-08 9:00 AM
+image: /img/2019/05/tolkien-2-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: There’s nothing super extraordinary that happens to inspire an indifferent
+    audience member to become emotionally invested in the calm phlegmatic story.
+  rating: 70
+subjectInfo:
+  about:
+    dateCreated: '2019-05-03'
+    director: Dome Karukoski
+    image: https://image.tmdb.org/t/p/original/5ElXRKi773koW0mAnRjpNTpgZXZ.jpg
+    name: Tolkien
+    sameAs: http://www.imdb.com/title/tt3361792
+  type: movie
+title: Tolkien (2019)
+youtube: vPoy27w5ZoM
+---
+
+Tolkien, directed by Dome Karukoski, is an average biopic that is sure to bore you to death if you’re not already eager to go in and want to learn about The Hobbit and The Lord of the Rings author, J.R.R. Tolkien.
+
+The film follows John Ronald Reuel Tolkien, (Nicholas Holt) and shows us a glimpse into this author’s past friendships, schooling, love of languages, and his romantic interest, Edith Bratt (Lily Collins).
+
+Karukoski knows how to film a beautiful movie that truly feels like it took place during the World War I Era. There’s no Starbucks cups that make their way on this set. The acting is well done, as Holt and Collins carry the film and are brilliant actors who have good chemistry with each other. 
+
+The main reason why I dislike Tolkien is because the film covers so many different facets of this author's life, and none of those aspects did anything to engage or intrigue me. If this was a movie about J.K. Rowling, an author who I already personally adore, I’ll admit that I might have enjoyed something like this slightly more. As someone who did not care for the content, it did nothing to draw me in. There’s nothing super extraordinary that happens to inspire an indifferent audience member to become emotionally invested in the calm phlegmatic story. The film is targeted specifically to those audiences who are already curious about what Tolkien went through before becoming a famous author.
+
+If you get past the stoic premise and tune in, the film is effectively informative and you will learn a lot about Tolkien's past friendship and love for Edith. While it failed to entertain, it successfully educated and I could now go write a paper on Tolkien's life if instructed to do so. 
+
+I would have liked to see more interesting conflict. It could be argued that they couldn’t make anything up because it’s based on a true story. However, I would add that by keeping the story strictly informative, they sacrifice losing a large audience who may have enjoyed a more creative story. Although, they probably would have lost an audience who wanted exactly what this movie is- a factual narrative. If you want to know the true details of Tolkien’s life, this film will satisfy your desire to learn.

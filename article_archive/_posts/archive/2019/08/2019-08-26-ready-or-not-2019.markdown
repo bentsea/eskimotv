@@ -1,0 +1,22 @@
+---
+title: "Ready or Not (2019)"
+blurb: "Fun, unique, and entertaining!"
+categories: [review,movie,Horror,Comedy,Thriller]
+image: /img/2019/08/readyornotcover2.jpg
+author: jasone
+youtube: j-Vcci4pyA4
+reviewInfo:
+   final-verdict: "The ending is not too surprising, but the journey to get there is fun, unique, and entertaining!"
+   rating: 85
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Ready or Not"
+      sameAs: "https://www.themoviedb.org/movie/567609"
+      image: "https://image.tmdb.org/t/p/original/vOl6shtL0wknjaIs6JdKCpcHvg8.jpg"
+      director: "Matt Bettinelli-Olpin"
+      datePublished: "2019-08-21"
+published: True
+---
+
+Ready or not is a horror film starring Samara Weaving who is a newly wed named Grace. She’s told the night of her wedding she has to play a game with her in-laws if she wishes to become a part of the hard-to-please family. Eager to begin playing, the game quickly turns violent! Lots of people are going to enjoy Ready or not- the premise is intriguing, the acting is terrific, and is quick paced. While I typically prefer a full-on horror movie, comedy is mixed in undeniably well. This should please those who want some lighthearted moments to ease the tension. The ending is a bit underwhelming and not too surprising but the journey to get there is fun, unique, and entertaining. I give Ready or Not a B.

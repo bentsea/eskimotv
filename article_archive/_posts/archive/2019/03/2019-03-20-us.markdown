@@ -1,0 +1,41 @@
+---
+author: jasone
+blurb: 'A creepy fun film with a creative premise '
+categories:
+- review
+- movie
+- Thriller
+- Horror
+image: /img/2019/04/us-6-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: Us is a creepy fun film with a creative premise that goes in a direction
+    you won't expect.
+  rating: 85
+subjectInfo:
+  about:
+    dateCreated: '2019-03-14'
+    director: Jordan Peele
+    image: https://image.tmdb.org/t/p/original/ux2dU1jQ2ACIMShzB3yP93Udpzc.jpg
+    name: Us
+    sameAs: http://www.imdb.com/title/tt6857112
+  type: movie
+title: Us (2019)
+youtube: RLnlCOLWti8
+---
+
+**Review Transcript**
+
+Us is directed by Jordan Peele and stars Lupita Nyong'o and Winston Duke, who play a mother and father who take their kids on vacation. This getaway turns into a nightmare when they bump into strangers who look just like them.
+
+Us is a creepishly fun film with a creative premise that goes in a direction you won’t expect. I loved that I did not know what was going to happen and the ending, which I will not spoil, was a bit unsettling and makes you want to check out the film a second time. There’s a lot of information I think someone would learn looking at the movie through the lens of what we learn at the ending.
+
+How does Us stack up against Get Out? I definitely liked Get Out more but the two movies are very different. Us won’t live up to the Oscar-worthy praise that Get Out received but it is an above average horror film that is mostly entertaining to watch.
+
+Through music and an interesting story that feels very original, Jordan Peele masterfully creates a tension filled atmosphere. There’s moments where you’re eyes are transfixed on what you’re watching because you have no clue what is going to unfold. It is a bit creepy to imagine people that look just like you appear and as you begin to find out why they are there and what they want, it is a bit unnerving.
+
+There’s a little bit of comedy that also works in this film because of Winston’s Duke character. His ignorance of these look-alike characters had some laugh-out-loud moments.
+
+My big complaint about Us is there’s about 10-20 minutes of typical running around horror stuff that could’ve been cut out. There’s a sequence for each of the four family members that felt like I had seen it before. It felt like padding and I wanted to the movie to get to the point. If you’re a fan of these horror are-they-going-to-get-them eerie scenes, this may not bother you-- but I felt like it dragged for a bit longer than it needed to.
+
+Also, I did like the surprise ending but I am curious how it would’ve played out had we learned about it just a little bit earlier.

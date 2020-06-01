@@ -1,0 +1,24 @@
+---
+title: "Good Boys (2019)"
+blurb: "Hilarious, heartfelt, and fast-paced!"
+categories: [review,movie,Comedy]
+image: /img/2019/08/good-boys-2019-3-cover.jpg
+author: jasone
+youtube: wYZ9I-tliwo
+reviewInfo:
+   final-verdict: "Good Boys has likable characters who are genuinely ignorant as to what they are getting involved in which makes the experience hilarious to the informed audience!"
+   rating: 90
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Good Boys"
+      sameAs: "https://www.themoviedb.org/movie/521777"
+      image: "https://image.tmdb.org/t/p/original/jIthqo2tQmW8TFN1fYpF8FmVL0o.jpg"
+      director: "Gene Stupnitsky"
+      datePublished: "2019-08-16"
+published: True
+---
+Good Boys is the raunchy comedy starring tweens who are not allowed to watch their own movie. 12 year old Max played hilariously by Jacob Trombley is invited to his first kissing party. Max and his friends skip school and accidently get involved with drugs, adult toys, and older girls. 
+
+I was worried that this humor would be overly relying on the 3 main characters doing inappropriate things. Fortunately, these Good Boys are genuinely ignorant as to what they are getting involved in. The fact that they don’t realize what is happening is consistently amusing. The characters are likable. The humor can be a little repetitive but the 90 minute fast-paced run time is sure to keep the audience laughing in this humorous feel-good flick.
+

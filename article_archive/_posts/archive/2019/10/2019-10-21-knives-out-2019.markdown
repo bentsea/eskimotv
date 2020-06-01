@@ -1,0 +1,35 @@
+---
+title: "Knives Out (Fantastic Fest 2019)"
+blurb: "An enthralling mystery!"
+categories: [review,movie,Mystery,Thriller,Crime,Drama,Comedy]
+image: /img/2019/10/KnivesOut.jpg
+author: jasone
+youtube: 
+reviewInfo:
+   final-verdict: "Knives Out is a WhoDunIt thriller with an outstanding cast, an enthralling mystery, and it is directed/communicated exhilaratingly well. "
+   rating: 90
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Knives Out"
+      sameAs: "https://www.themoviedb.org/movie/546554"
+      image: "https://image.tmdb.org/t/p/original/t47INT1sSNiJwJHJqxxQ7Vt3DE9.jpg"
+      director: "Rian Johnson"
+      datePublished: "2019-11-27"
+published: True
+---
+The closing film at Fantastic Fest, *Knives Out*, comes from *Star Wars: The Last Jedi* director, Rian Johnson. It’s a WhoDunIt thriller with an outstanding cast, an enthralling mystery, and it is directed and communicated exhilaratingly well. 
+
+Financially successful author Harlan Thrombey, played by Christopher Plummer, has died inside  his ginormous victorian-style mansion on his 85th birthday. Daniel Craig plays detective Benoit Blanc, who is mysteriously tasked with trying to figure out *who* killed Mr. Thrombey and *why*. After family and friends are all interviewed, it is not clear as to who took their knife out that dreadful night, but it does seem like several people would of had a motive. *Knives Out* takes us on a thrilling journey that will have wild twists unfold until the very end!
+
+{% include media type="youtube" src="sL-9Khv7wa4" %}
+
+*Knives Out* will have you in wonder for a long time and there comes a point where you think you’ve figured out the mystery. Don’t get comfortable with any of your predictions because the movie floored me multiple times! There’s suspense in wondering who did it and thrills involving characters trying not to get caught doing something.
+
+I appreciated the film’s engaging clarity, as it is surprisingly very easy to follow all of the characters and subplots that this movie presents. One of my worries about going into a movie like *Knives Out*, where there is a large cast is the characters not getting any depth. *Murder on the Orrient Express* was also a whodunit that had a large cast and I didn’t like it very much. There’s so many characters that we barely scratch the surface with who they are and I had the fear that *Knives Out* would do the same thing. Fortunately, this film does a perfect job at quickly and interestingly establishing the entire ensemble cast. I like that with each character that gets interviewed by the police there’s a lower third title that gives every character’s name. This helped my terrible memory remember who all the characters were and, additionally, each has something unique and interesting about them. 
+
+*Knives Out* not only has a fantastic screenplay, but it also has a terrific cast! Toni Collete who I adored in Hereditary is in this. We have an Avenger, Chris Evans- he plays a big role during the last two acts of the film. Scream Queen, Jaime Lee Curtis, is intriguing to see as well. The small nuances like the expressions and vocal tone each actor brings make seeing their performance highly entertaining. Amongst the big group of actors, the standout is Ana de Armas, who is Mr. Thrombey’s caretaker, Marta. She hilariously can’t lie without vomiting and so this allows her to be a great resource for police who are trying to uncover what exactly happened to Mr. Thrombey. She carries a large portion of the plot and her sweet caring disposition balanced with determination makes her a likeable character to root for.
+
+The production design paired with good cinematography make Knives Out a beautiful film to look at. The Thrombey home is enormous and full of rich details in its architecture. Additionally, the screen is consistently filled with saturated colors that pop in every frame.
+
+*Knives Out* will hit theaters November 26th, Thanksgiving weekend! I highly recommend it! <a href="https://youtu.be/FFhWCWvTvwI">Click here to view a live Q&A with Director Rian Johnson (Spoilers may be referred to!)</a>

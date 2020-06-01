@@ -1,0 +1,37 @@
+---
+author: jasone
+blurb: Interestingly unusual and comedic.
+categories:
+- review
+- movie
+- Comedy
+date: 2019-05-02 01:00 PM
+image: /img/2019/05/long-shot-4-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: The contrast between the lead characters was interestingly unusual
+    and comedic.
+  rating: 80
+subjectInfo:
+  about:
+    dateCreated: '2019-02-08'
+    director: Jonathan Levine
+    image: https://image.tmdb.org/t/p/original/m2ttWZ8rMRwIMT7zA48Jo6mTkDS.jpg
+    name: Long Shot
+    sameAs: http://www.imdb.com/title/tt2139881
+  type: movie
+title: Long Shot (2019)
+youtube: IKzwzuZPGtQ
+---
+
+Review Transcript:
+
+The Long Shot is directed by Jonathan Levine and stars Seth Rogan as an uncompromisable and strongly opinionated journalist named Fred who begins dating his former babysitter Charlotte, played by Charlize Theron, who is running to be the President of the United States.
+
+The premise was as interesting as it sounds and I liked the contrast between the two main characters. They have interesting chemestry, they’re comedic, and unusual but it was all in the realm of things that could potentially happen.
+
+I didn’t find all the humor to mowork but I thought a good amount of it was decent and it held my attention as the film unravels.
+
+I also liked how the film presents the true problem that well-known people have of upholding a good public image. The beginning of the film shows Theron’s character being told that she is doing well in her public image overall but needs to work on her humor. As the plot unfolds, there’s certain decisions that she makes in order to avoid her public image being tainted.
+
+There is an unrealistic decision that some politicians make towards the end. It involves them blackmailing characters and it took me out of the story for a moment as it felt way too unrealistic, as blackmailing would ruin their public image as well.

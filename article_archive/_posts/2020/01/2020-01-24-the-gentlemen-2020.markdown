@@ -1,0 +1,35 @@
+---
+title: "The Gentlemen (2020)"
+blurb: "An evolution of style for a director who has been more miss than hit."
+categories: [review,movie,Action,Crime,Comedy]
+image: /img/2020/01/the-gentlemen-2020-3-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "A defining work of its genre and a classic."
+   rating: 92
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "The Gentlemen"
+      sameAs: "https://www.themoviedb.org/movie/522627"
+      image: "https://image.tmdb.org/t/p/original/n1GZYASUskyByP4OfpuHzXFbjY4.jpg"
+      director: "Guy Ritchie"
+      datePublished: "2020-01-01"
+published: True
+---
+
+
+*The Gentlemen* is an unrepentant delight to consume, almost to a fault as it sacrifices weight for pleasure. While Guy Ritchie could have reached for something a little more, the giddy energy here will have you alternating between holding your breath and giggling with joy.
+
+{% include media type="youtube" src="KlXsguV9g0E" %}
+
+We follow Mickey Pearson, a ruthless American businessman who has set up an unrivaled weed empire in the UK. Having reached a healthy age and being somewhat satisfied with his current wealth he has begun to lose his appetite for violence and mayhem. As the walls close in around his empire just as he's trying to move on to his next great adventure, we follow along with the brutal entanglements of criminal endeavors seasoned with distinct regional flare.
+
+Seeing Guy Ritchie not just return to form but also evolve his style is a welcome surprise. As a director who has been more hit than miss since he burst onto the scene with *Lock, Stock and Two Smoking Barrels* followed immediately by *Snatch*, two movies that promised a unique voice in cinema that Ritchie has not been delivering on.
+
+That said, *The Gentlemen* feels like a version of *Snatch* that achieves a stronger narrative voice while pulling the viewer into a more tightly woven plot. It's an evolution in style that reminds me of why I look forward to his movies. More than that, he works in absolute concert with a phenomenal cast. 
+
+Matthew McConaughey is a machine. He never turns off, every scene in every movie and TV show he is in he brings everything there is to give. Is he even human? Colin Farrell is a creative voice who takes risks with his character. Hugh Grant is more entertaining than he's been in years. Henry Golding blends bite with class. Michelle Dockery doesn't have nearly enough scenes given how chilling she is. Even Charlie Hunnam acts, probably more than I've ever seen before.
+
+My only disappointment was that Guy Ritchie pulls some punches along the way. I'd like to say that it holds *The Gentelmen* back from being a classic, but the reality is that the mix of energetic flavors delivers a film without peer. I just wish that it had been more perfect, and that feels trite when I say it out loud.

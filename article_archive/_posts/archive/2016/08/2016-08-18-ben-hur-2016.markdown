@@ -1,0 +1,45 @@
+---
+author: dscott
+blurb: A largely mediocre movie sprinkled with both excellent and awful moments.
+categories:
+- review
+- movie
+date: 2016-08-18 16:59:15
+image: /img/articles/ben-hur-2016/BenHur.jpg
+layout: post
+reviewInfo:
+  final-verdict: Don't bother going out of your way to see it, but it's watchable
+    and even has a few really good moments.
+  rating: 50
+subjectInfo:
+  about:
+    dateCreated: 11 Aug 2016
+    director: Mark Atkins
+    image: https://images-na.ssl-images-amazon.com/images/M/MV5BMzU3NjczNjQtYzBjMy00YTAxLTg0NzctZmVmMDY0MGE3Nzc2XkEyXkFqcGdeQXVyMjA3MjE1MzM@._V1_SX300.jpg
+    name: In the Name of Ben Hur
+    sameAs: https://www.imdb.com/title/tt5582876
+  type: Movie
+title: Ben Derp (2016)
+---
+
+<img class="img-responsive" style="float:right;margin-left:10px;" src="https://img.eskimotv.net/img/articles/ben-hur-2016/maxresdefault.jpg" alt="Article Image">
+
+The buzz surrounding 2016's Ben Hur was pretty bad, and I went in really looking for ways for it to disappoint me. I was pleasantly surprised by a pretty average film that was more frequently competent than bad, and with even a few moments that really shined. The movie builds up to the chariot race near the end as the climax, which works even though it sets it up with some clumsy exposition delivered by the most phoned in performance by Morgan Freeman I have ever seen.
+
+The exposition, though clumsy, communicates enough nuance that during the race, a fairly long action sequence, we still feel like the characters are making meaningful decisions. This is pretty important, because it's the difference between an action scene that pauses the film and an action scene that moves the story forward and is a part of the story. We see so much of the former that Ben Hur deserves a lot of credit for delivering the latter.
+
+Immediately after the race the movie manages even to show really interesting insight into the nature of what is happening, cleverly overturning the understanding of what is happening for the audience. It is a surprise and a breathe of fresh air that is maybe all the more fresh for the otherwise by the numbers movie.
+
+<img class="img-responsive" style="float:left;margin-right:10px;" src="https://img.eskimotv.net/img/articles/ben-hur-2016/ben_hur_ver8.jpg" alt="Article Image">
+
+With that said, outside of those moments the movie has a lot of stumbles. It frequently stops the story progression to observe strangely framed depictions of Christ during some of his most iconic biblical moments, commenting on how majestic he is. Maybe this works more if you can buy into the performance of Rodrigo Santoro, but he didn't sell it well enough for me. It felt forced and stilted and while it was clearly intended to frame the narrative of Ben Hur, it grinds it to a halt instead.
+
+It's really interesting how this rendition of the story isn't afraid to just stop and tell you how you're supposed to feel, when really it should be showing us how to feel. This particularly fails when the narrative of how we should feel contradicts the underlying movement of the plot. When a character miraculously gets everything they want and triumphs in all of their endeavors, but then gets to fix the hollow feeling inside from an empty victory with an apology and forgiveness, it doesn't work. That character arc comes at no cost when they get absolutely everything they want.
+
+<img class="img-responsive" style="float:right;margin-left:10px;" src="https://img.eskimotv.net/img/articles/ben-hur-2016/ben-hur-looks-more-like-jesus-than-jesus.jpg" alt="Article Image">
+
+Those detached messages are probably the worst part of the film, though it certainly isn't the first movie to confuse what it needs to show you with what it needs to tell you. With the exception of Morgan Freeman, most of the other actors deliver competent performances, even if they're not good enough to sell you on the events of the movie overall. This is more a failing of direction for the film.
+
+Musically and visually the film is unremarkable, with neither particularly servicing the overall plot. There's better of both in better movies. They're both serviceable, but they don't amaze. And, that's not particularly bad, but why remake this movie to just put average special effects and visuals into it?
+
+Unless you absolutely have to see another depiction of the crucifixion, don't go out of your way to see this movie. What it does well does not outweigh what it does poorly and overall feels very bland. If you're ever stuck with nothing else to do and nothing better to watch, it'll do in a pinch, and you may even find it surprisingly enjoyable for a few moments, or potentially religiously edifying, but overall it wont satisfy.

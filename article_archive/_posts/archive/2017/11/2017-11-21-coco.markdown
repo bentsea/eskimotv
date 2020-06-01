@@ -1,0 +1,39 @@
+---
+author: dscott
+blurb: Pixar continues to pioneer animation that is technically beautiful as well
+  as evolve their emotional storytelling.
+categories:
+- review
+- movie
+- Family
+- Animation
+- Adventure
+image: /img/2017/11/coco-cover.jpg
+reviewInfo:
+  final-verdict: 'A must-see film that is a highlight of the already impressive Pixar
+    collection. '
+  rating: 95
+subjectInfo:
+  about:
+    dateCreated: '2017-10-27'
+    director: Lee Unkrich
+    image: https://image.tmdb.org/t/p/original/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg
+    name: Coco
+    sameAs: http://www.imdb.com/title/tt2380307
+  type: Movie
+title: Coco (2017)
+---
+
+Pixar has always lead the way in modern animation with a library that contains some of the most beautiful and complicated works ever made. While they are continually improving their animation quality and visual style, *Coco* shows that they are also able to evolve their storytelling in refreshing directions. The result is technically beautiful artistic accomplishment that is satisfying on a deeply emotional level.
+
+I want to talk about the animation first because it is the highest quality element of the film. Disney's Pixar captures a gradient of colors as it moves from a warm portrait of life in Mexico to the imaginatively fantastical land of the dead. This is the most consistent arc in the film as the colors and locations shift with the tone of the narrative. When we first see the bright and colorful expanse of the land of the dead it is absolutely breathtaking. That beauty never quite lets up until the beauty of the story picks up where the visuals leave off.
+
+*Coco*'s story goes places that other films tend to avoid, and flesh out much more human needs. The basic plot of the film follows Miguel, a young man who is still learning who he wants to be. Miguel longs to make music despite being raised by a family who ideologically opposes the very idea of song and dance. This very ideological divide drives a deep wedge between Miguel and his family, resulting in his running away from home to pursue his music. 
+
+Many modern children's films would be content to explore the theme of following your dreams, but *Coco* has much more to say about the importance of family. Miguel's journey through the land of the dead as he pursues his dream has a dramatic shift in tone and direction that is refreshing. The opening of the movie feels so much like a by the numbers "follow your heart" narrative that you could be forgiven for being a little bored by it. Unfortunately, the major plot points require the opening acts to feel mundane in order to play off the expectations of the audience. This is a paradox that many creative movies struggle with when they have unique ideas that need to be built on a mundane foundation. 
+
+That mundane foundation is necessary to subvert expectations or to otherwise build up to something special, but the viewer has to get past that barrier to the meat of the story. Fortunately, Pixar has a wealth of humor and beautiful visual spectacles to keep you engaged while it forms the structure that it uses to deliver on its more complex ideas about family.
+
+Despite any blemishes in the narrative, the deeply emotional destination that *Coco* arrives at is absolutely worth the ride. Happy tears are hard to come by, but *Coco* reached into my heart and squeezed them out of me. I place a very high value on a movie that can draw on that level of depth and produce such a broad range of feelings.
+
+While *Coco* struggles a little bit with its early narrative, it's a visual masterpiece that lands with an intense emotional core. This is a must-see film that is a highlight of the already impressive Pixar collection.

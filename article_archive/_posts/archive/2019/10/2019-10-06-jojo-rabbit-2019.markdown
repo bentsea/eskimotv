@@ -1,0 +1,29 @@
+---
+title: "Jojo Rabbit (Fantastic Fest 2019)"
+blurb: "Satire that is not very comical or just went over my head"
+categories: [review,movie,Comedy,War]
+image: /img/2019/10/02Jojo.jpg
+author: jasone
+youtube: 
+reviewInfo:
+   final-verdict: "Jojo Rabbit features satire throughout the script that failed to make me laugh consistently."
+   rating: 75
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Jojo Rabbit"
+      sameAs: "https://www.themoviedb.org/movie/515001"
+      image: "https://image.tmdb.org/t/p/original/zIXJoYXc8ezMXc7DEaYii4XwIlS.jpg"
+      director: "Taika Waititi"
+      datePublished: "2019-10-18"
+published: True
+---
+*Jojo Rabbit* is directed by Taika Waititi and I got the chance to see it early at Fantastic Fest 2019 in Austin, Texas. Unfortunately, *Jojo Rabbit* features satire throughout the script that failed to make me laugh consistently. There’s several one liners that are so absurd that the only intention is clearly for comedy but I found several of these lines to be unamusing and some may find them to be offensive. Ultimately, the script’s mass amounts of dialogue was either unengaging or simply went way over my head (probably the latter). If you are passionate or at least well-versed with the World War II time period, you may enjoy the film more than I did. Outside of the comedy that mostly didn’t work for my humor taste, there is a message and some great character moments that were admirable.
+
+10 year old Jojo Betzler (Roman Griffin Davis) gets coined the nickname *Jojo Rabbit* when he is too scared to break a rabbit’s neck at his “Hail Hitler” youth camp. Rabbit’s only comfort is his imaginary friend who happens to be an over-the-top silly version of Adolf Hitler (Taika Waititi). Captain Klenzendorf (Sam Rockwell) tells the boys they will be learning “manly things,” like grenade launching and knife throwing during the camp. Jojo is perplexed when he one day learns that his mother Rosie (Scarlett Johansson) is hiding a young Jewish girl (Thomasin McKenzie) in their attic.
+
+The film is shot and edited competently well. Specifically, the color palette of warm dark reds, yellows, browns, and greens all pop, vibrarantly saturated. Despite the film looking pretty, I wonder if the film would have benefited from being shot on less-attractive grainy film since that style would more accurately reflect the time period. Nonetheless, the picture is always pleasant to look at, thanks to cinematographer Mihai Mălaimare Jr.
+
+A shocking situation like finding someone being hidden in your home is not as shocking as it would be if the film was taken more seriously. Because the film is silly and feels like anything can happen, I didn’t find this boy’s discovery to be intriguing. If Hitler can appear so real to our young protagonist then why should anything in the film surprise me? “It’s not supposed to surprise you- it was in the trailer,” someone may refute. Good point, but it’s a missed opportunity because had that been a focal point that was executed in a serious trajectory, I may have become more invested in that plot point.
+
+*Jojo Rabbit* lacks focus, as the young girl being hidden and the Hitler camp feel unrelated. Rebel Wilson is in this movie so her name can be on the poster. The best moments of the film are between Davis and McKenzie’s characters as the young actors have the most heartfelt dialogue, which eventually causes Jojo to take a look at many of his beliefs. The conclusion to the story is satisfying because the protagonist experiences a positive-fitting character arc, which had me smiling at the very end. However, the overall plot and the humor throughout was so dull that I can’t recommend you run out to see *Jojo Rabbit*, unless you are already oozing with passion to see World War II satire amidst a lighthearted story.

@@ -1,0 +1,46 @@
+---
+author: dscott
+blurb: Bonkers and beautiful, but with a downside.
+categories:
+- review
+- movie
+- Thriller
+- Drama
+- Boring
+- Pretentious
+- Science Fiction
+image: /img/2019/01/serenity-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: Pretentious to the point of being unwatchable.
+  rating: 60
+subjectInfo:
+  about:
+    dateCreated: '2019-01-24'
+    director: Steven Knight
+    image: https://image.tmdb.org/t/p/original/yly5msA0RAdeMlev39VMpZH4D65.jpg
+    name: Serenity
+    sameAs: http://www.imdb.com/title/tt6476140
+  type: Movie
+title: Serenity (2019)
+---
+
+Despite being drowned in narrative problems that make *Serenity* unpleasantly frustrating to watch, the totally bonkers premise wrapped in an astoundingly beautiful location is almost worth the experience. I hate that I have to start with the negatives for this review because the positive things I have to say are outstandingly glowing that if I put them first it will fail to emphasize how negative the overall experience is despite them.
+
+{% include media type="youtube" src="SbrOMrjhyvI" %}
+
+*Serenity*'s narrative suffers from 2 core flaws: it believes that the premise is WAY smarter than it is, and it believes that its audience is completely brain dead. I can understand how these sound similar, but these sins are in fact represent two clear forms of dissonance to the experience.  
+
+First, the absolutely bonkers story that *Serenity* is wrapped around plays directly to some of my personal tastes, so it should be a near perfect movie for me. Where the director stumbles is with how the plot unravels with a series of reveals that are doled out slowly over the runtime of the film. Early on the reveals are so clearly informative of what is happening that the pacing leaves the audience with a clear understanding of what is happening long before the film completes the process of exposing its inner workings. 
+
+That dissonant feeling of already knowing what's happening, but having the film play as though you shouldn't know what is happening leaves a salty taste of pretentiousness behind. I believe this is what will bother most viewers. Even if the ideas are vague enough that you are able to remain in the dark for the majority of the length of the film, the extent to which *Serenity*'s plot is drawn out will leave you confused and bored. 
+
+When you finally reach the end of the movie, though, it holds nothing back. Everything is spelled out in exposition. You're told in no uncertain words what happened, who everyone is, what will happen next, and why everything is the way it is. It's a completely separate fault of over explaining that dashes whatever remaining harmony remains against the rocks.
+
+And this is deeply tragic, because, as I said before, the premise is so bonkers that I was almost personally in love. In addition to the off-the-wall story, I also have to call out some of the outstanding use of cinematic language that director Steven Knight uses to communicate information before he starts beating you over the head with visual symbolism. This is visible in the use of surreal glints of light to draw your attention to details that are important later on when you look in the same place or information that is just on your peripheral but just off enough that you can read the details that flesh out the world in fascinating ways. 
+
+I cannot express enough that I eat this kind of thing up whenever I can. I adore subtle communication, metaphor, and wildly surprising ideas. Up until the execution, it was like this film was written *for* me. Unfortunately, execution is the perfect word for describing what the writer and director managed to do to undermine what would otherwise be an outstanding gem.
+
+The gorgeous scenery also demands a quick mention. Visually, I want to live inside this film. *Serenity* was shot on some of the most inviting beaches I have ever seen and it makes you want to be there. It makes you want to just dive into the water and swim in the sun. The entire cast sells the place, making it just feel so inviting despite all the turmoil around them. It adds to the best parts of the surrealism of the overall feeling.
+
+Everything inside me wants to recommend *Serenity*, but I just can't. If you are dearly in love with high concept ideas and can overlook damning implementation, then give it a try. Anyone else should just find the most beautiful Jacques Cousteau documentary they can to watch instead.

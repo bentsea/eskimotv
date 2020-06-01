@@ -1,0 +1,34 @@
+---
+title: "Joker (2019)"
+blurb: "Humanizes an iconic villain effectively!"
+categories: [review,movie,Crime,Thriller,Drama]
+image: /img/2019/10/joker-2019-9-cover.jpg
+author: jasone
+youtube: S_ThW_Rs80A
+reviewInfo:
+   final-verdict: "Joker is an effective slow burn that takes an iconic villain, humanizes him, and gives the audience an insight to mental illness."
+   rating: 90
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Joker"
+      sameAs: "https://www.themoviedb.org/movie/475557"
+      image: "https://image.tmdb.org/t/p/original/aLRa1MZJmJJClNtOEHAmfaOkcsV.jpg"
+      director: "Todd Phillips"
+      datePublished: "2019-10-04"
+published: True
+---
+
+Rating:	R (for strong bloody violence, disturbing behavior, language and brief sexual images)
+
+Genre:	Action & Adventure, Drama, Mystery & Suspense
+
+Directed By:	Todd Phillips
+
+Written By:	Todd Phillips, Scott Silver
+
+In Theaters:	Oct 4, 2019  Wide
+
+Runtime:	122 minutes
+
+Studio:	Warner Bros. Pictures

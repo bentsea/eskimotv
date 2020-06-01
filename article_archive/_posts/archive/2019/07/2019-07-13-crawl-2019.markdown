@@ -1,0 +1,23 @@
+---
+title: "Crawl (2019)"
+blurb: "Fast-paced and thrilling!"
+categories: [review,movie,Thriller,Action,Horror]
+image: /img/2019/07/crawl_cover_2.jpg
+author: jasone
+youtube: d3cIiSGJ-jo
+reviewInfo:
+   final-verdict: "A fast-paced thriller that, despite lacking character depth, has consistently entertaining sequences."
+   rating: 85
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Crawl"
+      sameAs: "https://www.themoviedb.org/movie/511987"
+      image: "https://image.tmdb.org/t/p/original/mKxpYRIrCZLxZjNqpocJ2RdQW8v.jpg"
+      director: "Alexandre Aja"
+      datePublished: "2019-07-11"
+published: True
+
+---
+
+

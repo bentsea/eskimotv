@@ -1,0 +1,39 @@
+---
+title: "The Two Popes (Austin Film Festival 2019)"
+blurb: "A beautiful exploration of forgiveness and morality."
+categories: [review,movie,Drama,AFF 2019,Religious,Comedy]
+image: /img/2019/10/the-two-popes-2019-0-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "A beautiful work of true religious drama that should be watched."
+   rating: 98
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "The Two Popes"
+      sameAs: "https://www.themoviedb.org/movie/551332"
+      image: "https://image.tmdb.org/t/p/original/4d4mTSfDIFIbUbMLUfaKodvxYXA.jpg"
+      director: "Fernando Meirelles"
+      datePublished: "2019-08-31"
+published: True
+---
+
+
+*The Two Popes* is a cathartic exploration of how our religious institutions can be better. Its writing talks about how healing is needed even after forgiveness is received. Being forgiven isn't enough, the wound must be treated. *The Two Popes* powerfully captures the catharsis of tremendous healing and the heavy burden required to treat those cuts.
+
+{% include media type="youtube" src="bOJbHP1TtsU" %}
+
+Director Fernando Meirelles and writer Anthony McCarten have delivered a personal film about the relationship between Pope Benedict XVI and the future Pope Francis. It zooms in on these two men as they discuss philosophy, morality, and football in the time leading up to the election of Pope Francis and the historic resignation of Pope Benedict. By pulling the audience in tightly between these two titans of ideology, it makes us a part of their conversation. The directing and writing deliver a level of intimacy that is moving and I felt the weight of their responsibilities and their guilt. It's hard to put a value on something that can convey that kind of emotion through such an elegant context.
+
+Religious fiction and dramatizations often fail at their core tenet: to ask questions about faith. Almost without fail, modern religious films server more as propaganda or cheerleading than as any sort of exploration of faith.  This is the major reason why I struggle so much with the genre. However, *The Two Popes* accepts that faith comes in many forms and that it cannot provide the right answers. 
+
+There's a careful balance to be had, though, because there are some calls to action here. Everyone fails, even the Pope. When the Pope fails the whole world struggles under the weight of that failure because the church has failed.  Over the past decades, the world has watched carefully as the church let down its flock in ways that don't really warrant repeating here. We hurt from those wounds and their impact has been felt the world over. As a person who cares deeply about morality, Pope Francis has championed reform in the church that makes the world a better place. He's spread hope and love in ways that move me.
+
+I can't be fair to this film, because it captured the part of me that craves a better world. I ache for the healing that is delivered here, and *The Two Popes* made me feel all of the emotions involved in that. 
+
+It's dry. I won't lie, this is just two guys talking about religion for an hour and a half. But it worked better for me than the most dramatic movie that attempted to deliberately make use of my emotions. It worked for me because it was so honest. 
+
+There are a lot of reasons why *The Two Popes* may not work for you. Maybe the simplicity will fail to capture your imagination. Maybe you're the type of person who cringes at the trappings of Christianity (though I would argue that the subject of the film is a deep morality that transcends religion). Maybe the ways it challenges faith don't make you feel as comfortable as other religious works. I'm not sure I can speak to you, and I hope you can forgive me for not being able to objectively discuss this film.
+
+I felt something meaningful, I laughed, and I cried. To me, that is the height of aspiration for all film. I can only hope that *The Two Popes* is for you what it is for me... beautiful. 

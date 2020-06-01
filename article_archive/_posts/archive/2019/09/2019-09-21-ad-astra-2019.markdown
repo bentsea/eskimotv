@@ -1,0 +1,22 @@
+---
+title: "Ad Astra (2019)"
+blurb: "Intriguing but slow!"
+categories: [review,movie,Thriller,Science Fiction,Adventure,Mystery,Drama]
+image: /img/2019/09/ad-astra-2019-4-cover.jpg
+author: jasone
+youtube: e-iH_Tga1x0
+reviewInfo:
+   final-verdict: "Intriguing premise and a great performance- but a slow moving plot that some may find difficult to trudge through."
+   rating: 80
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Ad Astra"
+      sameAs: "https://www.themoviedb.org/movie/419704"
+      image: "https://image.tmdb.org/t/p/original/6e1P7OVSQT4O2h6vnJiOj90s7gT.jpg"
+      director: "James Gray"
+      datePublished: "2019-09-20"
+published: True
+---
+
+Ad Astra is a mysterious sci-fi adventure directed by James Gray. It stars Brad Pitt who plays an astronaut who goes on a mission to find his lost father who was assumed to be dead for several years. The film has an intriguing premise and a great performance by Pitt whose emotions are often communicated nonverbally. The single flaw with Ad Astra is the pacing- it is a slow burn and so my ultimate verdict is that if you have patience this movie is worth a ticket; it does have a satisfying final act and our protagonist has a great arc. If you get bored easily and need the plot to move along quickly, you can skip Ad Astra. 

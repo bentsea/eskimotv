@@ -1,0 +1,43 @@
+---
+author: dscott
+blurb: A gripping and uncomfortable film that should be experienced if you can endure
+  it.
+categories:
+- review
+- movie
+- Action
+- Drama
+- History
+- Thriller
+- War
+image: /img/2017/07/dunkirk-cover.jpg
+reviewInfo:
+  final-verdict: A highly tense experience that may be too stressful, though it is
+    a landmark achievement in WWII films.
+  rating: 95
+subjectInfo:
+  about:
+    dateCreated: '2017-07-19'
+    director: Christopher Nolan
+    image: https://image.tmdb.org/t/p/original/cUqEgoP6kj8ykfNjJx3Tl5zHCcN.jpg
+    name: Dunkirk
+    sameAs: http://www.imdb.com/title/tt5013056
+  type: Movie
+title: Dunkirk (2017)
+---
+
+Writer/Director Christopher Nolan surprised me by working on a movie about the Battle of Dunkirk. The short and sweet story had me expecting a drama more focused on a fictional narrative. *Titanic* and *Saving Private Ryan* set the bar for historical dramas for the past 20 years. I was completely wrong. *Dunkirk* is an intense and unforgiving experience that can be punishing to endure. 
+
+One of the first areas which surprised me was the amount of dialog. The verbal communication in *Dunkirk* is so sparse that I never stopped expecting the story to "start". Words get handed out like precious gems, each one with a specific purpose and meaning. While minimalist, this lets Nolan focus on letting you feel the importance of each event. It's not only the dialog, either; every frame of the film feels important.
+
+Nolan uses the straightforward narrative of a well-catalogued series of events to flex his editing muscles. Even when the characters are silent, we know what they're thinking. By the time it's important, we know the weight of the dangers each character must choose between. Additionally, we know the cost of their possible choices. We experience their agency on the story through their eyes and the information they have. Then, we experience that agency through the fog of the noise surrounding the characters and an oppressive musical score.
+
+The score amplifies the tension of such a personal connection to the characters. Nolan challenges his audience with heart-pounding loud music set to subtextual acting. The tracks have moments filled with the ticking of time marching on as the tension ratchets up for the characters to make a decision. When we see a new choice that they have to make, we are shown the consequences of either choice.
+
+The cumulative result feels like someone looked at the beach scene in from *Saving Private Ryan* and said, "Why isn't this the whole movie?" It is physically stressful. I let out a sigh of relief when the credits rolled, and I hadn't even noticed I was holding my breath. A lot of people will find this too intense. 
+
+I cannot say that it is entirely positive that the movie is so intense. There is never a moment for you to catch up on an emotional level. This is an achievement, but maybe not one that improves the experience. You're struggling for survival with each character from beginning to end; then, when it's all over, you don't feel necessarily good about it. You feel ambiguous, as ambiguous as you can about the miraculous rescue of 300,000 lives.
+
+A third tier to the quality of this film is the performances that Nolan manages to get out of his cast. Both Cillian Murphy and Tom Hardy, regulars in the films of Christopher Nolan (and for good reason), disappear into their roles. These performances are reminiscent of the work of Gary Oldman, and that is high praise. Every single actor worked to serve the larger purpose of the film, and no performance felt weaker than the others. This is the quality of acting that is most noticeable for how much you don't notice it. Most viewers won't even think about the acting because it feels transparent.
+
+*Dunkirk* is a movie that should be experienced if you can handle it. There's something important here to talk about in how we enjoy our war films, particularly those featuring World War II. Ultimately, *Dunkirk* is the type of movie that brings this discussion out without shouting it. Be warned that it is gripping and uncomfortable, but it may be Christopher Nolan's greatest work of art.

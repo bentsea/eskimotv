@@ -1,0 +1,34 @@
+---
+title: "Fractured (2019)"
+blurb: "An emotionally tense film that will increase your dislike for hospitals!"
+categories: [review,movie,Thriller]
+image: /img/2019/10/fractured-2019-2-cover.jpg
+author: jasone
+youtube: 
+reviewInfo:
+   final-verdict: "Fractured is one of the most emotionally tense films of 2019, featuring an intriguing premise (although admittingly implausible) and a likable lead helmed by Sam Worthington."
+   rating: 90
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Fractured"
+      sameAs: "https://www.themoviedb.org/movie/568091"
+      image: "https://image.tmdb.org/t/p/original/paZNRffT3kUckuRFKbeDBuX1YcZ.jpg"
+      director: "Brad Anderson"
+      datePublished: "2019-09-22"
+published: True
+---
+
+*Fractured* is the latest installment from director Brad Anderson and it is a very thrilling experience that I highly recommend you stream on Netflix! Despite the fact that those who reflect on plausibility can easily tear this movie a part, I found *Fractured* to be one of the most emotionally tense films of 2019.
+
+{% include media type="youtube" src="sCimThZW-Ew" %}
+
+Sam Worthington plays husband and father Ray Monroe who one day has an existential crisis. While coming back from being out of town, Ray’s daughter Perri (Lucy Capri) hurts herself at a rest stop. Ray and his wife Joanne (Lily Rabe) rush themselves to the emergency room. After dealing with overly rude hospital staff and going through the drudgerous drawn out process of providing insurance information, everything seems like it’s about to work out. Joanne accompanies Perri for testing while Ray awaits them. Shockingly, Ray’s wife and daughter seemingly vanish. When asked about their whereabouts, the hospital has no idea who he is talking about. The film focuses on the husband trying to figure out what happened to his family and uncover what this hospital might have done with them.
+
+Sam Worthington’s performance and character are commendable. Prior to the film’s plot taking off, Brad Anderson meticulously displays the state of Ray’s life. Struggling with a rocky marriage and hearing his wife scold, “You’re not the same person that you used to be,” we are left with the impression that this man can’t catch a break despite genuinely caring for his family. Today’s not going to give him that break either. We feel for Ray because even before the vanishings take place, we understand that that this guy has already endured much stress and throughout the entire film you are wishing things can simply work out for him. This proves to be much harder than it seems and what made the twists and turns featured in the film more visceral is that I actually cared for Ray and wanted to see him win.
+
+*Fractured*'s tension-filled plot held my interest from beginning to end. After the vanishing occur, Ray convincingly does what any good father would do, trying his absolute best to prove that his wife and daughter were in fact at this hospital. While the performance can arguably be a bit over-the-top, I thought it was interesting to watch. Not to mention, it’s difficult to imagine how anyone would behave in this incredulous situation- with what Worthington is tasked with, I think he does an excellent job at having fun with the role. He slowly unravels, trying to keep himself composed, until he begins to believe that the hospital may have shady intentions. 
+
+For the entire rest of the film, we are left to wonder, “Did the hospital want something from his family? Or is our lead crazy?” The film drops hints along the entire way to make you second-guess your predictions. I have heard people argue that, “*Fractured* is a predictable thriller” and I would argue that I don’t think there’s any one hint that solidifies what you think the ending might be. Either that or I’m just stupid. I truly believed that the film did a great job at keeping me in suspense until the very last scene.
+
+Unfortunately, the ending itself is a bit of a mixed bag, but the journey to get to that final scene was so brilliantly crafted that I can still recommend going on this mysterious journey.

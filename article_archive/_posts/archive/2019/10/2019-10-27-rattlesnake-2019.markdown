@@ -1,0 +1,36 @@
+---
+title: "Rattlesnake (Austin Film Festival 2019)"
+blurb: "A fun 'what if' premise that doesn't know how to resolve."
+categories: [review,movie,Thriller,Drama,Mystery,Horror,AFF 2019]
+image: /img/2019/10/rattlesnake-cover-final.jpg
+author: jasone
+youtube: 
+reviewInfo:
+   final-verdict: "Rattlesnake tries its best to hold its entertaining setup but the bizarre premise mostly traps itself from ending in any type of a compelling manner."
+   rating: 79
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Rattlesnake"
+      sameAs: "https://www.themoviedb.org/movie/560362"
+      image: "https://image.tmdb.org/t/p/original/16VDPLzdszGhhjRSh4DA03mM372.jpg"
+      director: "Zak Hilditch"
+      datePublished: "2019-10-25"
+published: True
+---
+What would you do if you had to kill a stranger in order to save someone that you love? Could you? This is a situation you normally wouldn’t find yourself in and probably never will. However, it is an interesting, “what if” question to ponder. *Rattlesnake* director Zak Hilditch takes this demising dilema and weaves together an 85 minute fantasy narrative that has some intrigue but lacks surprises and innovation.
+
+Katrina (Carmen Ejogo) has to change her tire when her car breaks down in the middle of nowhere. Her young daughter Clara (Apollina Pratt) wanders and is bitten by a venomous snake. Unable to quickly get to the hospital, she accepts the help of a mysterious woman who heals her daughter miraculously! However, Katrina learns that if she wants her daughter to remain in good health she will have to take the life of another human being and she only has until sunset to complete this dreadful task.
+
+{% include media type="youtube" src="LhklHFwmBYw" %}
+
+I like Katrina; she is a good mother who cares for her daughter and the beginning of the film clearly demonstrates this. Clara is telling her mom about a conflict she had with another girl her age who was “making faces at her” and how this girl “deserved to be hurt”. Katrina, surprised by her daughter’s response, explains, “Clara, no one deserves to be hurt.” We see the positive beliefs that this mom holds and how she puts forth effort to instill these beliefs in her daughter, without having knowledge that she will soon have these beliefs put to the test regarding the person she cares about more than anyone.
+
+After learning who Katrina is and understanding that she is not the type of person who would want to hurt anyone, we see the unimaginable happen. The film has some effective tense scenes, where you wonder, “Is she going to kill that person?” Because we understand the type of person that Katrina is, we as an audience feel the conflict that she is feeling. “I have to do this. I have to do this,” she repeats to herself not wanting to take the life of another individual.
+
+These dilemmas do become stale after we realize there’s not many different directions that this premise can go; she’s either going to kill someone or she’s not. Aside from the interesting premise being setup, there is no compelling or surprising way to end it all.
+
+The production set of the hospital is not very impressive, especially after watching Netflix’s other hospital-placed thriller, *Fractured*. While most people won’t be bothered, I think that the set could've bit lit more ominously and that a darker color grade of blues and greens could’ve added more tension in some of these scenes.
+
+The film really struggles to conclude and because of that it puts it on the fence of, “Should I recommend *Rattlesnake* or not?” On the one hand you have an interesting premise and a likable lead; on the other hand, you have a film that gets bland in the third act and fails to conclude in a satisfying way. *Rattlesnake* may have been better as a 40 minute short. 
+Many people will be intrigued by the idea that Rattlesnake presents and then at best be mildly content with its climax. There’s no big surprises or big revelations that floored me. However, *Rattlesnake* tries its best to hold its entertaining setup but t the bizarre premise mostly traps itself from ending in any type of a compelling manner. A risk is attempted at the very end but it is convoluted, forced, and gave me the impression that the creators were really reaching for that cliffhanger clincher that this film needed to have a stronger bite.

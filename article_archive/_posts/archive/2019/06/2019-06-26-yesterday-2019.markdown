@@ -1,0 +1,22 @@
+---
+title: "Yesterday (2019)"
+blurb: "Hilarious character interactions and dialogue derived from a fun premise!"
+categories: [review,movie,Comedy,Music,Romance]
+image: /img/2019/06/yesterday-2019-0-cover.jpg
+author: jasone
+youtube: zV4xYVC4AOI
+reviewInfo:
+   final-verdict: "Hilarious character interactions and dialogue derived from a fun premise!"
+   rating: 85
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Yesterday"
+      sameAs: "https://www.themoviedb.org/movie/515195"
+      image: "https://image.tmdb.org/t/p/original/n71FcqNOrwtGsO5gvkWbE4IkOHz.jpg"
+      director: "Danny Boyle"
+      datePublished: "2019-06-27"
+published: True
+---
+
+

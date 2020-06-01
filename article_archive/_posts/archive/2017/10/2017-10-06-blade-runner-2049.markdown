@@ -1,0 +1,41 @@
+---
+author: dscott
+blurb: A complex work of fiction that compares favorably to the original and strives
+  to thoroughly explore its themes.
+categories:
+- review
+- movie
+- Science Fiction
+image: /img/2017/10/blade-runner-2049-cover.jpg
+reviewInfo:
+  final-verdict: Rich and thought provoking science fiction that is longer and slower
+    than its predecessor.
+  rating: 89
+subjectInfo:
+  about:
+    dateCreated: '2017-10-04'
+    director: Denis Villeneuve
+    image: https://image.tmdb.org/t/p/original/cbRQVCia0urtv5UGsVFTdqLDIRv.jpg
+    name: Blade Runner 2049
+    sameAs: http://www.imdb.com/title/tt1856101
+  type: Movie
+title: Blade Runner 2049 (2017)
+---
+
+I couldn't possibly have hoped for a sequel to such a complicated work as good as *Blade Runner 2049*. Both thoughtful and engaging, *Blade Runner 2049* explores ambitious directions. There will be a lot of debate about whether the subject is as complex as the original, but it provokes thought. By creating a work of art worth discussing, director Denis Villeneuve has created something great.
+
+What 2049 does best is capturing the atmosphere of the original. Villeneuve creates a world by spending time looking around showing us what it's like to live in it. I highly value a film that shows me information, rather than telling it to me. *Blade Runner* does this more often than not, and *2049* follows suit. We see a changed world and the way it has changed is fascinating. Watching *Blade Runner 2049* is an experience, and it feels like you could live there.
+
+Everything contributes to the sense of firmness to the setting. The cinematography, the actors, the music, architecture, and dialog blend beautifully into a place that it feels like you could live in. *Blade Runner 2049* never once breaks this realism. Long awaited sequels are often served with a wink and a nod. They lace their stories with jokes and cameos that break the immersion. This never happens once, here. The mood never breaks and consistently delivers something that can stand entirely on its own merits.
+
+At times, though, this works against the film. This willingness to explore the world may be too thoroughly indulged. It's one of the most memorable aspects of the original, but here the result is a bit over long. I say this with love, too. I like the original, and I like *2049*, but 30 minutes before the the end of the movie I was ready for them to wrap things up. Given my love of the material, and appreciation for the original, this is saying something. I don't know where I would have cut 30 minutes from this film, but it needed to be found somewhere. 
+
+A great deal of what works comes from the plot. I am not comfortable discussing specifics, as I feel the element of discovery contributes greatly to enjoyment. The writers have found some creative spaces with which to explore this breathtaking universe, and it has worked very well for them. There are flaws, but I think that the flaws in the plot are far less significant than the flaws in the pacing.
+
+Though I cannot say if it is better or worse, the music is not the same. It has the same beats, and has a bleakness that is reminiscent of its predecessor, but it lacks a certain mellow musical quality. I miss the light chimes and moments of tenderness. *2049* is lacking moments where these would work. At its best the soundtrack creates emotion in the negative space. The way the silence allows you to feel the mood of a scene palpably through the composition of each shot. 
+
+This sense  of complexity shows up a lot. There were quite a few moments where I was unsure of how to feel about what I was seeing. While watching a movie, I try to consider what each moment means, and how it contributes to the larger themes. I ultimately am not sure how good *Blade Runner 2049* will be considered after it endures the test of time, but for now it is deeply interesting.
+
+I think it's worth stating that this is a difficult movie to rate. The ending isn't necessarily satisfying, and it sometimes feels like it drags, but... it feels like *Blade Runner 2049* is exactly what it is supposed to be. On some level, I don't even know how something like this gets made. The original *Blade Runner* cut was famously interfered with and took decades before Ridley Scott was able to cut it into what it is today. For all the things that I didn't necessarily enjoy, this is a true thematic sequel that delivers on what its predecessor does best, and it is a work of real artistic vision that achieves profound beauty.
+
+If you like rich and thought-provoking science fiction, you should definitely see *Blade Runner 2049*. It's a beautifully crafted work of art of which every single frame is stunning. This film engages with you and plays with you as you explore its world and characters. I believe that it will be easy to spend hours debating what it means and how well it communicates its messages. Be warned, it's longer and slower than the original, but if you can get past that you'll find an important, though flawed, work of fiction that is well worth your attention.

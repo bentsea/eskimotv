@@ -1,0 +1,41 @@
+---
+author: dscott
+blurb: More than just another Freaky Friday clone!
+categories:
+- review
+- movie
+- Comedy
+- Fantasy
+image: /img/2019/04/little-0-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: A refreshingly thoughtful revision of the Freaky Friday concept and
+    a fun watch!
+  rating: 89
+subjectInfo:
+  about:
+    dateCreated: '2019-04-04'
+    director: Tina Gordon Chism
+    image: https://image.tmdb.org/t/p/original/cFOQL6x4pWigGDWWzkFq2yfrRZN.jpg
+    name: Little
+    sameAs: http://www.imdb.com/title/tt8085790
+  type: movie
+title: Little (2019)
+youtube: null
+---
+
+Obligatory pun: *Little* is a treat that packs big laughs into a small package. 
+
+{% include media type="youtube" src="Dk6jGQXx3o0" %}
+
+I kid, but *Little* is sincerely an early lead for the most entertaining comedy of the year. It's more than just funny, though, as *Little* has just a bit more going on than your average *Freaky Friday* clone. In *Little*, Jordan Sanders starts life as an idealistic warm-hearted little girl who has her hope bullied out of her. She takes that model of abuse and decides to grow up to be so big and mean that no one will be able to bully her as she will always bully them first. Sure enough, she allows this to shadow her entire life until she's reverted back into the body of a child and forced to relive her adolescent pain.
+
+This is a  refreshing take on body transformation as more than just a learning experience for the character, but rather a metaphor for the mental state that reflects the arrested development that Jordan has suffered from through her whole life. I walked out of the film reflecting on the ways that my childhood impacted who I am as an adult, and... that is pretty special. 
+
+The acting is what pushes *Little* over the top, though. Marsai Martin steals the show as 13-year-old Jordan Sanders. She struggles here and there with keeping the scene together; but, when it counts, she is hitting her delivery home. Her role is also sandwiched by some of the most fun I've ever seen Regina Hall have. She dives headfirst into the evil witch role and packs every scene with aggressive energy that is only possible with the type of playful fantasy that *Little* tries to be.
+
+It wouldn't be fair to highlight great performances without also talking about Issa Rae's turn as Jordan's assistant and co-star April Williams. She plays beat for beat off of both Marsai and Regina, pushing her scenes into some gut-busting laughs territory.
+
+The weakest elements of *Little* go hand in hand with its strengths. The story is a tiny bit thin and I was more than once bothered by the level of contrivance in the events that push the plot forward. There's definitely some lazy writing from time to time that I found to be distracting. It's hard to be too critical of this, though, given how fantastical the premise is. I mean, it's a movie about a woman who is magically transported into the body of a child, but... I'd say that it's a manner of when and how the story breaks apart. 
+
+Overall, *Little* is an outlandish comedy that has enough going on to stand out from other movies like it. The acting and writing delighted me and it's an easy film to recommend, definitely give this one a watch.

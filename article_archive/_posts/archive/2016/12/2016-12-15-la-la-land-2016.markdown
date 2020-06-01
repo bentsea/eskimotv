@@ -1,0 +1,41 @@
+---
+author: dscott
+blurb: Very nearly a perfect movie, and a must see. La La Land is the truly harmonious
+  joining of story telling with imagery.
+categories:
+- review
+- movie
+- Comedy
+- Drama
+- Musical
+image: /img/2016/12/la-la-land/la-la-land-cover.jpg
+layout: post
+reviewInfo:
+  final-verdict: A near perfect movie that must be seen.
+  rating: 95
+subjectInfo:
+  about:
+    dateCreated: 25 Dec 2016
+    director: Damien Chazelle
+    image: https://images-na.ssl-images-amazon.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_SX300.jpg
+    name: La La Land
+    sameAs: https://www.imdb.com/title/tt3783958
+  type: Movie
+title: La La Land (2016)
+---
+
+There is a very short list of movies in which every single element ties together to reinforce what the movie is about. I don't mean the plot, either. When you stand back and look at what the movie says, it hits hard and clear. At the same time, it's like inception, though. If it spells it out for you, if it just writes it down, and you read it, it doesn't work. The movie has to weave it into every fiber of the fabric of its existence. La La Land does this.
+
+La La Land is the story of two people balancing their dreams and passions against their ability to connect. Their search for meaning against the demands of life states that life is music. Specifically, life is jazz. It's conflict and resolution; musicians making something new every time you hear it. The affecting soundtrack, natural dialog, and metaphorical directing to deliver its message beautifully.
+
+Melodies recur throughout the feature in different patterns and arrangements. Common themes rise and fall with the story. They could stand on their own and you would know what is happening. Not because this is a musical, either. The music does more than highlight the themes, mood, and story. It tickled something inside me. A half forgotten tune buried where only my soul remembered it. The track City of Stars in particular haunted me long after I left the theater.
+
+Though the music is good enough to stand on its own, the writing jumps at you. Every word from both Ryan Gosling and Emma Stone feels honest and genuine, as though it comes from a place of truth. When they break into song, it feels as natural as any verbal exchange I've ever heard. That is rare for me, as musicals feel jarring in their transition from dialog to singing. Here it felt as natural as breathing.
+
+What stood out to me, though, was the directing. The composition blends together music, dialog, and even the physical space to communicate. Metaphors weave into every frame, tied together by the dialog and cinched tight by the music. It blew my mind when I realized that even the sound effects were being used to drive home what I was watching. Every whisper of background noise is part of the composition. Every piece of furniture is an essential piece of how you feel about the scene.
+
+And it's about more than how the scene construction is. The writer and director, Damien Chazelle, is playful in his use of light, shadow, and color. He isolates figures with grace, illuminates the plot with skill, and plays with a look and feel that is a breathtaking gust of fresh air.
+
+If I were to level any criticism at La La Land, it would be at the pieces of music that lack clarity and a memorable rhythm. Also, a few bits of dialog rely on direct exposition to setup background for the characters. These are minor. They may be intentional incorporation of aspects of jazz, but they're there. I almost want to apologize for noticing these imperfections, and imagine them as part of the artistry that completes the picture.
+
+In the end, La La Land is a near perfect movie. It will last for decades to come as an example of what the medium is capable of. It touched my heart and woke up everything inside of me that makes me human. It reached me with laughter, love, and even a tinge of sadness. La La Land is a must watch.

@@ -1,0 +1,36 @@
+---
+title: "Frozen II (2019) an Alternate Opinion"
+blurb: "I'm not mad... I'm just disappointed."
+categories: [review,movie,Adventure,Animation,Comedy,Family,Fantasy,Music]
+image: /img/2019/11/frozen-ii-2019-5-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "A sequel that fails anything but the most skin deep appraisal."
+   rating: 55
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Frozen II"
+      sameAs: "https://www.themoviedb.org/movie/330457"
+      image: "https://image.tmdb.org/t/p/original/qdfARIhgpgZOBh3vfNhWS4hmSo3.jpg"
+      director: "Chris Buck"
+      datePublished: "2019-11-20"
+published: True
+---
+
+
+Disney has produced a sequel to one of its most popular franchises filled with iconic imagery, hauntingly beautiful music, and light-hearted humor despite having one of the most garbage stories I've ever seen. If your only metric is whether or not you're entertained while watching it, *Frozen 2: Frozen Harder* will meet those expectations. However, by any other measure, the film completely fails.
+
+{% include media type="youtube" src="Zi4LMpSDccc" %}
+
+In *Frozen 2: A Cold Day to Let it Go*, Elsa and Anna have found a sense of normalcy in their lives after the events of the first movie. However, Elsa has begun to hear a siren's call that tugs at her heart and reminds her of stories her parents shared about a far off place filled with native people who communed with the spirits of wind, fire, water, and earth. When this call pulls her from her bed in the middle of the night, Elsa finds the spirits from that far off enchanted wood have begun to terrorize the city of Arendelle, driving all of her people from their homes. To restore the status quo, Elsa must take her companions and those closest to her into the enchanted forest where they must uncover the truth of their heritage in order to restore order.
+
+I respond strongly to emotional symbols, which is why the moving visual language as well as haunting musical cues of *[Frozen 2: Ice Ice Baby](https://www.youtube.com/watch?v=rog8ou-ZepE)* resonated with me. The trailer is very forward with this aspect of the film as the early teasers showed princess Elsa charging out into the sea again and again.  The film includes a siren's call weaved into its soundtrack that is chillingly beautiful which resonates with the superficial symbolism. These were easily the best parts of the film for me, and, unfortunately, they set me up for severe disappointment. 
+
+When the main characters from the original (Elsa, Olaf, Anna, Christoff, and Sven) enter into the enchanted wood that serves as the main setting for *Frozen 2: Rise of the Evergreens*,  one of the characters promises that the nature of these characters will change. Unfortunately, the story completely fails to deliver on this promise, ending with a return to a status quo that demands no real change from any of the characters. At best the story is a shallow metaphor with high stakes that includes a problematic depiction of indigenous people which resolves its issues with extreme political bias but without any personal sacrifice which leaves the ending feeling hollow. 
+
+At worst, *Frozen 2: The Shivering* forces an awkward narrative about reparations for colonial imperialism onto a franchise where it has no thematic roots. How did we go from a story that succeeded by challenging princess tropes and rejecting flimsy romance for ideas of greater substance about personal identity and responsibility to having these characters fix their parent's crimes against magical native peoples? Even if the problems in *Frozen 2: Beyond the Snow* were able to be resolved meaningfully and dealt with real sacrifice or personal change this would still feel incredibly out of place against the source material. The extensions of the world's mythology required to force these themes together are broken on a practical level of narrative construction.
+
+There's an entertaining experience to be had here, but I think the original film was meaningful enough that the sequel deserves to be held to the same standard. If all you want is a movie for your kids to watch for 2 hours you'll find a million things that will serve. If what you need is specifically to see the characters from *Frozen* all over again and it doesn't matter what they're doing, you'll get that, too. But if you want any kind of meaningful experience or have any deeper standard than that, you'll be disappointed.
+

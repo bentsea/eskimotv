@@ -1,13 +1,14 @@
 {% extends "default.html.j2" %}
+{% import "includes/macros.html.j2" as macros %}
 
 {% block title %}EskimoTV: {{ user.username }}{% endblock %}
 
 {% block header %}
 <div class="row page-heading">
-  <div class="col-lg-3">
+  <div class="col-lg-4">
     <img class="rounded" src="{{ user.gravatar(size=400) }}">
   </div>
-  <div class="col-lg-6">
+  <div class="col-lg-8">
     <h1>{{ user.username }}</h1>
     {% if user.first_name or user.last_name %}
     <p>
@@ -48,4 +49,6 @@
     {% include "includes/articles.html.j2" %}
   </div>
 </div>
+<!-- BLOG NAVIGATION -->
+{{ macros.pagination_widget(pagination, request.url_rule.endpoint, id=user.id) }}
 {% endblock %}

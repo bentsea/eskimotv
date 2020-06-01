@@ -1,0 +1,21 @@
+---
+title: "Abominable (2019)"
+blurb: "A beautiful animated film worth your time despite its imperfections."
+categories: [review,movie,Animation,Adventure,Comedy,Family]
+image: /img/2019/09/abomin.jpg
+author: jasone
+youtube: NrA9-_UNq04
+reviewInfo:
+   final-verdict: "Despite unrealistic stock villains, the admirable protagonist and the lessons her and her friends learn along a beautiful exciting journey make Abominable worth seeing!"
+   rating: 85
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Abominable"
+      sameAs: "https://www.themoviedb.org/movie/431580"
+      image: "https://image.tmdb.org/t/p/original/iK0Q7VWxHsXU1uMzpkf3VjAd6yE.jpg"
+      director: "Jill Culton"
+      datePublished: "2019-09-27"
+published: True
+---
+Abominable is the big release this week and it’s a wonderful animated film to take the whole family to. Chloe Bennet portrays teenager Yi who one day encounters a big creature known as a Yeti. Chloe and her friends name the Yeti Everest and they venture off to return the Yeti to his home in Mount Everest, having to evade a wealthy man and a zoologist who intend to capture the beloved Yeti. Abominable features a likeable lead; Yi loves music, is highly affected by her absent father, and doesn’t give up despite adversity. At the same time, she’s a teenager and felt very real with her mom and hilarious grandma, who both argue about her teenage angst. Her two friends offer much comic relief. The villains are the weakest part of Abominable; feeling everything but real. When the Zoologist lets her hair down she looks like a ripped off Merida from Pixar’s Brave. Despite this, the protagonist and her friends are enough for me to recommend Abominable.

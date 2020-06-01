@@ -316,7 +316,7 @@ class Article(db.Model):
     def on_changed_rating(target,value,oldvalue,initiator):
         def get_letter_grade(grade):
             score_range = {"A+":99,"A":94,"A-":89,"B+":88,"B":84,"B-":79,"C+":78,"C":74,"C-":69,"D+":59,"D":39,"D-":19,"F":0}
-            for letter_grade,minimum in score_range:
+            for letter_grade,minimum in score_range.items():
                 if grade >= minimum:
                     return letter_grade
         target.letter_rating = get_letter_grade(value)

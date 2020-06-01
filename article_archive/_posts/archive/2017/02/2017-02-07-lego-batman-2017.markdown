@@ -1,0 +1,60 @@
+---
+author: dscott
+blurb: A subversive and often convulsively funny look at Batman.
+categories:
+- review
+- movie
+- Animation
+- Action
+- Adventure
+- Comedy
+image: /img/2017/02/lego-batman-cover.jpg
+layout: post
+reviewInfo:
+  final-verdict: Highly recommended for anyone who can enjoy a good Batman parody,
+    or those young enough to simply enjoy the adventure.
+  rating: 85
+subjectInfo:
+  about:
+    dateCreated: 10 Feb 2017
+    director: Chris McKay
+    image: https://images-na.ssl-images-amazon.com/images/M/MV5BMTcyNTEyOTY0M15BMl5BanBnXkFtZTgwOTAyNzU3MDI@._V1_SX300.jpg
+    name: The LEGO Batman Movie
+    sameAs: https://www.imdb.com/title/tt4116284
+  type: Movie
+title: The Lego Batman Movie (2017)
+---
+
+The Lego Batman Movie is a blast, if not as well refined and pure as The Lego Movie was. It also lacks the surprise factor. After The Lego Movie, I was more prepared for this to be a clever insight into the character of Batman. To sum  up: this movie is insightful, funny, and playful with its subject. So much so, that overcomes a few pacing and plot issues in a way that feels effortless.
+
+It is smart enough to hold the attention of older audiences and still be attractive to children. What I found to be great here, was that this movie gets Batman. It addressed many of the concerns that Batman fans have been expressing for years. It cuts to the core of his problems as a hero: using his power and influence to beat people up as therapy rather than invest in fixing society. It's clever and it's funny, even though it pulls back and returns to a more traditional movie with a family friendly ending after the first half.
+
+Every other Batman film is a brooding afair that is dismissive of the life of Bruce Wayne. They have <a data-toggle="modal" data-target="#secretcomic">glutonously indulges in the loss of his parents</a> for years. Lego Batman moves on and works on his future. The writers here also get, and make fun of, the flaws of Batman as a character. This is something that I particularly loved, and had me laughing constantly.
+
+The acting and music are spot on. Will Arnett reprises his role as Batman, and gets to work again with Michael Cera (Playing his adopted son). The chemistry here works. More over, I have to say that we finally got the Two Face we deserved: Billy Dee Williams. I have always wished that the Batman franchise had stuck to its guns and let him go from Harvey Dent to two face. He's got great timing and good acting chops, and I love it every time I see him on film. The only shame is that the film is so crowded with character that we only get a few brief seconds with him.
+
+A few flaws do mar the experience. The pacing of the last half stumbles and lacks the clever on point storytelling of the first half. The vast array of characters comes at a price, too. While the leads are all very well acted, many of the background characters are disposable. Their lackluster casting is minor, but noticeable.
+
+With that said, I still have to say, there are moments in this movie that made me laugh harder than I've laughed in years. Humor is subjective, though, and that's why I mention it last. The steady stream of in jokes, references, digs at Batman as a hero and as an icon landed effectively for me. They also came with nods and winks to fans of a wide variety of fandoms, like Doctor Who and Lord of the Rings.
+
+I highly recommend The Lego Batman Movie. It was a blast and I enjoyed the ride thoroughly. The few flaws wont bother the majority of viewers, though it may wear thin after repeated viewings.
+
+<!-- Modal -->
+<div class="modal fade" id="secretcomic" tabindex="-1" role="dialog" aria-labelledby="secretcomicLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="secretcomicLabel">Secret Batman Comic</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="https://img.eskimotv.net/img/2017/02/FxS6VqI.gif" alt="Secret Batman Comic" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

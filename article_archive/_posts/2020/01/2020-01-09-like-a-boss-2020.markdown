@@ -1,0 +1,33 @@
+---
+title: "Like a Boss (2020)"
+blurb: "Tuca and Bertie Lite?"
+categories: [review,movie,Comedy]
+image: /img/2020/01/like-a-boss-2020-0-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "A passable comedy with enough laughs but not nearly enough bite."
+   rating: 75
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Like a Boss"
+      sameAs: "https://www.themoviedb.org/movie/526019"
+      image: "https://image.tmdb.org/t/p/original/ifn7yLH7W69MdrEEkNzCyO8rTmL.jpg"
+      director: "Miguel Arteta"
+      datePublished: "2020-01-09"
+published: True
+---
+
+
+Though humorous, *Like a Boss* lacks teeth and appears to get bored of its premise prematurely.  Worse, director Miguel Arteta even appears to reach the limits of the charm of Tiffany Haddish while having her rehash the same notes as any other generic comedy. It's a shame to see so much promise deliver so little.
+
+{% include media type="youtube" src="9ESkyRFEso4"  %}
+
+No lie, there is a lot of potential here. Rich comedies that explore challenging friendships appear to be a theme with Tiffany.  After *Girl's Trip* and *Tuca and Bertie*, Tiffany Haddish plays Mia alongside Rose Byrne as Mel who have been best friends for their whole lives. Together they are living the dream by building a business together and each working with their closest friend on earth until their products catch the eye of ultra-rich Claire Luna. Claire Luna (Salma Hayek) is a ruthless makeup mogul intent on taking majority ownership of the company that Mia and Mel have built while ruining their friendship to do so.
+
+The laughs mostly work and there's a lot of talented acting here, everything gets resolved cheaply. The pacing runs out of steam and we're treated to a resolution that feels cheap. No, it's more than that, it feels lazy. The disinterest shown in giving a satisfying resolution to Mia and Mel's story is almost palpable in the final moments. Whether because the writers were bored or disinterested, the lack of satisfying conclusion undermines any bite that *Like a Boss* had.
+
+Tiffany Haddish is always glowing, but she's not enough to overcome the rushed storytelling. Even with such a talented supporting cast, she doesn't have the strength to prop up the experience. Worse, the lack of freshness further highlights the feeling that Haddish is replaying the same role over again, but without life. 
+
+After I walked out of the theater, I just felt like my time would have been better spent re-watching *Tuca and Bertie*. It's not that I disliked the film, it's just left me feeling like I'd eaten a single Pringle... unsatisfied and wanting more. While there is something to be said for leaving the audience eager for more of what you have, it doesn't count if you leave them absolutely starving. 

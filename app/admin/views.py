@@ -2,6 +2,7 @@ from datetime import datetime,date
 from flask import render_template, get_template_attribute, session, redirect, url_for, flash, request, current_app, abort, send_from_directory,jsonify
 import json
 import requests
+import os
 from io import BytesIO
 from PIL import Image
 from .. import db
@@ -16,10 +17,18 @@ from flask_login import login_required,current_user
 from ..decorators import admin_required
 from flask_ckeditor import upload_success, upload_fail
 
-def add_new_creative_work(tmdb_id,media_type):
+def add_new_creative_work(tmdb_id=None,media_type=None,imdb_id=None):
+    if not tmdb_id and not imdb_id:
+        raise Exception("No identifying ids were provided.")
+    creative_work_data = None
+    if imdb_id:
+        creative_work_data = tmdb_api.get_creative_work(imdb_id=imdb_id)
+        tmdb_id = creative_work_data['CreativeWork']['tmdb_id']
+        media_type = creative_work_data['CreativeWork']['type']
     creative_work = CreativeWork.query.filter_by(tmdb_id=tmdb_id).first()
     if not creative_work:
-        creative_work_data = tmdb_api.get_creative_work(tmdb_id,media_type)
+        if not creative_work_data:
+            creative_work_data = tmdb_api.get_creative_work(tmdb_id,media_type)
         creative_work = CreativeWork(
             type=creative_work_data['CreativeWork']['type'],
             name=creative_work_data['CreativeWork']['name'],
@@ -47,7 +56,6 @@ def add_new_creative_work(tmdb_id,media_type):
                     db.session.rollback()
     return creative_work
 
-
 @admin.route('/edit-profile',methods=['GET','POST'])
 @login_required
 def edit_profile():
@@ -74,11 +82,11 @@ def edit_profile():
                 flash('Your changes have been saved.')
             else:
                 flash('No edits were made.')
-            return redirect(url_for('.profile',id=current_user.id))
+            return redirect(url_for('main.profile',id=current_user.id))
         else:
             if form.cancel.data:
                 flash('No edits were made to your account.')
-                return redirect(url_for('.profile',id=current_user.id))
+                return redirect(url_for('main.profile',id=current_user.id))
             else:
                 for error in form.errors:
                     flash(form.errors[error][0])
@@ -95,10 +103,10 @@ def confirm_email_change(token):
     if current_user.change_email(token):
         flash('Your email has been successfully updated.')
         db.session.commit()
-        return redirect(url_for('.profile',id=current_user.id))
+        return redirect(url_for('main.profile',id=current_user.id))
     else:
         flash('This email confirmation link is expired or invalid. Please try again.')
-        return redirect(url_for('.profile',id=current_user.id))
+        return redirect(url_for('main.profile',id=current_user.id))
 
 @admin.route('/edit-profile/<int:id>',methods=['GET','POST'])
 @login_required
@@ -118,11 +126,11 @@ def edit_profile_admin(id):
             db.session.add(user)
             db.session.commit()
             flash('The profile has been updated.')
-            return redirect(url_for('.profile',id=user.id))
+            return redirect(url_for('main.profile',id=user.id))
         else:
             if form.cancel.data:
                 flash('No edits were made to your account.')
-                return redirect(url_for('.profile',id=user.id))
+                return redirect(url_for('main.profile',id=user.id))
             for error in form.errors:
                 flash(form.errors[error])
             return render_template('main/edit_user.html.j2',form=form, user=user)
@@ -154,14 +162,56 @@ def edit_article(id):
                     return render_template('main/edit_article.html.j2',form=form,article=article)
                 article.body = form.body.data
                 article.title = form.title.data
+                if form.rating.data:
+                    article.rating = form.rating.data
+                    article.final_verdict = form.final_verdict.data
                 article.blurb = form.blurb.data
                 article.draft = None
                 article.publish_date = form.publish_date.data
                 article.is_published = True
+                if form.subject_selected.data:
+                    if form.subject_selected.data != "None":
+                        subject = CreativeWork.query.filter_by(tmdb_id=form.tmdb_id.data).first()
+                        if not subject:
+                            subject = add_new_creative_work(form.tmdb_id.data,form.subject_type.data)
+                        article.subject = subject
+                        db.session.add(article)
+                        db.session.commit()
+                    elif form.subject_selected.data == "None":
+                        try:
+                            article.subject = None
+                            db.session.add(article)
+                            db.session.commit()
+                        except:
+                            db.session.rollback()
+                if form.cover_image_file.data:
+                    files.delete_image(article.image)
+                    img = Image.open(form.cover_image_file.data)
+                    article.image=files.save_cover_image(img,article.title_slug)
+                elif form.cover_image_url.data:
+                    files.delete_image(article.image)
+                    img = Image.open(BytesIO(requests.get(form.cover_image_url.data).content))
+                    article.image=files.save_cover_image(img,article.title_slug)
                 db.session.add(article)
                 db.session.commit()
+                for tag in article.tags.all():
+                    if str(tag.id) not in form.tags_selector.data:
+                        article.tags.remove(tag)
+                        db.session.add(article)
+                        db.session.commit()
                 for tag_id in form.tags_selector.data:
                     tag = Tags.query.get(tag_id)
+                    if not tag:
+                        if not current_user.can(Permission.PUBLISH):
+                            tag = Tags(name=tag_id.title())
+                            try:
+                                db.session.add(tag)
+                                db.session.commit()
+                            except:
+                                db.session.rollback()
+                        else:
+                            flash(f'Publisher permissions required to create new tag named {tag_id.title()}.')
+                            continue
                     if tag not in article.tags.all():
                         try:
                             article.tags.append(tag)
@@ -171,11 +221,6 @@ def edit_article(id):
                             current_app.logger.info('Error')
                             db.session.rollback()
                             continue
-                for tag in article.tags.all():
-                    if str(tag.id) not in form.tags_selector.data:
-                        article.tags.remove(tag)
-                        db.session.add(article)
-                        db.session.commit()
                 flash('The article has been successfully published.')
                 return redirect(article.url)
             if form.save_draft.data:
@@ -211,11 +256,23 @@ def edit_article(id):
     else:
         form.title.data = article.title
         form.body.data = article.body
+    form.tags_selector.render_kw = {'required':True}
     form.publish_date.data = article.publish_date
     form.blurb.data = article.blurb
+    form.blurb.render_kw = {'required':True}
+    if article.type.name == "Review":
+        form.final_verdict.data = article.final_verdict
+        form.final_verdict.render_kw = {'required':True}
+        form.rating.data = article.rating
     if article.subject:
         form.tmdb_id.data = article.subject.tmdb_id
         form.subject_type.data = article.subject.type
+    if article.published and not current_user.can(Permission.PUBLISH):
+        flash('This article is published and fields that can only be modified by a Publisher have been disabled.')
+        form.blurb.render_kw = {'disabled': True,'required':False,'title':"The blurb on a published article may only be edited by a Publisher."}
+        form.final_verdict.render_kw = {'disabled': True,'required':False,'title':"The final verdict on a published article may only be edited by a Publisher."}
+        form.rating.render_kw = {'disabled': True,'required':False,'title':"The rating on a published article may only be edited by a Publisher."}
+        form.tags_selector.render_kw = {'disabled': True,'required':False,'title':"The tags on a published article may only be edited by a Publisher."}
     return render_template('main/edit_article.html.j2',form=form,article=article)
 
 @admin.route('/discard_draft')
@@ -294,14 +351,27 @@ def new_article():
                 author=current_user,
                 type=ArticleType.query.get(form.article_type.data))
             article.image=files.save_cover_image(img,article.title_slug)
-            for tag in form.tags_selector.data:
-                article.tags.append(Tags.query.get(tag))
+            for tag_id in form.tags_selector.data:
+                tag = Tags.query.get(tag_id)
+                if not tag:
+                    if not current_user.can(Permission.PUBLISH):
+                        tag = Tags(name=tag_id.title())
+                        try:
+                            db.session.add(tag)
+                            db.session.commit()
+                        except:
+                            db.session.rollback()
+                    else:
+                        flash(f'Publisher permissions required to create new tag named {tag_id.title()}.')
+                        continue
+                article.tags.append(tag)
             try:
                 db.session.add(article)
                 db.session.commit()
             except Exception as err:
                 db.session.rollback()
                 flash("There was an unspecified error wile attempting to create your article. Please wait a minute and try again, then contact an admin if you continue to receive this error.")
+                flash(err)
                 return render_template('main/new_article.html.j2',form=form)
             if form.subject_selected.data != "None":
                 subject = CreativeWork.query.filter_by(tmdb_id=form.tmdb_id.data).first()

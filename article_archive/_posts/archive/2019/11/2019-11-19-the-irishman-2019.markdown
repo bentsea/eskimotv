@@ -1,0 +1,32 @@
+---
+title: "The Irishman (2019)"
+blurb: "3.5 Hours of your life you will never get back."
+categories: [review,movie,Crime]
+image: /img/2019/11/the-irishman-2019-1-cover.jpg
+author: jasone
+youtube: 
+reviewInfo:
+   final-verdict: "3.5 hours of your life you will never get back. Despite it’s technical accomplishments, the most important pieces of any movie will always be its story and its characters, which is where *The Irishman* fails entirely."
+   rating: 70
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "The Irishman"
+      sameAs: "https://www.themoviedb.org/movie/398978"
+      image: "https://image.tmdb.org/t/p/original/4Fc3UkAyXIKWW8jrCQpvOkTE1gy.jpg"
+      director: "Martin Scorsese"
+      datePublished: "2019-11-01"
+published: True
+---
+
+Full disclosure; I am not the target audience member for *The Irishman*. This year I have disliked almost every period piece or history movie including Judy, The King, The Lighthouse, Harriet, Tolkein, Downton Abbey, and The Highway Men (I have enjoyed Dolemite, The Report, and Ford V Ferrari). Most of these films do not appeal to me as they feature characters in situations that I can’t relate to or don’t find interesting. However, I really wanted to like *The Irishman*; it had a ton of buzz coming out of film festivals and had all the ingredients for it to be a successful film, including the notable director, Martin Scorsese, and an all star cast. While my opinion will be in the minority, I will be honest as to why The Irishman did not intrigue me and why it may be best to skip it on Netflix, which is a platform I can’t see many starting and choosing to finish.
+
+{% include media type="youtube" src="RS3aHkkfuEI" %}
+
+Frank Sheeran (Robert De Niro) is in a nursing home and is recollecting a wide glimpse of his life, including his time working for Russel Buffalino (Joe Pesci) as a hitman and his involvement with Jimmy Hoffa (Al Pacino).
+
+The best praise I can give to *The Irishman* is its overall production quality. Deaging effects are heavily relied on in order to tell this story with these characters in different time periods and they are applied seamlessly. Historically, if filmmakers were telling a story that stood across time they would have to hire different actors. The fact that we have seen a surge in films using these effects show that there’s many stories that were once difficult to tell without deaging and it’s interesting because these are all types of movies that couldn’t be told (or at least in this manner) without the innovative technology. Additionally, the production design is superb, as the overall visual look of the film captures the heart of the time periods visited. From the sets, clothing, and props; *The Irishman* is well-crafted on a technical level. 
+
+Despite it’s technical accomplishments, the most important pieces of any movie will always be its story and its characters, which is where *The Irishman* fails entirely. I would not be complaining about the long running time of *The Irishman* if the film could warrant that length by drawing me into the story and its characters. I sat on my couch at home for more than four hours in one sitting this past summer to watch Stranger Things Season 3 and did not mind a single moment because that story and its characters intrigued me and the plot consistently and entertainingly moves forward.  For a long period of time, I was left to wonder where *The Irishman* was going, as the pacing is awfully slow. 
+
+Admittingly, the acting is terrific from everyone in the cast! However, strong performances without a compelling character can’t save the film. This is a film that has lots of dead time where you are watching characters do an assortment of actions that don’t always seem to connect or advance the plot. I could not relate to Sheeran or any of the characters in the story; never have I been tasked with being a hitman or been in any gang related activity so I could not care about that aspect. A mystery surrounds what actually happened to Jimmy Hoffa but if you are like me and not familiar with Jimmy Hoffa this film does nothing to get you to care. In *Breaking Bad* and *Bates Motel* I couldn’t directly relate to selling drugs or being a killer-- however, those television shows allowed me to like and care for the protagonists by showing things that they did that I could get behind or relate to. Walter White genuinely care for his family and Norman Bates suffers from a terrible mental disorder that I could feel sympathy for. *The Irishman*? I don’t understand what there is to love about any single one of these characters.

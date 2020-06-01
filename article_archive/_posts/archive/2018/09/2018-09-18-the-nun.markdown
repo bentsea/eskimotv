@@ -1,0 +1,39 @@
+---
+author: dscott
+blurb: Director Corin Hardy's expansion of The Conjuring franchise.
+categories:
+- review
+- movie
+- Horror
+- Mystery
+- Thriller
+image: /img/2018/09/the-nun-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: A cheesy funhouse ride that's entertaining if you can overlook its
+    silliness.
+  rating: 65
+subjectInfo:
+  about:
+    dateCreated: '2018-09-05'
+    director: Corin Hardy
+    image: https://image.tmdb.org/t/p/original/sFC1ElvoKGdHJIWRpNB3xWJ9lJA.jpg
+    name: The Nun
+    sameAs: http://www.imdb.com/title/tt5814060
+  type: Movie
+title: The Nun (2018)
+---
+
+It's difficult to review a movie like *The Nun* because it isn't good, but it isn't exactly bad either. Horror is a fascinating genre because it can mean many different things to many different people, and there are those who thrive on cheap thrills that are served with a cheesy creepy atmosphere. In a nutshell, that's what *The Nun* is. A low-stakes haunted house ride that's fun to look at if you can get into just the right mood. It's great on the right night and with the right people, but it has a very specific purpose for its existence and it isn't good enough to rise above that.
+
+{% include media type="youtube" src="pzD9zGcUNrw" %}
+
+And that's okay. Sometimes I'm in the mood for a goofy horror flick. But it's important to know what it is so that you're ready to be in that mood. The plot is thin and holey (full of holes, despite having nuns in it this movie is not in the least divine), the characters are two-dimensional with no common sense, the story is similar to a campfire ghost tale, and the set design is gothic to the point of being outright silly. It's easy to point out the flaws with *The Nun* because they are transparent and surface level.
+
+"But Bob, " you might say, if my name were Bob, "you just listed all of the elements of the movie! If all those things are bad, then why isn't the movie bad?" The answer is that because some days you just want to enjoy something silly. Some days it's okay when all a movie wants to do is find a fun little way to make you jump in your seat. And when it comes to that, *The Nun* isn't half bad. Some of its jumps are nicely executed and pulled off with a bit of creativity and misdirection. 
+
+Additionally, *The Nun* is going to be important to people who are heavily invested in the mythology of the universe of *The Conjuring*. It's a series that is inconsistent with tone but overall is better than it should be. This alone will be enough for fans of the worldbuilding for that universe. It's not an incredible lore, but it is likely to be important to the upcoming *The Conjuring 3* and possibly also be referenced in *The Crooked Man*. I can't help but feel that having a horror universe develop such a diverse continuity is fun and I'm glad to see it happening. 
+
+The movie is also full of moments that are fun to watch if you're able to approach the movie with the right mindset. The trailer definitely shows off one of the better little scares, but it's not the only one. Director Corin Hardy is also pretty good with building a sense of suspense, so if you're able to turn your brain off there's plenty of great tension to enjoy. And lastly, the acting is all very solid. The characters come to life, and this also helps a lot. Everyone puts out a performance that is entertaining.
+
+*The Nun* is one of those movies that proves that a movie isn't always just the sum of its parts. If you know what you're going to watch and you are wanting exactly that, you'll have fun, and that's the important thing.

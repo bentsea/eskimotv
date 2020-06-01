@@ -1,0 +1,37 @@
+---
+title: "Hustlers (2019)"
+blurb: "More than just fun to watch, there's substance here."
+categories: [review,movie,Comedy,Crime,Drama]
+image: /img/2019/09/hustlers-2019-3-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "More than just fun to watch, there's substance here."
+   rating: 90
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Hustlers"
+      sameAs: "https://www.themoviedb.org/movie/540901"
+      image: "https://image.tmdb.org/t/p/original/zBhv8rsLOfpFW2M5b6wW78Uoojs.jpg"
+      director: "Lorene Scafaria"
+      datePublished: "2019-09-13"
+published: True
+---
+
+
+Like most real exotic dancers, *Hustlers* has a much more going on than is visible on the surface. The glitter-hazed flash of performances from enthralling actors is amped up by electric directing to deliver a thrilling ride. After you get past that sparkling exterior, though, there is a compellingly realized emotional core. 
+
+{% include media type="youtube" src="P_dfc0iqmig" %}
+
+The story stands out above all the other elements of the movie. What I loved here was the way the women were treated: as whole people who have agency in their lives. While the surface story of the film is about a group of women who, during the recession, have to move on from stripping to drugging lecherous men to steal from them, *Hustlers* is really about the relationship between its main characters. 
+
+The play between Destiny (Constance Wu) and Ramona (Jennifer Lopez) is profoundly touching as their friendship is explored. It's like *Thelma and Louise* crossed with *My Girl*, and there's something special about any film that can tap into two friends who feel that much for each other.  It's these moments when their humanity shines brightly even in the middle of all the shit they are buried in. 
+
+We have to talk about Jennifer Lopez. Not because I particularly want to, she's fine, but because she's getting a lot of kudos for this role. I don't know what to think about Jennifer as an actor. She has some stiffness that sort of halters some scenes, and it's not just this film where it's present. However, she has a natural charisma that shines bright. Say what you will, but Tom Hanks is an okay actor who stands out because he's just so darn likable. 
+
+Jennifer picks excellent scripts to be a part of, though. *Hustlers* comes just about a year after *Second Act*, which also included a remarkable sensitivity in its writing. Is *Hustlers* an award-winning performance for J-Lo? I'd be disappointed if it won an award. She's good, but she's not the best actress in the movie. I'd probably give that nod to Constance Wu, but she's also not the lead. Jennifer is a supporting role here and she does an excellent job. All the same, though I'd love to keep seeing her pull off films like this, it's just hard to think of her performances as being outstanding in and of themselves.
+
+If anything holds *Hustlers* back, it's just that the story isn't refreshing enough. It's got some hallmark condemnation of the corruption in the marketplace that is becoming Adam McKay's watermark. The crime drama has a very well established arc of the rise and fall of a mini-empire of greed. There's nothing wrong with that. If anything, it's admirable how much the positive qualities imbue this cookie-cutter template with magic.
+
+*Hustlers* is entertaining, wild, and beautiful. The crime is enthralling and the friendships are touching. Go watch it. 

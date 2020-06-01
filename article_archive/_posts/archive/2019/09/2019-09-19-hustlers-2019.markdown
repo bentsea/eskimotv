@@ -1,0 +1,22 @@
+---
+title: "Hustlers (2019)"
+blurb: "Awful Characters!"
+categories: [review,movie,Comedy,Crime,Drama]
+image: /img/2019/09/hustlers-2019-7-cover.jpg
+author: jasone
+youtube: 8xrwHmZXbaA
+reviewInfo:
+   final-verdict: "These characters are awful and I felt icky rooting for such vile protagonists."
+   rating: 69
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Hustlers"
+      sameAs: "https://www.themoviedb.org/movie/540901"
+      image: "https://image.tmdb.org/t/p/original/zBhv8rsLOfpFW2M5b6wW78Uoojs.jpg"
+      director: "Lorene Scafaria"
+      datePublished: "2019-09-13"
+published: True
+---
+
+Directed by Lorene Scafaria, Hustlers is based on true events and is about a group of New York City strippers played Constance Wuu, Jeniffer Lopez, Keke Palmer, and Lili Reinhart who drug and steal from dozens of wealthy men. These characters are awful and I felt icky rooting for such vile protagonists. The  ending was underwhelmingly dissatisfying. J Lo delivers an acceptable performance but I will poop bricks if she wins an Oscar for best actress like critics at TIFF were suggesting. My favorite aspects of Hustlers are a few comedic lines of dialogue and the music; we have some classic 2000’s jams including Brittany Spears and Usher who makes a cameo appearance. Also, Cardi B and Lizzo got their names on this poster despite having very few forgettable scenes. If you’re going to Hustlers to see skin, it’s nothing better than what you could just find on Google.

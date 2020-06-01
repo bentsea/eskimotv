@@ -1,0 +1,39 @@
+---
+author: dscott
+blurb: The second best film in the DCEU, for whatever that is worth.
+categories:
+- review
+- movie
+- Action
+- Fantasy
+- Science Fiction
+- Adventure
+- Comic
+image: /img/2018/12/aquaman-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: You may enjoy it, but that still doesn't make it worth your time.
+    You can do better.
+  rating: 65
+subjectInfo:
+  about:
+    dateCreated: '2018-12-07'
+    director: James Wan
+    image: https://image.tmdb.org/t/p/original/i2dF9UxOeb77CAJrOflj0RpqJRF.jpg
+    name: Aquaman
+    sameAs: http://www.imdb.com/title/tt1477834
+  type: Movie
+title: Aquaman (2018)
+---
+
+It's fine. Just... fine. You'll probably enjoy it and forget about it. It's the second best film in the DC extended universe, and that's something, right? It's well paced, decently choreographed, has witty dialog, and even has a few positive observations on responsibility. So why do I absolutely hate *Aquaman*?
+
+{% include media type="youtube" src="WDkg3h8PCVU" %}
+
+I hate it because it feels dated. Because the messaging of a movie is as important as the quality of craftsmanship. *Aquaman* is literally over 2 hours of two dudes smashing their spears together to see whose is hardest and then going on a quest for a harder spear, and whoever wins gets the girl. Marvel got past their shallow might-makes-right style storytelling almost 2 years ago and have been putting out the best movies they have ever made since then. DC has access to templates that work... decades of comics and even films that transcend the genre. Even within the DC extended universe, Wonder Woman managed to explore personal sacrifice, identity, humanity, and even the nature of conflict in stunning new ways. 
+
+Being more entertaining than *Batman v Superman* isn't enough. All that *Aquaman* really manages to do is to competently construct a movie around its garbage story as a monument to mediocrity. I'd rather rewatch *Venom* in all of its flawed awful glory than *Aquaman*.  The worst way to tell a bad story is to put it together well enough that it's boring. If you want a case study in this, watch *X-Men Origins: Wolverine*'s theatrical release back to back with the leaked workprint version and you will see exactly what I mean. 
+
+Imagine if *The Room* had been made by an experienced director with actors turning out engaging and human performances while an aggressive and mindful editor trimmed the story into a film with a well-paced sense of direction and you'd be left with *Fifty Shades of Grey*. A bad film by any standards, but just normal bad and good enough for the niche audience it appeals to. 
+
+*Aquaman*'s niche audience may be larger, but it's still just that. A hand-me-down sweater packaged in a pretty box with shiny wrapping and a pretty bow on top for Christmas. Maybe this would have been fine in the 90s, and even if you watch it you may even enjoy it while you sit through it, but you deserve better and better is out right now. Watch something else.

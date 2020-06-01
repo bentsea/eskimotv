@@ -1,0 +1,45 @@
+---
+author: dscott
+blurb: A dark exploration of dependency and codependent relationships.
+categories:
+- review
+- movie
+- Action
+- Comedy
+- Drama
+- Fantasy
+- Science Fiction
+image: /img/2017/06/colossal-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: Colossal is a good movie that falls well short of greatness, and
+    is well worth watching for what it does well.
+  rating: 75
+subjectInfo:
+  about:
+    dateCreated: '2017-02-23'
+    director: Nacho Vigalondo
+    image: https://image.tmdb.org/t/p/original/4VOyofBd1pexblxtDZYtYIk7NI4.jpg
+    name: Colossal
+    sameAs: https://www.imdb.com/title/tt4680182
+  type: Movie
+title: Colossal (2017)
+---
+
+Colossal is good enough that what you're expecting when you see it will affect how much you like it. I would have liked it a lot more if the movie hadn't been over hyped before I saw it.
+
+The trailers make it look like a low end weird comedy, and that's not what it is. Colossal is a dark science fiction exploration of dependency, depression, and abuse. You may feel disappointed if you were looking forward to what the trailers promised. However, it uses its material to explore some dark places so well, it's easy to forgive.
+
+In Colossal, Gloria (Anne Hathaway) is an out-of-work party girl forced to leave her life in New York City and move back home. Once home, she finds refuge with old friends who turn out to be enablers of her self destructive behavior. She discovers that a monster appears in Korea every day at the same time as she is stumbling home drunk and alone. It becomes increasingly plain that the monster is a physical manifestation of Gloria.
+
+Where Colossal gets interesting is in the tangle of enablers. Their motivations range from mutual addiction all the way to deliberate emotional abuse. The absolute best moments are when things get dark, spiraling into uncomfortable power games. The monster stomping around Korea acts as a physical embodiment of their dysfunctional relationships. It gets used for more than that, though. The destruction of the monster becomes the focus of the actual conflict of the story.
+
+As a metaphor, the monster is brilliant. It's cool when you're drunk, but when you sober up and realize how much damage you've done, it's crippling. If you're familiar with that feeling in any way, there are some moments here that will hit hard. It doesn't work so much as a plot point, though, and Colossal stumbles whenever it does anything else. When the movie is trying to move forward, or solve its problems it feels like it doesn't know where to go. It ends up feeling lost, and the resolution is disappointing after all the great setup. The conclusion is easily the weakest moment of the whole experience.
+
+Unfortunately, the monster isn't the only thing the movie doesn't know how to deal with. Characters outside of the core circle of enablers stumble around. Any time Gloria is interacting with her old boyfriend, etc, it just doesn't feel right. It may be because the core of the movie works so well that these moments feel weak by comparison. Even so, it breaks the immersion a bit.
+
+Jason Sudeikis is the standout as the supporting role. Anne Hathaway is as wonderful as she always is, capturing the character, but Sudeikis goes to some dark places. Every actor holds up throughout the film, though, even in the weaker moments.
+
+I don't even remember the music, which I consider a negative. A soundtrack should contribute to the story and heighten emotion, and it often felt generic or even flat.
+
+The disappointing resolution and unfocused side stories undermine an otherwise great story. A few other minor failures make the flaws glow a little more brightly. Colossal is a good movie that unfortunately falls short of greatness, and is well worth watching for what it does well. Go in with your expectations in check and you'll find a lot of rewarding content.

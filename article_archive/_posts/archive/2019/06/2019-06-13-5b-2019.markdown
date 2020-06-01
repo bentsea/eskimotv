@@ -1,0 +1,33 @@
+---
+title: "5B (2019)"
+blurb: "A look at a moment of bravery in the face of fear and adversity."
+categories: [review,movie,Documentary]
+image: /img/2019/06/5b-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "Emotionally touching despite its structural flaws."
+   rating: 85
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "5B"
+      sameAs: "https://www.themoviedb.org/movie/559323"
+      image: "https://image.tmdb.org/t/p/original/nAhYZ1mSrMZEr6FegP2oaWqsbxE.jpg"
+      director: "Dan Krauss"
+      datePublished: "2019-05-16"
+published: True
+---
+
+
+The struggle to bring human connection to the lives of those who are suffering is so profoundly powerful that I would be surprised if you could watch *5B* without being affected. Despite flaws in pacing and structure, *5B* triumphantly documents the work of people who showed the finest love and bravery in the middle of a global crisis. 
+
+{% include media type="youtube" src="48m65zguIdc" %}
+
+On its face, *5B* is about the very first designated ward for treating HIV/AIDS patients in the United States. Beginning with the early signs of the epidemic and continuing through modern day, *5B* follows the lives of the nurses and doctors who provided more than just advocacy to the victims of the disease. They provided human touch. They provided compassion and dignity. In the face of a plague that no one understood, these heroes refused to allow people to die scared and alone. 
+
+By providing an emotional connection from the early days of fear, prejudice, and discrimination to where we are today, *5B* ends up ultimately being a story about us. It's about how we as a society have changed. It touches on the culture wars of information through the government and media. The importance of visibility when you're struggling for understanding or even basic recognition. What is most profound here, is that *5B* highlights the parallels between the communities hit hardest and with how society addressed the sick as a whole. While the film is most heartwarming when it captures the compassion of physical touch, it is at its most thought-provoking when it explores how we, as a country, conflated AIDS with the community it ravaged.
+
+Though generally well executed, the film does struggle with pacing and structure. It often revisits portions of the narrative out of context. Given the context of the film and how well the subject matter resonated with me, I never felt as though the structural issues broke the immersion into the documentary, but they definitely hurt it. These moments were occasionally noticeable enough that it did feel like I was simply re-watching earlier chunks of the film, which is a bit disorienting.
+
+Overall, I recommend *5B*. It documents a touchstone in our society that had such wide-ranging effects that it touched everyone in some way. But, what is more essential than the importance of the material is how it made me feel. *5B* is a moving work of art through history that is worth your time.

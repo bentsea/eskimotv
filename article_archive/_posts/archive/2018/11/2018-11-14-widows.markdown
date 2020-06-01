@@ -1,0 +1,36 @@
+---
+author: dscott
+blurb: A Gender Flipped Dramatic Alternative to Ocean's 8
+categories:
+- review
+- movie
+- Crime
+- Drama
+- Thriller
+image: /img/2018/11/widows-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: Frayed at the edges, but woven well enough to be deeply enjoyable.
+  rating: 85
+subjectInfo:
+  about:
+    dateCreated: '2018-11-06'
+    director: Steve McQueen
+    image: https://image.tmdb.org/t/p/original/f27RTnWEc2bhVtfSlKmxxypznfR.jpg
+    name: Widows
+    sameAs: http://www.imdb.com/title/tt4218572
+  type: Movie
+title: Widows (2018)
+---
+
+*Widows* weaves a web with a strong core that's a bit frayed around the edges. Coming out in a bit of a drought of criminal caper films against the likes of lighter fare such as *Ocean's 8*, *Widows* will likely find an audience who will both appreciate and remember it despite its flaws. Both the strong acting and intense directing that define the experience far outweigh the nitpicks that keep it from greatness.
+
+{% include media type="youtube" src="nN2yBBSRC78" %}
+
+Director Steve McQueen manages to capture the action in a way that is grippingly fresh, and that is honestly 70% what I need. He captures chases in a way that pulls you right in without feeling jarring or uncomfortable. His structure for the physical space of the main locations is always clearly visible as he navigates that space so that it makes sense to the audience. For this type of caper flick to be enjoyable it's very important that the audience feels like they understand what's going on, and especially like they haven't been cheated in any of the reveals as they happen. This really sets *Widows* apart from other recent films such as [*Going in Style*]({% post_url /archive/2017/04/2017-04-11-going-in-style-2017 %}).
+
+Bolstering the directing is a fantastic cast putting in excellent performances. Viola Davis absolutely kills it, and her somber approach to the lead character of Veronica and Colin Farrel fantastically delivers a nuanced villain that is fascinating to watch. And Steve McQueen knows what he's working with and will occasionally freeze the movie and look away so that these actors have the opportunity to deliver with their voices alone in a way that is captivating. The performances bridge the gap between good enough and downright good for the entire movie.
+
+The heist itself is pretty run of the mill, nothing special, but some of the character and plot details just sort of splinter at the edges of the story. I know and enjoy that the hook is women pulling off a crime in generally male roles, but the political nature of this flip is just a little too much at the forefront. Completely tangential details get the political treatment in a way that causes a feeling of artificiality. Almost all of the nuance of character development is between the characters played by Colin Farrel and Robert Duvall.
+
+Ultimately, *Widows* is definitely worth watching for its construction and performances, both of which are good enough to outshine the mediocre subject matter. Unfortunately, I think the little, frayed edges will keep it from being a classic, but those who like it will remember it fondly for a few years.

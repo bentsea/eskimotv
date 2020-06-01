@@ -1,0 +1,36 @@
+---
+author: dscott
+blurb: An exceptional and fresh remake of a classic that delivers on every level.
+categories:
+- review
+- movie
+- Horror
+image: /img/2017/09/it-cover.jpg
+reviewInfo:
+  final-verdict: If you either love a good scare, or can overlook them for a well
+    crafted adventure story, IT is a must see film.
+  rating: 90
+subjectInfo:
+  about:
+    dateCreated: '2017-08-17'
+    director: Andy Muschietti
+    image: https://image.tmdb.org/t/p/original/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg
+    name: It
+    sameAs: http://www.imdb.com/title/tt1396484
+  type: Movie
+title: IT (2017)
+---
+
+*IT* is both wonderfully made and an excellent *Goonies*-esque adventure film for adults.  Characterizing this classic Stephen King story as a horror doesn't quite capture what is happening. *IT* is full of scary moments, but the larger story strives to capture growing up with friends. This 2017 remake does that first and foremost, and in so doing captures the spirit of what was most loved of the original.
+
+The greatest achievement here is the casting. Hands down, this is the best ensemble cast of child actors I have ever seen, bar none. Both the number of them and the quality per actor was astounding as they are consistently entertaining and convincing. *IT* captures a lot of what worked in the Netflix original *Stranger Things* but the cast of *IT* is more reliable. These kids capture a feeling of growing up in the 80's that feels authentic. 
+
+Though the children may be the more impressive part of the casting, *IT* is no slouch in any of the rest of the cast. There are no small parts here. As a whole, the cast works together to capture the look, feel, and tone of King's work. I want to specifically point out Bill Skarsgård as Pennywise the clown. 
+
+Pennywise dominated the trailers with a clown that was overtly scary looking, but in the whole of the film Bill Skarsgård strikes a balance. There are moments where his performance is almost joyous except for the environment. We never quite get the outright fun moments of fun that colored Tim Curry's performance in the 90's version, but they aren't needed either. Overall, Skarsgård knocks it out of the park with a difficult role that follows up an iconic performance by a great actor.
+
+To that end, the cinematography and direction work well. *IT* uses color and framing to set the foundation that the cast builds on. As opposed to contemporary horror films, *IT* avoids false jump scares. The core scares are jump scares, but the film uses them to build an emotional narrative that avoids making you jump at moments without delivery.
+
+Where *IT* stumbles a little bit is the story. Stephen King's 1000 page work is a complex piece of fiction, and any decent translation is an accomplishment. This 2017 film does improve on the original from the 90's, but is also where *IT* stumbles a bit. Character plotlines are occasionally dropped, such as Henry Bowers. Bowers is well developed and one of the more exceptionally developed characters. However, his plotline comes to a sudden halt that fails to deliver on his character arc. This is the most egregious example, but it's typical of the most noticeable failures. 
+
+Those failures aside, *IT* manages to capture this wonderful adventure story aesthetic that feels like *Goonies* for an audience that is all grown up. Though not quite perfect, *IT* is above and beyond reasonable expectations. If you either love a good scare, or can overlook them for a well crafted adventure story, *IT* is a must see film that I highly recommend.

@@ -1,0 +1,38 @@
+---
+title: "Doctor Sleep (2019)"
+blurb: "A modern cultural touchstone that will be a classic."
+categories: [review,movie,Horror]
+image: /img/2019/11/doctor-sleep-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "Nothing is perfect, but <i>Doctor Sleep</i> does too many things right to even bother with its blemishes."
+   rating: 100
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Doctor Sleep"
+      sameAs: "https://www.themoviedb.org/movie/501170"
+      image: "https://image.tmdb.org/t/p/original/p69QzIBbN06aTYqRRiCOY1emNBh.jpg"
+      director: "Mike Flanagan"
+      datePublished: "2019-11-08"
+published: True
+---
+
+*Doctor Sleep* is a dark well that has more to give the deeper you drill. There are three core layers that it exists at: as a unique suspense thriller, as a sequel to *The Shining*, and as a response to Kubrick's *The Shining* by Stephen King. Each of these layers works well but working together they multiply their effect.
+
+{% include media type="youtube" src="BOzFZxB-8cw" %}
+
+On its own, *Doctor Sleep* is an excellent supernatural thriller with clear writing, impeccable technical filmmaking, compelling acting, and beautiful music. It picks up shortly after Kubrick's adaptation of *The Shining* with a young Danny dealing with the trauma at the Overlook hotel. His pain becomes a life long struggle to overcome that is amplified by his shining, a condition that he is only able to cope with by hiding it.
+
+As an adult, Danny reaches rock bottom as he becomes an alcoholic in his father's footsteps. Isolated and struggling with relationships, he finds himself homeless and wandering until he finds a support network and a home. He can finally heal as he becomes friends with a young girl named Abra who shines brightly during a time of crises in her life. The film follows along as they both become entangled with a cult called the True Knot who feed on the shining in the world.
+
+The pacing is on point, the stories well interweaved, and the statements about healing and recovery resonate with me. We live in a world that is so full of pain that I always gravitate toward stories that share the strength to recover. The music is reserved but compelling with reserved nods to the outstanding work by Wendy Carlos‎ and ‎Rachel Elkind on Kubrick's film. Additionally, all of the actors achieve a level of excellence as to have their performances feel transparent. Every aspect of the construction is spot-on for a film in a desolate genre.
+
+Considered as a sequel to *The Shining*, *Doctor Sleep* is a powerful thematic extension of the original that expands King's world. The inclusion of The Knot, as well as the extension of the Overlook hotel beyond its borders, grow the world by giving us more of the world without over-explaining any of the aspects we have already come to expect. 
+
+More than that, it expands on the ideas with mirroring rather than exposition. Danny's alcoholism and struggle with it mirror his father's. Abra's shining as a child and the reaction of the world to her shine mirrors the very struggles that Danny experienced as a child. All of these elements serve to grow the world without pulling it apart, which is an extraordinary accomplishment.
+
+Finally, as a faithful adaptation of King's response to Stanley Kubrick's subversive use of his original material... *Doctor Sleep* is breathtaking. *Doctor Sleep* uses its mirroring and its extensions of the world to challenge Kubrick's earlier work. Where Kubrick is cold and leans into the weakness of Danny's father as an alcoholic driven by resentment for his family, Stephen King explores Danny's alcoholism as a response to trauma. Where Kubrick punishes Danny for being different, *Doctor Sleep* demands that Abra shines as brightly as possible despite the dangers in the world. Where the Overlook hotel only amplified the evil already within, the cult of the True Knot feeds on what is good. 
+
+Any single element here is good enough to stand on its own, but to get a sequel that stands out on so many levels is unprecedented. You can feel in its nature why it took so long to craft something that so perfectly responds to the original while at the same time challenging it.  *Doctor Sleep* is a modern cultural touchstone that will be remembered for decades to come just as its predecessor was.

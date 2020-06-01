@@ -1,0 +1,38 @@
+---
+title: "Countdown (2019)"
+blurb: "The best jump scares all year."
+categories: [review,movie,Horror,Thriller]
+image: /img/2019/10/countdown-2019-0-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "The best jump scares you'll get all year."
+   rating: 85
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Countdown"
+      sameAs: "https://www.themoviedb.org/movie/599975"
+      image: "https://image.tmdb.org/t/p/original/qCDPKUMX5xrxxQY8XhGVCKO3fks.jpg"
+      director: "Justin Dec"
+      datePublished: "2019-10-25"
+published: True
+---
+
+
+If jump scares are your thing, *Countdown* servers some of the best ones ever. Writer/director Justin Dec has produced the gourmet version of junk food by executing a cheesy popcorn horror with outstanding technical excellence. I just hope that one day he uses those skills to make a film that's more my speed.
+
+{% include media type="youtube" src="S6O4iy3Twwo" %}
+
+The trailer tells you everything you need to know about *Countdown*. One of those time-wasting apps that tells you how long you have left to live tells the truth and ensures that you still meet your fate even if you use its information to stay alive. There is something just perfect about that premise.
+
+While you could take the material in a more thought-provoking direction, Justin Dec leans into the corniest aspects of the idea. He makes it work by executing it with all of the seriousness of a veteran director working on a meticulous masterpiece. Every scene demonstrates outstanding continuity and awareness of the surroundings of the characters. It's tremendously difficult to produce such seamless editing and Justin's work elevates the entire movie.
+
+These things are small, and most viewers won't notice how every little plot element is foreshadowed in both the narrative as well as the visual frame, but it's cool if you know what you're looking at.
+
+Despite the schlockiness of the story, it does have some substance. Sure, the play off of urban legend style psychology is kinda cool, but it gets really fun when the story gets twisted with a little bit of sexual-assault revenge flavor à la *Jennifer's Body*. I honestly wanted the film to skew harder in that direction because it is such fun when it gets there.
+
+Even though I am not a fan of jump scares, *Countdown* gets the good ones right. They're creepy, well telegraphed, and it makes you want to cover your eyes right before they happen. I can appreciate well-done craft even when it isn't targeted at me. However, this was also the weakest part of the movie. Too many of the frights are toothless fake-outs and the film as a whole lacks a deliberateness in its escalation. 
+
+Overall, this movie has a very specific audience in mind despite how well made it is. If you love jump scares, then these are the best you'll get all year.
+

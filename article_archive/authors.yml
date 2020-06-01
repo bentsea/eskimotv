@@ -1,0 +1,52 @@
+# Author details.
+---
+jasone:
+    name: Jason Escamilla
+    email: jason@eskamotv.net
+    web: https://www.eskimotv.net/author/jasonescamilla/
+    editor: true
+    bio: Jason Escamilla holds a Bachelor’s degree in Communication and a Master’s degree in Education from Texas A&M University Corpus Christi. He teaches Audio/Video and Animation to high school students and still manages to find his way to the movie theatre several times a week. You can hear Jason’s reviews of new releases weekly on Corpus Christi’s KKPN Planet 102.3 FM, during Dave Ross and Jordan’s “Pop News” segment. Jason writes and records reviews for EskimoTV, an outlet he launched on YouTube in 2017. EskimoTV’s outreach now includes a dedicated website, created and managed by co-author David Scott. Jason is a proud member of the Houston Film Critics Society and a Tomato-meter approved critic on Rotten Tomatoes.
+    roles: Creator, Film Critic, Media Producer
+    pic: jason-profile-pic.jpg
+dscott:
+    name: David Scott
+    email: brokenmind@gmail.com
+    web: https://www.eskimotv.net/author/davidscott/
+    editor: true
+    bio: David became an editor and web designer for <i>EskimoTV</i> in April of 2019. Film critique was a natural evolution as a creative outlet for the editorial and technical skills he cultivated as the lead knowledgebase editor for a major web hosting company in 2016. He founded and maintained an outlet called <i>Critical Truth</i> until joining forces to collaborate on <i>EskimoTV</i>. As an advocate for creative freedom, a driving force for his perspective as a writer is the belief that how we entertain ourselves as people is an important aspect of who we are that deserves to be discussed thoughtfully. A better understanding of the things you like is a key part of better knowing yourself.
+    roles: Film Critic, Writer, and Website Manager
+    pic: david-profile-pic.jpg
+aded:
+    name: Ade Dina
+    email: aded@eskimotv.net
+    web: #
+    editor: false
+    bio: Ade Dina is a film student at the University of North Texas. He aspires to direct, write and act in films and television shows. While Ade loves film, he is a big sports addict and he even has his own sports podcast. Catch him on all social media talking sports and movies.
+    roles: Film Critic, Writer
+    pic: ade-profile-pic.jpg
+wholt:
+    name: William Holt
+    email: fearsometruth@gmail.com
+    web:
+    editor: false
+kevink:
+    name: Kevin Kirkpatrick
+    email: kakirkpatrick@gmail.com
+    web:
+    editor: false
+jkirby:
+    name: Jocelyn Kirby
+    email: jocelyn@crescentlady.com
+    web:
+    editor: false
+arenfro:
+    name: Adrienne Renfro
+    email: adrienne@helldive.org
+    web:
+    editor: false
+rishabh:
+    name: Rishabh Vashishtha
+    email: rishabh@eskimotv.net
+    web: https://www.eskimotv.net
+    editor: false
+---

@@ -1,0 +1,37 @@
+---
+author: dscott
+blurb: A slow burn that explores the rise of The Washington Post against a president
+  who is actively hostile to the press.
+categories:
+- review
+- movie
+- Drama
+- History
+image: /img/2017/12/the-post-cover.jpg
+reviewInfo:
+  final-verdict: Between the importance of the story and the out of this world performances
+    in its delivery, <i>The Post</i> is one of the easiest movies to recommend this
+    year.
+  rating: 87
+subjectInfo:
+  about:
+    dateCreated: '2017-12-22'
+    director: Steven Spielberg
+    image: https://image.tmdb.org/t/p/original/fEkvvj2DCd3jZ1wWMh0mSn1Rqea.jpg
+    name: The Post
+    sameAs: http://www.imdb.com/title/tt6294822
+  type: Movie
+title: The Post (2017)
+---
+
+While watching *The Post*, it occurred to me that the Vietnam era struggle of the press against the government to reveal fundamental truths about the conflict is to journalists as World War II is to most all Americans. It represents a time when the disruption of the government was purely virtuous, requiring good people to risk their life and liberty by standing up against a force that was unambiguously wrong. When you go through a conflict like that and achieve such a hard-won victory, it's hard not to want to relive that glory. How can a journalist not long to feel that sense of urgency to their work on some level?
+
+*The Post* manages to capture the feeling of this conflict of attack on our inalienable rights by the very institutions that were meant to protect them. It's primarily the showcase of an excellent cast, composed of Meryl Streep, Tom Hanks, and Bob Odenkirk, which makes this work. There is even a grounded performance from David Cross that feels right at home in this dramatic setting. Everything else the movie has: the writing, the directing, the music... all of it is propped up on an ensemble of incredible acting.
+
+That isn't at all to say that those elements are sub-par, far from it, in fact. It's just that everything else is caught up in the way that Tom Hanks plays an impotent lion of a man (Ben Bradlee, executive editor of *The Washington Post*), who has a terrible roar but ultimately risks nothing. More importantly than that is the timidity that Meryl Streep imbues into Kay Graham (owner of *The Washington Post*) who quietly puts everything on the line for what she believes is important. The contrast in these performances startled me even as they asked what true bravery is.
+
+Unfortunately, this does cause the film to feel unbalanced. The music never feels inspired, and the narrative struggles from needing to teach the audience the political history of Nixon and the Vietnam war at the same time as it is trying to tell a story. The plot frequently inserts heavy-handed speeches and conversations that feel engineered to act as exposition.
+
+Ultimately, the combined effect of these minor weaknesses is a slight flatness to the film. However, this never causes it to drag too much. The elements that work excel so much that the flaws pale in comparison. Moreover, the conflict between the press and a president who would attempt to discredit and silence them is profoundly relevant again. I walked out of the theater struck by the importance of protecting our first amendment rights. 
+
+I thoroughly enjoyed *The Post* and found it both entertaining and thought-provoking. Between the importance of the story and the out of this world performances in its delivery, *The Post* is one of the easiest movies to recommend this year.

@@ -1,0 +1,48 @@
+---
+author: dscott
+blurb: A strange reboot that goes in whole new directions.
+categories:
+- review
+- movie
+- Action
+- Adventure
+- Fantasy
+- Comedy
+- Comic
+- Science Fiction
+image: /img/2019/05/hellboy-14-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: An indulgent film that is a ton of fun while being absolutely bad.
+  rating: 79
+subjectInfo:
+  about:
+    dateCreated: '2019-04-10'
+    director: Neil Marshall
+    image: https://image.tmdb.org/t/p/original/bk8LyaMqUtaQ9hUShuvFznQYQKR.jpg
+    name: Hellboy
+    sameAs: http://www.imdb.com/title/tt2274648
+  type: movie
+title: Hellboy (2019)
+youtube: null
+---
+
+Littered with heavy-handed exposition, filled with bad acting, and fractured by an overly ambitious narrative, *Hellboy* is some of the most fun I've had all year. Almost as though it were specifically created to break systems like that of Rotten Tomatoes, *Hellboy* is a bad movie that is an absolute blast to watch, which makes it difficult to quantify. Because, what does it really mean to be a bad movie?
+
+{% include media type="youtube" src="ZsBO4b3tyZg" %}
+
+Given the previous films in this franchise, you would be totally justified in needing to know exactly what *Hellboy* (2019) *is*, especially since the answer to that question is something that's a little ballsy. *Hellboy* is a reboot of the franchise that represents a separate continuity from the previous installments but jumps headfirst into the depths of the title character's world as though it were a sequel. It's a strange experience to see something that both strives to be completely new but allows you to carry over your expectations from alternate versions. This isn't quite a unique approach to continuity. *Spider-Man: Homecoming* did exactly this only just last year by resetting the character while deliberately omitting all the story elements that have been seen before. 
+
+Creators are loath to take this approach for fear of confusing their audience. It *works* here, but it is so mixed in with the issues that I believe that this element will be perceived to be one of the core flaws rather than among its strengths. So, what exactly are the problems?
+
+Right from the beginning *Hellboy* sets the overall tone with a flashback narrated by an explanatory voiceover from Ian McShane as Professor Broom. All the ingredients are bland: the text itself is derivative, Ian McShane sounds bored, the effects are cheesy, and they tell so much of the story that they have to leave tons of holes leaving the ideas incomplete. Everything wrong with the first 30 seconds is emblematic of the poor craftsmanship that plagues the rest of the runtime... but...
+
+Despite all of that, there's a little bit of attitude there. Some totally unnecessary F-bombs. Off-handedly casual incorporation of underutilized mythology from around the world starts to creep around the edges. The music picks up. But, when it feels like they're pulling the *Guardians of the Galaxy* music thing with great classic rock, except poorly like when *Suicide Squad* did it, they kick it up with original arrangements that freshen up the vibe. 
+
+Every bone in my body screamed that I should be hating all of this, but by the time that Hellboy shows up there is just something fun happening. And for everything else wrong here, the writers, cast, and crew *get* Hellboy as a character. Before I know it I'm rocking out in the theater, hyped, and excited for what's coming next. And not just the character of Hellboy, but other whole elements of the *Hellboy* anthology that have only been done well in the comics. The portrayal of the Baba-Yaga (an incredibly unique Russian witch that lives in a house that walks around on chicken legs played here by Troy James and Emma Tate) is outstanding. She passes off as creepy while adding loads to the world. 
+
+Everything has been cranked up to 11 by the end of the film and I'm finally seeing a movie that's not afraid to throw some B-movie style gore around to take the R rating. It's cheap, silly, over-the-top silly gore that is like an 80's sci-fi re-imagined... and [I LOVE it](https://getyarn.io/yarn-clip/c12e5a62-bc06-4baa-a307-26f551259412)!
+
+There is a large body of people who like bad movies, which may cause you to ask if *Hellboy* is so much fun because it is bad. It absolutely is not. Its imperfections are without a doubt opportunities to have been a better movie. *Hellboy* is fun because of the things it does right and I only wish I could have seen a version of this movie that had tried harder to polish its edges.
+
+The things that *Hellboy* gets right are refreshingly unique. You just can't find this type of over the top excess anywhere else. Many of these characters omitted from previous films capture the real essence of the source material. Hellboy himself gets explored in ways he hasn't quite been explored before. For everything broken here, *Hellboy* gets so much right that I believe that it will ultimately become a cult classic for the things it accomplishes which the majority of critics have dismissed. This is a weird beautiful gem in spite of all of the cracks running through it.

@@ -1,0 +1,35 @@
+---
+author: dscott
+blurb: A creative ensemble piece with an excellent cast and a dark sense of humor.
+categories:
+- review
+- movie
+- Comedy
+- Drama
+- Action
+image: /img/2018/03/gringo-cover.jpg
+reviewInfo:
+  final-verdict: A fantastically dark comedy that is both clever and amusing.
+  rating: 87
+subjectInfo:
+  about:
+    dateCreated: '2018-03-09'
+    director: Nash Edgerton
+    image: https://image.tmdb.org/t/p/original/6leSrp2LTNAmOZhoAVTAPimSxyr.jpg
+    name: Gringo
+    sameAs: http://www.imdb.com/title/tt3721964
+  type: Movie
+title: Gringo (2018)
+---
+
+Some of my favorite films are the ones that start with a well-used formula for a template and then build on it by deviating in interesting ways. *Gringo* is absolutely one of these movies, and it is a delight to watch; though, it doesn't quite subvert expectations enough to completely make up for having a predictable plot.
+
+*Gringo* follows the events surrounding its protagonist, Harold (David Oyelowo), as his life crumbles around him because of the spiral of plots that exists around him and without his knowledge. While on a routine trip to Mexico for the medicinal marijuana pill producing pharmaceutical company that he works for, everything suddenly blows up in his life all at once. As the constant victim of predatory bosses, played by Charlize Theron and Joel Edgerton, an unhinged mercenary played by Sharlto Copley, and drug cartels, Harold strives to make sense of a world that is far beyond him and happily takes advantage of him. 
+
+While its strengths lay in the edges of the plot, *Gringo*'s cast excels. It's a treat to see such an excellent cast together, each cast member playing to their strengths with all of them building each other up.  The direction and editing also really highlight their performances, and they are all fully deserving of a great deal of credit here. Thanks to the clever editing, *Gringo* manages to build suspense with a few subtle gags that end up working over the course of the movie. 
+
+What really stands out above everything else, though, is the way *Gringo* talks to the audience. We're along for the ride with Harold, but we see everything happening around him and falling down on top of him, so we feel for him. And every time we're confronted with a character who is taking advantage of him, they confront him with pithy anecdotes in a way that is overt and deliberate. They sit him down and they tell him why they are taking advantage of him, and you can see how they've become a villain by reducing their worldview. 
+
+Despite all the plot points being fairly predictable, *Gringo* still managed to dig into me just a little bit with every scene and leave me with something small to think about. Between all of its strengths, the astounding cast, the clever editing, and the provocative ways it plays with its plot, *Gringo* largely manages to overcome and work within the bounds of the predictable nature of its story. 
+
+Ultimately, that's where I fall on this one: it's a fantastic demonstration of craft that has some fascinating ideas inside of it. *Gringo* is an excellent work of creative satire that is easy to recommend and is absolutely worth your time.

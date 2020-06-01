@@ -1,0 +1,28 @@
+---
+title: "Doctor Sleep (2019)"
+blurb: "Mike Flanagan prescribes a slow burning film that works on some levels"
+categories: [review,movie,Horror]
+image: /img/2019/11/doctor-sleep-2019-7-cover.jpg
+author: jasone
+youtube: 
+reviewInfo:
+   final-verdict: "Fans of The Shining and horror audiences who are patient enough to endure the slow setup will appreciate this tale, whose highlights are fleshed out villains and nostalgia."
+   rating: 80
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Doctor Sleep"
+      sameAs: "https://www.themoviedb.org/movie/501170"
+      image: "https://image.tmdb.org/t/p/original/p69QzIBbN06aTYqRRiCOY1emNBh.jpg"
+      director: "Mike Flanagan"
+      datePublished: "2019-11-08"
+published: True
+---
+Doctor Sleep is the sequel to Stephen King’s The Shining and it’s a creative horror film that takes place years after. Ewan McGregor plays adult Dan Torrance, who was a young boy in The Shining, and he meets a young girl named Abra who has the same strange powers as he does. The villains, known as The True Knot, unfortunately kill people who have these powers and so Dan and Abra have to figure out a way to stop this sinister cult. 
+
+
+<b> <I> RADIO REVIEW </i> </b>
+{% include media type="youtube" src="MGr0BLIinMc" %}
+
+Doctor Sleep is a slow burn; there is a lot of setup, building the villains who are thoroughly fleshed out and you understand their motives. Doctor Sleep is a beefy 2 hour and 31 minute film. As a duo, Abra and Dan, are not very riveting, which is why this movie feels as slow as it does. However, fans of The Shining and patient horror audiences will appreciate this eerie tale. I prescribe Doctor Sleep a B-
+

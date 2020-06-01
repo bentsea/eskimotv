@@ -1,0 +1,41 @@
+---
+title: "Black and Blue (2019)"
+blurb: "Come home to the unique flavor of shattering the grand illusion."
+categories: [review,movie,Action,Crime,Drama]
+image: /img/2019/10/black-and-blue-2019-0-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "Well made and entertaining, buuuuuuuut..."
+   rating: 85
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Black and Blue"
+      sameAs: "https://www.themoviedb.org/movie/578189"
+      image: "https://image.tmdb.org/t/p/original/fjmMu9fpqMMF17mCyLhNfkagKB0.jpg"
+      director: "Deon Taylor"
+      datePublished: "2019-10-25"
+published: True
+---
+
+
+For a film about racism, police brutality, and the value of every life, they sure do have a bunch of cops in hand-me-down warzone gear murder a whole lot of black drug dealers. But, positively, [because it's a swat raid](https://www.youtube.com/watch?v=klo4HI7c_TM), and that's one of the ways we're supposed to think of the police as being absolutely right. 
+
+{% include media type="youtube" src="QCfSeVCr7ng" %}
+
+*Black and Blue* is the high-end premium packaged version of civil rights. The text of the film talks about the problems caused by corrupt or racist police officers, but the subtext is telling us everything was fine just a couple of years ago. The problem with our civil services isn't caused by [how they're structured](https://www.youtube.com/watch?v=KUdHIatS36A), it's just a few bad apples. 
+
+A bright-eyed rookie cop (but two tour military veteran) is forced to run for her life after catching the murder of drug dealers by rogue police officers on her body cam. Trapped in a fantasy version of a gang-ridden city, she is crushed between an entirely black population that can only see the blue of her uniform and the infiltrated police force. Her only hope of survival is to pit these rival forces against each other while trying to escape the chaos.
+
+All of the ingredients are there for a truly modern thriller. We're in the middle of a real-world society gone mad with police corruption wrestling with the revolution of body cams. The setting is perfect for dealing with race and gender inequality while dealing with the very human fears that so many Americans suffer today.
+
+Unfortunately, all *Black and Blue* delivers is the diet flavored revolution. The main character, Alicia West (portrayed by the fantastic Naomie Harris), champions the ideals of personal accountability. The world today is a result of the choices of individuals, not a [failure of the system](https://www.youtube.com/watch?v=zaD84DTGULo). It's a subtle way to dig at the audience that our problems are our own fault. It glorifies the lethal and militarized extermination of thugs.
+
+It's the repackaged version of rebellion that supports the status quo. And that's troubling. 
+
+Look, you will probably enjoy *Black and Blue* if you watch it. It's entertaining. The action is a blast. Many of the characters are likable. And, I won't lie, I want to believe that everything can be fixed with our existing systems through personal integrity. That's a compelling lie. It's comforting as it speaks to the ethics I was raised with. And it will probably speak to yours as well. 
+
+The film is well structured, the acting is top-notch, and the music is serviceable. If you watch *Black and Blue* casually, it will meet all of the criteria of a good movie. No matter what your metrics are, *Black and Blue* is a solid movie as it is incredibly effective at conveying its real ideas. You may even agree with its real message.
+
+But I still can't help feeling like I just walked out of the Hot Topic of civil rights politics.

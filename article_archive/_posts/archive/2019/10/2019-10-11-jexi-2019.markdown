@@ -1,0 +1,33 @@
+---
+title: "Jexi (2019)"
+blurb: "Comedy that becomes repetitively dull"
+categories: [review,movie,Comedy]
+image: /img/2019/10/jexi-cover.jpg
+author: jasone
+youtube: 
+reviewInfo:
+   final-verdict: "Jexi may have worked as a funny short film but to throw in a forced romantic plot, four music videos, and to repeatedly use the same jokes that get dry after the first act result in a lukewarm underwhelming experience."
+   rating: 50
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Jexi"
+      sameAs: "https://www.themoviedb.org/movie/620725"
+      image: "https://image.tmdb.org/t/p/original/5ZeZB5XkhgL5JzngQQ3JrGlZKMp.jpg"
+      director: "Jon Lucas"
+      datePublished: "2019-10-11"
+published: True
+---
+*Jexi* is directed by Jon Lucas and Scott Moore, the directors who bought us *Bad Moms* and *Bad Moms Christmas*. It is an over-the-top unrealistic silly comedy that made me chuckle a few times at the beginning but then features comedy that becomes repetitively dull and does not have enough unique jokes to warrant it being a feature-length film.
+
+{% include media type="youtube" src="txSOaY-je-o" %}
+
+Phil (Adam Devine) is addicted to his phone. He has no friends but relies heavily on his smart device until one day it breaks. Unfortunately, Phil does not purchase the new iPhone 11 Pro. Instead, he gets a phone with Jexi. The interesting thought of, “What if Siri or Alexa was rude and had a mind of her own?” comes to life in this movie-- but instead of Siri, you have Jexi, a virtual personal assistant voiced by Rose Byrne. This phone is extremely volatile constantly calling Phil, “a stupid idiot,” (in addition to a bunch of cuss words) and a bit raunchy, as the phone loves when Phil inserts her charger in and out rapidly.
+
+There is a funny premise to play with but one that can’t be stretched very long. The film knows this, as it is a short 84 minutes. However, it struggles to even fill that time. After the first few scenes that the phone is vulgar, it gets old. You become desensitized to the weird fact that the phone is mean and you start to ask yourself, “Is anything new going to happen?” The phone decides to spout inappropriate insults in front of Phil’s boss and a girl he is interested in. Every insult a phone could possibly say is spued. It’s funny at first but then nothing intriguing or unique truly happens. There’s four music video style sequences that are unnecessary. These are not terrible to watch, but they are clearly used as overly long transitions used to fill more time. 
+
+The stupidity is embraced and *Jexi* mostly doesn’t take itself seriously- which I did appreciate. However, there is a romance plot involving a girl named Cate (Alexandra Shipp) who mostly feels like a plot device used to give the film a conclusion. Phil likes this beautiful woman but it seems like he’ll never have a chance. Despite Jexi being jealous and trying to sabotage the relationship, you’ll never be able to guess how it all ends (there’s 0% sarcasm with that last statement). Michael Peña plays an over-demanding boss which, like the cursing phone, is comical at first but then quickly loses his flare.
+
+*Jexi* may have worked as a funny short film but to throw in a forced romantic plot, four music videos, and to repeatedly use the same jokes that get dry after the first act result in a lukewarm underwhelming experience. It's not flat out boring but it's insulting to request 84 minutes of our time to do so little.
+
+

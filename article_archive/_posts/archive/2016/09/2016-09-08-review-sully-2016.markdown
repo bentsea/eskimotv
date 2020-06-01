@@ -1,0 +1,48 @@
+---
+author: dscott
+blurb: A well executed drama that successfully maintains suspense and evokes real
+  emotion!
+categories:
+- review
+- movie
+date: 2016-09-08 16:59:15
+image: /img/articles/sully/tom-hanks-as-sully.jpg
+layout: post
+reviewInfo:
+  final-verdict: An enthralling drama filled with solid acting that evokes the whole
+    range of emotion.
+  rating: 85
+subjectInfo:
+  about:
+    dateCreated: 09 Sep 2016
+    director: Clint Eastwood
+    image: https://images-na.ssl-images-amazon.com/images/M/MV5BMTg5NTUwNDIyOV5BMl5BanBnXkFtZTgwMjI2OTc3OTE@._V1_SX300.jpg
+    name: Sully
+    sameAs: https://www.imdb.com/title/tt3263904
+  type: Movie
+title: Sully
+---
+
+I want to start this review by disclosing that it's not possible for me to give an objective review for this movie. Sure, I can go over the technical accomplishments like how it looked, the range of acting, and the execution of the musical score. However, I cannot possibly impartially convey how effective they are to a general audience. This movie hit particularly hard for me, smashing right into a well of emotion left over from that time period.
+
+<img class="img-responsive" style="float:right;margin-left:10px;" src="https://img.eskimotv.net/img/articles/sully/sullenberger.jpg" alt="Article Image">
+
+Sully is a dramatization of the investigation surrounding the forced water landing of a passenger flight on the Hudson river executed by Chelsey Burnett Sullenberger on January 15, 2009. It's directed by Clint Eastwood, who continues to excel in expertly crafted cinematic experience. He demonstrates a masterful eye in capturing tension in his scenes, elevating often peaceful and subtle moments into of mundane restfulness into frames that stand out for their elegance and beauty. In addition to being able to craft each scene carefully with memorable framing and cinematography, Eastwood also manages to maintain level sense of tone and pacing, carefully crafting the emotional highs and lows of the experience.
+
+And everything he does is built on by the capable cast. Tom Hanks and Aaron Eckhart are in the foreground, but everyone turned out incredible performances for this film, adding richness of character and texture to every scene in the film. Particularly effective is Valerie Mahaffey, who plays Sullenberger's wife and manages to capture a full range of emotion that helps us feel what she feels, as she is often used to set the audience's perspective.
+
+<img class="img-responsive" style="margin: 0 10px 10px 0px;" src="https://img.eskimotv.net/img/articles/sully/hanks-eastwood.jpg" alt="Article Image">
+
+The soundtrack doesn't stand out, but not because it is mundane. It doesn't stand out because it is used with almost pure utilitarian precision. Musically, the soundtrack never drowns out the film, working entirely in concert with it to convey suspense, fear, dread, and relief. Though technically effective at everything it attempts to accomplish, it never really rises up to provide an experience worthy of independent merit.
+
+Narratively, Sully manages to do a fantastic job of putting the vast majority of the important context for the film in the background, leaving it as generally subtle subtext, though there were a few moments of careful exposition. That subtext is pretty harsh, though. As a nation, we hadn't had a whole lot of really good news for a while. We were at the bottom of a financial crisis where people were losing their homes, many of us had friends and family who were deployed in actively dangerous situations, and the memory of the worst attack on American soil in all of our history was still a little fresher in our minds than it is now.
+
+Things aren't really so different now, when you say all of that out loud, which should make it pretty easy to imagine how good it felt to have a miracle. And I want to say, that this movie delivered something that you just don't experience hardly ever in a theater: tears of joy. It pulled me right into all of the self doubt and confusion of the investigation, questioning whether or not the danger was even real while making you feel this well crafted sense of PTSD as you get constant flashes of how the crash could have gone to convey the trauma and shock of recovering from a violent near death experience.
+
+<img class="img-responsive" style="float:left;margin-right:10px;" src="https://img.eskimotv.net/img/articles/sully/Valerie-Mahaffey.jpg" alt="Article Image">
+
+And even knowing how everything turned out in the end, Sully manages to use the events surrounding the crash as much as the crash itself to draw you into the terror of the moment, to give you doubt, and to be afraid for all of the people on that flight. Then it pays you back for investing yourself in these lives and in this in ways I just didn't know a film was capable of doing.
+
+Given all of this, I can tell you that the movie is well made, but I can't say how well made. It was put together well enough that it triggered me and a lot of memories I have, and at it's best showed me a time where a lot of very hardworking people pulled together and accomplished something amazing. This was something I really needed to see after the past few months. I teared up a little bit seeing police and rescue crews actually saving people, and it served as a bit of a reminder of what we can do, and the positive difference we can make just by being ready and prepared.
+
+So I can't begin to tell you impartially how well made the movie needed to be in order to deliver on that experience, because it was definitely good enough to pump the feels right into me. It's possible that the events may come off as pretentious, or the organization of the story telling may be a little too conveniently arranged in the telling. Trying to see past the really powerful emotions I felt, it's really hard to see any flaws. The whole movie worked very well. I highly recommend this film, especially to people who need something to feel really good about.

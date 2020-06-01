@@ -1,0 +1,36 @@
+---
+title: "The Way Back (2020)"
+blurb: "Gavin O'Connor and Affleck team up again for a solid outing"
+categories: [review,movie,Drama]
+image: /img/2020/03/the-way-back-2020-1-cover.jpg
+author: aded
+youtube: 
+reviewInfo:
+   final-verdict: "Gavin O'Connor and Affleck team up again for a solid outing"
+   rating: 80
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "The Way Back"
+      sameAs: "https://www.themoviedb.org/movie/529485"
+      image: "https://image.tmdb.org/t/p/original/zwgPO5bamUuajIAEc02q9XZ2qhq.jpg"
+      director: "Gavin O'Connor"
+      datePublished: "2020-03-05"
+published: True
+---
+
+
+Ben Affleck was seemingly on his way to having one of the best comebacks in Hollywood. He started off the previous decade with *The Town* which garnered huge critical and commercial success. He would earn an Oscar with the excellent *Argo* and be in one of the best films of the decade, *Gone Girl*. However, as the second half of the decade began, his career began to go back in the previous direction. The casting as Batman didn’t turn out so great (I thought he was fantastic; the films not as much) and then starring in flops like *Live by Night*. Ironically enough, director Gavin O’Connor’s career follows in that same vein. O’Connor starting the decade off with the massive hit *Warrior* seemingly put him on a pedestal to follow it up. Unfortunately, that was followed up *Jane Got a Gun* and his first partnering with Affleck with *The Accountant*. Both were far from the success the two and the studio thought the films would be. Here we are now with *The Way Back* which O’Connor dropped *Suicide Squad 2* for. But is it any good?
+
+{% include media type="youtube" src="GhtTc7R8yBk" %}
+
+Affleck stars as Jack Cunningham, a small town basketball hero who is decades from his
+heydays. Now an alcoholic who has marital issues, Jack gets another chance at redemption when he is called up to coach his former high school’s basketball team. Per usual, Affleck brings a pretty good performance as Cunningham. He is forced to be dynamic with playing such an
+intricate character and he does it to a tee. Al Madrigal
+and Janina Gavankar play the next notable roles and they are just fine in the film. The rest of the supporting cast is not memorable at all but at least don’t fall into bad. The performances of the kids on the basketball team range from decent all the way down to “is this your first time on screen.” It’s disappointing because sports movies offer an outstanding opportunity for attention-grabbing performances from the supporting actors in the team roles.. 
+
+Starting with the positive elements, the story penned by Brad Ingelsby has a very positive message about redemption that, while done before, isn’t cheesy enough to blow it off. The film does know when to be funny to break some of the dramatic tension in the film which is always great to see. One big part of the film is the basketball team section which I did get invested in, getting excited and sad through the ebbs and flows of the season. There are also clever pockets throughout that stuck with me after leaving the theatre. 
+
+On the other hand, the film is far from perfect. The plot is overly predictable through its first two acts and the construction doesn’t carry the film enough to let it slide. The third act does have its twists and turns but by that time it was too late. My one big issue is how unbalanced the film. Going into the film you would believe the basketball team was a majority of the movie and we build with the team and learn and connect with them. In reality, *The Way Back* decides to prioritize Jack’s personal life way more than basketball, which is fine but when the basketball section is the best part of the film, you lose a ton. I did not get connected to the players enough other than the best player on the team, which is far from enough. The screenplay does not tap into its full potential but I was still attached to the screen through the whole runtime.
+
+I will slightly touch on O’Connor and what he does from the director’s chair. I was disappointed in the performances he gets out of his cast which disappoints after a film like *Warrior*. I think he shows flashes of brilliance when it comes to storytelling but nowhere near enough for me to remember any of it by next year. I do love how the film skips over an obvious connective conversation and gets straight to the next scene because it is common sense what will happen. It shows that O’Connor trusts the audience to use their brains, which I love. The cinematography and technical elements are decent which pretty much sums up how I feel about what O’Connor brings to this film. So *The Way Back* is far from the next master class from Gavin O’Connor and Ben Affleck, but it is still a fun watch. A heartfelt story with a great message and a beautiful performance from Affleck at the heart of it. If you have the free time, check this one out.

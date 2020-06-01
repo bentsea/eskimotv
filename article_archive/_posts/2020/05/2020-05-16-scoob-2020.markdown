@@ -1,0 +1,25 @@
+---
+title: "Scoob! (2020)"
+blurb: "Save your $20-$25! Not worth renting or buying..."
+categories: [review,movie,Family,Animation,Comedy,Mystery,Adventure]
+image: /img/2020/05/scoob-2020-3-cover.jpg
+author: jasone
+youtube: GZaapDPyO8w
+reviewInfo:
+   final-verdict: "Scoob! is an underwhelming tedious 90 minutes filled with cheesy dialogue, a silly villain objective, and is ultimately forgettable."
+   rating: 75
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Scoob!"
+      sameAs: "https://www.themoviedb.org/movie/385103"
+      image: "https://image.tmdb.org/t/p/original/zG2l9Svw4PTldWJAzC171Y3d6G8.jpg"
+      director: "Tony Cervone"
+      datePublished: "2020-05-15"
+published: True
+---
+Save your $20-$25 ladies and gentlemen! *Scoob!* tells a formulaic story of how Scooby-Doo and Shaggy meet; befriend Fred, Velma, and Daphne, and are now on a mission to stop antagonist Dick Dastardly- and yes, that’s his name and yes they make fun of it. 
+
+If you love Scooby-Doo the nostalgia is here and you may enjoy seeing these characters again. Scooby and Shaggy’s evolving friendship is admirable and the single redeemable quality of the film is when one of them begins to feel betrayed when the other begins to get more attention. This was done in a way that could connect with audiences who can understand the heartbreak that happens when friends change. Unfortunately this single plot point is very brief. 
+
+Scoob’s main problem is it’s predictable story, as the villain Dick Dastardly's main objective is flat out stupid as Dick plans to release a destructive three headed dog that will end life as we know it. Very forgettable narrative.

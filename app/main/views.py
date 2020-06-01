@@ -72,7 +72,7 @@ def profile(id):
         per_page=current_app.config['ESKIMOTV_ARTICLES_PER_PAGE'],
         error_out=False)
     articles = pagination.items
-    return render_template('main/user.html.j2',user=user, articles=articles,display=display)
+    return render_template('main/user.html.j2',user=user, articles=articles,display=display,pagination=pagination)
 
 @main.route('/toggle_user_display')
 def toggle_user_display():

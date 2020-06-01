@@ -1,0 +1,42 @@
+---
+author: jasone
+blurb: A suspenseful thrill ride!
+categories:
+- review
+- movie
+- Thriller
+- Drama
+- Horror
+- Mystery
+image: /img/2019/04/greta-5-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: Despite small conundrums that take place near the end, Greta is a
+    suspenseful thrill ride that will easily hold audience attention from beginning
+    to end.
+  rating: 89
+subjectInfo:
+  about:
+    dateCreated: '2019-02-28'
+    director: Neil Jordan
+    image: https://image.tmdb.org/t/p/original/6Lgk1OGexD0fU8QqDBQHcvEwd1Z.jpg
+    name: Greta
+    sameAs: http://www.imdb.com/title/tt2639336
+  type: movie
+title: Greta (2019)
+youtube: eNDhwoAOs6o
+---
+
+**Review Transcript**
+
+Greta is a horror thriller directed by Neil Jordan and centers around a young girl named Francis, portrayed by Chloë Grace Moretz who finds a bag on a subway. Looking at the driver’s license inside, Frances decides to return this item to Isabelle Huppert’s much older character, Greta. The two develop an unlikely bond and we are taken on a thrill ride, as you soon discover that Greta is not all who she appears to be.
+
+Greta easily will hold your interest from the beginning until the very end. I was intrigued with learning about Greta’s character and as the story unfolds, new mysteries develop and I wanted to know what was going to happen and how it would all end. 
+
+The acting by our leads is impressive, as there’s several scenes that rely heavily on dialogue and their performances held my attention. Isabelle Huppert does a tremendous job playing someone who initially seems innocent and slowly transforms into someone you won’t expect. All of the fear Moret’s character feels is believable and it felt like these circumstances that she’s in were realistic. Also, Mike-uh Monroe was a pleasant supporting actress who plays Frances’s best friend Erica and she tries to help Francis throughout the film.
+
+This movie does show us how difficult it can be to get out of the situation that Frances finds herself in, as the police and those that she works with offer no help. This causes us to feel sympathy for Frances and hopefully will cause actual police to think about how someone in this situation can get real help.
+
+The screenplay has some unusual storytelling choices that were slightly aggravating. For example, there’s a sequence where the film tricks the audience into thinking that a character is having a dream and it was very unnecessary. There’s questions I had about how long a character had been at a certain place and when I think the film is going to answer this question, it decides not to. Also, the ending had me roll my eyes as it seems to try to setup a sequel that does not need to happen.
+
+Despite these small conundrums that mostly all take place at the very end, I think Greta is a decent suspenseful thrill ride.

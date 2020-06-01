@@ -1,0 +1,29 @@
+---
+title: "Emma. (2020)"
+blurb: "Top-notch production and costume design littered by underdeveloped characters inside dull circumstances..."
+categories: [review,movie,Comedy,Drama]
+image: /img/2020/02/emma-2020-1-cover.jpg
+author: jasone
+youtube: 
+reviewInfo:
+   final-verdict: "A beautiful-looking film that lacks a compelling narrative due to interactions with mass amounts of characters who lack depth to anyone not familiar with the source material."
+   rating: 70
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Emma."
+      sameAs: "https://www.themoviedb.org/movie/556678"
+      image: "https://image.tmdb.org/t/p/original/sm8iVzA7kRp0d4BSIsgXjsSBMKV.jpg"
+      director: "Autumn de Wilde"
+      datePublished: "2020-02-14"
+published: True
+---
+*Emma.* (with a period at the end) is an incredibly beautiful looking film. I can do nothing but praise *Emma.’s* gorgeous Cinematography (Christopher Blauvelt), Production Design (Kave Quinn), and Costume Design (Alexandra Byrne). All three of these elements allowed me to feel like I was walking into the 1800’s. The colors are vibrantly color-graded and the costumes reflect the time and fit each character’s persona. Additionally, the acting is commendable. Unfortunately, the story is clunkily dull due to the large amounts of interactions our main characters have with the vast amounts of different underdeveloped supporting characters you know virtually nothing interesting about.
+
+{%  include media type="youtube" src="qsOwj0PR5Sk" %}
+
+It’s the 1800s. Emma Woodhouse (Anya Taylor-Joy) loves to bring couples together, as the film begins with the wedding of Mr. Weston and Miss Taylor, which Emma takes joyful credit for their love developing. The rest of the film is an assortment of different characters, notably Emma’s best friend Harriet Smith (Mia Goth) and Emma’s older friend/critic George Knightly (Johnny Flynn), trying to figure out who is attracted to who. These characters are loaded with snarky one-liner comments used for comedic effect.
+
+The characters Emma and Harriet did have an intriguingly dynamic friendship. Harriet is not confident with making decisions and can’t even decide on something as pivotal as accepting a marriage proposal. Harriet takes every word that comes out of Emma’s mouth as gospel truth and Emma’s input ends up causing an unpleasant domino effect. This dynamic is interesting because most people, despite however uncertain they may feel, would be able to muster up the strength to make such a big decision on their own. Not Harriet. She is one of the few characters I truly sympathized with, as she is allowing someone else to steer her life for her.
+
+Alas, after thirty minutes into the film, *Emma* becomes clogged with side plots and drawn-out dialogue that made it difficult for me to stay interested in the narrative. It is noticeable that director Autumn de Wilde wanted to be faithful to the novel, as so many specific scenarios are crammed without giving the characters all the moments they needed to be intricate, fleshed out, or cared for. However, if you are familiar with the source material, *Emma.* may be an enjoyable film because the novel has the luxury of being able to take its time with setting up the vast cast of characters. Therefore, what they say and the mundane situations they are in may have more meaning to an audience who already cares about the characters before entering the theater. Emma’s father (Mr. Woodhouse), Frank Churchill, Jane, Robert Martin, the Westons, and the Eltons all have a role that collides in the narrative that simply felt way too “clunky” and overall unengaging due to the lack of time the film is able to spend on all of them.

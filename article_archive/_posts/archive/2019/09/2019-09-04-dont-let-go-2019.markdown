@@ -1,0 +1,26 @@
+---
+title: "Don't Let Go (2019)"
+blurb: "A convoluted thriller!"
+categories: [review,movie,Horror,Science Fiction,Thriller]
+image: /img/2019/09/dont-let-go-2019-0-cover.jpg
+author: jasone
+youtube: 54IzdfgVlG8
+reviewInfo:
+   final-verdict: "A convoluted thriller communicated terribly despite having a creative premise"
+   rating: 75
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Don't Let Go"
+      sameAs: "https://www.themoviedb.org/movie/539651"
+      image: "https://image.tmdb.org/t/p/original/ahETZlOXCPIUVhp1HBW4X7KefiS.jpg"
+      director: "Jacob Aaron Estes"
+      datePublished: "2019-08-30"
+published: True
+---
+Don’t let go stars David Oyelowo who plays Detective Jack Radcliff, who one day gets a surprising phone call from his recently murdered niece. The film follows the duo as Jack attempts to save his niece from her future-- which is his past and it’s very confusing. 
+
+> "Don’t Let Go is unique and creative but does an amateur job at executing a compelling or polished thriller."
+
+I think getting a phone call from a passed loved one is admittingly shocking. The setup is effective as we see the close relationship that Jack and his niece have. Unfortunately, the story is slow, communicated terribly, and feels inconsequential. Don’t Let Go is unique and creative but does an amateur job at executing a compelling or polished thriller.
+

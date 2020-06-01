@@ -1,0 +1,38 @@
+---
+author: dscott
+blurb: An entertaining satirical exploration of rap battle culture.
+categories:
+- review
+- movie
+- Drama
+- Comedy
+image: /img/2018/10/bodied-cover.jpg
+published: true
+reviewInfo:
+  final-verdict: Entertaining, clever, and thought provoking for viewers who can appreciate
+    difficult subject matter.
+  rating: 90
+subjectInfo:
+  about:
+    dateCreated: '2018-11-02'
+    director: Joseph Kahn
+    image: https://image.tmdb.org/t/p/original/5urgy7sXFbvCK7SBmc0fF978AOb.jpg
+    name: Bodied
+    sameAs: http://www.imdb.com/title/tt5883570
+  type: Movie
+title: Bodied (2018)
+---
+
+*Bodied* manages the near impossible by showing deep contempt for the rap battles that are its core subject matter while still getting the audience deeply invested into the climax of the film. If anything, director Joseph Kahn heavily explores a fantasticly ironic relationship between the nature of rap battles boisterous bragging and the lives of the rappers. 
+
+{% include media type="youtube" src="oUry7CpMpCE" %}
+
+Before saying anything else, I have to say that *Bodied* has a lot to say about modern race relations that I'm just not qualified to comment on. I just don't know how to think or feel about it. I'm also not sure that the themes of the film are sincere as *Bodied* appears to have a satirical thread which may indicate that everything it appears to support may well be done for humorous effect. What I can say is that as much as any other aspect of *Bodied*, the discussion of political correctness and race relations kept me lost in thought through its entire runtime. And I think that's a good thing, anything that makes you think long and hard, whatever its message, is a good thing. It's discussion.
+
+In addition to this, there are some fantastic questions that get raised about the damage that a single video of a smaller moment in a person's life can change everything. That's a powerful topic because we are more and more immersed in a world where it is increasingly plausible that your worst possible moment may be blown up to the world and you may be judged for a time where you are lost and confused and still trying to find out who you are. 
+
+The last thing I'll say regarding the story is that I was refreshed throughout the experience by the thoughtful and analytical approach that *Bodied* uses to approach its subject. The film opens with a rap battle in progress between Behn Grymm and a forgettable opponent that is observed and commented on in real time by the main character, Adam. This opening makes it clear that the thoughtful approach is purposeful. 
+
+Outside of the story, Joseph Kahn uses creative shots and animations to keep the conflicts engaging and visceral. The pacing does a fantastic job of getting the audience invested in the emotional impact of the various battles as they progress the story. It's even more impressive that this is done even as the story emasculates its protagonists. 
+
+On the whole, *Bodied* is a fascinating work that is both thoughtful and entertaining. The subject matter can be harsh and a lot of people may be turned off by the ideas. However, if you're a fan of thought-provoking films with clever dialog that ask difficult questions, then *Bodied* is definitely worth your time.

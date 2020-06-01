@@ -1,0 +1,40 @@
+---
+author: dscott
+blurb: A fun but flawed adventure story that will delight despite its failings.
+categories:
+- review
+- movie
+- Action
+- Adventure
+- Science Fiction
+date: 2017-02-04
+image: /img/2017/02/rogue-one-cover.jpg
+layout: post
+published: true
+reviewInfo:
+  final-verdict: A fun but flawed adventure story that will delight despite its failings.
+  rating: 75
+subjectInfo:
+  about:
+    dateCreated: 16 Dec 2016
+    director: Gareth Edwards
+    image: https://images-na.ssl-images-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_SX300.jpg
+    name: Rogue One
+    sameAs: https://www.imdb.com/title/tt3748528
+  type: Movie
+title: 'Rogue One: A Star Wars Story (2016)'
+---
+
+Rogue One is a pretty interesting movie, and I want to start by saying that I liked it. The reason I feel it's really important to start with that is that it's a flawed work and it's really easy to talk about what's wrong with it. But, I want to make it very clear that I felt the good outweighed the bad and I enjoyed it *thoroughly*. The story is fun sci fi cheese that has relatively normal people reaching for something that they believe in and making sacrifices for it. To me, that makes for an engaging story despite any flaws. The music is excellent, the action is fun, and I was attached to the characters.
+
+What I found interesting about it was that it was affected by what appear to have been extensive re-writes and reshoots. The broken development shines through in the action scenes and story cohesiveness, and it's palpable. Characters and story-lines are dropped left and right. They are too much and too little. They're just enough to make you wonder what's missing, and if they were cut completely they may not have been missed at all.
+
+Characters will show up and and disappear or choose to die without having done much of anything and for no particular reason. The plot jumps from place to place, but doesn't make many of them feel important or necessary, with very little accomplished. The bigger issues lay in the inconsistancies of the  main characters. They shift from morally gray to doing the right thing without really a reason or character change to explain it. Many of the action scenes feel loose, and poorly thought out.
+
+That said, what is good with this movie kept me on the edge of my seat the entire time I watched it. I had to watch it a second time before it started falling apart for me. I was invested in what was happening, and it didn't matter that I knew that the rebels got the plans. I cared about what was happening and the fate of the characters. 
+
+I also give a lot of bonus points for what I feel is a surprising ending. I have heard a lot of people say it is predictable, but I have to completely disagree. Without giving away spoilers, "safe movies", movies that do not take many risks and are largely made by committee... they don't end like this.
+
+The Force Awakens didn't work for me because all of the character felt too overpowered and like they didn't ever have to risk or lose anything. Rogue One: A Star Wars story feels like all the characters and everything they believe in is on the line, and that's the huge difference. 
+
+If you can turn off your brain and see past the flaws, there is a real gem that I think will be a classic for generations.

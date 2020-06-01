@@ -1,0 +1,30 @@
+---
+title: "Tigertail (2020)"
+blurb: "An elegantly told character study"
+categories: [review,movie,Drama]
+image: /img/2020/04/tigertail-2020-1-cover.jpg
+author: rishabh
+youtube: 
+reviewInfo:
+   final-verdict: "Tigertail's simple and elegantly told character study is mostly engaging and poignant, even if it doesn't quite pack a complete emotional heft."
+   rating: 85
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Tigertail"
+      sameAs: "https://www.themoviedb.org/movie/544415"
+      image: "https://image.tmdb.org/t/p/original/tKqnN5CMSYQXjaNbTGZfbxpwK3t.jpg"
+      director: "Alan Yang"
+      datePublished: "2020-04-10"
+published: True
+---
+*Tigertail* is a new Netflix original film from director/writer/producer Alan Yang, and tells the story of a Taiwanese man's journey to America, and the difficult choices he faces along the way and as a result. This is Yang's first directorial feature, and he creates a personal, simple, and poignant story about family, relationships, and identity with this film. At a terse 1h 30m runtime, *Tigertail* still implements deliberate pacing in order to bring out the details of this story, and provide time for the story's themes and characters to simmer and develop. Ultimately, the film is somewhat of a mixed bag, with certain moments that feel more artificial and amateurish than others, but the story still contains a resounding potency that does resonate. Yang keeps the narrative focused, even if he doesn't break a lot of new ground, and ensures that the story remains perceptively grounded through its characters. *Tigertail* may not necessarily pack a complete emotional wallop, but still manages to tell a story that will strike a chord with audiences. 
+
+{%  include media type="youtube" src="i8lp_eI78ZM" %}
+
+Tzi Ma (you'll recognize him from *The Farewell*) is very good as an older version of Grover, the main character of the film. He perfectly embodies the embittered and jaded personality of his character, while also channeling the difficult confrontations he has with regrets of his past. Ma gives probably the best performance of the entire ensemble cast here, although Hong Chi-Lee and Kunjue Li are both good as young Grover and young Zhen Zhen. Christine Ko also provides a mostly solid and convincing turn as Angela in the film as well. The film is technically well-helmed too, and there is a focus on detail, despite the small-scale production.
+
+*Tigertail* is a film that is focused squarely on its characters, and the emotional struggles with memory that they face. In particular, it acts as a rather compelling character study for Grover's character, who is caught within the midst of his turbulent past and present colliding. As his story is presented, Yang depicts his character as realistically flawed but also through an empathetic lens, which makes for a well-fleshed out and engaging narrative. Furthermore, *Tigertail* takes its time to build its simple story, and the slow pacing still manages to make for compelling storytelling, simply because of how well thought out the characters are. There are times the film does falter however, and the constant narrative back-and-forth can sometimes give the movie an inconsistent and even amateurish quality. Additionally, there are times that the writing can feel a bit artificial and make the emotions in certain scenes feel slightly forced. Yet, despite the flaws, the poignancy of *Tigertail* comes through as the film's message of empathy shines through.
+
+All in all, *Tigertail* isn't very groundbreaking but proves to be a promising start to Alan Yang's burgeoning directorial career. It's a refreshingly character-driven and simple, but elegantly told, film that is worth a watch.
+

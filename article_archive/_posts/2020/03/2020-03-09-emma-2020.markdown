@@ -1,0 +1,30 @@
+---
+title: "Emma. (2020)"
+blurb: "A solid adaptation of Jane Austen's classic novel"
+categories: [review,movie,Comedy,Drama]
+image: /img/2020/03/emma-2020-0-cover.jpg
+author: rishabh
+youtube: 
+reviewInfo:
+   final-verdict: "Emma. is a solid adaptation of Jane Austen's classic novel that includes a wry sense of humor and a talented cast, headlined by a fantastic lead turn by Anya Taylor-Joy."
+   rating: 85
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Emma."
+      sameAs: "https://www.themoviedb.org/movie/556678"
+      image: "https://image.tmdb.org/t/p/original/sm8iVzA7kRp0d4BSIsgXjsSBMKV.jpg"
+      director: "Autumn de Wilde"
+      datePublished: "2020-02-13"
+published: True
+---
+*Emma.*, the film adaptation of Jane Austen's classic novel, is a retelling of a well-known story done with finesse, immaculate technical craftsmanship, and deft performances. This is a seemingly faithful adaptation done with relatively few narrative bells and whistles (don't expect the likes of the time-jumping narrative found in Greta Gerwig's *Little Women*) that still resonates thanks to the timelessness of its plot and characters. Director Autumn de Wilde and writer Eleanor Catton adapt Austen's source material with a loving spirit, embracing its characters' dynamic personalities and the story's wry and witty take. What gives Emma its strongest revitalization, however, is easily its performances, headlined by a dependably good Anya Taylor-Joy.
+
+This adaptation of *Emma.* brims with visual brilliance, as each frame bursts with gorgeously rendered pastel colors and detailed production/costume design. The cinematography by Christoper Blauvelt is gorgeous, and gives the movie a rich visual texture complete with beautifully composed shots and expansive landscapes. Much attention is also given to getting the details right in this period piece, with production design and costume design that brings the film to life.
+
+The performances by just about everyone in this film remain excellent throughout. Anya Taylor-Joy is fantastic as Emma, and plays the character with a great deal of subtlety. Mia Goth is great here as well as Harriet, as is the rest of the ensemble cast. Everyone here is giving strong performances and working effortlessly with one another to provide a complete cinematic experience.
+
+Overall, director Autumn de Wilde's adaptation gives Jane Austen's work a fresh new cinematic vision with a talented cast. The story of *Emma.* is light-hearted and frothy, with great flourishes of wry humor and terrific characters. This adaptation does a good job of making sure the entire ensemble cast gets a moment to shine, and the performers live up to the challenge. Ultimately, the story of *Emma.* is somewhat slight, but the story's strong characters remain a strength in this film adaptation as well. 
+
+*Emma.* isn't a groundbreaking or particularly inventive adaptation, but it's a solidly crafted film that provides a slight cinematic change-of-pace from most of the film fare currently playing in theaters.
+

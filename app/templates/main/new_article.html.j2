@@ -256,8 +256,20 @@ $("#tmdbCoverModal").on('shown.bs.modal', function(){
 <script type="text/javascript">
 $.getJSON("{{ url_for('api.get_tags') }}",function(data,status,xhr) {
   var items = JSON.parse(data)['results'];
-  console.log(items)
   $("#tags_selector").select2({
+    createTag: function (params) {
+      var term = $.trim(params.term);
+
+      if (term === '') {
+        return null;
+      }
+
+      return {
+        id: term,
+        text: term,
+        newTag: true // add additional parameters
+      }
+    },
     data: items,
     {% if current_user.can(Permission.PUBLISH) %}tags: true,{% endif %}
     tokenSeparators: [',']

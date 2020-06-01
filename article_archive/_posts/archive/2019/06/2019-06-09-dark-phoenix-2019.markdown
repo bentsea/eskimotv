@@ -1,0 +1,38 @@
+---
+title: "Dark Phoenix (2019)"
+blurb: "Maybe the Last X-Men Movie Before a Major Reboot?"
+categories: [review,movie,Science Fiction,Adventure,Action,Comic]
+image: /img/2019/06/dark-phoenix-2019-2-cover.jpg
+author: dscott
+youtube: 
+reviewInfo:
+   final-verdict: "IF you can see past the flaws, there are some elements that you don't get anywhere else."
+   rating: 74
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Dark Phoenix"
+      sameAs: "https://www.themoviedb.org/movie/320288"
+      image: "https://image.tmdb.org/t/p/original/kZv92eTc0Gg3mKxqjjDAM73z9cy.jpg"
+      director: "Simon Kinberg"
+      datePublished: "2019-06-05"
+published: True
+---
+
+
+A vast improvement over *X-Men: Apocalypse*, *Dark Phoenix* gets enough right that it is almost worth overlooking its sins. Don't get me wrong, there is plenty broken here. The villains are disposable, the plot twists and turns without purpose, and the action scenes, filled with continuity errors, aimlessly drift along. Despite all of this, *Dark Phoenix* manages to succeed by exploring the story through the character Jean Grey's perspective and by finally having some moments where the X-Men as a whole just feel like they should.
+
+{% include media type="youtube" src="azvR__GRQic" %}
+
+*Dark Phoenix* is set after the events of *X-Men: Apocalypse*. The X-Men have reached a level of normalcy in their universe. After finally developing a routine wherein they are on call to save the day, the president of the United States reaches out to them when the latest emergency arises with the curent space shuttle mission. While on this latest mission in space, Jean Grey (Sophie Turner) is exposed to cosmic forces that radically affect her powers. The effects on her character call into question whether or not she may remain a force of good as they also cast a shadow on the past actions of Professor X (James McAvoy).
+
+The very real flaws with the construction of *Dark Phoenix* are tied to its structure.  Individual action scenes are composed of clips that frequently lose sight of the layout of the environment. It is impossible to meaningfully track the exact events as they relate to each other in the moment-to-moment cuts. The intensity and length of these scenes are fine though their lack of clarity makes them feel hollow. 
+
+On a larger scale, the film introduces aliens that have no real context in either the universe or even in this story. The stakes they introduce are poorly explored at best and shallow at worst. I kid you not, they could have been cut from the entire movie and it would only have affected a few fight scenes. I couldn't tell you what they were called without looking it up or even a single one of their names. Even the characters that we care about flip-flop back and forth as they change motivation. 
+
+While Simon Kinberg doesn't abandon any plotlines, he resolves them with such abruptness as to feel like they might as well have just been dropped off. The real shame is that all the worst parts are in the last half ending *Dark Phoenix* on a sour note after a good start.
+
+And that start is really good. *Dark Phoenix* deserves a great deal of credit for finally feeling like a fun and adventurous X-Men movie for the first 30 minutes. They get called by the president, go to space, just flat out save people without any greater context of poisonous human-mutant relations. It's flat out entertaining. Even after they get back, the struggle between Jean Grey and Professor X is meaningful and gets the core ideas right. There's a fantastic exploration of what it means to be robbed of agency by people with good intentions and to be constantly told who you're supposed to be by the people who wronged you. 
+
+The first third of the runtime had me feeling genuinely hyped for what may have been the best X-Men movie yet. Overall, I think those things worked well enough and delivered something so rarely felt in this franchise that I think the movie is worth it. Just go in with tempered expectations.
+

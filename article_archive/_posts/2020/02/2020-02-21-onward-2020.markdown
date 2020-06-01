@@ -1,0 +1,26 @@
+---
+title: "Onward (2020)"
+blurb: "Comedic and heartwarming adventure!"
+categories: [review,movie,Animation,Comedy,Family,Fantasy,Adventure]
+image: /img/2020/02/onward-cover.jpg
+author: jasone
+youtube: sl56CoDqPrQ
+reviewInfo:
+   final-verdict: "Pixar once again makes a film kids and adults can love! Fleshed out characters go on a quest full of comedic, heartfelt, and emotional turns that are consistently engaging."
+   rating: 95
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Onward"
+      sameAs: "https://www.themoviedb.org/movie/508439"
+      image: "https://image.tmdb.org/t/p/original/3VqDLgKLfNYSQYEGC5sjGhcPhn7.jpg"
+      director: "Dan Scanlon"
+      datePublished: "2020-03-04"
+published: True
+---
+
+*Onward* releases on March 6th and you all have to go watch it. 
+
+Tom Holland and Chris Prat voice elf brothers Ian and Barley who discover a magical staff that will bring their dad back to life...but for only 24 hours. Unfortunately, the brothers only manage to bring back the father’s legs! It’s a race against time as the Dungeons and Dragons inspired quest takes the duo through a countless number of heartfelt and comedic turns. 
+
+*Onward* has fantastic fleshed out characters who have distinct likable personalities. Comedy is cleverly written; specifically, Octavia Spencer who plays a loud, rambunctious, and hilariously entertaining character called the Manticore. Ian satisfyingly learns a few things he never thought he could do along the journey and the climax is rewarding to see him put everything we’ve seen him learn to use. This plot has surprises, subverts your expectations, and will not end the way you think it will. The D&D atmosphere has a gorgeously unique style that will be adored by role-playing game fans as well as general audiences.

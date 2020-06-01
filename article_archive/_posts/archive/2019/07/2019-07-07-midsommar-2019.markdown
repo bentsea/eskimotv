@@ -1,0 +1,22 @@
+---
+title: "Midsommar (2019)"
+blurb: "An imaginative complex plot!"
+categories: [review,movie,Horror,Drama,Mystery]
+image: /img/2019/07/midsommar-2019-10-cover.jpg
+author: jasone
+youtube: 5iSjrX_5Khg
+reviewInfo:
+   final-verdict: "Viewers thirsting for an imaginative complex plot open to interpretation will appreciate the direction Aster has taken his sophomore film; others may call it a convoluted mess"
+   rating: 80
+subjectInfo:
+   type: "Movie"
+   about:
+      name: "Midsommar"
+      sameAs: "https://www.themoviedb.org/movie/530385"
+      image: "https://image.tmdb.org/t/p/original/7LEI8ulZzO5gy9Ww2NVCrKmHeDZ.jpg"
+      director: "Ari Aster"
+      datePublished: "2019-07-03"
+published: True
+---
+
+
