@@ -8,7 +8,7 @@
 <div class="home">
   <div class="page-heading d-none d-lg-block">
     <h1>Icy & Chilly Reviews and Editorials</h1>
-    <h3 class="page-meta">Your home for movies, entertainment, and more!</h3>
+    <h3 class="page-meta">Your home for movies {{ config['SERVER_NAME']}}, entertainment, and more!</h3>
   </div>
 
   <div id="home-slider" class="owl-carousel">
@@ -20,7 +20,7 @@
           <span class="slide-blurb"><span>{{ article.blurb }}</span></span>
         </div>
         <div class="slide-image">
-          <img {% if not loop.first %}class="lazyOwl" data-src="{{ resized_img_src(article.image,width=1110,height=555,mode='crop',quality="100") }}"{% endif %}{% if loop.first %}src="{{ resized_img_src(article.image,width=1110,height=555,mode='crop',quality="100") }}"{% endif %} alt="{{ article.title }}">
+          <img {% if not loop.first %}class="lazyOwl" data-src="{{ resized_img_src(article.image,width=1110,height=555,mode='crop',quality="70") }}"{% endif %}{% if loop.first %}src="{{ resized_img_src(article.image,width=1110,height=555,mode='crop',quality="70") }}"{% endif %} alt="{{ article.title }}">
         </div>
       </a>
     </div>

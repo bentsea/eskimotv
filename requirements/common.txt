@@ -24,3 +24,5 @@ python-resize-image
 requests
 urllib3
 frontmatter
+python-dotenv
+flask-sslify

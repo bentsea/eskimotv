@@ -10,12 +10,12 @@ from PIL import Image
 from app.admin import files
 from app.admin.views import add_new_creative_work
 
-image_path = '/home/eskimotv/app/article_archive'
+image_path = 'article_archive'
 
-with open('/home/eskimotv/app/article_archive/all_content.json') as json_file:
+with open('article_archive/all_content.json') as json_file:
     all_content = json.loads(json_file.read().replace('\n','\\n').replace('\t',' ')[:-2])
 
-articles = glob.glob('/home/eskimotv/app/article_archive/_posts/**/*.markdown', recursive=True)
+articles = glob.glob('article_archive/_posts/**/*.markdown', recursive=True)
 for article_path in articles:
     article = Frontmatter.read_file(article_path)
     article_object = Article.query.filter_by(title_slug=slugify(article['attributes']['title'])).first()
@@ -38,7 +38,7 @@ for article_path in articles:
         else:
             continue
     article_object.subject = creative_work
-    article_object.body = html.unescape(all_content[article_path.replace('/home/eskimotv/app/article_archive/','')])
+    article_object.body = html.unescape(all_content[article_path.replace('article_archive/','')])
     article_object.blurb = article['attributes'].get('blurb','The author of this article was lazy and forgot to write a blurb.')
     if article['attributes'].get('reviewInfo'):
         article_object.rating = article['attributes']['reviewInfo']['rating']

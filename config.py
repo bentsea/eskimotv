@@ -1,4 +1,5 @@
 import os
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
@@ -23,6 +24,7 @@ class Config:
     FLASKFILEMANAGER_FILE_PATH = os.path.join(basedir,'app/static/uploads/')
     TMDB_API_KEY=os.environ.get('TMDB_API_KEY')
     CKEDITOR_ENABLE_CSRF = True
+    IMAGES_CACHE=os.path.join(basedir,"tmp/flask-images")
     primary_color = "#6699cc"
     secondary_color1 = "#003366"
     secondary_color2 = "#336699"
@@ -42,6 +44,7 @@ class TestingConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or 'sqlite:///{}'.format(os.path.join(basedir,'data-test.sqlite'))
 
 class ProductionConfig(Config):
+    SERVER_NAME="www.eskimotv.net"
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///{}'.format(os.path.join(basedir,'data.sqlite'))
 
 config = {

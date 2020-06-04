@@ -6,11 +6,9 @@ from flask import current_app
 
 # Define Globals
 max_width=1920
-path_prefix="/home/eskimotv"
-app_prefix="/app/app"
 static_directory="/static/"
 cover_image_path="img/cover-images/"
-static_file_path=f"{path_prefix}{app_prefix}{static_directory}"
+static_file_path=f"{current_app.root_path}{static_directory}"
 
 def save_cover_image(img,article_slug):
     img_name = f"{article_slug}-cover-image.jpg"

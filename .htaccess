@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /home/eskimotv/public_html/cgi-bin/eskimotv.cgi/$1 [L]
