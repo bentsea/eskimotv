@@ -208,7 +208,11 @@ class User(UserMixin,db.Model):
         return check_password_hash(self.password_hash, password)
 
     def gravatar_hash(self):
-        return hashlib.md5(self.email.lower().encode('utf-8')).hexdigest()
+        return hashlib.md5(self.email.lower().strip().encode('utf-8')).hexdigest()
+
+    @staticmethod
+    def on_changed_email(target, value, oldvalue, initiator):
+        target.avatar_hash = target.gravatar_hash()
 
 class AnonymousUser(AnonymousUserMixin):
     def can(self, permissions):
@@ -381,3 +385,4 @@ class Person(db.Model):
 db.event.listen(Article.body, 'set', Article.on_changed_body)
 db.event.listen(Article.title,'set', Article.on_changed_title)
 db.event.listen(Article.rating,'set', Article.on_changed_rating)
+db.event.listen(User.email, 'set', Article.on_changed_email)

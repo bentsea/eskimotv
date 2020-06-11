@@ -1,0 +1,13 @@
+{% extends "default.html.j2" %}
+
+{% block title %}{{ super() }}: {{ title }}{% endblock %}
+
+{% block header %}<h1>{{ title }}</h1>{% endblock %}
+
+{% block page_content %}
+<div>
+  <gcse:searchresults-only></gcse:searchresults-only>
+</div>
+
+<p class="rss-subscribe">subscribe <a href="{{ url_for('main.rss_feed') }}">via RSS</a></p>
+{% endblock %}

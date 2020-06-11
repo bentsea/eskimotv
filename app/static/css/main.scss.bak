@@ -158,8 +158,8 @@ h5.bio-subheader {
 
 @font-face {
     font-family: 'chunkfiveroman';
-    src: url('static/fonts/chunkfive-webfont.woff2') format('woff2'),
-         url('static/fonts/chunkfive-webfont.woff') format('woff');
+    src: url('fonts/chunkfive-webfont.woff2') format('woff2'),
+         url('fonts/chunkfive-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 

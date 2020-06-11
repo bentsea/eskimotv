@@ -1,6 +1,4 @@
 {% extends "default.html.j2" %}
-{% import "bootstrap/wtf.html" as wtf %}
-{% import "includes/macros.html.j2" as macros %}
 
 {% block title %}{{ super() }}: Home{% endblock %}
 
@@ -8,11 +6,11 @@
 <div class="home">
   <div class="page-heading d-none d-lg-block">
     <h1>Icy & Chilly Reviews and Editorials</h1>
-    <h3 class="page-meta">Your home for movies {{ config['SERVER_NAME']}}, entertainment, and more!</h3>
+    <h3 class="page-meta">Your home for movies, entertainment, and more!</h3>
   </div>
 
   <div id="home-slider" class="owl-carousel">
-    {% for article in articles[:15] %}
+    {% for article in articles[:14] %}
     <div class="item">
       <a href="{{ article.url }}">
         <div class="slide-text">
@@ -53,7 +51,4 @@
 
   <p class="rss-subscribe">subscribe <a href="">via RSS</a></p>
 </div>
-{#<div class="">
-  {{ macros.pagination_widget(pagination, 'main.index') }}
-</div>#}
 {% endblock %}

@@ -102,6 +102,8 @@ def reset_password(token):
         return redirect('main.index')
     if form.validate_on_submit():
         user.password = form.password.data
+        db.session.add(user)
+        db.session.commit()
         flash('Your password has been successfully reset.')
         return redirect(url_for('auth.login'))
     return render_template("auth/password_reset.html.j2",form=form, user=user)

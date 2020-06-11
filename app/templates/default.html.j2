@@ -23,6 +23,22 @@
 
   <!-- SEO / META / OG Data -->
   <title>{% block title %}{{ config.TITLE }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{% if article %}{% if article.youtube %}Video {% endif %}{{ article.type.name }}: {{ article.blurb }}{% elif description %}{{ description }}{% else %}{{ config.DESCRIPTION }}{% endif %}{% endblock %}">
+  <link rel="canonical" href="{% block pageurl %}{% if article %}{{ article.url }}{% else %}{{ request.url }}{% endif %}{% endblock %}">
+  <link rel="alternate" type="application/rss+xml" title="{{ config.TITLE }}" href="{{ url_for('main.rss_feed') }}" />
+
+  <meta property="og:title" content="{{ self.title() }}">
+  <meta property="og:description" content="{{ self.description() }}" />
+  <meta property="og:url" content="{{ self.pageurl() }}">
+  <meta property="og:image" content="{% if article %}{{ url_for('static',filename=article.image,_external=True) }}{% else %}{{ url_for('static',filename="/img/site-resource/logo-page.jpg",_external=True) }}{% endif %}">
+  {% if article %}
+  <meta property="og:type" content="article">
+  {% elif user %}
+  <meta property="og:type" content="profile">
+  {% else %}
+  <meta property="og:type" content="website">
+  {% endif %}
+  <meta property="fb:app_id" content="{{ config.FBAPPID }}"/>
 
   <!-- Bootstrap 4 CSS only -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -50,6 +66,60 @@
     });
   </script>
   #}
+  {% if article %}
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": {% if article.type.name == "Review" %}"Review"{% else %}"Article"{% endif %},
+      "datePublished" : "{{ article.publish_date }}",
+      "dateModified" : "{{ article.last_edit }}",
+      "headline":"{{ article.title }}",
+      "description" : "{{ self.description() }}",
+      "image":{
+        "@type":"imageObject",
+        "url":"{{ resized_img_src(article.image,width=994,height=466,mode='crop') }}",
+        "width":"994",
+        "height":"466"
+      },
+      {% if article.type.name=="Review" %}"reviewBody"{% else %}"articleBody"{% endif %}:"{{ article.body_html|striptags }}",
+      {% if article.subject %}{% if article.type.name=="Review" %}"itemReviewed"{% else %}"about"{% endif %}: {
+        "@type": "{% if article.subject.type == 'movie' %}Movie{% else %}TVSeries{% endif %}",
+        "name": "{{ article.subject.name }}",
+        "sameAs": "{{ article.subject.same_as }}",
+        "image": "{{ article.subject.image }}"{% if article.subject.date_published %},
+        "datePublished": "{{ article.subject.date_published }}"{% endif %}{% if article.subject.directed_by.all() %},
+        "director": [{% for director in article.subject.directed_by %}{
+          "@type": "Person",
+          "name": "{{ director.name }}" }{% if not loop.last %},{% endif %}{% endfor %}]{% endif %}
+      },{% endif %}
+      "author": {
+        "@type": "Person",
+        "name": "{{ article.author.first_name }} {{ article.author.last_name }}",
+        "sameAs":"{{ url_for('main.profile', id = article.author.id, _external=True) }}"
+      },
+      {% if article.type.name=="Review" %}"reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ article.rating }}",
+        "worstRating":"0",
+        "bestRating": "100"
+      },{% endif %}
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ config.TITLE }}",
+        "logo":{
+          "@type":"imageObject",
+          "url":"{{ url_for('static',filename="/img/site-resource/logo-page.jpg",_external=True) }}"
+        },
+        "sameAs":"https://www.eskimotv.net"
+      },
+      "mainEntityOfPage":{
+        "@type":"WebPage",
+        "@id":"{{ article.url }}"
+      }
+    }
+  </script>
+  {% endif %}
   {% endblock %}
 </head>
 <body>

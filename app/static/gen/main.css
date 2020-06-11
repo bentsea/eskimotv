@@ -459,3 +459,51 @@
                                                                                                                                                                         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
                                                                                                                                                                         font-weight: 300;
                                                                                                                                                                         color: #FFF; }
+
+                                                                                                                                                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003477}}
+                                                                                                                                                                        .portfolio {
+                                                                                                                                                                          padding: 2% 4% 2% 2%;
+                                                                                                                                                                          text-align: center; }
+
+                                                                                                                                                                          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003481}}
+                                                                                                                                                                          .heading {
+                                                                                                                                                                            background: #fff;
+                                                                                                                                                                            text-align: left;
+                                                                                                                                                                            box-shadow: 0px 0px 4px 0px #545b62; }
+
+                                                                                                                                                                            @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003486}}
+                                                                                                                                                                            .heading img {
+                                                                                                                                                                              width: 10%; }
+
+                                                                                                                                                                              @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003489}}
+                                                                                                                                                                              .bio-info {
+                                                                                                                                                                                padding: 3%;
+                                                                                                                                                                                box-shadow: 0px 0px 4px 0px #b0b3b7; }
+
+                                                                                                                                                                                @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003493}}
+                                                                                                                                                                                h3.bio-header {
+                                                                                                                                                                                  font-weight: 600; }
+
+                                                                                                                                                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003496}}
+                                                                                                                                                                                  h5.bio-subheader {
+                                                                                                                                                                                    font-size: 12px;
+                                                                                                                                                                                    margin-top: -15px;
+                                                                                                                                                                                    color: gray; }
+
+                                                                                                                                                                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003501}}
+                                                                                                                                                                                    .name {
+                                                                                                                                                                                      font-family: 'Charmonman', cursive;
+                                                                                                                                                                                      font-weight: 600; }
+
+                                                                                                                                                                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003505}}
+                                                                                                                                                                                      .bio-image {
+                                                                                                                                                                                        text-align: center;
+                                                                                                                                                                                        padding: 6%; }
+
+                                                                                                                                                                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003509}}
+                                                                                                                                                                                        .bio-image img {
+                                                                                                                                                                                          border-radius: 50%; }
+
+                                                                                                                                                                                          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eskimotv\/app\/app\/static\/css\/main\.scss}line{font-family:\00003512}}
+                                                                                                                                                                                          .bio-content {
+                                                                                                                                                                                            text-align: left; }

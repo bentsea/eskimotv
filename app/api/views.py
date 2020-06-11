@@ -5,6 +5,7 @@ import base64
 import json
 from . import api
 from . import tmdb_api
+from .. import db
 from flask_login import login_required,current_user
 
 
@@ -22,37 +23,35 @@ def get_backdrops():
 def tmdb_search():
     """Returns a list of results from TMDB based on the specified query values. 'title' is required and 'release_year' can be specified to narrow results."""
     all_tags = {tag.tmdb_id:{'id':tag.id,'name':tag.name} for tag in Tags.query.all()}
-    try:
-        results = tmdb_api.find_subjects(title = request.values.get('title',""),release_year = request.values.get('release_year',None))
-        for result in results:
-            genres = []
-            if result.get('genre_ids'):
-                for genre_id in result.get('genre_ids'):
-                    tag_id=all_tags.get(genre_id)['id']
-                    if not tag_id:
-                        genre_name = tmdb_api.get_genre_name(genre_id)
-                        genre = Tags.query.filter_by(name=genre_name).first()
-                        if genre:
-                            if not genre.tmdb_id:
-                                genre.tmdb_id = genre_id
-                            else:
-                                current_app.logger.error(f'TMDB genre {genre_name} already has TMDB id. Old id: {genre.id}. New id: {genre_id}.')
-                                continue
+    results = tmdb_api.find_subjects(title = request.values.get('title',""),release_year = request.values.get('release_year',None))
+    for result in results:
+        genres = []
+        if result.get('genre_ids'):
+            for genre_id in result.get('genre_ids'):
+                tag_info=all_tags.get(genre_id)
+                if tag_info:
+                    tag_id = tag_info.get('id')
+                elif not tag_info:
+                    genre_name = tmdb_api.get_genre_info(genre_id)
+                    genre = Tags.query.filter_by(name=genre_name).first()
+                    if genre:
+                        if not genre.tmdb_id:
+                            genre.tmdb_id = genre_id
                         else:
-                            genre = Tags(tmdb_id=genre_id,name=genre_name)
-                        try:
-                            db.session.add(genre)
-                            db.session.commit()
-                        except:
-                            db.session.rollback()
-                            current_app.logger.error(f'Cannot add new genre, {genre.name}')
-                        tag_id = genre.id
-                    genres.append(tag_id)
-            result['genres']=genres
-        return jsonify(json.dumps(results))
-    except Exception as err:
-        current_app.logger.error(err)
-        return print(err),500
+                            current_app.logger.error(f'TMDB genre {genre_name} already has TMDB id. Old id: {genre.id}. New id: {genre_id}.')
+                            genre.tmdb_id = genre_id
+                    else:
+                        genre = Tags(tmdb_id=genre_id,name=genre_name)
+                    try:
+                        db.session.add(genre)
+                        db.session.commit()
+                    except:
+                        db.session.rollback()
+                        current_app.logger.error(f'Cannot add new genre, {genre.name}')
+                    tag_id = genre.id
+                genres.append(tag_id)
+        result['genres']=genres
+    return jsonify(json.dumps(results))
 
 @api.route('/get-tags')
 @login_required

@@ -7,10 +7,11 @@ if os.path.exists(dotenv_path):
 
 
 import sys
-# paths=["/home/eskimotv/public_html/"]
-# for path in paths:
-#     if path not in sys.path:
-#         sys.path.append(path)
+if os.environ.get('FLASK_CONFIG') == "production":
+    paths=["/home/eskimotv/public_html/"]
+    for path in paths:
+        if path not in sys.path:
+            sys.path.append(path)
 from app import create_app,db
 from flask_login import current_user
 from app.models import User,Role,Permission,CreativeWork,Article,ArticleType,Tags,Person
