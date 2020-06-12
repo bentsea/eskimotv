@@ -18,11 +18,22 @@
         {{ wtf.form_field(form.blurb) }}
         {{ wtf.form_field(form.tags_selector) }}
         {% if article.type.name == "Review" %}
-        {{ wtf.form_field(form.rating,type="Number",min="0",max="100") }}
         {{ wtf.form_field(form.final_verdict) }}
         {% endif %}
-        {{ wtf.form_field(form.body) }}
+      </div>
+      {% if article.type.name == "Review" %}
+      <div class="col-md-4">
+        {{ wtf.form_field(form.rating,type="Number",min="0",max="100") }}
+      </div>
+      {% endif %}
+      <div class="col-md-4">
+        {{ wtf.form_field(form.youtube) }}
+      </div>
+      <div class="col-md-4">
         {{ wtf.form_field(form.publish_date) }}
+      </div>
+      <div class="col-md-12">
+        {{ wtf.form_field(form.body) }}
       </div>
       <div class="col-md-12">
         <div class="float-left">

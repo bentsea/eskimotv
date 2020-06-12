@@ -385,4 +385,4 @@ class Person(db.Model):
 db.event.listen(Article.body, 'set', Article.on_changed_body)
 db.event.listen(Article.title,'set', Article.on_changed_title)
 db.event.listen(Article.rating,'set', Article.on_changed_rating)
-db.event.listen(User.email, 'set', Article.on_changed_email)
+db.event.listen(User.email, 'set', User.on_changed_email)

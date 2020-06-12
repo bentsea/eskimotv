@@ -31,7 +31,7 @@
           {% include "includes/social-media.html" %}
         </header>
         {% if article.youtube %}{{ macros.media(type="youtube",src=article.youtube,feature=True) }}{% else %}<img class="img-responsive webfeedsFeaturedVisual" src="{{ resized_img_src(article.image,width=994,height=466,mode='crop') }}" alt="{{ article.title }} Cover">{% endif %}
-        {{ article.body_html }}
+        {% if not article.published and article.draft %}{{ article.draft }}{% endif %}{{ article.body }}
         {% if article.rating %}
         <table class="table">
           <tbody>

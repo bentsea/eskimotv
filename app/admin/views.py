@@ -162,6 +162,7 @@ def edit_article(id):
                     return render_template('main/edit_article.html.j2',form=form,article=article)
                 article.body = form.body.data
                 article.title = form.title.data
+                article.youtube = form.youtube.data
                 if form.rating.data:
                     article.rating = form.rating.data
                     article.final_verdict = form.final_verdict.data
@@ -226,6 +227,12 @@ def edit_article(id):
             if form.save_draft.data:
                 article.draft_title = form.title.data
                 article.draft = form.body.data
+                article.youtube = form.youtube.data
+                article.blurb = form.blurb.data
+                if form.rating.data:
+                    article.rating = form.rating.data
+                    article.final_verdict = form.final_verdict.data
+                article.publish_date = form.publish_date.data
                 db.session.add(article)
                 db.session.commit()
                 for tag_id in form.tags_selector.data:
@@ -259,6 +266,7 @@ def edit_article(id):
     form.tags_selector.render_kw = {'required':True}
     form.publish_date.data = article.publish_date
     form.blurb.data = article.blurb
+    form.youtube.data = article.youtube
     form.blurb.render_kw = {'required':True}
     if article.type.name == "Review":
         form.final_verdict.data = article.final_verdict

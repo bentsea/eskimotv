@@ -78,6 +78,7 @@ class ArticleForm(FlaskForm):
     subject_selected = HiddenField('Subject Selected')
     tmdb_id = HiddenField('Subject ID')
     subject_type = HiddenField('Subject Type')
+    youtube = StringField('YouTube Video id:')
     rating = IntegerField('Rating (0-100):')
     final_verdict = StringField('Final Verdict:')
     submit = SubmitField('Publish')
