@@ -282,7 +282,12 @@ class Article(db.Model):
     @hybrid_property
     def published(self):
         """Returns true if the publish date is at or before the current time and is_published is true."""
-        return self.is_published and self.publish_date <= datetime.now()
+        return self.is_published and self.publish_date <= datetime.utcnow()
+
+    @published.expression
+    def published(cls):
+        return ((cls.publish_date <= datetime.utcnow()) & (cls.is_published))
+
 
     @property
     def url(self):
