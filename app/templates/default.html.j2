@@ -30,7 +30,7 @@
   <meta property="og:title" content="{{ self.title() }}">
   <meta property="og:description" content="{{ self.description() }}" />
   <meta property="og:url" content="{{ self.pageurl() }}">
-  <meta property="og:image" content="{% if article %}{{ url_for('static',filename=article.image,_external=True) }}{% else %}{{ url_for('static',filename="/img/site-resource/logo-page.jpg",_external=True) }}{% endif %}">
+  <meta property="og:image" content="{% if article %}{{ url_for('static',filename=article.image,_external=True) }}{% else %}{{ url_for('static',filename="img/site-resource/logo-page.jpg",_external=True) }}{% endif %}">
   {% if article %}
   <meta property="og:type" content="article">
   {% elif user %}

@@ -157,6 +157,9 @@ def edit_article(id):
     if request.method == "POST":
         if form.validate_on_submit():
             if form.submit.data:
+                if not current_user.can(Permission.PUBLISH):
+                    flash("Articles can only be published by a Publisher.")
+                    return render_template('main/edit_article.html.j2',form=form,article=article)
                 if Article.query.filter_by(title_slug=slugify(form.title.data)).first() and article.title != form.title.data:
                     flash("Your title is too similar to an existing article.")
                     return render_template('main/edit_article.html.j2',form=form,article=article)

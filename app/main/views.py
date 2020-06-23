@@ -64,7 +64,7 @@ def profile(id):
         "unpublished":query_for_all_unpublished
     }
     display = 'none'
-    if current_user.is_authenticated:
+    if current_user.is_authenticated and current_user == user:
         display = request.cookies.get('display','none')
         if current_user.id != id and display == "followed":
             display = 'none'
