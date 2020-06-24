@@ -41,10 +41,10 @@
           <a href="#" data-toggle="modal" data-target="#tmdbCoverModal" class="btn btn-primary">Change Image</a>
         </div>
         <div class="float-right">
-          {{ wtf.form_field(form.submit, class="btn btn-primary") }}
+          {% if current_user.can(Permission.PUBLISH) %}{{ wtf.form_field(form.submit, class="btn btn-primary") }}{% else %}{{ wtf.form_field(form.request_to_publish, class="btn btn-primary") }}{% endif %}
           {{ wtf.form_field(form.save_draft, class="btn btn-success") }}
           {% if article.published %}<a href="{{ url_for('admin.unpublish',article_id=article.id) }}" class="btn btn-warning">Un-Publish</a>{% endif %}
-          {% if (article.published and current_user.can(Permission.PUBLISH)) or (not article.published and current_user == article.author) %}<button type="button" data-toggle="modal" data-target="#deleteArticleModal" class="btn btn-danger">Delete</button>{% endif %}
+          {% if current_user.can(Permission.PUBLISH) or (not article.published and current_user == article.author) %}<button type="button" data-toggle="modal" data-target="#deleteArticleModal" class="btn btn-danger">Delete</button>{% endif %}
           <button type="button" data-toggle="modal" data-target="#exitEditorModal" class="btn btn-secondary">Cancel</button>
         </div>
       </div>

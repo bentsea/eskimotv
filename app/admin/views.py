@@ -172,6 +172,7 @@ def edit_article(id):
                 article.blurb = form.blurb.data
                 article.draft = None
                 article.publish_date = form.publish_date.data
+                article.request_to_publish = False
                 article.is_published = True
                 if form.subject_selected.data:
                     if form.subject_selected.data != "None":
@@ -226,6 +227,71 @@ def edit_article(id):
                             db.session.rollback()
                             continue
                 flash('The article has been successfully published.')
+                return redirect(article.url)
+            if form.request_to_publish.data:
+                article.body = form.body.data
+                article.title = form.title.data
+                article.youtube = form.youtube.data
+                if form.rating.data:
+                    article.rating = form.rating.data
+                    article.final_verdict = form.final_verdict.data
+                article.blurb = form.blurb.data
+                article.draft = None
+                article.publish_date = form.publish_date.data
+                article.request_to_publish = True
+                if form.subject_selected.data:
+                    if form.subject_selected.data != "None":
+                        subject = CreativeWork.query.filter_by(tmdb_id=form.tmdb_id.data).first()
+                        if not subject:
+                            subject = add_new_creative_work(form.tmdb_id.data,form.subject_type.data)
+                        article.subject = subject
+                        db.session.add(article)
+                        db.session.commit()
+                    elif form.subject_selected.data == "None":
+                        try:
+                            article.subject = None
+                            db.session.add(article)
+                            db.session.commit()
+                        except:
+                            db.session.rollback()
+                if form.cover_image_file.data:
+                    files.delete_image(article.image)
+                    img = Image.open(form.cover_image_file.data)
+                    article.image=files.save_cover_image(img,article.title_slug)
+                elif form.cover_image_url.data:
+                    files.delete_image(article.image)
+                    img = Image.open(BytesIO(requests.get(form.cover_image_url.data).content))
+                    article.image=files.save_cover_image(img,article.title_slug)
+                db.session.add(article)
+                db.session.commit()
+                for tag in article.tags.all():
+                    if str(tag.id) not in form.tags_selector.data:
+                        article.tags.remove(tag)
+                        db.session.add(article)
+                        db.session.commit()
+                for tag_id in form.tags_selector.data:
+                    tag = Tags.query.get(tag_id)
+                    if not tag:
+                        if not current_user.can(Permission.PUBLISH):
+                            tag = Tags(name=tag_id.title())
+                            try:
+                                db.session.add(tag)
+                                db.session.commit()
+                            except:
+                                db.session.rollback()
+                        else:
+                            flash(f'Publisher permissions required to create new tag named {tag_id.title()}.')
+                            continue
+                    if tag not in article.tags.all():
+                        try:
+                            article.tags.append(tag)
+                            db.session.add(article)
+                            db.session.commit()
+                        except:
+                            current_app.logger.info('Error')
+                            db.session.rollback()
+                            continue
+                flash('This article has been sent for publisher review.')
                 return redirect(article.url)
             if form.save_draft.data:
                 article.draft_title = form.title.data

@@ -46,10 +46,7 @@ def article(title_slug,**kwargs):
 def profile(id):
     user = User.query.filter_by(id=id).first()
     def query_for_user():
-        if current_user == user:
-            return user.articles
-        else:
-            return user.articles.filter(Article.publish_date <= datetime.utcnow(),Article.is_published==True)
+        return user.articles.filter_by(published=True)
     def query_for_requests_to_publish():
         if current_user.can(Permission.PUBLISH):
             return Article.query.filter_by(request_to_publish=True)
@@ -57,19 +54,23 @@ def profile(id):
             abort(403,description="You don't have permission to publish.")
     def query_for_all_unpublished():
         if current_user.can(Permission.PUBLISH):
-            return Article.query.filter((Article.publish_date >= datetime.utcnow()) | (Article.is_published==False))
+            return Article.query.filter_by(is_published=False)
+    def query_for_my_drafts():
+        return Article.query.filter_by(author=user).filter_by(is_published=False)
     display_options = {
         'none':query_for_user,
         "waiting_for_publication":query_for_requests_to_publish,
-        "unpublished":query_for_all_unpublished
+        "unpublished":query_for_all_unpublished,
+        "my_drafts":query_for_my_drafts
     }
     display = 'none'
     if current_user.is_authenticated and current_user == user:
         display = request.cookies.get('display','none')
-        if current_user.id != id and display == "followed":
+        if (not current_user.can(Permission.PUBLISH) and display in ["waiting_for_publication","unpublished"]) or (current_user.can(Permission.PUBLISH) and display in ["my_drafts"]):
             display = 'none'
     query = display_options[display]()
     page = request.args.get('page',1,type=int)
+    current_app.logger.info(query)
     pagination = query.order_by(Article.publish_date.desc()).paginate(page,
         per_page=current_app.config['ESKIMOTV_ARTICLES_PER_PAGE'],
         error_out=False)

@@ -83,6 +83,7 @@ class ArticleForm(FlaskForm):
     final_verdict = StringField('Final Verdict:')
     submit = SubmitField('Publish')
     save_draft = SubmitField('Save Draft')
+    request_to_publish = SubmitField('Request to Publish')
 
 class NewArticle(ArticleForm):
     article_type = SelectField('Article Type:', coerce=int)

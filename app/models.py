@@ -317,8 +317,8 @@ class Article(db.Model):
     def on_changed_body(target, value, oldvalue, initiator):
         allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code',
                         'em', 'i', 'li', 'ol', 'pre', 'strong', 'ul','img','figure','figcaption',
-                        'h1', 'h2', 'h3','h4', 'p']
-        allowed_attr = ['alt','height','width','src','class']
+                        'h1', 'h2', 'h3','h4', 'p','div','iframe']
+        allowed_attr = ['alt','height','width','src','class','allow','allowFullScreen']
         target.body_html = bleach.linkify(bleach.clean(render_template_string(value),tags=allowed_tags, attributes=allowed_attr, strip=True))
 
     @staticmethod

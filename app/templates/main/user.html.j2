@@ -9,10 +9,10 @@
     <img class="rounded" src="{{ user.gravatar(size=400) }}">
   </div>
   <div class="col-lg-8">
-    <h1>{{ user.username }}</h1>
+    <h1>{% if user.first_name %}{{ user.first_name }}{% if user.last_name %} {{ user.last_name }}{% endif %}{% else %}No Name{% endif %}</h1>
     {% if user.first_name or user.last_name %}
     <p>
-      {% if user.first_name %}{{ user.first_name }}{% if user.last_name %} {{ user.last_name }}{% endif %} | {{ user.role.name }}{% endif %}
+      {{ user.username }} | {{ user.role.name }}
     </p>
     {% endif %}
     {% if current_user.is_administrator() or current_user.id == user.id %}
@@ -44,7 +44,7 @@
         <li class="nav-item"><a class="nav-link{% if display == 'none' %} active{% endif %}" href="{{ url_for('main.toggle_user_display',user_id=user.id) }}">{% if user == current_user %}My{% else %}{{ user.username }}'s{% endif %} Articles</a></li>
         {#{% if current_user == user %}<li class="nav-item"><a class="nav-link{% if display == "followed" %} active{% endif %}" href="{{ url_for('main.toggle_user_display',display="followed",user_id=user.id) }}">Followed Authors</a></li>{% endif %}#}
         {% if current_user.can(Permission.PUBLISH) and user == current_user %}<li class="nav-item"><a class="nav-link{% if display == "waiting_for_publication" %} active{% endif %}" href="{{ url_for('main.toggle_user_display',display="waiting_for_publication",user_id=user.id) }}">Requests to Publish</a></li>{% endif %}
-        {% if current_user.can(Permission.PUBLISH) and user == current_user %}<li class="nav-item"><a class="nav-link{% if display == "unpublished" %} active{% endif %}" href="{{ url_for('main.toggle_user_display',display="unpublished",user_id=user.id) }}">All Drafts</a></li>{% endif %}
+        {% if current_user.can(Permission.PUBLISH) and user == current_user %}<li class="nav-item"><a class="nav-link{% if display == "unpublished" %} active{% endif %}" href="{{ url_for('main.toggle_user_display',display="unpublished",user_id=user.id) }}">All Drafts</a></li>{% elif current_user.can(Permission.WRITE) and current_user == user %}<li class="nav-item"><a class="nav-link{% if display == "my_drafts" %} active{% endif %}" href="{{ url_for('main.toggle_user_display',display="my_drafts",user_id=user.id) }}">My Drafts</a></li>{% endif %}
     </ul>
     {% include "includes/articles.html.j2" %}
   </div>

@@ -1,6 +1,6 @@
 <ul class="articles">
   {% for article in articles %}
-  {% if current_user == article.author or current_user.is_administrator() or article.published %}
+  {% if current_user == article.author or current_user.can(Permission.PUBLISH) or article.published %}
     <li class="article">
       <div class="profile-thumbnail">
         <a href="{{ url_for('main.profile', id = article.author.id) }}">
@@ -12,7 +12,7 @@
         <div class="article-author">
           {% if article.title_slug %}
             <a href="{{ article.url }}">
-              {{ article.title }}
+              {{ article.title }}{% if article.request_to_publish %} [Waiting for Publication]{% endif %}
             </a>
           {% else %}
             <a href="{{ url_for('main.article_by_id', id=article.id) }}">
