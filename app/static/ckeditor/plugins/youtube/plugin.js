@@ -103,7 +103,7 @@
 											id : 'txtWidth',
 											width : '60px',
 											label : editor.lang.youtube.txtWidth,
-											'default' : editor.config.youtube_width != null ? editor.config.youtube_width : '640',
+											'default' : editor.config.youtube_width != null ? editor.config.youtube_width : '853',
 											validate : function () {
 												if (this.getValue()) {
 													var width = parseInt (this.getValue()) || 0;
@@ -124,7 +124,7 @@
 											id : 'txtHeight',
 											width : '60px',
 											label : editor.lang.youtube.txtHeight,
-											'default' : editor.config.youtube_height != null ? editor.config.youtube_height : '360',
+											'default' : editor.config.youtube_height != null ? editor.config.youtube_height : '480',
 											validate : function () {
 												if (this.getValue()) {
 													var height = parseInt(this.getValue()) || 0;
