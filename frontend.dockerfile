@@ -34,4 +34,5 @@ COPY boot.sh ./app/
 
 #Deploy Project
 EXPOSE 5000
+#This is now being done in the docker compose file.
 #ENTRYPOINT ["./boot.sh"]
