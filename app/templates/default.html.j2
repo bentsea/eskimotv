@@ -158,6 +158,16 @@
   {{ moment.include_moment() }}
 
   <script type="text/javascript">
+
+    //initialize Headroom js
+    // grab header
+    var myElement = document.querySelector("nav");
+    // construct an instance of Headroom, passing the element
+    var headroom  = new Headroom(myElement);
+    // initialise
+    headroom.init();
+
+    
     //Initialize tooltips for whole page popper.js and bootstrap 4
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
