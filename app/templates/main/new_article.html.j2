@@ -151,8 +151,8 @@
   <div class="card-body">
     <h5 class="card-title">{{ media_type }}: {{ title }} ({{ year }})</h5>
     <p class="card-text">{{ overview }}</p>
-    <div onclick="$('#title').val('{{ title }} ({{ year }})');$('#subject_title').val('{{ title }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Use For Subject and Article Title</div>
-    <div onclick="$('#subject_title').val('{{ title }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Only Use For Subject</div>
+    <div onclick="$('#title').val('{{ js_title }} ({{ year }})');$('#subject_title').val('{{ js_title }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ js_title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Use For Subject and Article Title</div>
+    <div onclick="$('#subject_title').val('{{ js_title }}');$('#tmdb_id').val('{{ id }}');$('#subject_type').val('{{ media_type }}');$('#subject_selected').val('{{ js_title }}');$('#tags_selector').val([{{ genres }}]);$('#tags_selector').trigger('change');$('#subjectModal').modal('hide');" class="btn btn-primary">Only Use For Subject</div>
   </div>
 </div>
 </script>{% endraw %}
@@ -199,6 +199,12 @@ function search(data) {
       if (v.hasOwnProperty("name")) {
         v.title = v.name;
       }
+      function escapeJs (str) {
+          return str.replace(/[\'\"\\\/]/gm, function (c) {
+              return '\\' + c;
+          });
+      }
+      v.js_title = escapeJs(v.title);
       $("#searchData").append(Mustache.render(template, v));
     });
   });
