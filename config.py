@@ -24,7 +24,7 @@ class Config:
     FLASKFILEMANAGER_FILE_PATH = os.path.join(basedir,'app/static/uploads/')
     TMDB_API_KEY=os.environ.get('TMDB_API_KEY')
     CKEDITOR_ENABLE_CSRF = True
-    CKEDITOR_EXTRA_PLUGINS = ["youtube"]
+    CKEDITOR_EXTRA_PLUGINS = ["youtube","wordcount","notification"]
     IMAGES_CACHE=os.path.join(basedir,"tmp/flask-images")
     primary_color = "#6699cc"
     secondary_color1 = "#003366"

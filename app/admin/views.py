@@ -394,7 +394,7 @@ def delete_article():
     article_id = request.values.get('article_id')
     if article_id:
         article = Article.query.get_or_404(article_id)
-        if article.is_published and current_user.can(Permission.PUBLISH):
+        if current_user.can(Permission.PUBLISH):
             remove_from_database(article)
             return redirect(url_for('main.index'))
         elif not article.is_published and article.author == current_user:
