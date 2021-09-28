@@ -207,7 +207,7 @@ def edit_article(id):
                 for tag_id in form.tags_selector.data:
                     tag = Tags.query.get(tag_id)
                     if not tag:
-                        if not current_user.can(Permission.PUBLISH):
+                        if current_user.can(Permission.PUBLISH):
                             tag = Tags(name=tag_id.title())
                             try:
                                 db.session.add(tag)
@@ -272,7 +272,7 @@ def edit_article(id):
                 for tag_id in form.tags_selector.data:
                     tag = Tags.query.get(tag_id)
                     if not tag:
-                        if not current_user.can(Permission.PUBLISH):
+                        if current_user.can(Permission.PUBLISH):
                             tag = Tags(name=tag_id.title())
                             try:
                                 db.session.add(tag)
@@ -431,7 +431,7 @@ def new_article():
             for tag_id in form.tags_selector.data:
                 tag = Tags.query.get(tag_id)
                 if not tag:
-                    if not current_user.can(Permission.PUBLISH):
+                    if current_user.can(Permission.PUBLISH):
                         tag = Tags(name=tag_id.title())
                         try:
                             db.session.add(tag)

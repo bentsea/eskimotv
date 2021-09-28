@@ -9,7 +9,7 @@
 {% block page_content %}
 {% if current_user == article.author or current_user.can(Permission.EDIT) %}
 <div class="">
-  <form class="form form-horizontal" enctype="multipart/form-data" method="post" role="form">
+  <form class="form form-horizontal" id="article-form" enctype="multipart/form-data" method="post" role="form">
     <div class="row">
       <div class="col-md-12">
         {{ form.hidden_tag() }}
@@ -41,7 +41,7 @@
           <a href="#" data-toggle="modal" data-target="#tmdbCoverModal" class="btn btn-primary">Change Image</a>
         </div>
         <div class="float-right">
-          {% if current_user.can(Permission.PUBLISH) %}{{ wtf.form_field(form.submit, class="btn btn-primary") }}{% else %}{{ wtf.form_field(form.request_to_publish, class="btn btn-primary") }}{% endif %}
+          {% if current_user.can(Permission.PUBLISH) and not article.published %}<button type="button" data-toggle="modal" data-target="#updateArticleDateBeforePublishModal" class="btn btn-primary">Publish</button>{% elif current_user.can(Permission.PUBLISH) %}{{ wtf.form_field(form.submit, class="btn btn-primary") }}{% else %}{{ wtf.form_field(form.request_to_publish, class="btn btn-primary") }}{% endif %}
           {{ wtf.form_field(form.save_draft, class="btn btn-success") }}
           {% if article.published %}<a href="{{ url_for('admin.unpublish',article_id=article.id) }}" class="btn btn-warning">Un-Publish</a>{% endif %}
           {% if current_user.can(Permission.PUBLISH) or (not article.published and current_user == article.author) %}<button type="button" data-toggle="modal" data-target="#deleteArticleModal" class="btn btn-danger">Delete</button>{% endif %}
@@ -96,6 +96,34 @@
                 <div class="float-right">
                   <a href="{{ url_for('admin.delete_article',article_id=article.id) }}" class="btn btn-danger">Delete</a>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Offer to Update Article Date Before Publishing -->
+    <div class="modal fade" id="updateArticleDateBeforePublishModal" tabindex="-1" role="dialog" aria-labelledby="deleteArticleLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteArticleLabel">Publish <em>{{ article.title }}</em>?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <p><em>{{ article.title }}</em> is not already published, would you like the publication date set to today before publishing?</p>
+              </div>
+              <div class="col-sm-12">
+                <div class="float-right">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-secondary" onclick="update_and_publish();">Update & Publish</button>
+                  {{ wtf.form_field(form.submit, class="btn btn-primary") }}
                 </div>
               </div>
             </div>
@@ -330,5 +358,40 @@ $("#tmdbCoverModal").on('shown.bs.modal', function(){
           return false;
       }
   });
+</script>
+
+<!-- Update the Publication Date and Publish -->
+<script type="text/javascript">
+  function update_and_publish() {
+    form = document.getElementById("article-form");
+    date_field = document.getElementById("publish_date");
+
+    // Get Today's Date
+    date_ob = new Date();
+
+    // adjust 0 before single digit date
+    day = ("0" + date_ob.getDate()).slice(-2);
+
+    // current month
+    month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+
+    // current year
+    year = date_ob.getFullYear();
+
+    // current hours
+    hours = date_ob.getHours();
+
+    // current minutes
+    minutes = date_ob.getMinutes();
+
+    // current seconds
+    seconds = date_ob.getSeconds();
+
+    //Format date into useable format. Javascript formatting SUCKS.
+    today = year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds
+
+    date_field.value = today;
+    document.getElementById("submit").click();
+  }
 </script>
 {% endblock %}
