@@ -20,4 +20,7 @@ def save_cover_image(img,article_slug):
     return f"{cover_image_path}{img_name}"
 
 def delete_image(img_path):
-    os.remove(f"{static_file_path}{img_path}")
+    try:
+        os.remove(f"{static_file_path}{img_path}")
+    except Exception as err:
+        print(err)
