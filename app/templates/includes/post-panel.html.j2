@@ -5,7 +5,7 @@
                 <figure class="blog-thumb">
 <!--                <img src="{% if post.image %}/thumbs{{ post.image }}{% else %}/img/carousel/fullimage1.jpg{% endif %}" alt="{{ post.description }}" {% if post.description %}title="{{ post.description }}"{% endif %}>
     -->
- <img src="{{ resized_img_src(post.image,width=480,height=225,mode='crop',quality='55') }}" alt="{% if post.blurb %}{{ post.blurb }}{% else %}{{ post.title }}{% endif %}" title="{% if post.blurb %}{{ post.blurb }}{% else %}{{ post.title }}{% endif %}">
+ <img src="{{ resized_img_src(post.image,width=480,height=225,mode='crop',quality='55') }}" alt="{% if post.blurb %}{{ post.blurb | e }}{% else %}{{ post.title | e }}{% endif %}" title="{% if post.blurb %}{{ post.blurb | e }}{% else %}{{ post.title | e }}{% endif %}">
             </figure>
             </a>
             <div class="post-area">

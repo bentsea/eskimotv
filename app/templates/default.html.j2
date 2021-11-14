@@ -23,7 +23,7 @@
 
   <!-- SEO / META / OG Data -->
   <title>{% block title %}{{ config.TITLE }}{% endblock %}</title>
-  <meta name="description" content="{% block description %}{% if article %}{% if article.youtube %}Video {% endif %}{{ article.type.name }}: {{ article.blurb }}{% elif description %}{{ description }}{% else %}{{ config.DESCRIPTION }}{% endif %}{% endblock %}">
+  <meta name="description" content="{% block description %}{% if article %}{% if article.youtube %}Video {% endif %}{{ article.type.name }}: {{ article.blurb | e }}{% elif description %}{{ description }}{% else %}{{ config.DESCRIPTION }}{% endif %}{% endblock %}">
   <link rel="canonical" href="{% block pageurl %}{% if article %}{{ article.url }}{% else %}{{ request.url }}{% endif %}{% endblock %}">
   <link rel="alternate" type="application/rss+xml" title="{{ config.TITLE }}" href="{{ url_for('main.rss_feed') }}" />
 
