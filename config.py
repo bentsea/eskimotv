@@ -26,6 +26,7 @@ class Config:
     CKEDITOR_ENABLE_CSRF = True
     CKEDITOR_EXTRA_PLUGINS = ["youtube","wordcount","notification"]
     IMAGES_CACHE=os.path.join(basedir,"tmp/flask-images")
+    WTF_CSRF_TIME_LIMIT=None
     primary_color = "#6699cc"
     secondary_color1 = "#003366"
     secondary_color2 = "#336699"
