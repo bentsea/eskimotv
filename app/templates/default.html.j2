@@ -38,7 +38,6 @@
   {% else %}
   <meta property="og:type" content="website">
   {% endif %}
-  <meta property="fb:app_id" content="{{ config.FBAPPID }}"/>
 
   <!-- Bootstrap 4 CSS only -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -156,6 +155,8 @@
   <script src="{{ ASSET_URL }}"></script>
   {% endassets %}
   {{ moment.include_moment() }}
+  <!-- Disqus Comment Count -->
+  <script id="dsq-count-scr" src="//eskimotv.disqus.com/count.js" async></script>
 
   <script type="text/javascript">
 
@@ -272,24 +273,6 @@
   </script>
   #}
 
-  <!-- facebook js -->
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '{{ config.FBAPPID }}',
-        xfbml      : true,
-        version    : 'v2.8'
-      });
-    };
-
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
 
   {% endblock %}
 </body>

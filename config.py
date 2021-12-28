@@ -31,7 +31,6 @@ class Config:
     secondary_color1 = "#003366"
     secondary_color2 = "#336699"
     light_color1 = "#D6EAF8"
-    FBAPPID = "969503389844347"
 
     @staticmethod
     def init_app(app):
