@@ -11,4 +11,4 @@ services:
     volumes:
       - '.:/home/eskimotv/app'
     entrypoint: ./app/boot.sh
-    restart: always
+    restart: unless-stopped
