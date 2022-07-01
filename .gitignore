@@ -5,3 +5,4 @@ tmp/*
 !.gitattributes
 !.htaccess
 *.sqlite
+app/static/img/*
