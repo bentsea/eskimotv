@@ -46,7 +46,7 @@ class TestingConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or 'sqlite:///{}'.format(os.path.join(basedir,'data-test.sqlite'))
 
 class ProductionConfig(Config):
-    SERVER_NAME="www.eskimotv.net"
+    #SERVER_NAME="www.eskimotv.net"
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///{}'.format(os.path.join(basedir,'data.sqlite'))
     #ASSETS_DEBUG = True
     @classmethod

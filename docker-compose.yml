@@ -1,6 +1,6 @@
-version: '3'
 services:
   web:
+    container_name: flask-app
     image: bentsea/eskimotv-frontend:latest
     build:
       dockerfile: frontend.dockerfile
@@ -12,3 +12,22 @@ services:
       - '.:/home/eskimotv/app'
     entrypoint: ./app/boot.sh
     restart: unless-stopped
+
+#  mysql-db:
+#    container_name: mysql-db
+#    image: mysql:latest
+#    restart: always
+#    environment:
+#      MYSQL_RANDOM_ROOT_PASSWORD: yes
+#      MYSQL_DATABASE: eskimotv_sitedb
+#      MYSQL_USER: eskimotv_sitedb
+#      MYSQL_PASSWORD: UBHZw8C9
+#    ports:
+#      - '3308:3306'
+#    volumes:
+#      - ./database:/var/lib/mysql
+#      - ./eskimotv_sitedb.sql:/docker-entrypoint-initdb.d/eskimotv_sitedb.sql
+#
+#volumes:
+#    app:
+#    database:

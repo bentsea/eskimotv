@@ -2,7 +2,7 @@
 
 source venv/bin/activate
 cd app/
-flask run --host=0.0.0.0
+flask run --host=0.0.0.0 --debugger
 #flask test
 #while true; do
 #    flask deploy

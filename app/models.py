@@ -5,7 +5,7 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask import current_app, request, render_template_string,url_for
 from . import db, login_manager
 from flask_login import UserMixin, AnonymousUserMixin
-from datetime import datetime,date
+from datetime import datetime,date,timezone
 from sqlalchemy.ext.hybrid import hybrid_property
 from slugify import slugify
 import hashlib
@@ -106,7 +106,7 @@ class User(UserMixin,db.Model):
                 cascade='all, delete-orphan')
 
     def __init__(self, **kwargs):
-        super(User, self).__init__(**kwargs)
+        #super(User, self).__init__(**kwargs)
         if self.role is None:
             if self.email == current_app.config['ESKIMOTV_ADMIN']:
                 self.role = Role.query.filter_by(name='Administrator').first()
@@ -128,7 +128,7 @@ class User(UserMixin,db.Model):
             rating=rating)
 
     def ping(self):
-        self.last_seen = datetime.utcnow()
+        self.last_seen = datetime.now(timezone.utc)
         db.session.add(self)
         db.session.commit()
 
@@ -208,11 +208,13 @@ class User(UserMixin,db.Model):
         return check_password_hash(self.password_hash, password)
 
     def gravatar_hash(self):
-        return hashlib.md5(self.email.lower().strip().encode('utf-8')).hexdigest()
+        if self.email:
+            return hashlib.md5(self.email.lower().strip().encode('utf-8')).hexdigest()
 
     @staticmethod
     def on_changed_email(target, value, oldvalue, initiator):
-        target.avatar_hash = target.gravatar_hash()
+        if self.email is not None:
+            target.avatar_hash = target.gravatar_hash()
 
 class AnonymousUser(AnonymousUserMixin):
     def can(self, permissions):
